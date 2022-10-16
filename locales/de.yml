@@ -1,0 +1,15 @@
+main:
+  title: Fast angle
+  description: Einfacher Online-Winkelmesser - messen Sie jeden Winkel direkt auf Ihrem Bild!
+  brought_to_you_by: Präsentiert von
+  visit_our_website: Besuche unsere Webseite
+  star_us_on_github: Star uns auf GitHub
+board:
+  drop_file_here: Legen Sie die Datei hier ab
+  angle_convex: 'Konvexer Winkel: {value}'
+  angle_concave: 'Konkaver Winkel: {value}'
+  nav:
+    upload_file: Klicken Sie hier oder ziehen Sie das Bild, um es zu laden
+    toggle_fullscreen: Vollbildmodus umschalten
+    toggle_dark: Dunkelmodus umschalten
+    toggle_langs: Sprachen ändern

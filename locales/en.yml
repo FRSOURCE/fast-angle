@@ -1,0 +1,15 @@
+main:
+  title: Fast angle
+  description: Simple online protractor - measure any angle directly on your image!
+  brought_to_you_by: Brought to you by
+  visit_our_website: Visit our website
+  star_us_on_github: Star us on GitHub
+board:
+  drop_file_here: Drop the file here
+  angle_convex: 'Convex angle (internal): {value}'
+  angle_concave: 'Concave angle (external): {value}'
+  nav:
+    upload_file: Click here, or drag the image over to load it
+    toggle_fullscreen: Toggle fullscreen mode
+    toggle_dark: Toggle dark mode
+    toggle_langs: Change languages
