@@ -29,6 +29,7 @@
   "~icons/carbon/minimize": [],
   "~icons/carbon/cloud-upload": [],
   "src/components/BoardNav.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/components/BoardNav.vue?vue&type=style&index=0&lang.scss": [],
   "src/composables/usePoints.ts": [],
   "src/composables/useAngle.ts": [],
   "src/components/Segment.vue?vue&type=script&setup=true&lang.ts": [],
@@ -46,9 +47,9 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/assets/virtual_pwa-register.a513c9fc.js"
+    "/fast-angle/assets/virtual_pwa-register.77fbc38c.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
-    "/assets/workbox-window.prod.es5.6954f450.js"
+    "/fast-angle/assets/workbox-window.prod.es5.6954f450.js"
   ]
 }
