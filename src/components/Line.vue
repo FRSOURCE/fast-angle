@@ -38,7 +38,7 @@ const line = computed(() => {
 </script>
 
 <template>
-  <circle v-if="points[0] && !points[1]" :cx="`${points[0][0]}px`" :cy="`${points[0][1]}px`" :r="pathWidth" :stroke-width="1" />
-  <Segment :point-start="points[0]" :point-stop="points[1]" />
-  <Segment v-if="line" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="4" stroke-width="1" />
+  <circle v-if="points[0] && !points[1]" v-bind="$attrs" :cx="`${points[0][0]}px`" :cy="`${points[0][1]}px`" :r="pathWidth" :stroke-width="1" />
+  <Segment v-bind="$attrs" :point-start="points[0]" :point-stop="points[1]" />
+  <Segment v-if="line" v-bind="$attrs" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="4" stroke-width="1" />
 </template>

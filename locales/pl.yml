@@ -8,6 +8,7 @@ board:
   drop_file_here: Upuść plik tutaj
   angle_convex: 'Kąt wypukły (wewnętrzny): {value}'
   angle_concave: 'Kąt wklęsły (zewnętrzny): {value}'
+  click_this_button_or_drop: Kliknij tutaj aby rozpocząć pomiary. Możesz też kliknąć w przycisk poniżej lub upuścić tutaj obrazek, by z niego skorzystać. Użytkowanie jest najwygodniejsze w trybie pełnoekranowym
   nav:
     upload_file: Kliknij tutaj lub przeciągnij obraz, aby go załadować
     toggle_fullscreen: Przełącz tryb pełnoekranowy

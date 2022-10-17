@@ -8,6 +8,7 @@ board:
   drop_file_here: Legen Sie die Datei hier ab
   angle_convex: 'Konvexer Winkel: {value}'
   angle_concave: 'Konkaver Winkel: {value}'
+  click_this_button_or_drop: Klicken Sie hier, um die Messung zu starten. Sie können auch auf die Schaltfläche unten klicken oder das Bild ablegen, um es zu verwenden. Die Nutzung kann im Vollbildmodus komfortabler sein.
   nav:
     upload_file: Klicken Sie hier oder ziehen Sie das Bild, um es zu laden
     toggle_fullscreen: Vollbildmodus umschalten

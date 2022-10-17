@@ -33,6 +33,7 @@ export const usePoints = ({ elementX, elementY }: { elementX: Ref<number>; eleme
   }
 
   return {
+    step,
     points,
     drawNextPoint,
   }

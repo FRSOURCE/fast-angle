@@ -2,6 +2,10 @@
 @import './markdown.scss';
 @import './utils.scss';
 
+#app {
+  overflow-x: hidden;
+}
+
 button {
   display: flex;
 }

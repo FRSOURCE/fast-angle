@@ -31,7 +31,7 @@ whenever(files, (files) => {
 
 <template>
   <nav clas="pointer-none">
-    <ul>
+    <ul class="info">
       <li v-for="text in info" :key="text">
         <span>{{ text }}</span>
       </li>
@@ -44,10 +44,16 @@ whenever(files, (files) => {
       </li>
       <li v-if="isSupported">
         <button role="button" type="button" :data-tooltip="t('board.nav.toggle_fullscreen')" @click="toggle">
-          <IconMaximize v-if="isFullscreen" />
-          <IconMinimize v-else />
+          <IconMinimize v-if="isFullscreen" />
+          <IconMaximize v-else />
         </button>
       </li>
     </ul>
   </nav>
 </template>
+
+<style lang="scss">
+.info {
+  mix-blend-mode: exclusion;
+}
+</style>

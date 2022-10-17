@@ -2,7 +2,6 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import Preview from 'vite-plugin-vue-component-preview'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
 import generateSitemap from 'vite-ssg-sitemap'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -15,7 +14,12 @@ import Shiki from 'markdown-it-shiki'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
+const baseArg = process.argv.find(v => v.includes('--base='))
+const base = baseArg ? baseArg.replace('--base=', '') : '/'
+
 export default defineConfig({
+  publicDir: 'fast-angle',
+  base,
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -28,11 +32,6 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
-    }),
-
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
     }),
 
     // https://github.com/antfu/unplugin-auto-import

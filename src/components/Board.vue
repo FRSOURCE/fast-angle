@@ -16,7 +16,7 @@ const processFiles = (files: File[] | null) => {
     imageSrc.value = URL.createObjectURL(files[0])
 }
 
-const { points, drawNextPoint } = usePoints({ elementX, elementY })
+const { points, drawNextPoint, step } = usePoints({ elementX, elementY })
 const angle = useAngle(points)
 
 const svgSize = computed(() => ({ width: elementWidth.value, height: elementHeight.value }))
@@ -46,11 +46,15 @@ const info = computed(() => {
       @click="drawNextPoint"
     >
       <image v-if="imageSrc" :href="imageSrc" height="100%" width="100%" />
-      <circle :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
+      <circle class="blend-exclusion" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
 
-      <Line :points="points[0]" :svg-size="svgSize" :path-width="pathWidth" />
-      <Line :points="points[1]" :svg-size="svgSize" :path-width="pathWidth" />
+      <Line class="blend-exclusion" :points="points[0]" :svg-size="svgSize" :path-width="pathWidth" />
+      <Line class="blend-exclusion" :points="points[1]" :svg-size="svgSize" :path-width="pathWidth" />
     </svg>
+
+    <div v-if="step === -1 && !imageSrc" class="board__hint">
+      {{ t('board.click_this_button_or_drop') }}
+    </div>
 
     <BoardNav class="board__nav" :board-ref="boardRef" :info="info" @update:files="processFiles" />
   </div>
@@ -79,6 +83,21 @@ const info = computed(() => {
       left: 1rem;
       right: 1rem;
     }
+
+    &__hint {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      right: 10px;
+      margin: auto;
+      max-width: 600px;
+      transform: translateY(-50%);
+      text-align: justify;
+    }
+  }
+
+  .blend-exclusion  {
+    mix-blend-mode: exclusion;
   }
 
   .m-0 {
