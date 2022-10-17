@@ -18,7 +18,6 @@ const baseArg = process.argv.find(v => v.includes('--base='))
 const base = baseArg ? baseArg.replace('--base=', '') : '/'
 
 export default defineConfig({
-  publicDir: 'fast-angle',
   base,
   resolve: {
     alias: {
