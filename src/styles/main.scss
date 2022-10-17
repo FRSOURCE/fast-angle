@@ -2,8 +2,8 @@
 @import './markdown.scss';
 @import './utils.scss';
 
-#app {
-  overflow-x: hidden;
+body {
+  margin: 0;
 }
 
 button {
@@ -12,4 +12,10 @@ button {
 
 [role=button] {
   display: inline-flex;
+}
+
+#app {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }

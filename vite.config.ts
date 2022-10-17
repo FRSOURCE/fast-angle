@@ -13,6 +13,7 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Shiki from 'markdown-it-shiki'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 const baseArg = process.argv.find(v => v.includes('--base='))
 const base = baseArg ? baseArg.replace('--base=', '') : '/'
@@ -31,6 +32,11 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => ['hgroup'].includes(tag),
+        },
+      },
     }),
 
     // https://github.com/antfu/unplugin-auto-import
@@ -56,7 +62,9 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
-      resolvers: [IconsResolver()],
+      resolvers: [IconsResolver({
+        customCollections: ['custom'],
+      })],
     }),
 
     // https://github.com/antfu/vite-plugin-vue-markdown
@@ -118,7 +126,12 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
 
-    Icons({ compiler: 'vue3' }),
+    Icons({
+      compiler: 'vue3',
+      customCollections: {
+        custom: FileSystemIconLoader('./src/assets/icons'),
+      },
+    }),
 
     // https://github.com/antfu/vite-plugin-inspect
     // Visit http://localhost:3333/__inspect/ to see the inspector

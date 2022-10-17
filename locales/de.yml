@@ -6,11 +6,14 @@ main:
   star_us_on_github: Star uns auf GitHub
 board:
   drop_file_here: Legen Sie die Datei hier ab
-  angle_convex: 'Konvexer Winkel: {value}'
-  angle_concave: 'Konkaver Winkel: {value}'
   click_this_button_or_drop: Klicken Sie hier, um die Messung zu starten. Sie können auch auf die Schaltfläche unten klicken oder das Bild ablegen, um es zu verwenden. Die Nutzung kann im Vollbildmodus komfortabler sein.
   nav:
     upload_file: Klicken Sie hier oder ziehen Sie das Bild, um es zu laden
     toggle_fullscreen: Vollbildmodus umschalten
+    undo: Aktion rückgängig machen
+    redo: Aktion wiederholen
     toggle_dark: Dunkelmodus umschalten
     toggle_langs: Sprachen ändern
+    help: |
+      - nach Aufbau der zweiten Linie, Klicken Sie einfach noch einmal, um die Zeilen zurückzusetzen
+      - Verwenden Sie für ein schöneres Erlebnis den Vollbildmodus

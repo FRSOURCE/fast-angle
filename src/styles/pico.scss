@@ -3,5 +3,15 @@ $semantic-root-element: '#app';
 $enable-semantic-container: true;
 // Enable .classes
 $enable-classes: false;
+// Enable fluid layout
+$enable-viewport: false;
 
 @import '@picocss/pico/scss/pico';
+
+[data-tooltip]::before {
+  white-space: pre-wrap!important;
+  width: max-content;
+  max-width: 60vw;
+  overflow: visible;
+  text-overflow:initial;
+}

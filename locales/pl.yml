@@ -1,16 +1,19 @@
 main:
   title: Fast angle
   description: Prosty kątomierz online - zmierz dowolny kąt bezpośrednio na Twoim obrazku!
-  brought_to_you_by: Przygotowane specjalnie dla Ciebie przez
+  brought_to_you_by: Specjalnie dla Ciebie od
   visit_our_website: Odwiedź naszą stronę
   star_us_on_github: Daj nam gwiazdkę na GitHub
 board:
   drop_file_here: Upuść plik tutaj
-  angle_convex: 'Kąt wypukły (wewnętrzny): {value}'
-  angle_concave: 'Kąt wklęsły (zewnętrzny): {value}'
   click_this_button_or_drop: Kliknij tutaj aby rozpocząć pomiary. Możesz też kliknąć w przycisk poniżej lub upuścić tutaj obrazek, by z niego skorzystać. Użytkowanie jest najwygodniejsze w trybie pełnoekranowym
   nav:
     upload_file: Kliknij tutaj lub przeciągnij obraz, aby go załadować
     toggle_fullscreen: Przełącz tryb pełnoekranowy
+    undo: Cofnij poprzednią akcję
+    redo: Przywróć cofniętą akcję
     toggle_dark: Ustaw tryb nocny
     toggle_langs: Zmień język
+    help: |
+      - po ustaleniu drugiej linii, kliknij raz jeszcze by zresetować linie
+      - aplikacja jest bardziej wygodna w trybie pełnoekranowym

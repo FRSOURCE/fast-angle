@@ -6,11 +6,14 @@ main:
   star_us_on_github: Star us on GitHub
 board:
   drop_file_here: Drop the file here
-  angle_convex: 'Convex angle (internal): {value}'
-  angle_concave: 'Concave angle (external): {value}'
   click_this_button_or_drop: Click here to start measurement. You can also click the button below or drop the image to use it. Usage may be more comfortable in a fullscreen mode.
   nav:
     upload_file: Click here or drag the image over to load it
     toggle_fullscreen: Toggle fullscreen mode
+    undo: Undo previous action
+    redo: Redo action
     toggle_dark: Toggle dark mode
     toggle_langs: Change languages
+    help: |
+      - after establishing second line, just click once more to reset lines
+      - for nicer experience, use fullscreen mode

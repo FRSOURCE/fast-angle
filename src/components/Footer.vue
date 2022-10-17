@@ -12,7 +12,14 @@ const { t } = useI18n()
       </ul>
       <ul>
         <li>
-          <a rel="noreferrer" href="https://github.com/FRSOURCE/fast-angle" :data-tooltip="t('main.star_us_on_github')" target="_blank" title="GitHub">
+          <a
+            rel="noreferrer"
+            href="https://github.com/FRSOURCE/fast-angle"
+            :data-tooltip="t('main.star_us_on_github')"
+            data-placement="left"
+            target="_blank"
+            title="GitHub"
+          >
             <IconLogoGithub />
           </a>
         </li>

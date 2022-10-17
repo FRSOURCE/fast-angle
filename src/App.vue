@@ -22,9 +22,22 @@ useHead({
 </script>
 
 <template>
-  <Header />
-  <main>
-    <Board ref="boardRef" />
+  <Header :class="$style.header" />
+  <main :class="$style.main">
+    <Board ref="boardRef" :class="$style.board" />
+    <Footer />
   </main>
-  <Footer />
 </template>
+
+<style lang="scss" module>
+.main {
+  --block-spacing-vertical: 0!important;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+}
+
+.board {
+  flex-grow: 1;
+}
+</style>
