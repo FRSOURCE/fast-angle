@@ -26,7 +26,27 @@
   "~icons/carbon/logo-github": [],
   "src/components/Footer.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Footer.vue?vue&type=style&index=0&lang.scss": [],
+  "src/components/Segment.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/composables/useLines.ts": [],
+  "src/composables/useAngle.ts": [],
+  "src/composables/useLinearFnVariables.ts": [],
+  "\u0000commonjsHelpers.js": [],
+  "\u0000/home/runner/work/fast-angle/fast-angle/node_modules/.pnpm/colornames@1.1.1/node_modules/colornames/index.js?commonjs-module": [],
+  "node_modules/.pnpm/colornames@1.1.1/node_modules/colornames/colors.js": [],
+  "node_modules/.pnpm/colornames@1.1.1/node_modules/colornames/index.js": [],
+  "node_modules/.pnpm/lodash.words@4.2.0/node_modules/lodash.words/index.js": [],
+  "node_modules/.pnpm/lodash.trimstart@4.5.1/node_modules/lodash.trimstart/index.js": [],
+  "node_modules/.pnpm/lodash.padend@4.6.1/node_modules/lodash.padend/index.js": [],
+  "node_modules/.pnpm/rgb-hex@3.0.0/node_modules/rgb-hex/index.js": [],
+  "node_modules/.pnpm/hex-rgb@4.3.0/node_modules/hex-rgb/index.js": [],
+  "node_modules/.pnpm/string-to-color@2.2.2/node_modules/string-to-color/index.js": [],
+  "src/composables/useColor.ts": [],
+  "src/components/BoardResult.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/components/BoardResult.vue?used&vue&type=style&index=0&lang.module.scss": [],
+  "\u0000plugin-vue:export-helper": [],
+  "src/components/BoardResult.vue": [],
   "src/composables/breakpoints.ts": [],
+  "src/composables/useBoardImage.ts": [],
   "~icons/carbon/maximize": [],
   "~icons/carbon/minimize": [],
   "~icons/carbon/cloud-upload": [],
@@ -37,12 +57,11 @@
   "~icons/custom/angle-concave": [],
   "src/components/BoardNav.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/BoardNav.vue?used&vue&type=style&index=0&lang.module.scss": [],
-  "\u0000plugin-vue:export-helper": [],
   "src/components/BoardNav.vue": [],
-  "src/composables/usePoints.ts": [],
-  "src/composables/useAngle.ts": [],
-  "src/components/Segment.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Line.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/components/BoardSvg.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/components/BoardSvg.vue?used&vue&type=style&index=0&lang.module.scss": [],
+  "src/components/BoardSvg.vue": [],
   "src/components/Board.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Board.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "src/components/Board.vue": [],
@@ -60,9 +79,9 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/fast-angle/assets/virtual_pwa-register.98d7dedd.js"
+    "./assets/virtual_pwa-register.88900ae1.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
-    "/fast-angle/assets/workbox-window.prod.es5.6954f450.js"
+    "./assets/workbox-window.prod.es5.6954f450.js"
   ]
 }
