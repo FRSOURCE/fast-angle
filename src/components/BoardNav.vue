@@ -29,7 +29,7 @@ const angle = useAngle(lines)
 const { toggle, isFullscreen, isSupported } = useFullscreen(toRef(props, 'boardRef'))
 const { undo, redo, canUndo, canRedo } = useLines()
 const { processFiles } = useBoardImage()
-const { files, open } = useFileDialog({ multiple: false, accept: 'image/*', capture: 'environment' })
+const { files, open } = useFileDialog({ multiple: false, accept: 'image/*' })
 
 whenever(files, (files) => {
   processFiles(Array.from(files))
