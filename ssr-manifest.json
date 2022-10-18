@@ -45,7 +45,6 @@
   "src/components/BoardResult.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "\u0000plugin-vue:export-helper": [],
   "src/components/BoardResult.vue": [],
-  "src/composables/breakpoints.ts": [],
   "src/composables/useBoardImage.ts": [],
   "~icons/carbon/maximize": [],
   "~icons/carbon/minimize": [],
@@ -79,7 +78,7 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "./assets/virtual_pwa-register.f5541bdc.js"
+    "./assets/virtual_pwa-register.f6bcd203.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
     "./assets/workbox-window.prod.es5.6954f450.js"
