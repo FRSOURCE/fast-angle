@@ -46,6 +46,7 @@ export default defineConfig({
         'vue-i18n',
         'vue/macros',
         '@vueuse/head',
+        '@vueuse/math',
         '@vueuse/core',
       ],
       dts: 'src/auto-imports.d.ts',

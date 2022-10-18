@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@7.8.0",
   "scripts": {
-    "build": "vite-ssg build --base='/fast-angle/'",
+    "build": "vite-ssg build --base='./'",
     "dev": "vite --port 3333 --open",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -17,6 +17,8 @@
     "@picocss/pico": "^1.5.6",
     "@vueuse/core": "^9.3.0",
     "@vueuse/head": "^0.9.7",
+    "@vueuse/math": "^9.3.1",
+    "string-to-color": "^2.2.2",
     "vue": "^3.2.40",
     "vue-demi": "^0.13.11",
     "vue-i18n": "^9.2.2"

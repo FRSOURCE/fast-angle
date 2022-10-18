@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue'
 import { computed } from 'vue'
-import Segment from './Segment.vue'
-import type { Line, Point } from '~/composables/usePoints'
+import type { Line, Point } from '~/composables/useLines'
 
 const props = defineProps({
   points: {
@@ -17,27 +16,40 @@ const props = defineProps({
     type: Object as PropType<{ width: number; height: number }>,
     default: undefined,
   },
+  centerX: {
+    type: Number,
+    default: undefined,
+  },
 })
 
+const linearFnVariables = useLinearFnVariables(toRef(props, 'points'))
+
+const color = useColor(toRef(props, 'points'))
 const line = computed(() => {
-  const { points, svgSize } = props
-  if (!points[0] || !points[1] || !svgSize)
+  const { svgSize } = props
+  if (!svgSize || !linearFnVariables.value)
     return
 
-  let [[x1, y1], [x2, y2]] = points
-  if (x1 < x2)
-    ([[x2, y2], [x1, y1]] = points)
-  else if (x1 === x2)
-    ++x1
+  const { slope, intercept } = linearFnVariables.value
 
-  const a = (y1 - y2) / (x1 - x2)
-  const b = y2 - x2 * a
+  if (!slope || !intercept)
+    return
 
-  return [[0, b], [svgSize.width, a * svgSize.width + b]] as [Point, Point]
+  const calculatePoint = (x: number) => slope * x + intercept
+
+  if (props.centerX) {
+    const x1 = props.centerX - svgSize.width
+    const x2 = props.centerX + svgSize.width
+
+    return [[x1, calculatePoint(x1)], [x2, calculatePoint(x2)]] as [Point, Point]
+  }
+  else {
+    return [[0, intercept], [svgSize.width, slope * svgSize.width + intercept]] as [Point, Point]
+  }
 })
 </script>
 
 <template>
-  <Segment v-bind="$attrs" :point-start="points[0]" :point-stop="points[1]" />
-  <Segment v-if="line" v-bind="$attrs" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="4" stroke-width="1" />
+  <Segment v-if="!centerX" v-bind="$attrs" :stroke="color" :point-start="points[0]" :point-stop="points[1]" />
+  <Segment v-if="line" stroke-width="1" v-bind="$attrs" :stroke="color" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="4" />
 </template>

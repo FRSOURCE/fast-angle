@@ -1,36 +1,16 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import Line from './Line.vue'
-
 const { t } = useI18n()
 
-const pathWidth = 3
 const showHint = ref(true)
 const boardRef = ref<HTMLDivElement>()
-const svgRef = ref<SVGElement>()
-const { elementX, elementY } = useMouseInElement(svgRef)
-const { height: elementHeight, width: elementWidth } = useElementSize(boardRef)
-const svgSize = computed(() => ({ width: elementWidth.value, height: elementHeight.value }))
+const { height, width } = useElementSize(boardRef)
 
-const { points, drawNextPoint, step, undo, redo, canUndo, canRedo } = usePoints({ elementX, elementY })
-const angle = useAngle(points)
-
-const imageSrc = ref('')
-const processFiles = (files: File[] | null) => {
-  if (files?.[0] instanceof File)
-    imageSrc.value = URL.createObjectURL(files[0])
-}
+const { imageSrc, processFiles } = useBoardImage()
 const { isOverDropZone } = useDropZone(boardRef, processFiles)
 
 const info = computed(() => {
   if (isOverDropZone.value)
     return [t('board.drop_file_here')]
-  if (angle.value) {
-    return [
-      { type: 'convex', value: angle.value },
-      { type: 'concave', value: 360 - angle.value },
-    ] as { type: 'convex' | 'concave'; value: number }[]
-  }
 
   return []
 })
@@ -38,20 +18,9 @@ const info = computed(() => {
 
 <template>
   <div ref="boardRef" :class="$style.board">
-    <svg
-      ref="svgRef"
-      :class="$style.board__svg"
-      :viewBox="`0 0 ${svgSize.width} ${svgSize.height}`"
-      :style="{ strokeWidth: pathWidth }"
-      @click="drawNextPoint(), showHint = false"
-    >
+    <BoardSvg :class="$style.board__svg" :width="width" :height="height" @click="showHint = false">
       <image v-if="imageSrc" :href="imageSrc" height="100%" width="100%" />
-      <circle v-if="step % 2" :class="$style['blend-exclusion']" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
-      <Line v-else :class="$style['blend-exclusion']" :points="[points[Math.floor(step / 2)][0], [elementX, elementY]]" :svg-size="svgSize" :path-width="pathWidth" />
-
-      <Line :class="$style['blend-exclusion']" :points="points[0]" :svg-size="svgSize" :path-width="pathWidth" />
-      <Line :class="$style['blend-exclusion']" :points="points[1]" :svg-size="svgSize" :path-width="pathWidth" />
-    </svg>
+    </BoardSvg>
 
     <div v-if="showHint && !imageSrc" :class="$style.board__hint">
       {{ t('board.click_this_button_or_drop') }}
@@ -61,11 +30,7 @@ const info = computed(() => {
       :class="$style.board__nav"
       :board-ref="boardRef"
       :info="info"
-      :can-undo="canUndo"
-      :can-redo="canRedo"
       @update:files="processFiles"
-      @undo="undo"
-      @redo="redo"
     />
   </div>
 </template>
@@ -89,7 +54,6 @@ const info = computed(() => {
     }
 
     &__nav {
-      flex-wrap: wrap;
       position: absolute;
       bottom: 0;
       left: 1rem;
@@ -110,9 +74,5 @@ const info = computed(() => {
         right: 20px;
       }
     }
-  }
-
-  .blend-exclusion  {
-    mix-blend-mode: exclusion;
   }
 </style>

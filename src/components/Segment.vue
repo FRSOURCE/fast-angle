@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import type { Point } from '~/composables/usePoints'
+import type { Point } from '~/composables/useLines'
 
 defineProps({
   pointStart: {

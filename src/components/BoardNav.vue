@@ -16,119 +16,106 @@ const props = defineProps({
     default: undefined,
   },
   info: {
-    type: Array as PropType<(string | { value: number; type: 'convex' | 'concave' })[]>,
+    type: Array as PropType<string[]>,
     required: true,
   },
-  canUndo: {
-    type: Boolean,
-    default: false,
-  },
-  canRedo: {
-    type: Boolean,
-    default: false,
-  },
 })
-
-const emit = defineEmits<{
-  (e: 'update:files', src: File[]): void
-  (e: 'undo'): void
-  (e: 'redo'): void
-}>()
 
 const { t } = useI18n()
 const smallMobile = breakpoints.smaller('xs')
+
+const { lines } = useLines()
+const angle = useAngle(lines)
+
 const { toggle, isFullscreen, isSupported } = useFullscreen(toRef(props, 'boardRef'))
+const { undo, redo, canUndo, canRedo } = useLines()
+const { processFiles } = useBoardImage()
 const { files, open } = useFileDialog({ multiple: false, accept: 'image/*', capture: 'environment' })
 
 whenever(files, (files) => {
-  emit('update:files', Array.from(files))
+  processFiles(Array.from(files))
 })
 
-onKeyStroke('F', toggle)
+onKeyStroke('f', toggle)
 </script>
 
 <template>
-  <nav class="pointer-none" :class="$style.nav">
-    <ul :class="[$style.relative, $style.info]">
-      <template v-for="text in info">
-        <li v-if="typeof text === 'string'" :key="text" :class="$style.relative">
-          <span>{{ text }}</span>
-        </li>
-        <li v-else-if="text.type === 'convex'" :key="`convex|${text.value}`" :class="$style.relative">
-          <span><IconAngle /> {{ text.value }}</span>
-        </li>
-        <li v-else :key="`concave|${text.value}`" :class="$style.relative">
-          <span><IconAngleConcave /> {{ text.value }}</span>
-        </li>
+  <div :class="$style.bar" class="pointer-none">
+    <div :class="[$style.relative, $style['result-box']]">
+      <template v-if="angle">
+        <small :class="$style['mr-2']"><IconAngle :class="$style.success" /> {{ angle.toFixed(3) }}&deg;</small>
+        <small><IconAngleConcave :class="$style.delete" /> {{ (180 - angle).toFixed(3) }}&deg;</small>
       </template>
-    </ul>
-    <ul class="pointer-all" :class="$style.nav__btns">
-      <li>
-        <a
-          href="#"
-          :data-tooltip="t('board.nav.help')"
-          :class="$style['cursor-help']"
-          :data-placement="smallMobile ? 'top' : 'left'"
-        >
-          <IconHelp />
-        </a>
-      </li>
-      <li>
-        <button
-          role="button"
-          type="button"
-          :disabled="!canUndo"
-          :data-tooltip="`${t('board.nav.undo')} [ctrl + z]`"
-          data-placement="left"
-          @click="$emit('undo')"
-        >
-          <IconUndo />
-        </button>
-      </li>
-      <li>
-        <button
-          role="button"
-          type="button"
-          :disabled="!canRedo"
-          :data-tooltip="`${t('board.nav.redo')} [ctrl + shift + z]`"
-          data-placement="left"
-          @click="$emit('redo')"
-        >
-          <IconRedo />
-        </button>
-      </li>
-      <li>
-        <button
-          role="button"
-          type="button"
-          :data-tooltip="t('board.nav.upload_file')"
-          data-placement="left"
-          @click="open()"
-        >
-          <IconUpload />
-        </button>
-      </li>
-      <li v-if="isSupported">
-        <button
-          role="button"
-          type="button"
-          :data-tooltip="`${t('board.nav.toggle_fullscreen')} [F]`"
-          data-placement="left"
-          @click="toggle"
-        >
-          <IconMinimize v-if="isFullscreen" />
-          <IconMaximize v-else />
-        </button>
-      </li>
-    </ul>
-  </nav>
+      <BoardResult :class="$style.result" :board-ref="boardRef" />
+    </div>
+    <li v-for="text in info" :key="text" :class="$style.relative">
+      <span>{{ text }}</span>
+    </li>
+    <nav :class="$style.nav">
+      <ul class="pointer-all" :class="$style.nav__btns">
+        <li>
+          <a
+            href="#"
+            :data-tooltip="t('board.nav.help')"
+            :class="$style['cursor-help']"
+            :data-placement="smallMobile ? 'top' : 'left'"
+          >
+            <IconHelp />
+          </a>
+        </li>
+        <li>
+          <button
+            role="button"
+            type="button"
+            :disabled="!canUndo"
+            :data-tooltip="`${t('board.nav.undo')} [ctrl + z]`"
+            data-placement="left"
+            @click="undo"
+          >
+            <IconUndo />
+          </button>
+        </li>
+        <li>
+          <button
+            role="button"
+            type="button"
+            :disabled="!canRedo"
+            :data-tooltip="`${t('board.nav.redo')} [ctrl + shift + z]`"
+            data-placement="left"
+            @click="redo"
+          >
+            <IconRedo />
+          </button>
+        </li>
+        <li>
+          <button
+            role="button"
+            type="button"
+            :data-tooltip="t('board.nav.upload_file')"
+            data-placement="left"
+            @click="open()"
+          >
+            <IconUpload />
+          </button>
+        </li>
+        <li v-if="isSupported">
+          <button
+            role="button"
+            type="button"
+            :data-tooltip="`${t('board.nav.toggle_fullscreen')} [F]`"
+            data-placement="left"
+            @click="toggle"
+          >
+            <IconMinimize v-if="isFullscreen" />
+            <IconMaximize v-else />
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss" module>
-.relative {
-  position: relative;
-}
-
 .info::before {
   content: '';
   position: absolute;
@@ -139,13 +126,14 @@ onKeyStroke('F', toggle)
   mix-blend-mode: luminosity;
 }
 
-.cursor-help {
-  cursor: help;
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .nav {
-  align-items: flex-end;
-
   &__btns {
     margin-left: auto;
     flex-flow: column;
@@ -155,5 +143,41 @@ onKeyStroke('F', toggle)
       flex-flow: row;
     }
   }
+}
+
+.result-box {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.result {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  max-height: 30vh
+}
+
+.success {
+  color: var(--ins-color);
+  stroke: var(--ins-color);
+}
+
+.delete {
+  color: var(--del-color);
+  stroke: var(--del-color);
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.relative {
+  position: relative;
+}
+
+.mr-2 {
+  margin-right: var(--spacing);
 }
 </style>
