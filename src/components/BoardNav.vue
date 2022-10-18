@@ -22,7 +22,6 @@ const props = defineProps({
 })
 
 const { t } = useI18n()
-const smallMobile = breakpoints.smaller('xs')
 
 const { lines } = useLines()
 const angle = useAngle(lines)
@@ -58,7 +57,7 @@ onKeyStroke('f', toggle)
             href="#"
             :data-tooltip="t('board.nav.help')"
             :class="$style['cursor-help']"
-            :data-placement="smallMobile ? 'top' : 'left'"
+            data-placement="left"
           >
             <IconHelp />
           </a>
