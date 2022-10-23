@@ -63,8 +63,8 @@ const prepareSvg = (originalSvg: SVGElement) => {
 }
 
 export const useBoardSvgDownload = createSharedComposable(() => {
-  const canvas = document.createElement('canvas')
-  const ctx = canvas.getContext('2d')
+  const canvas = import.meta.env.SSR ? undefined : document.createElement('canvas')
+  const ctx = canvas?.getContext('2d')
 
   const svgRef = useBoardSvgRef()
   const isSupported = computed(() => svgRef.value && ctx)
@@ -78,12 +78,12 @@ export const useBoardSvgDownload = createSharedComposable(() => {
     if (!isSupported.value)
       return
 
-    canvas.width = width
-    canvas.height = height
-    // isSupported checks svgRef and ctx
+    // isSupported checks svgRef, canvas and ctx existence
+    canvas!.width = width
+    canvas!.height = height
     await svgToCanvas(prepareSvg(svgRef.value!), ctx!)
     const { encoding, extension } = FILETYPES[filetype]
-    const svgDownloadUrl = canvas.toDataURL(encoding, quality)
+    const svgDownloadUrl = canvas!.toDataURL(encoding, quality)
     triggerDownload(svgDownloadUrl, `${filename}.${extension}`)
   }
 

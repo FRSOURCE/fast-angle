@@ -10,7 +10,7 @@ declare global {
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
   const SIZING_UNIT: typeof import('./composables/usePixelToUnit')['SIZING_UNIT']
-  const SVG_DOWNLOAD_FILETYPE: typeof import('./composables/useSvgDownload')['SVG_DOWNLOAD_FILETYPE']
+  const SVG_DOWNLOAD_FILETYPE: typeof import('./composables/useBoardSvgDownload')['SVG_DOWNLOAD_FILETYPE']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const breakpoints: typeof import('./composables/breakpoints')['breakpoints']
@@ -140,7 +140,7 @@ declare global {
   const useBluetooth: typeof import('@vueuse/core')['useBluetooth']
   const useBoardImage: typeof import('./composables/useBoardImage')['useBoardImage']
   const useBoardRef: typeof import('./composables/useBoardRef')['useBoardRef']
-  const useBoardSvgDownload: typeof import('./composables/useSvgDownload')['useBoardSvgDownload']
+  const useBoardSvgDownload: typeof import('./composables/useBoardSvgDownload')['useBoardSvgDownload']
   const useBoardSvgRef: typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']
   const useBreakpoints: typeof import('@vueuse/core')['useBreakpoints']
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
@@ -324,7 +324,7 @@ declare module '@vue/runtime-core' {
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly SIZING_UNIT: UnwrapRef<typeof import('./composables/usePixelToUnit')['SIZING_UNIT']>
-    readonly SVG_DOWNLOAD_FILETYPE: UnwrapRef<typeof import('./composables/useSvgDownload')['SVG_DOWNLOAD_FILETYPE']>
+    readonly SVG_DOWNLOAD_FILETYPE: UnwrapRef<typeof import('./composables/useBoardSvgDownload')['SVG_DOWNLOAD_FILETYPE']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly breakpoints: UnwrapRef<typeof import('./composables/breakpoints')['breakpoints']>
@@ -454,7 +454,7 @@ declare module '@vue/runtime-core' {
     readonly useBluetooth: UnwrapRef<typeof import('@vueuse/core')['useBluetooth']>
     readonly useBoardImage: UnwrapRef<typeof import('./composables/useBoardImage')['useBoardImage']>
     readonly useBoardRef: UnwrapRef<typeof import('./composables/useBoardRef')['useBoardRef']>
-    readonly useBoardSvgDownload: UnwrapRef<typeof import('./composables/useSvgDownload')['useBoardSvgDownload']>
+    readonly useBoardSvgDownload: UnwrapRef<typeof import('./composables/useBoardSvgDownload')['useBoardSvgDownload']>
     readonly useBoardSvgRef: UnwrapRef<typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']>
     readonly useBreakpoints: UnwrapRef<typeof import('@vueuse/core')['useBreakpoints']>
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
