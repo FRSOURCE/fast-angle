@@ -127,6 +127,7 @@ onKeyStroke('f', toggle)
           <button
             role="button"
             type="button"
+            :aria-label="`${t('board.nav.toggle_fullscreen')} [F]`"
             :data-tooltip="`${t('board.nav.toggle_fullscreen')} [F]`"
             data-placement="left"
             @click="toggle"

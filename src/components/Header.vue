@@ -36,11 +36,10 @@ const setLocale = (value: string) => {
             <summary aria-haspopup="listbox" role="link">
               <IconLanguage />
             </summary>
-            <ul role="listbox" :class="$style.dropdown" :aria-label="t('board.nav.toggle_langs')">
+            <ul role="group" :class="$style.dropdown" :aria-label="t('board.nav.toggle_langs')">
               <li v-for="lang in availableLocales" :key="lang" role="listitem" :aria-label="lang">
                 <a
                   href="#"
-                  role="option"
                   :class="{ [$style['dropdown--active']]: locale === lang }"
                   @click.prevent="setLocale(lang)"
                   v-text="lang"
