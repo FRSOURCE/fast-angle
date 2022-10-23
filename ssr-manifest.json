@@ -97,7 +97,7 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "./assets/virtual_pwa-register.ac8268f2.js"
+    "./assets/virtual_pwa-register.2364ff16.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
     "./assets/workbox-window.prod.es5.6954f450.js"
