@@ -8,6 +8,18 @@ $enable-classes: false;
 // Enable fluid layout
 $enable-viewport: false;
 
+$primary-hue: 205 !default;
+$primary-50: hsl($primary-hue, 99%, 94%) !default;
+$primary-100: hsl($primary-hue, 98%, 86%) !default;
+$primary-200: hsl($primary-hue, 95%, 77%) !default;
+$primary-300: hsl($primary-hue, 92%, 68%) !default;
+$primary-400: hsl($primary-hue, 94%, 59%) !default;
+$primary-500: hsl($primary-hue, 96%, 50%) !default;
+$primary-600: hsl($primary-hue, 99%, 46%) !default;
+$primary-700: hsl($primary-hue, 99%, 32%) !default;
+$primary-800: hsl($primary-hue, 98%, 23%) !default;
+$primary-900: hsl($primary-hue, 100%, 15%) !default;
+
 @import '@picocss/pico/scss/pico';
 
 $background-color-transparent-light: color.adjust($white, $alpha: -0.3);
