@@ -76,6 +76,7 @@ onKeyStroke('f', toggle)
           <button
             role="button"
             type="button"
+            :aria-label="t('board.nav.help')"
             :data-tooltip="t('board.nav.help')"
             class="bg-bg-transparent-inverse b-bg-transparent-inverse text-inverse cursor-help"
             data-placement="left"
@@ -88,6 +89,7 @@ onKeyStroke('f', toggle)
             role="button"
             type="button"
             :disabled="!canUndo"
+            :aria-label="undoTooltip"
             :data-tooltip="undoTooltip"
             data-placement="left"
             @click="undo"
@@ -100,6 +102,7 @@ onKeyStroke('f', toggle)
             role="button"
             type="button"
             :disabled="!canRedo"
+            :aria-label="redoTooltip"
             :data-tooltip="redoTooltip"
             data-placement="left"
             @click="redo"
@@ -112,6 +115,7 @@ onKeyStroke('f', toggle)
           <button
             role="button"
             type="button"
+            :aria-label="t('board.nav.upload_file')"
             :data-tooltip="t('board.nav.upload_file')"
             data-placement="left"
             @click="open()"

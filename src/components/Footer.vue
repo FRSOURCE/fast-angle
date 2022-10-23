@@ -15,6 +15,7 @@ const { t } = useI18n()
           <a
             rel="noreferrer"
             href="https://github.com/FRSOURCE/fast-angle"
+            :aria-label="t('main.star_us_on_github')"
             :data-tooltip="t('main.star_us_on_github')"
             data-placement="left"
             target="_blank"

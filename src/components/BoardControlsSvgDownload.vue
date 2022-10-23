@@ -31,6 +31,7 @@ useMagicKeys({
       type="button"
       role="button"
       class="vertical-middle"
+      :aria-label="`${t('board.nav.download_image.action')} [ctrl + s][⌘ + s]`"
       :data-tooltip="`${t('board.nav.download_image.action')} [ctrl + s][⌘ + s]`"
       data-placement="left"
       :disabled="!disabled ? true : undefined"

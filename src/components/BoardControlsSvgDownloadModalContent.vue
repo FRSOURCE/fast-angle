@@ -107,6 +107,7 @@ const submit = async () => {
           <button
             type="button"
             role="button"
+            :aria-label="t('board.nav.download_image.keep_aspect_ratio')"
             :class="[
               $style['aspect-ratio-btn'],
               { [$style['aspect-ratio-btn--inactive']]: !keepAspectRatio },

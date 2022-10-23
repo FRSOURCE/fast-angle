@@ -20,7 +20,7 @@ const setLocale = (value: string) => {
     <hgroup
       :class="$style.heading"
     >
-      <h2><img :src="favicon" :class="$style.favicon">{{ t('main.title') }}</h2>
+      <h2><img :src="favicon" :class="$style.favicon" alt="Fast Angle logo" width="32" height="32">{{ t('main.title') }}</h2>
       <h3>{{ t('main.description') }}</h3>
     </hgroup>
     <nav>
@@ -36,10 +36,11 @@ const setLocale = (value: string) => {
             <summary aria-haspopup="listbox" role="link">
               <IconLanguage />
             </summary>
-            <ul role="listbox" :class="$style.dropdown">
-              <li v-for="lang in availableLocales" :key="lang">
+            <ul role="listbox" :class="$style.dropdown" :aria-label="t('board.nav.toggle_langs')">
+              <li v-for="lang in availableLocales" :key="lang" role="listitem" :aria-label="lang">
                 <a
                   href="#"
+                  role="option"
                   :class="{ [$style['dropdown--active']]: locale === lang }"
                   @click.prevent="setLocale(lang)"
                   v-text="lang"
