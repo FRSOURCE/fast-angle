@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import type { MaybeElement } from '@vueuse/core'
 import type { PropType } from 'vue'
-import { getAngle } from '~/composables/useAngle'
-import type { Lines, Point } from '~/composables/useLines'
+import IconZoomInArea from '~icons/carbon/zoom-in-area'
+import IconZoomOutArea from '~icons/carbon/zoom-out-area'
+import { OVERFLOW_LABELS_DIRECTION } from '~/composables/useOutOfBoundLabels'
 
 const props = defineProps({
   boardRef: {
@@ -10,111 +11,152 @@ const props = defineProps({
     default: undefined,
   },
 })
-const { lines } = useLines()
-const angle = useAngle(lines)
-const svgRef = ref<SVGElement>()
+
 const { height: elementHeight, width: elementWidth } = useElementSize(toRef(props, 'boardRef'))
 const svgSize = computed(() => ({
   width: 300, height: 300 * elementHeight.value / elementWidth.value,
 }))
+
+const { outOfBoundLabels } = useOutOfBoundLabels()
+const isOpen = ref(false)
+const resultSizing = computed(() => {
+  const size = isOpen.value ? 260 : 50
+  return { width: size, height: size }
+})
+const bounding = computed(() => ({
+  minY: resultSizing.value.height,
+  maxY: elementHeight.value - resultSizing.value.height,
+  minX: resultSizing.value.width,
+  maxX: elementWidth.value - resultSizing.value.width,
+}))
+const positionStyling = computed(() => {
+  const { minX, maxX, minY, maxY } = bounding.value
+  const normalizeVerticalPosition = (y: number) => y > maxY ? maxY : y < minY ? minY : y
+  const normalizeHorizontalPosition = (x: number) => x > maxX ? maxX : x < minX ? minX : x
+
+  if (!outOfBoundLabels.value)
+    return
+
+  const sizeStyling = { height: `${resultSizing.value.height}px`, width: `${resultSizing.value.width}px` }
+  switch (outOfBoundLabels.value.direction) {
+    case OVERFLOW_LABELS_DIRECTION.DOWN:
+      return { ...sizeStyling, bottom: '1rem', left: `${normalizeHorizontalPosition(outOfBoundLabels.value.x)}px`, transform: 'translateX(-50%)' }
+    case OVERFLOW_LABELS_DIRECTION.UP:
+      return { ...sizeStyling, top: '1rem', left: `${normalizeHorizontalPosition(outOfBoundLabels.value.x)}px`, transform: 'translateX(-50%)' }
+    case OVERFLOW_LABELS_DIRECTION.LEFT:
+      return { ...sizeStyling, top: `${normalizeVerticalPosition(outOfBoundLabels.value.y)}px`, left: '1rem', transform: 'translateY(-50%)' }
+    case OVERFLOW_LABELS_DIRECTION.RIGHT:
+      return { ...sizeStyling, top: `${normalizeVerticalPosition(outOfBoundLabels.value.y)}px`, right: '1rem', transform: 'translateY(-50%)' }
+  }
+})
+
+const { lines } = useLines()
+const angle = useAngle(lines)
 const segment1 = computed(() => lines.value[0] || [])
 const segment2 = computed(() => lines.value[1] || [])
 const line1Variables = useLinearFnVariables(segment1)
 const line2Variables = useLinearFnVariables(segment2)
-const interceptionOffset = computed(() => {
-  if (!line1Variables.value || !line2Variables.value || !svgSize.value)
-    return
+const intersectionOffset = useLinesIntersectionPosition(line1Variables, line2Variables)
+const anglesBisectors = useAnglesBisectors(angle, intersectionOffset, line1Variables, line2Variables)
+const labels = useAnglesLabels(angle, intersectionOffset, anglesBisectors)
+const lineXCoords = computed(() => intersectionOffset.value && ({
+  x1: intersectionOffset.value.x - svgSize.value.width,
+  x2: intersectionOffset.value.x + svgSize.value.width,
+}))
+const line1 = useLine(line1Variables, lineXCoords)
+const line2 = useLine(line2Variables, lineXCoords)
 
-  const { slope: slope1, intercept: intercept1 } = line1Variables.value
-  const { slope: slope2, intercept: intercept2 } = line2Variables.value
-
-  let x: number
-  if (slope1 === slope2)
-    x = intercept2 - intercept1
-  else
-    x = (intercept1 - intercept2) / (slope2 - slope1)
-
-  return { x, y: slope1 * x + intercept1 }
-})
-const line1 = computed(() => {
-  if (!interceptionOffset.value || !line1Variables.value)
-    return
-
-  const { slope, intercept } = line1Variables.value
-  const x1 = interceptionOffset.value.x - svgSize.value.width
-  const x2 = interceptionOffset.value.x + svgSize.value.width
-
-  const calculatePoint = (x: number) => slope * x + intercept
-
-  return [[x1, calculatePoint(x1)], [x2, calculatePoint(x2)]] as [Point, Point]
-})
-const line2 = computed(() => {
-  if (!interceptionOffset.value || !line2Variables.value)
-    return
-
-  const { slope, intercept } = line2Variables.value
-  const x1 = interceptionOffset.value.x - svgSize.value.width
-  const x2 = interceptionOffset.value.x + svgSize.value.width
-
-  const calculatePoint = (x: number) => slope * x + intercept
-
-  return [[x1, calculatePoint(x1)], [x2, calculatePoint(x2)]] as [Point, Point]
-})
-const labelPoses = computed(() => {
-  if (!interceptionOffset.value || !line1Variables.value || !line2Variables.value || !angle.value || !interceptionOffset.value)
-    return []
-
-  const line1Vars = line1Variables.value
-  const line2Vars = line2Variables.value
-
-  let slope1 = Math.tan((Math.atan(line1Vars.slope) + Math.atan(line2Vars.slope)) / 2)
-  let slope2 = -1 / slope1
-  let intercept1 = line1Vars.slope * interceptionOffset.value.x + line1Vars.intercept - slope1 * interceptionOffset.value.x
-  let intercept2 = line1Vars.slope * interceptionOffset.value.x + line1Vars.intercept - slope2 * interceptionOffset.value.x
-
-  const isCorrectBisection = getAngle([
-    [[0, line1Vars.intercept], [interceptionOffset.value.x, line1Vars.slope * interceptionOffset.value.x + line1Vars.intercept]],
-    [[0, intercept1], [interceptionOffset.value.x, slope1 * interceptionOffset.value.x + intercept1]],
-  ] as Lines) * 2 <= 90 && angle.value <= 90
-
-  let x1 = interceptionOffset.value.x + angle.value / 90 * 25 + 10
-  let x2 = (interceptionOffset.value.y - ((180 - angle.value) / 90 * 25) - 10 - intercept2) / slope2
-
-  if (!isCorrectBisection)
-    ([slope1, intercept1, x1, slope2, intercept2, x2] = [slope2, intercept2, x2, slope1, intercept1, x1])
-
-  return [{
-    x: x1,
-    y: slope1 * x1 + intercept1,
-    color: 'var(--ins-color)',
-  }, {
-    x: x2,
-    y: slope2 * x2 + intercept2,
-    color: 'var(--del-color)',
-  }]
-})
 const color1 = useColor(segment1)
 const color2 = useColor(segment2)
 </script>
 
 <template>
-  <svg
-    v-if="line1Variables && line2Variables && interceptionOffset"
-    ref="svgRef"
-    :viewBox="`${svgSize.width * .1} ${svgSize.height * .1} ${svgSize.width * .8} ${svgSize.height * .8}`"
-    :class="$style.result"
+  <section
+    v-if="line1Variables && line2Variables && intersectionOffset && outOfBoundLabels"
+    class="bg-bg-transparent-inverse text-inverse"
+    :class="[
+      $style.result,
+      { [$style['result--open']]: isOpen },
+    ]"
+    :style="positionStyling"
+    @mousemove.prevent.stop
+    @click="isOpen = !isOpen"
   >
-    <g :transform="`translate(${-interceptionOffset.x + svgSize.width * .5} ${-interceptionOffset.y + svgSize.height * .5})`">
-      <Segment v-if="line1" stroke-width="1" v-bind="$attrs" :stroke="color1" :point-start="line1[0]" :point-stop="line1[1]" />
-      <Segment v-if="line2" stroke-width="1" v-bind="$attrs" :stroke="color2" :point-start="line2[0]" :point-stop="line2[1]" />
-      <circle v-for="labelPos in labelPoses" :key="JSON.stringify(labelPos)" :cx="labelPos.x" :cy="labelPos.y" r="8" :fill="labelPos.color" />
-    </g>
-  </svg>
+    <button
+      type="button"
+      :class="[
+        $style.btn,
+      ]"
+    >
+      <component :is="isOpen ? IconZoomOutArea : IconZoomInArea" />
+    </button>
+
+    <svg
+      :viewBox="`${svgSize.width * .1} ${svgSize.height * .1} ${svgSize.width * .8} ${svgSize.height * .8}`"
+      :class="$style.svg"
+    >
+      <g :transform="`translate(${-intersectionOffset.x + svgSize.width * .5} ${-intersectionOffset.y + svgSize.height * .5})`">
+        <Line v-if="line1" stroke-width="4" stroke-linecap="round" v-bind="$attrs" :stroke="color1" :path-width="4" :points="line1" stroke-dasharray="5 10" filter="saturate(2.5)" />
+        <Line v-if="line2" stroke-width="4" stroke-linecap="round" v-bind="$attrs" :stroke="color2" :path-width="4" :points="line2" stroke-dasharray="5 10" filter="saturate(2.5)" />
+        <text v-for="label in labels" :key="`${label.x}|${label.y}`" :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="transparent">{{ label.value.toFixed(3) }}&deg;</text>
+      </g>
+    </svg>
+  </section>
 </template>
 
 <style lang="scss" module>
 .result {
-  background: rgba(0,0,0,.5);
-  border-radius: 0.25rem;
+  position: absolute;
+  border-radius: .25rem;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  transition: height .4s ease-in-out, width .4s ease-in-out, top .2s ease-in-out, left .2s ease-in-out, bottom .2s ease-in-out, right .2s ease-in-out;
+
+  &:not(.result--open){
+    &:hover .svg {
+      opacity: .2;
+    }
+
+    .btn {
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border-color: transparent;
+      color: inherit;
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+
+  transition: none;
+}
+
+.result--open {
+
+  .svg {
+    opacity: 1;
+  }
+
+  .btn {
+    margin: .5rem;
+    padding: .5rem;
+    width: auto;
+  }
+}
+
+.svg {
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  transition: opacity .2s ease-in-out;
 }
 </style>

@@ -16,10 +16,6 @@ const props = defineProps({
     type: Object as PropType<{ width: number; height: number }>,
     default: undefined,
   },
-  centerX: {
-    type: Number,
-    default: undefined,
-  },
 })
 
 const linearFnVariables = useLinearFnVariables(toRef(props, 'points'))
@@ -27,29 +23,20 @@ const linearFnVariables = useLinearFnVariables(toRef(props, 'points'))
 const color = useColor(toRef(props, 'points'))
 const line = computed(() => {
   const { svgSize } = props
-  if (!svgSize || !linearFnVariables.value)
+  if (!svgSize || !linearFnVariables.value || (props.points[0]?.[0] === props.points[1]?.[0] && props.points[0]?.[1] === props.points[1]?.[1]))
     return
 
   const { slope, intercept } = linearFnVariables.value
 
-  if (!slope || !intercept)
-    return
-
-  const calculatePoint = (x: number) => slope * x + intercept
-
-  if (props.centerX) {
-    const x1 = props.centerX - svgSize.width
-    const x2 = props.centerX + svgSize.width
-
-    return [[x1, calculatePoint(x1)], [x2, calculatePoint(x2)]] as [Point, Point]
-  }
-  else {
-    return [[0, intercept], [svgSize.width, slope * svgSize.width + intercept]] as [Point, Point]
-  }
+  return [[0, intercept], [svgSize.width, slope * svgSize.width + intercept]] as [Point, Point]
 })
 </script>
 
 <template>
-  <Segment v-if="!centerX" v-bind="$attrs" :stroke="color" :point-start="points[0]" :point-stop="points[1]" />
-  <Segment v-if="line" stroke-width="1" v-bind="$attrs" :stroke="color" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="4" />
+  <template v-if="line">
+    <Segment v-bind="$attrs" stroke-width="4" stroke="var(--background-color-transparent)" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="5 10" stroke-linecap="round" opacity=".2" />
+    <Segment stroke-width="2" :stroke="color" v-bind="$attrs" :point-start="line[0]" :point-stop="line[1]" stroke-dasharray="5 10" stroke-linecap="round" />
+  </template>
+  <Segment v-bind="$attrs" :stroke-width="pathWidth + 2" stroke="var(--background-color-transparent)" :point-start="points[0]" :point-stop="points[1]" stroke-linecap="round" opacity=".3" />
+  <Segment :stroke="color" v-bind="$attrs" stroke-linecap="round" :point-start="points[0]" :point-stop="points[1]" />
 </template>

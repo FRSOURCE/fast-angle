@@ -8,12 +8,9 @@ export const getAngle = (lines: Lines) => {
   const dAy = y12 - y11
   const dBx = x22 - x21
   const dBy = y22 - y21
-  let angle = Math.atan2(dAx * dBy - dAy * dBx, dAx * dBx + dAy * dBy)
+  const angle = Math.atan2(dAx * dBy - dAy * dBx, dAx * dBx + dAy * dBy)
 
-  if (angle < 0)
-    angle *= -1
-
-  return Math.round(angle * (180 / Math.PI) * 1000) / 1000
+  return Math.abs(angle) * (180 / Math.PI)
 }
 
 export const useAngle = (lines: Ref<Lines>) =>

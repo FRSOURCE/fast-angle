@@ -12,6 +12,37 @@ button {
 
 [role=button] {
   display: inline-flex;
+  width: auto;
+}
+
+[role=button].secondary {
+  --background-color: var(--secondary);
+  --border-color: var(--secondary);
+  --color: var(--secondary-inverse);
+
+  &:is(:hover, :active, :focus) {
+    --background-color: var(--secondary-hover);
+    --border-color: var(--secondary-hover);
+    --color: var(--secondary-inverse);
+  }
+
+  &:focus {
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+      0 0 0 var(--outline-width) var(--secondary-focus);
+  }
+}
+
+[data-tooltip]::before {
+  white-space: pre-wrap!important;
+  width: max-content;
+  max-width: 60vw;
+  overflow: visible;
+  text-overflow:initial;
+  text-align: justify;
+}
+
+dialog article {
+  overflow-x: hidden;
 }
 
 #app {

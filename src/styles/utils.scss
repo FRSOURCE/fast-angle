@@ -5,3 +5,40 @@
 .pointer-all {
   pointer-events: all;
 }
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.bg-bg-transparent-inverse {
+  background: var(--background-color-transparent-inverse);
+  backdrop-filter: blur(8px);
+}
+
+.text-inverse {
+  color: var(--contrast-inverse);
+}
+
+.b-bg-transparent-inverse {
+  border-color: var(--background-color-transparent-inverse);
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-w-0 {
+  min-width: 0
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.cursor-help {
+  cursor: help;
+}

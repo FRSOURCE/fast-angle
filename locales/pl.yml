@@ -4,10 +4,25 @@ main:
   brought_to_you_by: Specjalnie dla Ciebie od
   visit_our_website: Odwiedź naszą stronę
   star_us_on_github: Daj nam gwiazdkę na GitHub
+  close: Zamknij
 board:
   drop_file_here: Upuść plik tutaj
-  click_this_button_or_drop: Kliknij tutaj aby rozpocząć pomiary. Możesz też kliknąć w przycisk poniżej lub upuścić tutaj obrazek, by z niego skorzystać. Użytkowanie jest najwygodniejsze w trybie pełnoekranowym
+  click_this_button_or_drop: |
+    Kliknij tutaj aby rozpocząć pomiary.
+    By wczytać obrazek, upuść go tutaj lub naciśnij przycisk oznaczony ikoną chmury ze strzałką.
+    Dla większej wygody możesz włączyć tryb pełnoekranowy za pomocą przycisku znajdującego się w prawym-dolnym rogu.
   nav:
+    download_image:
+      action: Pobierz obrazek
+      save: Zapisz obrazek
+      heading: Ustawienia obrazka
+      name_label: Nazwa obrazka
+      format_label: Format
+      width_label: Szerokość
+      height_label: Wysokość
+      keep_aspect_ratio: Zachowuj proporcje obrazka
+      unit_label: Jednostka
+      quality_label: Jakość
     upload_file: Kliknij tutaj lub przeciągnij obraz, aby go załadować
     toggle_fullscreen: Przełącz tryb pełnoekranowy
     undo: Cofnij poprzednią akcję
@@ -15,5 +30,5 @@ board:
     toggle_dark: Ustaw tryb nocny
     toggle_langs: Zmień język
     help: |
-      - po ustaleniu drugiej linii, kliknij raz jeszcze by zresetować linie
-      - aplikacja jest bardziej wygodna w trybie pełnoekranowym
+      • po ustaleniu drugiej linii, kliknij raz jeszcze by zresetować linie
+      • wygodniej jest obsługiwać aplikację w trybie pełnoekranowym

@@ -9,6 +9,8 @@ declare global {
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
+  const SIZING_UNIT: typeof import('./composables/usePixelToUnit')['SIZING_UNIT']
+  const SVG_DOWNLOAD_FILETYPE: typeof import('./composables/useSvgDownload')['SVG_DOWNLOAD_FILETYPE']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const breakpoints: typeof import('./composables/breakpoints')['breakpoints']
@@ -119,6 +121,8 @@ declare global {
   const useAbs: typeof import('@vueuse/math')['useAbs']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useAngle: typeof import('./composables/useAngle')['useAngle']
+  const useAnglesBisectors: typeof import('./composables/useAnglesBisectors')['useAnglesBisectors']
+  const useAnglesLabels: typeof import('./composables/useAnglesLabels')['useAnglesLabels']
   const useArrayEvery: typeof import('@vueuse/core')['useArrayEvery']
   const useArrayFilter: typeof import('@vueuse/core')['useArrayFilter']
   const useArrayFind: typeof import('@vueuse/core')['useArrayFind']
@@ -135,6 +139,9 @@ declare global {
   const useBattery: typeof import('@vueuse/core')['useBattery']
   const useBluetooth: typeof import('@vueuse/core')['useBluetooth']
   const useBoardImage: typeof import('./composables/useBoardImage')['useBoardImage']
+  const useBoardRef: typeof import('./composables/useBoardRef')['useBoardRef']
+  const useBoardSvgDownload: typeof import('./composables/useSvgDownload')['useBoardSvgDownload']
+  const useBoardSvgRef: typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']
   const useBreakpoints: typeof import('@vueuse/core')['useBreakpoints']
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
   const useBrowserLocation: typeof import('@vueuse/core')['useBrowserLocation']
@@ -195,8 +202,10 @@ declare global {
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
   const useKeyModifier: typeof import('@vueuse/core')['useKeyModifier']
   const useLastChanged: typeof import('@vueuse/core')['useLastChanged']
+  const useLine: typeof import('./composables/useLine')['useLine']
   const useLinearFnVariables: typeof import('./composables/useLinearFnVariables')['useLinearFnVariables']
   const useLines: typeof import('./composables/useLines')['useLines']
+  const useLinesIntersectionPosition: typeof import('./composables/useLinesIntersectionPosition')['useLinesIntersectionPosition']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
@@ -218,9 +227,11 @@ declare global {
   const useObjectUrl: typeof import('@vueuse/core')['useObjectUrl']
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
   const useOnline: typeof import('@vueuse/core')['useOnline']
+  const useOutOfBoundLabels: typeof import('./composables/useOutOfBoundLabels')['useOutOfBoundLabels']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const usePermission: typeof import('@vueuse/core')['usePermission']
+  const usePixelToUnit: typeof import('./composables/usePixelToUnit')['usePixelToUnit']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
   const usePrecision: typeof import('@vueuse/math')['usePrecision']
@@ -242,6 +253,7 @@ declare global {
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShare: typeof import('@vueuse/core')['useShare']
   const useSlots: typeof import('vue')['useSlots']
+  const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
   const useStepper: typeof import('@vueuse/core')['useStepper']
@@ -311,6 +323,8 @@ declare module '@vue/runtime-core' {
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly SIZING_UNIT: UnwrapRef<typeof import('./composables/usePixelToUnit')['SIZING_UNIT']>
+    readonly SVG_DOWNLOAD_FILETYPE: UnwrapRef<typeof import('./composables/useSvgDownload')['SVG_DOWNLOAD_FILETYPE']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly breakpoints: UnwrapRef<typeof import('./composables/breakpoints')['breakpoints']>
@@ -421,6 +435,8 @@ declare module '@vue/runtime-core' {
     readonly useAbs: UnwrapRef<typeof import('@vueuse/math')['useAbs']>
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
     readonly useAngle: UnwrapRef<typeof import('./composables/useAngle')['useAngle']>
+    readonly useAnglesBisectors: UnwrapRef<typeof import('./composables/useAnglesBisectors')['useAnglesBisectors']>
+    readonly useAnglesLabels: UnwrapRef<typeof import('./composables/useAnglesLabels')['useAnglesLabels']>
     readonly useArrayEvery: UnwrapRef<typeof import('@vueuse/core')['useArrayEvery']>
     readonly useArrayFilter: UnwrapRef<typeof import('@vueuse/core')['useArrayFilter']>
     readonly useArrayFind: UnwrapRef<typeof import('@vueuse/core')['useArrayFind']>
@@ -437,6 +453,9 @@ declare module '@vue/runtime-core' {
     readonly useBattery: UnwrapRef<typeof import('@vueuse/core')['useBattery']>
     readonly useBluetooth: UnwrapRef<typeof import('@vueuse/core')['useBluetooth']>
     readonly useBoardImage: UnwrapRef<typeof import('./composables/useBoardImage')['useBoardImage']>
+    readonly useBoardRef: UnwrapRef<typeof import('./composables/useBoardRef')['useBoardRef']>
+    readonly useBoardSvgDownload: UnwrapRef<typeof import('./composables/useSvgDownload')['useBoardSvgDownload']>
+    readonly useBoardSvgRef: UnwrapRef<typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']>
     readonly useBreakpoints: UnwrapRef<typeof import('@vueuse/core')['useBreakpoints']>
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
@@ -497,8 +516,10 @@ declare module '@vue/runtime-core' {
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
     readonly useKeyModifier: UnwrapRef<typeof import('@vueuse/core')['useKeyModifier']>
     readonly useLastChanged: UnwrapRef<typeof import('@vueuse/core')['useLastChanged']>
+    readonly useLine: UnwrapRef<typeof import('./composables/useLine')['useLine']>
     readonly useLinearFnVariables: UnwrapRef<typeof import('./composables/useLinearFnVariables')['useLinearFnVariables']>
     readonly useLines: UnwrapRef<typeof import('./composables/useLines')['useLines']>
+    readonly useLinesIntersectionPosition: UnwrapRef<typeof import('./composables/useLinesIntersectionPosition')['useLinesIntersectionPosition']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
@@ -520,9 +541,11 @@ declare module '@vue/runtime-core' {
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
+    readonly useOutOfBoundLabels: UnwrapRef<typeof import('./composables/useOutOfBoundLabels')['useOutOfBoundLabels']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
+    readonly usePixelToUnit: UnwrapRef<typeof import('./composables/usePixelToUnit')['usePixelToUnit']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
     readonly usePrecision: UnwrapRef<typeof import('@vueuse/math')['usePrecision']>
@@ -544,6 +567,7 @@ declare module '@vue/runtime-core' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
     readonly useStepper: UnwrapRef<typeof import('@vueuse/core')['useStepper']>

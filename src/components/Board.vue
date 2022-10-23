@@ -2,7 +2,7 @@
 const { t } = useI18n()
 
 const showHint = ref(true)
-const boardRef = ref<HTMLDivElement>()
+const boardRef = useBoardRef()
 const { height, width } = useElementSize(boardRef)
 
 const { imageSrc, processFiles } = useBoardImage()
@@ -18,7 +18,7 @@ const info = computed(() => {
 
 <template>
   <div ref="boardRef" :class="$style.board">
-    <BoardSvg :class="$style.board__svg" :width="width" :height="height" @click="showHint = false">
+    <BoardSvg :class="$style.board__svg" :width="width" :height="height" @pressed="showHint = false">
       <image v-if="imageSrc" :href="imageSrc" height="100%" width="100%" />
     </BoardSvg>
 
@@ -26,7 +26,9 @@ const info = computed(() => {
       {{ t('board.click_this_button_or_drop') }}
     </div>
 
-    <BoardNav
+    <BoardResult :board-ref="boardRef" />
+
+    <BoardControls
       :class="$style.board__nav"
       :board-ref="boardRef"
       :info="info"
@@ -42,7 +44,6 @@ const info = computed(() => {
     border-radius: 2px;
     display: flex;
     flex-flow: column;
-    stroke: #fff;
     width: 100%;
     height: 300px;
     background: var(--card-background-color);
@@ -51,13 +52,19 @@ const info = computed(() => {
       flex-grow: 1;
       min-height: 0;
       width: 100%;
+      stroke: #fff;
     }
 
     &__nav {
       position: absolute;
       bottom: 0;
-      left: 1rem;
-      right: 1rem;
+      left: .25rem;
+      right: .25rem;
+
+      @media (min-width: 640) {
+        left: 1rem;
+        right: 1rem;
+      }
     }
 
     &__hint {
@@ -69,6 +76,9 @@ const info = computed(() => {
       max-width: 600px;
       transform: translateY(-50%);
       text-align: justify;
+      white-space: pre-line;
+      opacity: .7;
+      pointer-events: none;
 
       @media (min-width: 768px) {
         right: 20px;

@@ -9,33 +9,58 @@ const props = defineProps({
     default: 0,
   },
 })
-const pathWidth = 3
-const svgRef = ref<SVGElement>()
+const emit = defineEmits<{
+  (e: 'pressed'): void
+}>()
+const pathWidth = 5
+const svgRef = useBoardSvgRef()
 
 const { elementX, elementY } = useMouseInElement(svgRef)
 const svgSize = computed(() => ({ width: props.width, height: props.height }))
-const { lines, drawNextPoint, step } = useLines()
+const { lines, predictNextPoint, drawNextPoint, step } = useLines()
+watch([elementX, elementY] as const, ([elementX, elementY]) => {
+  if (step.value === 2)
+    predictNextPoint(elementX, elementY)
+})
+const angle = useAngle(lines)
+const segment1 = computed(() => lines.value[0] || [])
+const segment2 = computed(() => lines.value[1] || [])
+const line1Variables = useLinearFnVariables(segment1)
+const line2Variables = useLinearFnVariables(segment2)
+const intersectionOffset = useLinesIntersectionPosition(line1Variables, line2Variables)
+const anglesBisectors = useAnglesBisectors(angle, intersectionOffset, line1Variables, line2Variables)
+const labels = useAnglesLabels(angle, intersectionOffset, anglesBisectors)
+const { outOfBoundLabels, setOutBoundLabels } = useOutOfBoundLabels()
+
+watch([labels, svgSize] as const, ([labels, svgSize]) => {
+  setOutBoundLabels(labels, svgSize)
+})
+
+const pressed = () => {
+  drawNextPoint(elementX.value, elementY.value)
+  emit('pressed')
+}
 </script>
 
 <template>
   <svg
     ref="svgRef"
     :viewBox="`0 0 ${svgSize.width} ${svgSize.height}`"
-    :style="{ strokeWidth: pathWidth }"
-    @click="drawNextPoint({ elementX, elementY })"
+    :stroke-width="pathWidth"
+    @touchend.prevent="pressed"
+    @mouseup.prevent="pressed"
   >
     <slot />
+    <circle v-if="step % 2" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
+    <Line v-else :points="[lines[Math.floor(step / 2)][0], [elementX, elementY]]" :svg-size="svgSize" :path-width="pathWidth" />
 
-    <circle v-if="step % 2" :class="$style['blend-exclusion']" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
-    <Line v-else :class="$style['blend-exclusion']" :points="[lines[Math.floor(step / 2)][0], [elementX, elementY]]" :svg-size="svgSize" :path-width="pathWidth" />
-
-    <Line :class="$style['blend-exclusion']" label="line A" :points="lines[0]" :svg-size="svgSize" :path-width="pathWidth" />
-    <Line :class="$style['blend-exclusion']" label="line B" :points="lines[1]" :svg-size="svgSize" :path-width="pathWidth" />
+    <Line :points="lines[0]" :svg-size="svgSize" :path-width="pathWidth" />
+    <Line :points="lines[1]" :svg-size="svgSize" :path-width="pathWidth" />
+    <template v-if="!outOfBoundLabels">
+      <template v-for="label in labels" :key="`${label.x}|${label.y}`">
+        <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="var(--background-color-transparent)" stroke-width="5">{{ label.value.toFixed(3) }}&deg;</text>
+        <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="transparent">{{ label.value.toFixed(3) }}&deg;</text>
+      </template>
+    </template>
   </svg>
 </template>
-
-<style lang="scss" module>
-  .blend-exclusion  {
-    mix-blend-mode: exclusion;
-  }
-</style>

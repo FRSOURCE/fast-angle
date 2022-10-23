@@ -8,7 +8,7 @@ import IconHelp from '~icons/carbon/help'
 import IconAngle from '~icons/carbon/angle'
 import IconUndo from '~icons/carbon/undo'
 import IconRedo from '~icons/carbon/redo'
-import IconAngleConcave from '~icons/custom/angle-concave'
+import IconAngleObtuse from '~icons/custom/angle-obtuse'
 
 const props = defineProps({
   boardRef: {
@@ -22,15 +22,25 @@ const props = defineProps({
 })
 
 const { t } = useI18n()
-
 const { lines } = useLines()
 const angle = useAngle(lines)
 
-const { toggle, isFullscreen, isSupported } = useFullscreen(toRef(props, 'boardRef'))
+const { toggle, isFullscreen, isSupported: isFullscreenSupported } = useFullscreen(toRef(props, 'boardRef'))
 const { undo, redo, canUndo, canRedo } = useLines()
+// eslint-disable-next-line vue/no-irregular-whitespace, no-irregular-whitespace
+const undoTooltip = computed(() => `${t('board.nav.undo')} [ctrl + z][⌘ + z]`)
+// eslint-disable-next-line vue/no-irregular-whitespace, no-irregular-whitespace
+const redoTooltip = computed(() => `${t('board.nav.redo')} [ctrl + shift + z][⌘ + z]`)
+const acuteAngle = ref<number>()
+watch(angle, (angle) => {
+  if (angle === undefined)
+    return acuteAngle.value = undefined
+  return acuteAngle.value = angle > 90 ? 180 - angle : angle
+})
+const obtuseAngle = computed(() => acuteAngle.value ? 180 - acuteAngle.value : undefined)
+
 const { processFiles } = useBoardImage()
 const { files, open } = useFileDialog({ multiple: false, accept: 'image/*' })
-
 whenever(files, (files) => {
   processFiles(Array.from(files))
 })
@@ -40,34 +50,45 @@ onKeyStroke('f', toggle)
 
 <template>
   <div :class="$style.bar" class="pointer-none">
-    <div :class="[$style.relative, $style['result-box']]">
-      <template v-if="angle">
-        <small :class="$style['mr-2']"><IconAngle :class="$style.success" /> {{ angle.toFixed(3) }}&deg;</small>
-        <small><IconAngleConcave :class="$style.delete" /> {{ (180 - angle).toFixed(3) }}&deg;</small>
-      </template>
-      <BoardResult :class="$style.result" :board-ref="boardRef" />
+    <div
+      class="pointer-all bg-bg-transparent-inverse text-inverse whitespace-nowrap"
+      :class="$style['info-box']"
+      @mousemove.prevent.stop
+    >
+      <BoardSummaryItem :value="acuteAngle">
+        <IconAngle />
+      </BoardSummaryItem>
+      <BoardSummaryItem :value="obtuseAngle">
+        <IconAngleObtuse />
+      </BoardSummaryItem>
     </div>
-    <li v-for="text in info" :key="text" :class="$style.relative">
-      <span>{{ text }}</span>
+    <li
+      v-for="text in info"
+      :key="text"
+      class="bg-bg-transparent-inverse text-inverse min-w-0"
+      :class="$style['info-box']"
+    >
+      <small>{{ text }}</small>
     </li>
     <nav :class="$style.nav">
       <ul class="pointer-all" :class="$style.nav__btns">
         <li>
-          <a
-            href="#"
+          <button
+            role="button"
+            type="button"
             :data-tooltip="t('board.nav.help')"
-            :class="$style['cursor-help']"
+            class="bg-bg-transparent-inverse b-bg-transparent-inverse text-inverse cursor-help"
             data-placement="left"
           >
             <IconHelp />
-          </a>
+          </button>
         </li>
         <li>
           <button
             role="button"
             type="button"
             :disabled="!canUndo"
-            :data-tooltip="`${t('board.nav.undo')} [ctrl + z]`"
+            :data-tooltip="undoTooltip"
             data-placement="left"
             @click="undo"
           >
@@ -79,13 +100,14 @@ onKeyStroke('f', toggle)
             role="button"
             type="button"
             :disabled="!canRedo"
-            :data-tooltip="`${t('board.nav.redo')} [ctrl + shift + z]`"
+            :data-tooltip="redoTooltip"
             data-placement="left"
             @click="redo"
           >
             <IconRedo />
           </button>
         </li>
+        <BoardControlsSvgDownload :disabled="canUndo" />
         <li>
           <button
             role="button"
@@ -97,7 +119,7 @@ onKeyStroke('f', toggle)
             <IconUpload />
           </button>
         </li>
-        <li v-if="isSupported">
+        <li v-if="isFullscreenSupported">
           <button
             role="button"
             type="button"
@@ -115,19 +137,8 @@ onKeyStroke('f', toggle)
 </template>
 
 <style lang="scss" module>
-.info::before {
-  content: '';
-  position: absolute;
-  inset: 20% 0;
-  background: var(--background-color);
-  display: block;
-  opacity: .8;
-  mix-blend-mode: luminosity;
-}
-
 .bar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -144,39 +155,14 @@ onKeyStroke('f', toggle)
   }
 }
 
-.result-box {
+.info-box {
   display: flex;
+  flex-flow: column;
+  gap: .5rem;
   align-items: center;
-  padding: 0.5rem 0;
-}
-
-.result {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  max-height: 30vh
-}
-
-.success {
-  color: var(--ins-color);
-  stroke: var(--ins-color);
-}
-
-.delete {
-  color: var(--del-color);
-  stroke: var(--del-color);
-}
-
-.cursor-help {
-  cursor: help;
-}
-
-.relative {
-  position: relative;
-}
-
-.mr-2 {
-  margin-right: var(--spacing);
+  margin: var(--nav-element-spacing-horizontal);
+  margin-left: 0;
+  padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+  border-radius: 4.5px;
 }
 </style>

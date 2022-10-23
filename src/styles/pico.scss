@@ -1,3 +1,5 @@
+@use "sass:color" as color;
+
 $semantic-root-element: '#app';
 // Enable <header>, <main>, <footer> inside $semantic-root-element as containers
 $enable-semantic-container: true;
@@ -8,10 +10,22 @@ $enable-viewport: false;
 
 @import '@picocss/pico/scss/pico';
 
-[data-tooltip]::before {
-  white-space: pre-wrap!important;
-  width: max-content;
-  max-width: 60vw;
-  overflow: visible;
-  text-overflow:initial;
+$background-color-transparent-light: color.adjust($white, $alpha: -0.3);
+$background-color-transparent-dark: color.adjust(color.mix($black, $grey-900, 37.5%), $alpha: -0.4);
+
+[data-theme=light], :root:not([data-theme=dark]) {
+  --background-color-transparent: #{$background-color-transparent-light};
+  --background-color-transparent-inverse: #{$background-color-transparent-dark};
+}
+
+[data-theme=dark] {
+  --background-color-transparent: #{$background-color-transparent-dark};
+  --background-color-transparent-inverse: #{$background-color-transparent-light};
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --background-color-transparent: #{$background-color-transparent-dark};
+    --background-color-transparent-inverse: #{$background-color-transparent-light};
+  }
 }

@@ -8,13 +8,19 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Board: typeof import('./components/Board.vue')['default']
+    BoardControls: typeof import('./components/BoardControls.vue')['default']
+    BoardControlsSvgDownload: typeof import('./components/BoardControlsSvgDownload.vue')['default']
+    BoardControlsSvgDownloadModal: typeof import('./components/BoardControlsSvgDownloadModal.vue')['default']
+    BoardControlsSvgDownloadModalContent: typeof import('./components/BoardControlsSvgDownloadModalContent.vue')['default']
     BoardNav: typeof import('./components/BoardNav.vue')['default']
     BoardResult: typeof import('./components/BoardResult.vue')['default']
-    BoardResultLine: typeof import('./components/BoardResultLine.vue')['default']
+    BoardSummary: typeof import('./components/BoardSummary.vue')['default']
+    BoardSummaryItem: typeof import('./components/BoardSummaryItem.vue')['default']
     BoardSvg: typeof import('./components/BoardSvg.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     Line: typeof import('./components/Line.vue')['default']
+    Modal: typeof import('./components/Modal.vue')['default']
     README: typeof import('./components/README.md')['default']
     Segment: typeof import('./components/Segment.vue')['default']
   }

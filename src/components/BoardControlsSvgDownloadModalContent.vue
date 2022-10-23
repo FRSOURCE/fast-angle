@@ -1,0 +1,190 @@
+<script lang="ts" setup>
+import type { ValueOf } from 'type-fest'
+import { SVG_DOWNLOAD_FILETYPE } from '~/composables/useSvgDownload'
+import IconLocked from '~icons/carbon/locked'
+import IconUnlocked from '~icons/carbon/unlocked'
+
+const emit = defineEmits<{
+  (e: 'downloadFinish'): void
+}>()
+
+const { t } = useI18n()
+const boardRef = useBoardRef()
+const { height: boardHeight, width: boardWidth } = useElementSize(boardRef)
+const { triggerDownload: triggerSvgDownload } = useBoardSvgDownload()
+const filename = useLocalStorage('FA_FILENAME', 'fast-angle-image')
+
+const height = ref(400)
+const width = ref(400)
+const unit = useLocalStorage<ValueOf<typeof SIZING_UNIT>>('FA_SIZE_UNIT', SIZING_UNIT.px)
+const keepAspectRatio = ref(true)
+const aspectRatio = ref(1)
+
+watch([boardWidth, boardHeight] as const, ([boardWidth, boardHeight]) => {
+  width.value = boardWidth
+  height.value = boardHeight
+  aspectRatio.value = boardWidth / boardHeight
+}, { immediate: true })
+
+const heightUnit = usePixelToUnit(height, unit, boardHeight)
+const widthUnit = usePixelToUnit(width, unit, boardWidth)
+
+watch([widthUnit, heightUnit] as const, ([widthUnit, heightUnit]) => {
+  if (!keepAspectRatio.value)
+    aspectRatio.value = widthUnit / heightUnit
+}, { flush: 'sync', immediate: true })
+
+watch(heightUnit, () => {
+  if (heightUnit.value < 0)
+    heightUnit.value = 1
+  if (keepAspectRatio.value && heightUnit.value !== +((widthUnit.value / aspectRatio.value).toFixed(3)))
+    widthUnit.value = +((heightUnit.value * aspectRatio.value).toFixed(3))
+}, { flush: 'sync' })
+watch(widthUnit, () => {
+  if (widthUnit.value < 0)
+    widthUnit.value = 1
+  if (keepAspectRatio.value && widthUnit.value !== +((heightUnit.value * aspectRatio.value).toFixed(3)))
+    heightUnit.value = +((widthUnit.value / aspectRatio.value).toFixed(3))
+}, { flush: 'sync' })
+
+const filetype = useLocalStorage<ValueOf<typeof SVG_DOWNLOAD_FILETYPE>>('FA_FILETYPE', SVG_DOWNLOAD_FILETYPE.PNG)
+
+const quality = useLocalStorage('FA_QUALITY', 100)
+watch(quality, () => {
+  if (quality.value > 100)
+    quality.value = 100
+  if (quality.value < 0)
+    quality.value = 0
+})
+
+const submit = async () => {
+  await triggerSvgDownload({
+    filename: filename.value,
+    filetype: filetype.value,
+    quality: quality.value / 100,
+    width: width.value,
+    height: height.value,
+  }).catch(() => {})
+
+  emit('downloadFinish')
+}
+</script>
+
+<template>
+  <form
+    @submit.prevent="submit"
+  >
+    <div :class="$style.name">
+      <label class="flex-grow">
+        {{ t('board.nav.download_image.name_label') }}
+        <input v-model="filename" type="text" name="name" required>
+      </label>
+
+      <label>
+        {{ t('board.nav.download_image.format_label') }}
+        <select v-model="filetype" required>
+          <option
+            v-for="format in Object.keys(SVG_DOWNLOAD_FILETYPE)"
+            :key="format"
+            :value="SVG_DOWNLOAD_FILETYPE[format as keyof typeof SVG_DOWNLOAD_FILETYPE]"
+            v-text="format"
+          />
+        </select>
+      </label>
+    </div>
+    <div :class="$style.sizing">
+      <label :class="$style.label">
+        {{ t('board.nav.download_image.width_label') }}
+        <input v-model.number="heightUnit" type="number" step="0.000001" name="width" required>
+      </label>
+      <label :class="$style.label">
+        {{ t('board.nav.download_image.height_label') }}
+        <input v-model.number="widthUnit" type="number" step="0.000001" name="height" required>
+      </label>
+      <label>
+        &nbsp;
+        <div :class="$style['aspect-ratio']" :data-tooltip="t('board.nav.download_image.keep_aspect_ratio')">
+          <button
+            type="button"
+            role="button"
+            :class="[
+              $style['aspect-ratio-btn'],
+              { [$style['aspect-ratio-btn--inactive']]: !keepAspectRatio },
+            ]"
+            @click="keepAspectRatio = !keepAspectRatio"
+          >
+            <IconLocked v-if="keepAspectRatio" />
+            <IconUnlocked v-else />
+          </button>
+        </div>
+      </label>
+      <label :class="$style.label">
+        {{ t('board.nav.download_image.unit_label') }}
+        <select v-model="unit" required>
+          <option
+            v-for="unitItem in Object.keys(SIZING_UNIT)"
+            :key="unitItem"
+            :value="SIZING_UNIT[unitItem as keyof typeof SIZING_UNIT]"
+            v-text="unitItem"
+          />
+        </select>
+      </label>
+    </div>
+    <label>
+      <span :class="$style.quality">
+        {{ t('board.nav.download_image.quality_label') }}
+        <input v-model.number="quality" type="number" min="0" max="100" :class="$style.quality__input" name="quality">
+        %
+      </span>
+      <input v-model.number="quality" type="range" min="0" max="100" name="quality">
+    </label>
+  </form>
+</template>
+
+<style lang="scss" module>
+.label {
+  flex-shrink: 1;
+    flex-grow: 1;
+    width: 120px;
+    min-width: 0;
+}
+
+.sizing, .name {
+  display: flex;
+  gap: .5rem;
+}
+
+.sizing {
+  flex-wrap: wrap;
+}
+
+.aspect-ratio {
+  border-bottom: none!important;
+  margin-top: calc(var(--spacing) * 0.25 + .375rem);
+  cursor: default!important;
+}
+
+.aspect-ratio-btn {
+  --form-element-spacing-vertical: .5rem;
+  --form-element-spacing-horizontal: .25rem;
+  margin-right: 0;
+}
+
+.aspect-ratio-btn--inactive {
+  opacity: 0.5;
+}
+
+.quality {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+
+  .quality__input {
+    margin: 0 .5rem 0 auto;
+    width: 100px;
+    --line-height: 9px;
+    --form-element-spacing-vertical: 0.5rem;
+    --form-element-spacing-horizontal: 0.75rem;
+  }
+}
+</style>

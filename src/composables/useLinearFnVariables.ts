@@ -7,9 +7,8 @@ const getLinearFnVariables = useMemoize((
 ) => {
   if (!x1 || !y1 || !x2 || !y2)
     return
-  if (x1 < x2)
-    ([x2, y2, x1, y1] = [x1, y1, x2, y2])
-  else if (x1 === x2)
+
+  if (x1 === x2)
     ++x1
 
   const slope = (y1 - y2) / (x1 - x2)

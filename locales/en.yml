@@ -4,10 +4,25 @@ main:
   brought_to_you_by: Brought to you by
   visit_our_website: Visit our website
   star_us_on_github: Star us on GitHub
+  close: Close
 board:
   drop_file_here: Drop the file here
-  click_this_button_or_drop: Click here to start measurement. You can also click the button below or drop the image to use it. Usage may be more comfortable in a fullscreen mode.
+  click_this_button_or_drop: |
+    Click here to start measurement.
+    To upload image, drop it onto this board or use upload button below.
+    For better experience - use button that's placed in bottom-right corner to enable fullscreen mode.
   nav:
+    download_image:
+      action: Download image
+      save: Save image
+      heading: Image configuration
+      name_label: Name
+      format_label: Format
+      width_label: Width
+      height_label: Height
+      keep_aspect_ratio: Keep aspect ratio
+      unit_label: Unit
+      quality_label: Quality
     upload_file: Click here or drag the image over to load it
     toggle_fullscreen: Toggle fullscreen mode
     undo: Undo previous action
@@ -15,5 +30,5 @@ board:
     toggle_dark: Toggle dark mode
     toggle_langs: Change languages
     help: |
-      - after establishing second line, just click once more to reset lines
-      - for nicer experience, use fullscreen mode
+      • after establishing second line, just click once more to reset lines
+      • for nicer experience, use fullscreen mode

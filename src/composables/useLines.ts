@@ -7,27 +7,49 @@ export type Lines = Line[]
 const MAX_STEP = 4
 
 export const useLines = createSharedComposable(() => {
+  const internalLines = ref<Lines>([])
   const lines = ref<Lines>([])
   const step = ref(MAX_STEP - 1)
 
-  const drawNextPoint = ({ elementX, elementY }: { elementX: number; elementY: number }) => {
+  watch(internalLines, (internalLines) => {
+    lines.value = [...internalLines]
+  }, { deep: true })
+
+  const drawNextPoint = (x: number, y: number) => {
     if (++step.value >= MAX_STEP) {
       step.value = 0
-      lines.value = []
+      internalLines.value = []
     }
 
     const pointNo = Math.floor(step.value / 2)
     if (step.value % 2) {
-      if (lines.value[pointNo])
-        lines.value[pointNo] = [lines.value[pointNo][0], [elementX, elementY]]
+      const previousPoint = internalLines.value[pointNo][0]
+      if (!previousPoint)
+        return
+      internalLines.value[pointNo] = [previousPoint, [x, y]]
     }
     else {
-      lines.value[pointNo] = [[elementX, elementY]]
+      internalLines.value[pointNo] = [[x, y]]
+    }
+  }
+
+  const predictNextPoint = (x: number, y: number) => {
+    const nextStep = step.value + 1 >= MAX_STEP ? 0 : step.value + 1
+    const pointNo = Math.floor(nextStep / 2)
+
+    if (nextStep % 2) {
+      const previousPoint = lines.value[pointNo][0]
+      if (!previousPoint)
+        return
+      lines.value[pointNo] = [previousPoint, [x, y]]
+    }
+    else {
+      lines.value[pointNo] = [[x, y]]
     }
   }
 
   const { undo: stepUndo, redo: stepRedo, canUndo: stepCanUndo, canRedo: stepCanRedo } = useRefHistory(step)
-  const { undo: pointsUndo, redo: pointsRedo, canUndo: pointsCanUndo, canRedo: pointsCanRedo } = useRefHistory(lines, { deep: true })
+  const { undo: pointsUndo, redo: pointsRedo, canUndo: pointsCanUndo, canRedo: pointsCanRedo } = useRefHistory(internalLines, { deep: true })
 
   const undo = () => {
     pointsUndo()
@@ -52,6 +74,7 @@ export const useLines = createSharedComposable(() => {
     step,
     lines,
     drawNextPoint,
+    predictNextPoint,
     undo,
     redo,
     canUndo: computed(() => stepCanUndo.value && pointsCanUndo.value),
