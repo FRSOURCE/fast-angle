@@ -1,21 +1,22 @@
 <script setup lang="ts">
+const { t } = useI18n()
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   title: 'Fast angle',
   meta: [
-    { name: 'description', content: 'Online protractor - measure any angle directly on your image!' },
+    { name: 'description', content: t('main.description') },
     {
       name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+      content: computed(() => isDark.value ? '#0189e9' : '#0189e9'),
     },
   ],
   link: [
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/fast-angle/favicon-dark.svg' : '/fast-angle/favicon.svg'),
+      href: favicon,
     },
   ],
 })

@@ -20,7 +20,7 @@ const setLocale = (value: string) => {
     <hgroup
       :class="$style.heading"
     >
-      <h2>{{ t('main.title') }}</h2>
+      <h2><img :src="favicon" :class="$style.favicon">{{ t('main.title') }}</h2>
       <h3>{{ t('main.description') }}</h3>
     </hgroup>
     <nav>
@@ -76,6 +76,10 @@ const setLocale = (value: string) => {
   @media (min-height: 720px) {
     max-height: 120px;
   }
+}
+
+.favicon {
+  margin-right: .5rem;
 }
 
 .dropdown {

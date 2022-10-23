@@ -39,6 +39,7 @@ declare global {
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const fallbackLocale: typeof import('./composables/locale')['fallbackLocale']
+  const favicon: typeof import('./composables/favicon')['favicon']
   const getAngle: typeof import('./composables/useAngle')['getAngle']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
@@ -353,6 +354,7 @@ declare module '@vue/runtime-core' {
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly fallbackLocale: UnwrapRef<typeof import('./composables/locale')['fallbackLocale']>
+    readonly favicon: UnwrapRef<typeof import('./composables/favicon')['favicon']>
     readonly getAngle: UnwrapRef<typeof import('./composables/useAngle')['getAngle']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
