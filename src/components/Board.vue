@@ -77,7 +77,6 @@ const info = computed(() => {
       transform: translateY(-50%);
       text-align: justify;
       white-space: pre-line;
-      opacity: .7;
       pointer-events: none;
 
       @media (min-width: 768px) {
