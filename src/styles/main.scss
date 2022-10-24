@@ -46,8 +46,7 @@ dialog article {
 }
 
 a,
-[role="link"],
-details[role=list] summary + ul li a {
+[role="link"] {
   color: var(--primary-link);
 }
 

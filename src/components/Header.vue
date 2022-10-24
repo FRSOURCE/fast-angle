@@ -87,7 +87,7 @@ const setLocale = (value: string) => {
   overflow: auto;
 
   &--active {
-    --dropdown-color: var(--color);
+    --dropdown-color: var(--primary-link);
   }
 }
 </style>
