@@ -16,28 +16,45 @@ $primary-300: hsl($primary-hue, 92%, 68%) !default;
 $primary-400: hsl($primary-hue, 94%, 59%) !default;
 $primary-500: hsl($primary-hue, 96%, 50%) !default;
 $primary-600: hsl($primary-hue, 99%, 46%) !default;
-$primary-700: hsl($primary-hue, 99%, 32%) !default;
-$primary-800: hsl($primary-hue, 98%, 23%) !default;
-$primary-900: hsl($primary-hue, 100%, 15%) !default;
+$primary-700: hsl($primary-hue, 99%, 40%) !default;
+$primary-800: hsl($primary-hue, 98%, 30%) !default;
+$primary-900: hsl($primary-hue, 100%, 22%) !default;
+
+$grey-hue: 205 !default;
+$grey-500: hsl($grey-hue, 20%, 40%) !default;
+$grey-600: hsl($grey-hue, 15%, 41%) !default;
+$grey-700: hsl($grey-hue, 20%, 32%) !default;
+$grey-800: hsl($grey-hue, 25%, 23%) !default;
+$grey-900: hsl($grey-hue, 30%, 15%) !default;
 
 @import '@picocss/pico/scss/pico';
 
 $background-color-transparent-light: color.adjust($white, $alpha: -0.3);
 $background-color-transparent-dark: color.adjust(color.mix($black, $grey-900, 37.5%), $alpha: -0.4);
 
+$primary-link-light: $primary-700;
+$primary-link-dark: $primary-400;
+
+$muted-color-dark: #{$grey-300};
+
 [data-theme=light], :root:not([data-theme=dark]) {
   --background-color-transparent: #{$background-color-transparent-light};
   --background-color-transparent-inverse: #{$background-color-transparent-dark};
+  --primary-link: #{$primary-link-light};
 }
 
 [data-theme=dark] {
   --background-color-transparent: #{$background-color-transparent-dark};
   --background-color-transparent-inverse: #{$background-color-transparent-light};
+  --primary-link: #{$primary-link-dark};
+  --muted-color: #{$muted-color-dark};
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme=light]) {
     --background-color-transparent: #{$background-color-transparent-dark};
     --background-color-transparent-inverse: #{$background-color-transparent-light};
+    --primary-link: #{$primary-link-dark};
+    --muted-color: #{$muted-color-dark};
   }
 }

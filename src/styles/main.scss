@@ -45,6 +45,16 @@ dialog article {
   overflow-x: hidden;
 }
 
+a,
+[role="link"],
+details[role=list] summary + ul li a {
+  color: var(--primary-link);
+}
+
+nav details summary[role=button] {
+  --line-height: 1.2;
+}
+
 #app {
   display: flex;
   flex-flow: column;

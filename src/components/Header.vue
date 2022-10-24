@@ -33,7 +33,7 @@ const setLocale = (value: string) => {
             :open="open"
             @toggle="() => open = detailsRef?.open || false"
           >
-            <summary aria-haspopup="listbox" role="link">
+            <summary aria-haspopup="listbox" role="button">
               <IconLanguage />
             </summary>
             <ul role="group" :class="$style.dropdown" :aria-label="t('board.nav.toggle_langs')">
