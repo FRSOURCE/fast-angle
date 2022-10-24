@@ -96,9 +96,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
-        theme_color: '#ffffff',
+        name: 'Fast Angle',
+        short_name: 'Fast Angle',
+        theme_color: '#0189e9',
         icons: [
           {
             src: '/fast-angle/pwa-192x192.png',
