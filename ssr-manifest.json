@@ -84,6 +84,7 @@
   "src/components/Board.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Board.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "src/components/Board.vue": [],
+  "src/composables/basePath.ts": [],
   "src/composables/favicon.ts": [],
   "~icons/carbon/sun": [],
   "~icons/carbon/moon": [],
@@ -91,13 +92,14 @@
   "src/components/Header.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Header.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "src/components/Header.vue": [],
+  "src/composables/host.ts": [],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [],
   "src/App.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "src/App.vue": [],
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "./assets/virtual_pwa-register.94bdfaf0.js"
+    "./assets/virtual_pwa-register.2128ea44.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
     "./assets/workbox-window.prod.es5.6954f450.js"
