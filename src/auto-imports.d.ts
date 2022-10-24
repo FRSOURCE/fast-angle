@@ -13,6 +13,7 @@ declare global {
   const SVG_DOWNLOAD_FILETYPE: typeof import('./composables/useBoardSvgDownload')['SVG_DOWNLOAD_FILETYPE']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
+  const basePath: typeof import('./composables/basePath')['basePath']
   const breakpoints: typeof import('./composables/breakpoints')['breakpoints']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
@@ -44,6 +45,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
+  const host: typeof import('./composables/host')['host']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
   const isDark: typeof import('./composables/dark')['isDark']
@@ -327,6 +329,7 @@ declare module '@vue/runtime-core' {
     readonly SVG_DOWNLOAD_FILETYPE: UnwrapRef<typeof import('./composables/useBoardSvgDownload')['SVG_DOWNLOAD_FILETYPE']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly basePath: UnwrapRef<typeof import('./composables/basePath')['basePath']>
     readonly breakpoints: UnwrapRef<typeof import('./composables/breakpoints')['breakpoints']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
@@ -358,6 +361,7 @@ declare module '@vue/runtime-core' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly host: UnwrapRef<typeof import('./composables/host')['host']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isDark: UnwrapRef<typeof import('./composables/dark')['isDark']>

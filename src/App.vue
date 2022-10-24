@@ -7,6 +7,12 @@ useHead({
   title: 'Fast angle',
   meta: [
     { name: 'description', content: t('main.description') },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:site', content: '@FRSOURCE1' },
+    { name: 'og:url', content: `${host}${basePath}` },
+    { name: 'og:title', content: 'Fast Angle' },
+    { name: 'og:description', content: t('main.description') },
+    { name: 'og:image', content: `${host}${basePath}fast-angle-og-image.jpg` },
     {
       name: 'theme-color',
       content: computed(() => isDark.value ? '#0189e9' : '#0189e9'),
