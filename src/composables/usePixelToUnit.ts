@@ -53,7 +53,7 @@ export const usePixelToUnit = (valuePx: Ref<number>, unit: Ref<ValueOf<typeof SI
       innerPxValue.value = convertUnitToPx(inputValue, unit.value, originalSize.value)
   })
 
-  watch(value, value => inputValue.value = value)
+  watch(value, value => inputValue.value = value, { immediate: true })
 
   return inputValue
 }

@@ -10,6 +10,8 @@ defineProps({
 
 const { t } = useI18n()
 const { isSupported: isSvgDownloadSupported } = useBoardSvgDownload()
+const boardRef = useBoardRef()
+const { height: boardHeight, width: boardWidth } = useElementSize(boardRef)
 const isModalOpen = ref(false)
 const isSubmittingForm = ref(false)
 const formId = 'board_svg_download_form'
@@ -42,7 +44,13 @@ useMagicKeys({
         v-model="isModalOpen"
         :heading="t('board.nav.download_image.heading')"
       >
-        <BoardControlsSvgDownloadModalContent :id="formId" @submit="isSubmittingForm = true, isModalOpen = false" @download-finish="isSubmittingForm = false" />
+        <BoardControlsSvgDownloadModalContent
+          :id="formId"
+          :board-height="boardHeight"
+          :board-width="boardWidth"
+          @submit="isSubmittingForm = true"
+          @download-finish="isSubmittingForm = false, isModalOpen = false"
+        />
 
         <template #footer>
           <button

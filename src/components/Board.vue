@@ -53,6 +53,7 @@ const info = computed(() => {
       min-height: 0;
       width: 100%;
       stroke: #fff;
+      touch-action: none;
     }
 
     &__nav {

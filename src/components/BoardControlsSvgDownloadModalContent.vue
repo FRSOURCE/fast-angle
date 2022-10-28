@@ -4,27 +4,39 @@ import { SVG_DOWNLOAD_FILETYPE } from '~/composables/useBoardSvgDownload'
 import IconLocked from '~icons/carbon/locked'
 import IconUnlocked from '~icons/carbon/unlocked'
 
+const props = defineProps({
+  boardWidth: {
+    type: Number,
+    required: true,
+  },
+  boardHeight: {
+    type: Number,
+    required: true,
+  },
+})
+
 const emit = defineEmits<{
   (e: 'downloadFinish'): void
 }>()
 
 const { t } = useI18n()
-const boardRef = useBoardRef()
-const { height: boardHeight, width: boardWidth } = useElementSize(boardRef)
 const { triggerDownload: triggerSvgDownload } = useBoardSvgDownload()
 const filename = useLocalStorage('FA_FILENAME', 'fast-angle-image')
 
-const height = ref(400)
-const width = ref(400)
+const { boardHeight, boardWidth } = toRefs(props)
+const height = ref(boardHeight.value)
+const width = ref(boardWidth.value)
 const unit = useLocalStorage<ValueOf<typeof SIZING_UNIT>>('FA_SIZE_UNIT', SIZING_UNIT.px)
 const keepAspectRatio = ref(true)
-const aspectRatio = ref(1)
+const aspectRatio = ref(boardWidth.value / boardHeight.value)
 
-watch([boardWidth, boardHeight] as const, ([boardWidth, boardHeight]) => {
-  width.value = boardWidth
-  height.value = boardHeight
-  aspectRatio.value = boardWidth / boardHeight
-}, { immediate: true })
+if (breakpoints.isGreaterOrEqual('xl')) {
+  watch([boardWidth, boardHeight] as const, ([boardWidth, boardHeight]) => {
+    width.value = boardWidth
+    height.value = boardHeight
+    aspectRatio.value = boardWidth / boardHeight
+  })
+}
 
 const heightUnit = usePixelToUnit(height, unit, boardHeight)
 const widthUnit = usePixelToUnit(width, unit, boardWidth)
@@ -95,11 +107,11 @@ const submit = async () => {
     <div :class="$style.sizing">
       <label :class="$style.label">
         {{ t('board.nav.download_image.width_label') }}
-        <input v-model.number="heightUnit" type="number" step="0.000001" name="width" required>
+        <input v-model.number="widthUnit" type="number" step="0.000001" name="width" required>
       </label>
       <label :class="$style.label">
         {{ t('board.nav.download_image.height_label') }}
-        <input v-model.number="widthUnit" type="number" step="0.000001" name="height" required>
+        <input v-model.number="heightUnit" type="number" step="0.000001" name="height" required>
       </label>
       <label>
         &nbsp;
