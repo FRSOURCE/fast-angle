@@ -31,16 +31,17 @@
   "node_modules/.pnpm/focus-trap@7.0.0/node_modules/focus-trap/dist/focus-trap.esm.js": [],
   "node_modules/.pnpm/@vueuse+integrations@9.3.1_pjdria5vbbxcbooins3zcfxkzy/node_modules/@vueuse/integrations/useFocusTrap/component.mjs": [],
   "src/components/Modal.vue?vue&type=script&setup=true&lang.ts": [],
-  "src/composables/useBoardRef.ts": [],
   "src/composables/useBoardSvgRef.ts": [],
   "src/composables/useBoardSvgDownload.ts": [],
   "src/composables/usePixelToUnit.ts": [],
+  "src/composables/breakpoints.ts": [],
   "~icons/carbon/locked": [],
   "~icons/carbon/unlocked": [],
   "src/components/BoardControlsSvgDownloadModalContent.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/BoardControlsSvgDownloadModalContent.vue?used&vue&type=style&index=0&lang.module.scss": [],
   "\u0000plugin-vue:export-helper": [],
   "src/components/BoardControlsSvgDownloadModalContent.vue": [],
+  "src/composables/useBoardRef.ts": [],
   "~icons/carbon/download": [],
   "src/components/BoardControlsSvgDownload.vue?vue&type=script&setup=true&lang.ts": [],
   "~icons/carbon/copy": [],
@@ -99,7 +100,7 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "./assets/virtual_pwa-register.ee491361.js"
+    "./assets/virtual_pwa-register.acf44822.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
     "./assets/workbox-window.prod.es5.6954f450.js"
