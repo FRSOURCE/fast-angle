@@ -18,6 +18,7 @@
   "src/modules/i18n.ts": [],
   "\u0000vite/preload-helper": [],
   "src/modules/pwa.ts": [],
+  "src/modules/virtual-keyboard.ts": [],
   "node_modules/.pnpm/@vueuse+head@0.9.8_vue@3.2.41/node_modules/@vueuse/head/dist/index.mjs": [],
   "node_modules/.pnpm/vite-ssg@0.21.1_z7nasfakxkzag3yzh5oeiacxna/node_modules/vite-ssg/dist/shared/vite-ssg.be31ffcd.mjs": [],
   "node_modules/.pnpm/vite-ssg@0.21.1_z7nasfakxkzag3yzh5oeiacxna/node_modules/vite-ssg/dist/shared/vite-ssg.c3db3195.mjs": [],
@@ -100,7 +101,7 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "./assets/virtual_pwa-register.9270d693.js"
+    "./assets/virtual_pwa-register.38960bd8.js"
   ],
   "node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
     "./assets/workbox-window.prod.es5.6954f450.js"
