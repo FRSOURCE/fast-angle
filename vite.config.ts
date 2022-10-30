@@ -99,6 +99,7 @@ export default defineConfig({
         name: 'Fast Angle',
         short_name: 'Fast Angle',
         theme_color: '#0189e9',
+        background_color: '#11191f',
         icons: [
           {
             src: '/fast-angle/pwa-192x192.png',
@@ -117,6 +118,7 @@ export default defineConfig({
             purpose: 'any maskable',
           },
         ],
+        categories: ['graphics', 'utilities'],
       },
     }),
 
