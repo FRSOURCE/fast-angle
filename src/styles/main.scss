@@ -2,6 +2,10 @@
 @import './markdown.scss';
 @import './utils.scss';
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
 }
@@ -57,5 +61,5 @@ nav details summary[role=button] {
 #app {
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
+  min-height: 100%;
 }
