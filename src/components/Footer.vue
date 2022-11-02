@@ -5,10 +5,10 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <footer class="footer">
-    <nav>
+  <footer :class="$style.footer">
+    <nav :class="$style.nav">
       <ul>
-        <li><strong class="font-small">{{ t('main.brought_to_you_by') }} <a href="https://www.frsource.org/" :data-tooltip="t('main.visit_our_website')" :title="t('main.visit_our_website')">FRSOURCE</a></strong></li>
+        <li><strong :class="$style['font-small']">{{ t('main.brought_to_you_by') }} <a href="https://www.frsource.org/" :data-tooltip="t('main.visit_our_website')" :title="t('main.visit_our_website')">FRSOURCE</a></strong></li>
       </ul>
       <ul>
         <li>
@@ -29,9 +29,17 @@ const { t } = useI18n()
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" module>
 .footer {
   --block-spacing-vertical: 0!important;
+}
+
+.nav {
+  --nav-element-spacing-vertical: 0.25rem;
+
+  @media (min-width: 768px) {
+  --nav-element-spacing-vertical: 1rem;
+  }
 }
 
 .font-small {

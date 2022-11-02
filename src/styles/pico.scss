@@ -58,3 +58,11 @@ $muted-color-dark: #{$grey-300};
     --muted-color: #{$muted-color-dark};
   }
 }
+
+body {
+  --nav-element-spacing-horizontal: 0.25rem;
+
+  @media (min-width: 640px) {
+    --nav-element-spacing-horizontal: 0.5rem;
+  }
+}

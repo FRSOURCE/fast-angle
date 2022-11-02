@@ -88,7 +88,9 @@ const setLocale = (value: string) => {
 }
 
 .favicon {
-  margin-right: .5rem;
+  @media (min-width: 768px) {
+    margin-right: .5rem;
+  }
 }
 
 .dropdown {
