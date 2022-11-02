@@ -43,6 +43,7 @@
     "cross-env": "7.0.3",
     "eslint": "^8.25.0",
     "https-localhost": "4.7.1",
+    "incstr": "^1.2.3",
     "markdown-it-link-attributes": "4.0.1",
     "markdown-it-shiki": "0.5.1",
     "pnpm": "7.13.5",

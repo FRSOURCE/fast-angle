@@ -16,6 +16,28 @@ import Shiki from 'markdown-it-shiki'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import incstr from 'incstr'
+
+const isProd = process.env.NODE_ENV === 'production'
+const prefix = 'f_'
+const nextClassName = incstr.idGenerator({
+  alphabet: 'abcdefghijklmnopqrstuvwxyz0123456789_-',
+  prefix,
+})
+const classNameMap = {} as Record<string, string>
+
+const productionClassGenerator = (name: string, filename: string) => {
+  const id = `${filename}_>_${name}`
+  let classname = classNameMap[id]
+
+  if (!classname) {
+    classname = nextClassName()
+
+    classNameMap[id] = classname
+  }
+
+  return classname
+}
 
 const availableLocalesPromise = new Promise<string[]>((resolve) => {
   fs.readdir('./locales').then((files) => {
@@ -50,6 +72,24 @@ export default defineConfig({
         },
       },
     }),
+
+    {
+      name: 'Remove unused CSS code',
+      transform(code, id) {
+        if (id.includes('main.scss')) {
+          return {
+            code: [
+              '--icon-close',
+              '--icon-date',
+              '--icon-search',
+              '--icon-time',
+            ].reduce((p, cssVar) => {
+              return p.replace(new RegExp(`${cssVar.replaceAll('-', '\\-')}:.+?;`), '')
+            }, code),
+          }
+        }
+      },
+    },
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
@@ -196,6 +236,12 @@ export default defineConfig({
     environment: 'jsdom',
     deps: {
       inline: ['@vue', '@vueuse', 'vue-demi'],
+    },
+  },
+
+  css: {
+    modules: {
+      ...(isProd ? { generateScopedName: productionClassGenerator } : {}),
     },
   },
 

@@ -14,3 +14,14 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'incstr' {
+  export const component = {
+    idGenerator: (opts: {
+      alphabet: string,
+      prefix: string,
+    })=> () => string
+  }
+  export default component
+}
+

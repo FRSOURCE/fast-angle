@@ -23,6 +23,7 @@ specifiers:
   eslint: ^8.25.0
   focus-trap: 7.0.0
   https-localhost: 4.7.1
+  incstr: ^1.2.3
   lodash-es: 4.17.21
   markdown-it-link-attributes: 4.0.1
   markdown-it-shiki: 0.5.1
@@ -78,6 +79,7 @@ devDependencies:
   cross-env: 7.0.3
   eslint: 8.25.0
   https-localhost: 4.7.1
+  incstr: 1.2.3
   markdown-it-link-attributes: 4.0.1
   markdown-it-shiki: 0.5.1
   pnpm: 7.13.5
@@ -4378,6 +4380,10 @@ packages:
   /imurmurhash/0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
+    dev: true
+
+  /incstr/1.2.3:
+    resolution: {integrity: sha512-ySi29Lzdc3QnB1LzZgRf5kl59m5tPucNagrAyJJ9rWz4+Pa6IxAHSNyUHYvEvaj6QPwWAY2/thi3Rxt45qi3HQ==}
     dev: true
 
   /indent-string/4.0.0:
