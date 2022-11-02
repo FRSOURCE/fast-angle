@@ -56,16 +56,31 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       async onRoutesGenerated(routes) {
         const availableLocales = await availableLocalesPromise
-        return routes.flatMap((route) => {
-          if (route.name !== 'lang')
+
+        return routes
+          .flatMap((route) => {
+            if (route.name === 'all') {
+              return [
+                {
+                  ...route,
+                  name: '404',
+                  path: '/404',
+                },
+                route,
+              ]
+            }
+
+            if (route.name === 'lang') {
+              return availableLocales
+                .map(locale => ({
+                  ...route,
+                  name: `lang-${locale}`,
+                  path: `/${locale}`,
+                }))
+            }
+
             return route
-          return availableLocales
-            .map(locale => ({
-              ...route,
-              name: `lang-${locale}`,
-              path: `/${locale}`,
-            }))
-        })
+          })
       },
     }),
 
@@ -188,7 +203,15 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    onFinished() { generateSitemap() },
+    crittersOptions: {
+      publicPath: '/fast-angle/',
+    },
+    onFinished() {
+      generateSitemap({
+        hostname: 'https://www.frsource.org/fast-angle/',
+        exclude: ['/'],
+      })
+    },
   },
 
   ssr: {
