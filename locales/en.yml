@@ -5,6 +5,17 @@ main:
   visit_our_website: Visit our website
   star_us_on_github: Star us on GitHub
   close: Close
+404:
+  title: Page not found
+  description: |
+    Page accessed under the address: "{url}" was not found.
+    If you believe this is an error,
+  file_issue_button: click here to file an issue.
+  redirect_button_description: Otherwise, you can go back to the main page by
+  redirect_button: clicking here.
+lang_redirect:
+  title: Page Redirect
+  description: We're redirecting you to the main page.
 board:
   drop_file_here: Drop the file here
   click_this_button_or_drop: |

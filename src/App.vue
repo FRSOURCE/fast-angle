@@ -1,17 +1,22 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale, availableLocales } = useI18n()
+const router = useRouter()
+
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   title: 'Fast angle',
+  htmlAttrs: {
+    lang: locale,
+  },
   meta: [
-    { name: 'description', content: t('main.description') },
+    { name: 'description', content: computed(() => t('main.description')) },
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:site', content: '@FRSOURCE1' },
     { name: 'og:url', content: `${host}${basePath}` },
     { name: 'og:title', content: 'Fast Angle' },
-    { name: 'og:description', content: t('main.description') },
+    { name: 'og:description', content: computed(() => t('main.description')) },
     { name: 'og:image', content: `${host}${basePath}fast-angle-og-image.jpg` },
     {
       name: 'theme-color',
@@ -24,6 +29,11 @@ useHead({
       type: 'image/svg+xml',
       href: favicon,
     },
+    ...availableLocales.map(locale => ({
+      rel: 'alternate',
+      hreflang: locale,
+      href: `${host}${basePath}${router.resolve({ name: `lang-${locale}` }).fullPath.substring(1)}`,
+    })),
   ],
 })
 
@@ -36,22 +46,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <Header :class="$style.header" />
-  <main :class="$style.main">
-    <Board ref="boardRef" :class="$style.board" />
-    <Footer />
-  </main>
+  <RouterView />
 </template>
 
-<style lang="scss" module>
-.main {
-  --block-spacing-vertical: 0!important;
-  flex-grow: 1;
-  display: flex;
-  flex-flow: column;
-}
-
-.board {
-  flex-grow: 1;
-}
-</style>

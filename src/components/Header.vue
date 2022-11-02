@@ -20,7 +20,12 @@ const setLocale = (value: string) => {
     <hgroup
       :class="$style.heading"
     >
-      <h2><img :src="favicon" :class="$style.favicon" alt="Fast Angle logo" width="32" height="32">{{ t('main.title') }}</h2>
+      <h2>
+        <a :href="basePath" :class="$style.title">
+          <img :src="favicon" :class="$style.favicon" alt="Fast Angle logo" width="32" height="32">
+          {{ t('main.title') }}
+        </a>
+      </h2>
       <h3>{{ t('main.description') }}</h3>
     </hgroup>
     <nav>
@@ -76,6 +81,10 @@ const setLocale = (value: string) => {
   @media (min-height: 720px) {
     max-height: 120px;
   }
+}
+
+.title {
+  color: var(--h2-color);
 }
 
 .favicon {

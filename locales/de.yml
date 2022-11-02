@@ -5,6 +5,17 @@ main:
   visit_our_website: Besuche unsere Webseite
   star_us_on_github: Star uns auf GitHub
   close: Schließen
+404:
+  title: Seite nicht gefunden
+  description: |
+    Die aufgerufene Seite unter der Adresse: "{url}" wurde nicht gefunden.
+    Wenn Sie glauben, dass dies ein Fehler ist,
+  file_issue_button: klicken Sie hier, um ein Problem zu melden.
+  redirect_button_description: Andernfalls können Sie zur Hauptseite zurückkehren, indem Sie
+  redirect_button: hier klicken.
+lang_redirect:
+  title: Seitenumleitung
+  description: Wir leiten Sie auf die Hauptseite um.
 board:
   drop_file_here: Legen Sie die Datei hier ab
   click_this_button_or_drop: |

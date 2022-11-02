@@ -1,8 +1,10 @@
 import path from 'path'
+import { promises as fs } from 'fs'
 import { defineConfig } from 'vite'
-import Preview from 'vite-plugin-vue-component-preview'
 import Vue from '@vitejs/plugin-vue'
+import Pages from 'vite-plugin-pages'
 import generateSitemap from 'vite-ssg-sitemap'
+import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
@@ -14,6 +16,18 @@ import Shiki from 'markdown-it-shiki'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+
+const availableLocalesPromise = new Promise<string[]>((resolve) => {
+  fs.readdir('./locales').then((files) => {
+    resolve(
+      files
+        .filter(file =>
+          ['.yml', '.json', '.yaml'].includes(path.extname(file).toLowerCase()),
+        )
+        .map(file => file.substring(0, file.lastIndexOf('.'))),
+    )
+  })
+})
 
 const baseArg = process.argv.find(v => v.includes('--base='))
 const base = baseArg ? baseArg.replace('--base=', '') : '/'
@@ -27,8 +41,6 @@ export default defineConfig({
   },
 
   plugins: [
-    Preview(),
-
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
@@ -39,10 +51,32 @@ export default defineConfig({
       },
     }),
 
+    // https://github.com/hannoeru/vite-plugin-pages
+    Pages({
+      extensions: ['vue', 'md'],
+      async onRoutesGenerated(routes) {
+        const availableLocales = await availableLocalesPromise
+        return routes.flatMap((route) => {
+          if (route.name !== 'lang')
+            return route
+          return availableLocales
+            .map(locale => ({
+              ...route,
+              name: `lang-${locale}`,
+              path: `/${locale}`,
+            }))
+        })
+      },
+    }),
+
+    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    Layouts(),
+
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
+        'vue-router',
         'vue-i18n',
         'vue/macros',
         '@vueuse/head',

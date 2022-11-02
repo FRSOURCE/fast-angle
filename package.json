@@ -19,12 +19,14 @@
     "@vueuse/head": "0.9.8",
     "@vueuse/integrations": "9.3.1",
     "@vueuse/math": "9.3.1",
+    "@vueuse/router": "^9.4.0",
     "color-hash": "2.0.1",
     "focus-trap": "7.0.0",
     "lodash-es": "4.17.21",
     "vue": "3.2.41",
     "vue-demi": "0.13.11",
-    "vue-i18n": "9.2.2"
+    "vue-i18n": "9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.27.0",
@@ -50,8 +52,9 @@
     "unplugin-vue-components": "0.22.8",
     "vite": "3.1.8",
     "vite-plugin-inspect": "0.7.5",
+    "vite-plugin-pages": "^0.27.1",
     "vite-plugin-pwa": "0.13.1",
-    "vite-plugin-vue-component-preview": "0.3.3",
+    "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vue-markdown": "0.22.1",
     "vite-ssg": "0.21.2",
     "vite-ssg-sitemap": "0.4.3",

@@ -5,6 +5,17 @@ main:
   visit_our_website: Odwiedź naszą stronę
   star_us_on_github: Daj nam gwiazdkę na GitHub
   close: Zamknij
+404:
+  title: Strona nie została odnaleziona
+  description: |
+    Strona podana pod adresem: "{url}" nie została odnaleziona.
+    Jeśli uważasz to za błąd,
+  file_issue_button: Kliknij tutaj, by go zgłosić.
+  redirect_button_description: Do strony głównej możesz wrócić poprzez
+  redirect_button: naciśnięcie tego linku.
+lang_redirect:
+  title: Przekierowanie
+  description: Przekierowujemy Cię do strony głównej.
 board:
   drop_file_here: Upuść plik tutaj
   click_this_button_or_drop: |

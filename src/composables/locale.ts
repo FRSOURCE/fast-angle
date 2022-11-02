@@ -8,13 +8,17 @@ export const messages = Object.fromEntries(
 )
 export const fallbackLocale = 'en'
 
-export const prefferedLanguages = usePreferredLanguages()
+const prefferedLanguages = usePreferredLanguages()
 const availableLocales = Object.keys(messages)
+
+const isLocaleAvailable = (lang: string) => availableLocales.includes(lang)
+export const toAvailableLocale = (lang: string) => isLocaleAvailable(lang)
+  ? lang
+  : fallbackLocale
 
 const defaultLanguage = ref(fallbackLocale)
 
 watch(prefferedLanguages, (prefferedLanguages) => {
-  defaultLanguage.value = prefferedLanguages.find(lang => availableLocales.includes(lang)) || fallbackLocale
+  defaultLanguage.value = prefferedLanguages.find(isLocaleAvailable) || fallbackLocale
 }, { immediate: true })
-export const locale = useLocalStorage('fa:locale', defaultLanguage)
-
+export const locale = ref(defaultLanguage)
