@@ -4,6 +4,10 @@ const { t } = useI18n()
 useHead({
   meta: [
     {
+      'http-equiv': 'status' as 'refresh',
+      'content': '302',
+    },
+    {
       'http-equiv': 'refresh',
       'content': `0;${host}${basePath}en`,
     },
