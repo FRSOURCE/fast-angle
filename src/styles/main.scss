@@ -16,7 +16,9 @@ button {
 
 [role=button] {
   display: inline-flex;
+  align-items: center;
   width: auto;
+  vertical-align: middle;
 }
 
 [role=button].secondary {

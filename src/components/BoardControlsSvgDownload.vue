@@ -58,6 +58,7 @@ useMagicKeys({
             role="button"
             :form="formId"
             :disabled="isSubmittingForm"
+            :aria-busy="isSubmittingForm"
             v-text="t('board.nav.download_image.save')"
           />
         </template>
