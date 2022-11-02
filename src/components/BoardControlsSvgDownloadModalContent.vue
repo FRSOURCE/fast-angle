@@ -89,7 +89,7 @@ const submit = async () => {
     <div :class="$style.name">
       <label class="flex-grow">
         {{ t('board.nav.download_image.name_label') }}
-        <input v-model="filename" type="text" name="name" required>
+        <input v-model="filename" type="text" name="name" required :aria-invalid="!filename">
       </label>
 
       <label>
@@ -107,11 +107,11 @@ const submit = async () => {
     <div :class="$style.sizing">
       <label :class="$style.label">
         {{ t('board.nav.download_image.width_label') }}
-        <input v-model.number="widthUnit" type="number" step="0.000001" name="width" required>
+        <input v-model.number="widthUnit" min="1" type="number" step="0.000001" name="width" required :aria-invalid="!widthUnit || widthUnit < 1">
       </label>
       <label :class="$style.label">
         {{ t('board.nav.download_image.height_label') }}
-        <input v-model.number="heightUnit" type="number" step="0.000001" name="height" required>
+        <input v-model.number="heightUnit" min="1" type="number" step="0.000001" name="height" required :aria-invalid="!heightUnit || heightUnit < 1">
       </label>
       <label>
         &nbsp;
@@ -146,10 +146,10 @@ const submit = async () => {
     <label>
       <span :class="$style.quality">
         {{ t('board.nav.download_image.quality_label') }}
-        <input v-model.number="quality" type="number" min="0" max="100" :class="$style.quality__input" name="quality">
+        <input v-model.number="quality" type="number" min="1" max="100" :class="$style.quality__input" name="quality" :aria-invalid="!quality || quality > 100 || quality < 1">
         %
       </span>
-      <input v-model.number="quality" type="range" min="0" max="100" name="quality">
+      <input v-model.number="quality" type="range" min="1" max="100" name="quality">
     </label>
   </form>
 </template>
@@ -157,9 +157,9 @@ const submit = async () => {
 <style lang="scss" module>
 .label {
   flex-shrink: 1;
-    flex-grow: 1;
-    width: 120px;
-    min-width: 0;
+  flex-grow: 1;
+  width: 120px;
+  min-width: 0;
 }
 
 .sizing, .name {
