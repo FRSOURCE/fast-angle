@@ -28,12 +28,12 @@ onKeyStroke('Escape', (e) => {
 
 <template>
   <Teleport v-if="modelValue" to="body">
-    <UseFocusTrap :options="{ immediate: true }">
-      <dialog open>
-        <article>
+    <UseFocusTrap :options="{ immediate: true, initialFocus: false }">
+      <dialog open @click="$emit('update:modelValue', false)">
+        <article @click.prevent.stop>
           <h3 v-text="heading" />
           <slot />
-          <footer>
+          <footer :class="$style.footer">
             <button
               type="button"
               role="button"
@@ -48,3 +48,10 @@ onKeyStroke('Escape', (e) => {
     </UseFocusTrap>
   </Teleport>
 </template>
+
+<style lang="scss" module>
+.footer {
+  position: sticky;
+  bottom: calc(-1 * var(--block-spacing-vertical));
+}
+</style>
