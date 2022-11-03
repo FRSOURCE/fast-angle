@@ -187,8 +187,22 @@ export default defineConfig({
       manifest: {
         name: 'Fast Angle',
         short_name: 'Fast Angle',
+        description: 'Simple online protractor - measure any angle directly on your image!',
         theme_color: '#0189e9',
         background_color: '#11191f',
+        orientation: 'natural',
+        display: 'standalone',
+        display_override: ['standalone', 'fullscreen', 'minimal-ui', 'browser'],
+        shortcuts: [],
+        screenshots: [
+          {
+            src: '/fast-angle/fast-angle-og-image.jpg',
+            sizes: '1200x630',
+            type: 'image/jpeg',
+            platform: 'wide',
+            label: 'Example of the angle measurement on top of an image in FastAngle app.',
+          },
+        ],
         icons: [
           {
             src: '/fast-angle/pwa-192x192.png',
@@ -204,7 +218,13 @@ export default defineConfig({
             src: '/fast-angle/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable',
+            purpose: 'any',
+          },
+          {
+            src: '/fast-angle/pwa-maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
           },
         ],
         categories: ['graphics', 'utilities'],
