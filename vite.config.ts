@@ -216,6 +216,12 @@ export default defineConfig({
             type: 'image/png',
           },
           {
+            src: '/fast-angle/pwa-monochrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'monochrome',
+          },
+          {
             src: '/fast-angle/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
