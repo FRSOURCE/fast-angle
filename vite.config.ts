@@ -184,6 +184,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['*.svg', '*.png'],
+      injectRegister: 'inline',
       manifest: {
         name: 'Fast Angle',
         short_name: 'Fast Angle',
