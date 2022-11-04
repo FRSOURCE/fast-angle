@@ -20,7 +20,7 @@ board:
   drop_file_here: Legen Sie die Datei hier ab
   click_this_button_or_drop: |
     Klicken Sie hier, um die Messung zu starten.
-    Um ein Bild hochzuladen, ziehen Sie es auf dieses Board oder verwenden Sie die Upload-Schaltfläche unten.
+    Um das Bild zu öffnen, ziehen Sie es auf dieses Board oder verwenden Sie die Ladeschaltfläche unten.
     Verwenden Sie für ein besseres Erlebnis die Schaltfläche in der unteren rechten Ecke, um den Vollbildmodus zu aktivieren.
   nav:
     download_image:

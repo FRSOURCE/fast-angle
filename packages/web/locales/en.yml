@@ -20,7 +20,7 @@ board:
   drop_file_here: Drop the file here
   click_this_button_or_drop: |
     Click here to start measurement.
-    To upload image, drop it onto this board or use upload button below.
+    To open image, drop it onto this board or use load button below.
     For better experience - use button that's placed in bottom-right corner to enable fullscreen mode.
   nav:
     download_image:
