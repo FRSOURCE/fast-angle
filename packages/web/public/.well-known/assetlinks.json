@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.frsource.www.fast_angle.twa",
+      "sha256_cert_fingerprints":
+        ["D5:3B:50:0B:71:6F:6D:9D:1C:2D:50:9D:B5:DE:74:0B:ED:E3:F7:47:93:AE:68:AA:BB:2C:A1:0D:9D:B4:45:F4"]
+    }
+  }
+]
