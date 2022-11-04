@@ -13,19 +13,6 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "vitest",
-      "vite/client",
-      "vue/ref-macros",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client",
-      "vite-plugin-pwa/client",
-      "unplugin-icons/types/vue"
-    ],
-    "paths": {
-      "~/*": ["src/*"]
-    }
-  },
-  "exclude": ["dist", "node_modules"]
+    "forceConsistentCasingInFileNames": true
+  }
 }

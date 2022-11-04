@@ -27,4 +27,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: deploy
-          FOLDER: dist
+          FOLDER: packages/web/dist

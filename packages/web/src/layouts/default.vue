@@ -25,7 +25,7 @@ watch(locale, (locale) => {
 
 <style lang="scss" module>
 .main {
-  --block-spacing-vertical: 0!important;
+  --block-spacing-vertical: 0px!important;
   flex-grow: 1;
   display: flex;
   flex-flow: column;

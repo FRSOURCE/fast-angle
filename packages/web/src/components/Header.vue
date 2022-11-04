@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { basePath } from '~/composables/basePath'
+import { favicon } from '~/composables/favicon'
+import { isDark, toggleDark } from '~/composables/dark'
 import IconSun from '~icons/carbon/sun'
 import IconMoon from '~icons/carbon/moon'
 import IconLanguage from '~icons/carbon/language'

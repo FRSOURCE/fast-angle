@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { ValueOf } from 'type-fest'
 import { SVG_DOWNLOAD_FILETYPE } from '~/composables/useBoardSvgDownload'
+import { SIZING_UNIT } from '~/composables/usePixelToUnit'
 import IconLocked from '~icons/carbon/locked'
 import IconUnlocked from '~icons/carbon/unlocked'
 

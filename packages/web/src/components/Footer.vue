@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { locale } from '~/composables/locale'
 import IconLogoGithub from '~icons/carbon/logo-github'
 
 const { t } = useI18n()
@@ -11,6 +12,14 @@ const { t } = useI18n()
         <li><strong :class="$style['font-small']">{{ t('main.brought_to_you_by') }} <a href="https://www.frsource.org/" :data-tooltip="t('main.visit_our_website')" :title="t('main.visit_our_website')">FRSOURCE</a></strong></li>
       </ul>
       <ul>
+        <li :class="$style.links">
+          <RouterLink :to="{ name: 'lang-terms', params: { lang: locale } }">
+            <small :class="$style['font-small']">Terms and Conditions</small>
+          </RouterLink>
+          <RouterLink :to="{ name: 'lang-privacy-policy', params: { lang: locale } }">
+            <small :class="$style['font-small']">Privacy Policy</small>
+          </RouterLink>
+        </li>
         <li>
           <a
             rel="noreferrer"
@@ -39,6 +48,23 @@ const { t } = useI18n()
 
   @media (min-width: 768px) {
   --nav-element-spacing-vertical: 1rem;
+  }
+}
+
+.links {
+  margin-inline-end: .5rem;
+  display: flex;
+  flex-flow: column;
+  width: max-content;
+  text-align: right;
+
+  &::before {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    flex-flow: row;
+    gap: 1rem;
   }
 }
 
