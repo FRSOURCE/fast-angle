@@ -1,0 +1,50 @@
+{
+  "packageId": "org.frsource.www.fast_angle.twa",
+  "host": "www.frsource.org",
+  "name": "Fast Angle",
+  "launcherName": "Fast Angle",
+  "display": "standalone",
+  "themeColor": "#0189E9",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#11191F",
+  "enableNotifications": true,
+  "startUrl": "/fast-angle/",
+  "iconUrl": "https://www.frsource.org/fast-angle/pwa-512x512.png",
+  "maskableIconUrl": "https://www.frsource.org/fast-angle/pwa-maskable-512x512.png",
+  "monochromeIconUrl": "https://www.frsource.org/fast-angle/pwa-monochrome-192x192.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/Users/jakubfreisler/android-studio-keystore",
+    "alias": "fastangle"
+  },
+  "appVersionName": "2",
+  "appVersionCode": 2,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://www.frsource.org/fast-angle/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://www.frsource.org/fast-angle/",
+  "minSdkVersion": 19,
+  "orientation": "natural",
+  "fingerprints": [
+    {
+      "value": "2B:F0:18:F9:3F:3B:EB:05:B4:1B:E4:E6:EA:0A:AA:4F:26:BC:48:AC:46:2D:07:87:87:24:16:AA:71:98:F4:B8"
+    },
+    {
+      "value": "2B:F0:18:F9:3F:3B:EB:05:B4:1B:E4:E6:EA:0A:AA:4F:26:BC:48:AC:46:2D:07:87:87:24:16:AA:71:98:F4:B8"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "2"
+}

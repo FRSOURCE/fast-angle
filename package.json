@@ -4,12 +4,11 @@
   "private": true,
   "packageManager": "pnpm@7.8.0",
   "scripts": {
-    "build": "pnpm run -r build",
+    "build": "pnpm --filter '@frsource/fast-angle-web' build",
     "dev": "pnpm run -r --parallel --stream dev",
     "lint": "eslint .",
     "test": "pnpm run -r --parallel --stream test",
-    "typecheck": "pnpm run -r --parallel --stream typecheck",
-    "build:android": "pnpm run -r build:android"
+    "typecheck": "pnpm run -r --parallel --stream typecheck"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.27.0",
