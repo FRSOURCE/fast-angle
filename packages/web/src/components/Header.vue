@@ -81,7 +81,7 @@ const setLocale = (value: string) => {
   margin: 10px 0;
   transition: max-height .3s ease-out;
 
-  @media (min-height: 720px) {
+  @media (min-width: 1024px) {
     max-height: 120px;
   }
 }
