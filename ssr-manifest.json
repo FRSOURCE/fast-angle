@@ -26,6 +26,7 @@
   "../../node_modules/.pnpm/vite-ssg@0.21.2_gi5lchtbnp4trb5kl3ztdfuf34/node_modules/vite-ssg/dist/shared/vite-ssg.be31ffcd.mjs": [],
   "../../node_modules/.pnpm/vite-ssg@0.21.2_gi5lchtbnp4trb5kl3ztdfuf34/node_modules/vite-ssg/dist/shared/vite-ssg.c3db3195.mjs": [],
   "../../node_modules/.pnpm/vite-ssg@0.21.2_gi5lchtbnp4trb5kl3ztdfuf34/node_modules/vite-ssg/dist/index.mjs": [],
+  "src/composables/host.ts": [],
   "~icons/carbon/logo-github": [],
   "src/components/Footer.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Footer.vue?used&vue&type=style&index=0&lang.module.scss": [],
@@ -45,7 +46,6 @@
   "src/layouts/default.vue": [],
   "../../../../../../../@vite-plugin-vue-layouts/generated-layouts": [],
   "src/styles/main.scss": [],
-  "src/composables/host.ts": [],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [],
   "src/pages/index.vue?vue&type=script&setup=true&lang.ts": [],
   "../../../../../../../@vite-plugin-pages/route-block": [],
@@ -54,284 +54,284 @@
   "src/main.ts": [],
   "index.html": [],
   "../../../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/fast-angle/assets/virtual_pwa-register.fea814e2.js"
+    "/fast-angle/assets/virtual_pwa-register.09900150.js"
   ],
   "src/layouts/centered.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/centered.effa523c.js",
+    "/fast-angle/assets/centered.43271b33.js",
     "/fast-angle/assets/centered.7b47be9e.css"
   ],
   "src/layouts/centered.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/centered.effa523c.js",
+    "/fast-angle/assets/centered.43271b33.js",
     "/fast-angle/assets/centered.7b47be9e.css"
   ],
   "src/layouts/centered.vue": [
-    "/fast-angle/assets/centered.effa523c.js",
+    "/fast-angle/assets/centered.43271b33.js",
     "/fast-angle/assets/centered.7b47be9e.css"
   ],
   "src/pages/[...all].vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/_...all_.92f71dab.js"
+    "/fast-angle/assets/_...all_.cb7b5c69.js"
   ],
   "src/pages/[...all].vue": [
-    "/fast-angle/assets/_...all_.92f71dab.js"
+    "/fast-angle/assets/_...all_.cb7b5c69.js"
   ],
   "../../node_modules/.pnpm/tabbable@6.0.0/node_modules/tabbable/dist/index.esm.js": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "../../node_modules/.pnpm/focus-trap@7.0.0/node_modules/focus-trap/dist/focus-trap.esm.js": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "../../node_modules/.pnpm/@vueuse+integrations@9.3.1_pjdria5vbbxcbooins3zcfxkzy/node_modules/@vueuse/integrations/useFocusTrap/component.mjs": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Modal.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Modal.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Modal.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useBoardSvgRef.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useBoardSvgDownload.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/breakpoints.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/usePixelToUnit.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/locked": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/unlocked": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControlsSvgDownloadModalContent.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControlsSvgDownloadModalContent.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControlsSvgDownloadModalContent.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useBoardRef.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/download": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControlsSvgDownload.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/copy": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/checkmark": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardSummaryItem.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardSummaryItem.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardSummaryItem.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useLines.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useAngle.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useBoardImage.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/maximize": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/minimize": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/cloud-upload": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/help": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/angle": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/undo": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/redo": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/custom/angle-obtuse": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControls.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControls.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardControls.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Segment.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useLinearFnVariables.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "\u0000commonjsHelpers.js": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "\u0000/home/runner/work/fast-angle/fast-angle/node_modules/.pnpm/color-hash@2.0.1/node_modules/color-hash/dist/color-hash.js?commonjs-exports": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "../../node_modules/.pnpm/color-hash@2.0.1/node_modules/color-hash/dist/color-hash.js": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useColor.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Line.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useOutOfBoundLabels.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useLinesIntersectionPosition.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useAnglesBisectors.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useAnglesLabels.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/composables/useLine.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/zoom-in-area": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "~icons/carbon/zoom-out-area": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardResult.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardResult.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardResult.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/BoardSvg.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Board.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Board.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/components/Board.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/pages/[lang]/index.vue": [
-    "/fast-angle/assets/index.ef9bca54.js",
+    "/fast-angle/assets/index.5d0273cc.js",
     "/fast-angle/assets/index.0de69dcc.css"
   ],
   "src/pages/[lang]/privacy-policy.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/privacy-policy.e2ca4b68.js",
+    "/fast-angle/assets/privacy-policy.b7476bb0.js",
     "/fast-angle/assets/privacy-policy.4df0be3d.css"
   ],
   "src/pages/[lang]/privacy-policy.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/privacy-policy.e2ca4b68.js",
+    "/fast-angle/assets/privacy-policy.b7476bb0.js",
     "/fast-angle/assets/privacy-policy.4df0be3d.css"
   ],
   "src/pages/[lang]/privacy-policy.vue": [
-    "/fast-angle/assets/privacy-policy.e2ca4b68.js",
+    "/fast-angle/assets/privacy-policy.b7476bb0.js",
     "/fast-angle/assets/privacy-policy.4df0be3d.css"
   ],
   "src/pages/[lang]/terms.vue?vue&type=script&setup=true&lang.ts": [
-    "/fast-angle/assets/terms.20e1b325.js",
+    "/fast-angle/assets/terms.b0ead972.js",
     "/fast-angle/assets/terms.136ca182.css"
   ],
   "src/pages/[lang]/terms.vue?used&vue&type=style&index=0&lang.module.scss": [
-    "/fast-angle/assets/terms.20e1b325.js",
+    "/fast-angle/assets/terms.b0ead972.js",
     "/fast-angle/assets/terms.136ca182.css"
   ],
   "src/pages/[lang]/terms.vue": [
-    "/fast-angle/assets/terms.20e1b325.js",
+    "/fast-angle/assets/terms.b0ead972.js",
     "/fast-angle/assets/terms.136ca182.css"
   ],
   "../../node_modules/.pnpm/workbox-window@6.5.4/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
