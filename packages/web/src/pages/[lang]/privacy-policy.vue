@@ -15,7 +15,7 @@ useHead({
     <p>This privacy notice for FRS Jakub Freisler ("<strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might collect, store, use, and/or share ("<strong>process</strong>") your information when you use our services ("<strong>Services</strong>"), such as when you:</p>
     <ul>
       <li>
-        Visit our website at <a href="https://www.frsource.org/fast-angle/">https://www.frsource.org/fast-angle/</a>, or any website of ours that links to this privacy notice
+        Visit our website at <a :href="`${host}${basePath}`" v-text="`${host}${basePath}`" />, or any website of ours that links to this privacy notice
       </li>
     </ul>
     <ul>

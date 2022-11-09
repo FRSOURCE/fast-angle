@@ -5,6 +5,8 @@ main:
   visit_our_website: Visit our website
   star_us_on_github: Star us on GitHub
   close: Close
+  privacy_policy: Privacy Policy
+  terms_and_conditions: Terms and Conditions
 404:
   title: Page not found
   description: |

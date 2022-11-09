@@ -5,6 +5,8 @@ main:
   visit_our_website: Besuche unsere Webseite
   star_us_on_github: Star uns auf GitHub
   close: Schließen
+  privacy_policy: Datenschutz-Bestimmungen
+  terms_and_conditions: Geschäftsbedingungen
 404:
   title: Seite nicht gefunden
   description: |

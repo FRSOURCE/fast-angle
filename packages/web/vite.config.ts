@@ -119,6 +119,16 @@ export default defineConfig({
                 }))
             }
 
+            if (route.name.substring(0, 5) === 'lang-') {
+              const pageName = route.name.substring(5)
+              return availableLocales
+                .map(locale => ({
+                  ...route,
+                  name: `lang-${locale}-${pageName}`,
+                  path: `/${locale}/${pageName}`,
+                }))
+            }
+
             return route
           })
       },
