@@ -23,13 +23,13 @@ const setLocale = (value: string) => {
     <hgroup
       :class="$style.heading"
     >
-      <h2>
+      <h1>
         <a :href="basePath" :class="$style.title">
           <img :src="favicon" :class="$style.favicon" alt="Fast Angle logo" width="32" height="32">
           {{ t('main.title') }}
         </a>
-      </h2>
-      <h3>{{ t('main.description') }}</h3>
+      </h1>
+      <h2>{{ t('main.description') }}</h2>
     </hgroup>
     <nav>
       <ul>
