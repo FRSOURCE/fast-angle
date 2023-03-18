@@ -20,7 +20,7 @@ importers:
 
   packages/web:
     specifiers:
-      '@frsource/frs-replace': ^3.0.3
+      '@frsource/frs-replace': ^4.0.0
       '@iconify-json/carbon': 1.1.9
       '@intlify/vite-plugin-vue-i18n': 6.0.3
       '@picocss/pico': 1.5.6
@@ -82,7 +82,7 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.41
       vue-router: 4.1.6_vue@3.2.41
     devDependencies:
-      '@frsource/frs-replace': 3.0.3
+      '@frsource/frs-replace': 4.0.0
       '@iconify-json/carbon': 1.1.9
       '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@3.1.8+vue-i18n@9.2.2
       '@types/color-hash': 1.0.2
@@ -1475,14 +1475,14 @@ packages:
       - supports-color
     dev: true
 
-  /@frsource/frs-replace/3.0.3:
-    resolution: {integrity: sha512-qssybjXlZyxju1zu9nqTK07HihJHHj/v5uQeAxMz+FJay2k0TYUrEmJhys8pGD8wkGNzEosSyrpBavGt3FNRgg==}
+  /@frsource/frs-replace/4.0.0:
+    resolution: {integrity: sha512-FxF0T9lvpQfCt2qtolaTe3gVH28womNaBazMr8EOzFtKVrbS2GB4fcrkruvnueNnGei4R0cGeCt9i7+lD/eHbA==}
     hasBin: true
     dependencies:
       fast-glob: 3.2.12
       get-stdin: 8.0.0
       write: 2.0.0
-      yargs: 16.2.0
+      yargs: 17.6.0
     dev: true
 
   /@humanwhocodes/config-array/0.10.5:
@@ -1540,8 +1540,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.6
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/message-compiler': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.10
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.2.2_vue@3.2.41
@@ -1570,11 +1570,11 @@ packages:
       '@intlify/shared': 9.2.2
       source-map: 0.6.1
 
-  /@intlify/message-compiler/9.3.0-beta.6:
-    resolution: {integrity: sha512-3PJqRJoqvFHExA9DCkf7fZYKbvYne1tYQ0fptJAhUOZsELarh8wr4aPLKWCkQSRuutdrtZ/n5CcPgJgUmVthDw==}
+  /@intlify/message-compiler/9.3.0-beta.10:
+    resolution: {integrity: sha512-RoOC6yceOykLRhN0NlbkNOBUx1el6iphx3W8NfOx3jHVNtfT1FYokx14/5sU3F1F0uxeG4sp6q+ppKvaF8o+ww==}
     engines: {node: '>= 14'}
     dependencies:
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/shared': 9.3.0-beta.10
       source-map: 0.6.1
     dev: true
 
@@ -1582,8 +1582,8 @@ packages:
     resolution: {integrity: sha512-wRwTpsslgZS5HNyM7uDQYZtxnbI12aGiBZURX3BTR9RFIKKRWpllTsgzHWvj3HKm3Y2Sh5LPC1r0PDCKEhVn9Q==}
     engines: {node: '>= 14'}
 
-  /@intlify/shared/9.3.0-beta.6:
-    resolution: {integrity: sha512-ITA1R4tvJYwZXT5x6QCSwxcwQ4dU52zrzVm/EUbgsp8oWzYS1xexBrxyNM80PSQudYvL2rvcZJKQ7yBh7b0LkQ==}
+  /@intlify/shared/9.3.0-beta.10:
+    resolution: {integrity: sha512-h93uAanbAt/XgjDHclrVB7xix6r7Uz11wx0iGNOCdHP7aA2LCJjUT3uNbekJjjbo+Fl5jzTSJZdm2SexzoqhRA==}
     engines: {node: '>= 14'}
     dev: true
 
@@ -1603,7 +1603,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1_vue-i18n@9.2.2
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/shared': 9.3.0-beta.10
       '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
       fast-glob: 3.2.12
@@ -2060,8 +2060,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20221103:
-    resolution: {integrity: sha512-6PZLAcNkmMBRZUEQ1gROk8mjKOykXdYUfhzjM1DKZS6SbYgUst1hMOvVBmr1vJEt05FpU3Eb1JV9wVEqjF5ksA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20221208:
+    resolution: {integrity: sha512-T6jeKvDp6SEm+VvKHAsPqM1BCkVoCeSA/XYXW2Di6a68YNEvuVbNdYRpH5FND091t3xTg8q131ldBbzI9PfvUA==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2267,7 +2267,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20221103
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20221208
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -3425,14 +3425,6 @@ packages:
   /cli-width/3.0.0:
     resolution: {integrity: sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==}
     engines: {node: '>= 10'}
-    dev: true
-
-  /cliui/7.0.4:
-    resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
-    dependencies:
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 7.0.0
     dev: true
 
   /cliui/8.0.1:
@@ -8934,23 +8926,11 @@ packages:
   /yargs-parser/20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
+    dev: false
 
   /yargs-parser/21.0.1:
     resolution: {integrity: sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==}
     engines: {node: '>=12'}
-    dev: true
-
-  /yargs/16.2.0:
-    resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
-    engines: {node: '>=10'}
-    dependencies:
-      cliui: 7.0.4
-      escalade: 3.1.1
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      string-width: 4.2.3
-      y18n: 5.0.8
-      yargs-parser: 20.2.9
     dev: true
 
   /yargs/17.6.0:
