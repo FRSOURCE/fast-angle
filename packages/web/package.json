@@ -15,7 +15,7 @@
   "dependencies": {
     "@picocss/pico": "1.5.6",
     "@vueuse/core": "9.3.1",
-    "@vueuse/head": "0.9.8",
+    "@vueuse/head": "1.1.23",
     "@vueuse/integrations": "9.3.1",
     "@vueuse/math": "9.3.1",
     "@vueuse/router": "^9.4.0",
