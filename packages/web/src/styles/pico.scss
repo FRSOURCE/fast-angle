@@ -27,7 +27,44 @@ $grey-700: hsl($grey-hue, 20%, 32%) !default;
 $grey-800: hsl($grey-hue, 25%, 23%) !default;
 $grey-900: hsl($grey-hue, 30%, 15%) !default;
 
-@import '@picocss/pico/scss/pico';
+// Config
+@import "@picocss/pico/scss/variables";
+
+// Theming
+@import "@picocss/pico/scss/themes/default";
+
+// Layout
+@import "@picocss/pico/scss/layout/document"; // html
+@import "@picocss/pico/scss/layout/sectioning"; // body, header, main, footer
+@import "@picocss/pico/scss/layout/container"; // .container, .container-fluid
+@import "@picocss/pico/scss/layout/section"; // section
+@import "@picocss/pico/scss/layout/grid"; // .grid
+@import "@picocss/pico/scss/layout/scroller"; // figure
+
+// Content
+@import "@picocss/pico/scss/content/typography"; // a, headings, p, ul, blockquote, ...
+@import "@picocss/pico/scss/content/embedded"; // audio, canvas, iframe, img, svg, video
+@import "@picocss/pico/scss/content/button"; // button, a[role=button], type=button, type=submit ...
+@import "@picocss/pico/scss/content/form"; // input, select, textarea, label, fieldset, legend
+@import "@picocss/pico/scss/content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
+@import "@picocss/pico/scss/content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
+@import "@picocss/pico/scss/content/table"; // table, tr, td, ...
+@import "@picocss/pico/scss/content/code"; // pre, code, ...
+@import "@picocss/pico/scss/content/miscs"; // hr, template, [hidden], dialog, canvas
+
+// Components
+@import "@picocss/pico/scss/components/accordion"; // details, summary
+@import "@picocss/pico/scss/components/card"; // article
+@import "@picocss/pico/scss/components/modal"; // dialog
+@import "@picocss/pico/scss/components/nav"; // nav
+@import "@picocss/pico/scss/components/progress"; // progress
+@import "@picocss/pico/scss/components/dropdown"; // dropdown
+
+// Utilities
+@import "@picocss/pico/scss/utilities/loading"; // aria-busy=true
+@import "tooltip"; // data-tooltip
+@import "@picocss/pico/scss/utilities/accessibility"; // -ms-touch-action, aria-*
+@import "@picocss/pico/scss/utilities/reduce-motion"; // prefers-reduced-motion
 
 $background-color-transparent-light: color.adjust($white, $alpha: -0.3);
 $background-color-transparent-dark: color.adjust(color.mix($black, $grey-900, 37.5%), $alpha: -0.4);
@@ -65,4 +102,37 @@ body {
   @media (min-width: 640px) {
     --nav-element-spacing-horizontal: 0.5rem;
   }
+}
+
+dialog {
+  padding: 0;
+
+  > article {
+    margin: 0;
+    max-height: 100%;
+  }
+
+  @media (min-width: 480px) {
+    padding: var(--spacing);
+
+    > article {
+      margin: var(--block-spacing-vertical) 0;
+      max-height: calc(100vh - var(--spacing) * 2);
+    }
+  }
+}
+
+fieldset {
+  border: thin solid var(--form-element-border-color);
+  padding: 0 var(--form-element-spacing-horizontal);
+  border-radius: var(--border-radius);
+
+  legend {
+    padding: 0 calc(var(--form-element-spacing-horizontal) / 2);
+    color: var(--form-element-placeholder-color);
+  }
+}
+
+th, td {
+  padding: calc(var(--spacing) / 4) calc(var(--spacing) / 2);
 }

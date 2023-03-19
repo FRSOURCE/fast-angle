@@ -14,14 +14,27 @@ const emit = defineEmits<{
 }>()
 const pathWidth = 5
 const svgRef = useBoardSvgRef()
+const initialized = ref(false)
 
-const { elementX, elementY } = useMouseInElement(svgRef)
+const { elementX, elementY } = useMouseInElement(svgRef, { handleOutside: false })
+const { undo: elementXUndo, redo: elementXRedo } = useRefHistory(elementX)
+const { undo: elementYUndo, redo: elementYRedo } = useRefHistory(elementY)
+
 const svgSize = computed(() => ({ width: props.width, height: props.height }))
-const { lines, predictNextPoint, drawNextPoint, step } = useLines()
+const { lines, predictNextPoint, drawNextPoint, step, registerOnRedo, registerOnUndo } = useLines()
+registerOnRedo(() => {
+  elementXRedo()
+  elementYRedo()
+})
+registerOnUndo(() => {
+  elementXUndo()
+  elementYUndo()
+})
 watch([elementX, elementY] as const, ([elementX, elementY]) => {
   if (step.value === 2)
     predictNextPoint(elementX, elementY)
 })
+
 const angle = useAngle(lines)
 const segment1 = computed(() => lines.value[0] || [])
 const segment2 = computed(() => lines.value[1] || [])
@@ -49,9 +62,12 @@ const pressed = () => {
     :stroke-width="pathWidth"
     @touchend.prevent="pressed"
     @mouseup.prevent="pressed"
+    @mousedown.once="initialized = true"
+    @mousemove.passive.once="initialized = true"
+    @touchstart.passive.once="initialized = true"
   >
     <slot />
-    <circle v-if="step % 2" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
+    <circle v-show="initialized" v-if="step % 2" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
     <Line v-else :points="[lines[Math.floor(step / 2)][0], [elementX, elementY]]" :svg-size="svgSize" :path-width="pathWidth" />
 
     <Line :points="lines[0]" :svg-size="svgSize" :path-width="pathWidth" />

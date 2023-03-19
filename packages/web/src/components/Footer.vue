@@ -47,7 +47,7 @@ const { t } = useI18n()
   --nav-element-spacing-vertical: 0.25rem;
 
   @media (min-width: 768px) {
-  --nav-element-spacing-vertical: 1rem;
+    --nav-element-spacing-vertical: 1rem;
   }
 }
 
@@ -62,7 +62,7 @@ const { t } = useI18n()
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     flex-flow: row;
     gap: 1rem;
   }

@@ -93,7 +93,7 @@ const submit = async () => {
         <input v-model="filename" type="text" name="name" required :aria-invalid="!filename">
       </label>
 
-      <label>
+      <label :class="$style['label--big']">
         {{ t('board.nav.download_image.format_label') }}
         <select v-model="filetype" required>
           <option
@@ -105,7 +105,8 @@ const submit = async () => {
         </select>
       </label>
     </div>
-    <div :class="$style.sizing">
+    <fieldset :class="$style.sizing">
+      <legend><small>{{ t('board.nav.download_image.sizing_label') }}</small></legend>
       <label :class="$style.label">
         {{ t('board.nav.download_image.width_label') }}
         <input v-model.number="widthUnit" min="1" type="number" step="0.000001" name="width" required :aria-invalid="!widthUnit || widthUnit < 1">
@@ -117,9 +118,7 @@ const submit = async () => {
       <label>
         &nbsp;
         <div :class="$style['aspect-ratio']" :data-tooltip="t('board.nav.download_image.keep_aspect_ratio')">
-          <button
-            type="button"
-            role="button"
+          <Button
             :aria-label="t('board.nav.download_image.keep_aspect_ratio')"
             :class="[
               $style['aspect-ratio-btn'],
@@ -129,10 +128,10 @@ const submit = async () => {
           >
             <IconLocked v-if="keepAspectRatio" />
             <IconUnlocked v-else />
-          </button>
+          </Button>
         </div>
       </label>
-      <label :class="$style.label">
+      <label :class="[$style.label, $style['label--small']]">
         {{ t('board.nav.download_image.unit_label') }}
         <select v-model="unit" required>
           <option
@@ -143,7 +142,7 @@ const submit = async () => {
           />
         </select>
       </label>
-    </div>
+    </fieldset>
     <label>
       <span :class="$style.quality">
         {{ t('board.nav.download_image.quality_label') }}
@@ -159,8 +158,16 @@ const submit = async () => {
 .label {
   flex-shrink: 1;
   flex-grow: 1;
-  width: 120px;
+  width: 100px;
   min-width: 0;
+}
+
+.label--big {
+  width: 160px;
+}
+
+.label--small {
+  width: 80px;
 }
 
 .sizing, .name {

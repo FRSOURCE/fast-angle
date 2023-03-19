@@ -1,6 +1,16 @@
 <script setup lang="ts">
+import { throttleFilter } from '@vueuse/core'
+
 const { t, locale, availableLocales } = useI18n()
 const router = useRouter()
+const throttle = throttleFilter(300)
+const recalculateViewport = () => {
+  // Make sure viewport is always 100vh, even with mobile keyboard open
+  // https://stackoverflow.com/a/62054041/8805801
+  const viewport = document.querySelector<HTMLMetaElement>('meta[name=viewport]')
+  viewport?.setAttribute('content', `width=device-width, height=${window.innerHeight}, initial-scale=1.0`)
+}
+const throttledRecalculateViewport = () => throttle(recalculateViewport, {} as any)
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
@@ -38,10 +48,8 @@ useHead({
 })
 
 onMounted(() => {
-  // Make sure viewport is always 100vh, even with mobile keyboard open
-  // https://stackoverflow.com/a/62054041/8805801
-  const viewport = document.querySelector<HTMLMetaElement>('meta[name=viewport]')
-  viewport?.setAttribute('content', `width=device-width, height=${window.innerHeight}, initial-scale=1.0`)
+  window.addEventListener('resize', throttledRecalculateViewport, { passive: true })
+  recalculateViewport()
 })
 </script>
 

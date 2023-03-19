@@ -58,10 +58,10 @@ const setLocale = (value: string) => {
         </li>
 
         <li>
-          <button type="button" role="button" :title="t('board.nav.toggle_dark')" @click="toggleDark()">
+          <Button :title="t('board.nav.toggle_dark')" @click="toggleDark()">
             <IconSun v-if="isDark" />
             <IconMoon v-else />
-          </button>
+          </Button>
         </li>
       </ul>
     </nav>
@@ -71,14 +71,15 @@ const setLocale = (value: string) => {
 <style lang="scss" module>
 .header {
   --block-spacing-vertical: 0!important;
+  --nav-element-spacing-vertical: .5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .heading {
   overflow: hidden;
-  max-height: 45px;
-  margin: 10px 0;
+  max-height: 2.25rem;
+  margin: var(--nav-element-spacing-vertical) 0;
   transition: max-height .3s ease-out;
 
   @media (min-width: 1024px) {
@@ -87,7 +88,13 @@ const setLocale = (value: string) => {
 }
 
 .title {
+  display: block;
+  font-size: 1.5rem;
   color: var(--h2-color);
+
+  @media (min-width: 1024px) {
+    font-size: var(--font-size);
+  }
 }
 
 .favicon {

@@ -12,13 +12,24 @@ const props = defineProps({
   },
 })
 
+const { t } = useI18n()
+const isOpen = ref(false)
+
+const close = () => {
+  if (isOpen.value)
+    isOpen.value = false
+}
+
+const el = ref<HTMLElement>()
+onClickOutside(el, close)
+onKeyStroke('Escape', close)
+
 const { height: elementHeight, width: elementWidth } = useElementSize(toRef(props, 'boardRef'))
 const svgSize = computed(() => ({
   width: 300, height: 300 * elementHeight.value / elementWidth.value,
 }))
 
 const { outOfBoundLabels } = useOutOfBoundLabels()
-const isOpen = ref(false)
 const resultSizing = computed(() => {
   const size = isOpen.value ? 260 : 50
   return { width: size, height: size }
@@ -68,11 +79,19 @@ const line2 = useLine(line2Variables, lineXCoords)
 
 const color1 = useColor(segment1)
 const color2 = useColor(segment2)
+
+const tooltipDirectionsMap = {
+  [OVERFLOW_LABELS_DIRECTION.UP]: 'bottom',
+  [OVERFLOW_LABELS_DIRECTION.DOWN]: undefined,
+  [OVERFLOW_LABELS_DIRECTION.LEFT]: 'right',
+  [OVERFLOW_LABELS_DIRECTION.RIGHT]: 'left',
+} as const
 </script>
 
 <template>
   <section
     v-if="line1Variables && line2Variables && intersectionOffset && outOfBoundLabels"
+    ref="el"
     class="bg-bg-transparent-inverse text-inverse"
     :class="[
       $style.result,
@@ -82,14 +101,9 @@ const color2 = useColor(segment2)
     @mousemove.prevent.stop
     @click="isOpen = !isOpen"
   >
-    <button
-      type="button"
-      :class="[
-        $style.btn,
-      ]"
-    >
+    <Button :class="$style.btn" :tooltip="isOpen ? t('board.result.zoom_out') : t('board.result.zoom_in')" :tooltip-placement="isOpen ? 'left' : tooltipDirectionsMap[outOfBoundLabels.direction]">
       <component :is="isOpen ? IconZoomOutArea : IconZoomInArea" />
-    </button>
+    </Button>
 
     <svg
       :viewBox="`${svgSize.width * .1} ${svgSize.height * .1} ${svgSize.width * .8} ${svgSize.height * .8}`"
@@ -107,6 +121,7 @@ const color2 = useColor(segment2)
 <style lang="scss" module>
 .result {
   position: absolute;
+  z-index: 1;
   border-radius: .25rem;
   box-sizing: content-box;
   margin: 0;

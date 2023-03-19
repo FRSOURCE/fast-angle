@@ -1,6 +1,11 @@
-<script lang="ts" setup>
+<script lang="ts">
 import { UseFocusTrap } from '@vueuse/integrations/useFocusTrap/component'
+export default {
+  inheritAttrs: false,
+}
+</script>
 
+<script lang="ts" setup>
 const props = defineProps({
   heading: {
     type: String,
@@ -30,17 +35,17 @@ onKeyStroke('Escape', (e) => {
   <Teleport v-if="modelValue" to="body">
     <UseFocusTrap :options="{ immediate: true, initialFocus: false }">
       <dialog open @click="$emit('update:modelValue', false)">
-        <article @click.prevent.stop>
+        <article v-bind="$attrs" @click.prevent.stop>
           <h3 v-text="heading" />
           <slot />
           <footer :class="$style.footer">
-            <button
-              type="button"
-              role="button"
+            <slot name="footer-pre" />
+            <Button
               class="secondary"
               @click.prevent="$emit('update:modelValue', false)"
-              v-text="t('main.close')"
-            />
+            >
+              {{ t('main.close') }}
+            </Button>
             <slot name="footer" />
           </footer>
         </article>

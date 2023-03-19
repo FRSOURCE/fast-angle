@@ -4,6 +4,7 @@ main:
   brought_to_you_by: Specjalnie dla Ciebie od
   visit_our_website: Odwiedź naszą stronę
   star_us_on_github: Daj nam gwiazdkę na GitHub
+  donate_us: Wesprzyj nas
   close: Zamknij
   privacy_policy: Polityka prywatności
   terms_and_conditions: Regulamin
@@ -24,13 +25,17 @@ board:
     Kliknij tutaj aby rozpocząć pomiary.
     By wczytać obrazek, upuść go tutaj lub naciśnij przycisk oznaczony ikoną chmury ze strzałką.
     Dla większej wygody możesz włączyć tryb pełnoekranowy za pomocą przycisku znajdującego się w prawym-dolnym rogu.
+  result:
+    zoom_in: Przybliż
+    zoom_out: Oddal
   nav:
     download_image:
       action: Pobierz obrazek
       save: Zapisz obrazek
-      heading: Ustawienia obrazka
+      heading: Eksport obrazka
       name_label: Nazwa obrazka
       format_label: Format
+      sizing_label: Wymiary obrazka
       width_label: Szerokość
       height_label: Wysokość
       keep_aspect_ratio: Zachowuj proporcje obrazka
@@ -42,6 +47,14 @@ board:
     redo: Przywróć cofniętą akcję
     toggle_dark: Ustaw tryb nocny
     toggle_langs: Zmień język
-    help: |
-      • po ustaleniu drugiej linii, kliknij raz jeszcze by zresetować linie
-      • wygodniej jest obsługiwać aplikację w trybie pełnoekranowym
+    help:
+      action: Otwórz pomoc i informację o aplikacji
+      heading: Pomoc
+      heading_authors: Autorzy
+      key_bindings:
+        heading: Skróty klawiaturowy
+        description: Akcja
+      content:
+        - By wczytać obrazek, upuść go na pole rysowania lub naciśnij przycisk oznaczony ikoną obrazka ze strzałką.
+        - Po narysowaniu drugiej linii, kliknij raz jeszcze by zresetować linie.
+        - Wygodniej jest obsługiwać aplikację w trybie pełnoekranowym.

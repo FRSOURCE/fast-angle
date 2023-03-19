@@ -29,15 +29,12 @@ useMagicKeys({
 
 <template>
   <li v-if="isSvgDownloadSupported">
-    <button
-      type="button"
-      role="button"
-      class="vertical-middle"
-      :aria-label="`${t('board.nav.download_image.action')} [ctrl + s][⌘ + s]`"
-      :data-tooltip="`${t('board.nav.download_image.action')} [ctrl + s][⌘ + s]`"
-      data-placement="left"
+    <Button
+      :tooltip="`${t('board.nav.download_image.action')} [ctrl + s][⌘ + s]`"
+      tooltip-placement="left"
       :disabled="!disabled ? true : undefined"
       @click="isModalOpen = true"
+      @touchstart.stop.prevent="isModalOpen = true"
     >
       <IconDownload />
       <Modal
@@ -53,16 +50,17 @@ useMagicKeys({
         />
 
         <template #footer>
-          <button
+          <Button
             type="submit"
             role="button"
             :form="formId"
             :disabled="isSubmittingForm"
             :aria-busy="isSubmittingForm"
-            v-text="t('board.nav.download_image.save')"
-          />
+          >
+            {{ t('board.nav.download_image.save') }}
+          </Button>
         </template>
       </Modal>
-    </button>
+    </Button>
   </li>
 </template>

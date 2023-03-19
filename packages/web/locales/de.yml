@@ -4,6 +4,7 @@ main:
   brought_to_you_by: Präsentiert von
   visit_our_website: Besuche unsere Webseite
   star_us_on_github: Star uns auf GitHub
+  donate_us: Spenden Sie uns
   close: Schließen
   privacy_policy: Datenschutz-Bestimmungen
   terms_and_conditions: Geschäftsbedingungen
@@ -23,14 +24,18 @@ board:
   click_this_button_or_drop: |
     Klicken Sie hier, um die Messung zu starten.
     Um das Bild zu öffnen, ziehen Sie es auf dieses Board oder verwenden Sie die Ladeschaltfläche unten.
-    Verwenden Sie für ein besseres Erlebnis die Schaltfläche in der unteren rechten Ecke, um den Vollbildmodus zu aktivieren.
+    Für ein besseres Erlebnis - aktivieren Sie den Vollbildmodus, indem Sie auf die Schaltfläche „Vollbild“ in der unteren rechten Ecke klicken.
+  result:
+    zoom_in: Hineinzoomen
+    zoom_out: Rauszoomen
   nav:
     download_image:
       action: Bild herunterladen
       save: Bild speichern
-      heading: Bildkonfiguration
+      heading: Bildexport
       name_label: Bildname
       format_label: Format
+      sizing_label: Bildgröße
       width_label: Breite
       height_label: Höhe
       keep_aspect_ratio: Seitenverhältnis beibehalten
@@ -42,6 +47,14 @@ board:
     redo: Aktion wiederholen
     toggle_dark: Dunkelmodus umschalten
     toggle_langs: Sprachen ändern
-    help: |
-      • nach Aufbau der zweiten Linie, Klicken Sie einfach noch einmal, um die Zeilen zurückzusetzen
-      • Verwenden Sie für ein schöneres Erlebnis den Vollbildmodus
+    help:
+      action: Öffnen Sie das Hilfe- und Anwendungsinformationsmodal
+      heading: Hilfe
+      heading_authors: Autoren
+      key_bindings:
+        heading: Tastatürkürzel
+        description: Aktion
+      content:
+        - Um das Bild zu öffnen, legen Sie es auf dem Board ab oder verwenden Sie die Ladeschaltfläche im Hauptmenü.
+        - Nachdem Sie die zweite Linie eingerichtet haben, klicken Sie einfach noch einmal, um die Linien zurückzusetzen und neu zu beginnen.
+        - Verwenden Sie für ein schöneres Erlebnis den Vollbildmodus.

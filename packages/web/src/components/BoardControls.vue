@@ -3,8 +3,7 @@ import type { PropType } from 'vue'
 import type { MaybeElement } from '@vueuse/core'
 import IconMaximize from '~icons/carbon/maximize'
 import IconMinimize from '~icons/carbon/minimize'
-import IconUpload from '~icons/carbon/cloud-upload'
-import IconHelp from '~icons/carbon/help'
+import IconImageReference from '~icons/carbon/image-reference'
 import IconAngle from '~icons/carbon/angle'
 import IconUndo from '~icons/carbon/undo'
 import IconRedo from '~icons/carbon/redo'
@@ -30,7 +29,7 @@ const { undo, redo, canUndo, canRedo } = useLines()
 // eslint-disable-next-line vue/no-irregular-whitespace, no-irregular-whitespace
 const undoTooltip = computed(() => `${t('board.nav.undo')} [ctrl + z][⌘ + z]`)
 // eslint-disable-next-line vue/no-irregular-whitespace, no-irregular-whitespace
-const redoTooltip = computed(() => `${t('board.nav.redo')} [ctrl + shift + z][⌘ + z]`)
+const redoTooltip = computed(() => `${t('board.nav.redo')} [ctrl + shift + z][⌘ + shift + z]`)
 const acuteAngle = ref<number>()
 watch(angle, (angle) => {
   if (angle === undefined)
@@ -53,7 +52,7 @@ onKeyStroke('f', toggle)
     <div
       class="pointer-all bg-bg-transparent-inverse text-inverse whitespace-nowrap"
       :class="$style['info-box']"
-      @mousemove.prevent.stop
+      @mousemove.prevent.stop.capture
     >
       <BoardSummaryItem :value="acuteAngle">
         <IconAngle />
@@ -72,69 +71,50 @@ onKeyStroke('f', toggle)
     </li>
     <nav :class="$style.nav">
       <ul class="pointer-all" :class="$style.nav__btns">
+        <BoardControlsSvgHelp />
         <li>
-          <button
-            role="button"
-            type="button"
-            :aria-label="t('board.nav.help')"
-            :data-tooltip="t('board.nav.help')"
-            class="bg-bg-transparent-inverse b-bg-transparent-inverse text-inverse cursor-help"
-            data-placement="left"
-          >
-            <IconHelp />
-          </button>
-        </li>
-        <li>
-          <button
-            role="button"
-            type="button"
+          <Button
             :disabled="!canUndo"
-            :aria-label="undoTooltip"
-            :data-tooltip="undoTooltip"
-            data-placement="left"
+            :tooltip="undoTooltip"
+            tooltip-placement="left"
             @click="undo"
+            @touchstart.prevent.stop.capture="undo"
           >
             <IconUndo />
-          </button>
+          </Button>
         </li>
         <li>
-          <button
-            role="button"
-            type="button"
+          <Button
             :disabled="!canRedo"
-            :aria-label="redoTooltip"
-            :data-tooltip="redoTooltip"
-            data-placement="left"
+            :tooltip="redoTooltip"
+            tooltip-placement="left"
             @click="redo"
+            @touchstart.prevent.stop.capture="redo"
           >
             <IconRedo />
-          </button>
+          </Button>
         </li>
         <BoardControlsSvgDownload :disabled="canUndo" />
         <li>
-          <button
-            role="button"
-            type="button"
-            :aria-label="t('board.nav.upload_file')"
-            :data-tooltip="t('board.nav.upload_file')"
-            data-placement="left"
+          <Button
+            :tooltip="t('board.nav.upload_file')"
+            tooltip-placement="left"
             @click="open()"
+            @touchstart.prevent.stop.capture="open()"
           >
-            <IconUpload />
-          </button>
+            <IconImageReference />
+          </Button>
         </li>
         <li v-if="isFullscreenSupported">
-          <button
-            role="button"
-            type="button"
-            :aria-label="`${t('board.nav.toggle_fullscreen')} [F]`"
-            :data-tooltip="`${t('board.nav.toggle_fullscreen')} [F]`"
-            data-placement="left"
+          <Button
+            :tooltip="`${t('board.nav.toggle_fullscreen')} [f]`"
+            tooltip-placement="left"
             @click="toggle"
+            @touchstart.prevent.stop.capture="toggle"
           >
             <IconMinimize v-if="isFullscreen" />
             <IconMaximize v-else />
-          </button>
+          </Button>
         </li>
       </ul>
     </nav>

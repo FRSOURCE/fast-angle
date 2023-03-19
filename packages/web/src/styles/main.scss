@@ -14,13 +14,6 @@ button {
   display: flex;
 }
 
-[role=button] {
-  display: inline-flex;
-  align-items: center;
-  width: auto;
-  vertical-align: middle;
-}
-
 [role=button].secondary {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
@@ -35,6 +28,32 @@ button {
   &:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--secondary-focus);
+  }
+
+  &.outline {
+    --color: var(--secondary);
+
+    &:is([aria-current], :hover, :active, :focus) {
+      --color: var(--secondary-hover);
+      --background-color: var(--secondary-focus);
+    }
+  }
+}
+
+[role=button] {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  vertical-align: middle;
+
+  &.outline {
+    --background-color: transparent;
+    --color: var(--primary);
+
+    &:is([aria-current], :hover, :active, :focus) {
+      --background-color: transparent;
+      --color: var(--primary-hover);
+    }
   }
 }
 

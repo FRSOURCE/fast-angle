@@ -40,13 +40,19 @@ const info = computed(() => {
 <style lang="scss" module>
   .board {
     position: relative;
+    margin: 0 calc(-1 * var(--block-spacing-horizontal));
     border: solid thin var(--card-border-color);
     border-radius: 2px;
     display: flex;
     flex-flow: column;
-    width: 100%;
-    height: 300px;
+    width: calc(100% + 2 * var(--block-spacing-horizontal));
+    height: 260px;
     background: var(--card-background-color);
+
+    @media (min-width: 768px) {
+      margin: 0;
+      width: 100%;
+    }
 
     &__svg {
       flex-grow: 1;
@@ -59,18 +65,13 @@ const info = computed(() => {
     &__nav {
       position: absolute;
       bottom: 0;
-      left: .25rem;
-      right: .25rem;
-
-      @media (min-width: 640) {
-        left: 1rem;
-        right: 1rem;
-      }
+      left: var(--nav-element-spacing-horizontal);
+      right: var(--nav-element-spacing-horizontal);
     }
 
     &__hint {
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 20px;
       right: 70px;
       margin: auto;

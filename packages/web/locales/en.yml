@@ -4,6 +4,7 @@ main:
   brought_to_you_by: Brought to you by
   visit_our_website: Visit our website
   star_us_on_github: Star us on GitHub
+  donate_us: Donate us
   close: Close
   privacy_policy: Privacy Policy
   terms_and_conditions: Terms and Conditions
@@ -23,14 +24,18 @@ board:
   click_this_button_or_drop: |
     Click here to start measurement.
     To open image, drop it onto this board or use load button below.
-    For better experience - use button that's placed in bottom-right corner to enable fullscreen mode.
+    For better experience - enable fullscreen mode by clicking on fullscreen button located in bottom-right corner.
+  result:
+    zoom_in: Zoom in
+    zoom_out: Zoom out
   nav:
     download_image:
       action: Download image
       save: Save image
-      heading: Image configuration
+      heading: Image export
       name_label: Name
       format_label: Format
+      sizing_label: Image size
       width_label: Width
       height_label: Height
       keep_aspect_ratio: Keep aspect ratio
@@ -42,6 +47,15 @@ board:
     redo: Redo action
     toggle_dark: Toggle dark mode
     toggle_langs: Change languages
-    help: |
-      • after establishing second line, just click once more to reset lines
-      • for nicer experience, use fullscreen mode
+    help:
+      action: Open help and application information modal
+      heading: Help
+      heading_authors: Authors
+      key_bindings:
+        heading: Keyboard shortcuts
+        description: Action
+      content:
+        - To open image, drop it into the board or use load button located in main menu.
+        - After establishing second line, just click once more to reset lines and start again.
+        - For nicer experience, use fullscreen mode.
+

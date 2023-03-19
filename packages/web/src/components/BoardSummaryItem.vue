@@ -21,10 +21,10 @@ const { copy, copied, isSupported } = useClipboard({ source: formattedValue })
         <template v-else>?</template>
       </span>
     </div>
-    <button v-if="isSupported && formattedValue" :class="$style.btn" type="button" role="button" :disabled="copied">
+    <Button v-if="isSupported && formattedValue" :class="$style.btn" :disabled="copied">
       <IconCheckmark v-if="copied" />
       <IconCopy v-else />
-    </button>
+    </Button>
   </small>
 </template>
 

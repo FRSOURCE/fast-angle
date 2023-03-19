@@ -10,10 +10,12 @@ export const useLines = createSharedComposable(() => {
   const internalLines = ref<Lines>([])
   const lines = ref<Lines>([])
   const step = ref(MAX_STEP - 1)
+  let onUndo = () => {}
+  let onRedo = () => {}
 
   watch(internalLines, (internalLines) => {
     lines.value = [...internalLines]
-  }, { deep: true })
+  }, { deep: true, flush: 'sync' })
 
   const drawNextPoint = (x: number, y: number) => {
     if (++step.value >= MAX_STEP) {
@@ -53,10 +55,12 @@ export const useLines = createSharedComposable(() => {
 
   const undo = () => {
     pointsUndo()
+    onUndo()
     stepUndo()
   }
   const redo = () => {
     pointsRedo()
+    onRedo()
     stepRedo()
   }
 
@@ -79,5 +83,7 @@ export const useLines = createSharedComposable(() => {
     redo,
     canUndo: computed(() => stepCanUndo.value && pointsCanUndo.value),
     canRedo: computed(() => stepCanRedo.value && pointsCanRedo.value),
+    registerOnUndo: (newOnUndo: typeof onUndo) => onUndo = newOnUndo,
+    registerOnRedo: (newOnRedo: typeof onRedo) => onRedo = newOnRedo,
   }
 })

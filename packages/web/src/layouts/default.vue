@@ -7,6 +7,10 @@ watch(uriLocale, (uriLocale) => {
 }, { immediate: true })
 
 const router = useRouter()
+const showFooter = computed(() => {
+  const routeName = router.currentRoute.value.name as string || ''
+  return routeName.split('-').length !== 2
+})
 
 watch(locale, (locale) => {
   const currentPath = router.currentRoute.value.path.split('/')
@@ -19,7 +23,7 @@ watch(locale, (locale) => {
   <Header :class="$style.header" />
   <main :class="$style.main">
     <slot><RouterView /></slot>
-    <Footer />
+    <Footer v-if="showFooter" />
   </main>
 </template>
 
@@ -29,5 +33,13 @@ watch(locale, (locale) => {
   flex-grow: 1;
   display: flex;
   flex-flow: column;
+
+  @media (min-width: 768px) {
+    padding-bottom: .5rem!important;
+  }
+
+  @media (min-width: 1024px) {
+    padding-bottom: 1rem!important;
+  }
 }
 </style>
