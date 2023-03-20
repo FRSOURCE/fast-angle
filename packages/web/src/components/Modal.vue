@@ -22,27 +22,27 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
+const dialog = ref<HTMLDialogElement>()
 
-onKeyStroke('Escape', (e) => {
-  if (props.modelValue) {
-    e.preventDefault()
-    emit('update:modelValue', false)
-  }
+const close = () => emit('update:modelValue', false)
+
+watch(dialog, (dialog) => {
+  dialog?.showModal()
 })
 </script>
 
 <template>
   <Teleport v-if="modelValue" to="body">
     <UseFocusTrap :options="{ immediate: true, initialFocus: false }">
-      <dialog open @click="$emit('update:modelValue', false)">
-        <article v-bind="$attrs" @click.prevent.stop>
+      <dialog ref="dialog" aria-modal @click="close" @close="close">
+        <article v-bind="$attrs" @click.stop>
           <h3 v-text="heading" />
           <slot />
           <footer :class="$style.footer">
             <slot name="footer-pre" />
             <Button
               class="secondary"
-              @click.prevent="$emit('update:modelValue', false)"
+              @click="close"
             >
               {{ t('main.close') }}
             </Button>
