@@ -6,7 +6,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   heading: {
     type: String,
     required: true,
