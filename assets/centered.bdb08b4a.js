@@ -1,1 +1,0 @@
-import{d as o,o as t,c as a,w as r,D as n,a as c,b as l,n as p,r as _,e as u}from"./app.5ccacd78.js";const d=o({__name:"centered",setup(w){return(e,x)=>{const s=_("RouterView");return t(),a(n,null,{default:r(()=>[c("div",{class:p(["flex-grow",e.$style.wrapper])},[l(s)],2)]),_:1})}}}),f="f_e",i={wrapper:f},m={$style:i},C=u(d,[["__cssModules",m]]);export{C as default};
