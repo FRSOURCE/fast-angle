@@ -16,7 +16,6 @@ declare module '@vue/runtime-core' {
     BoardSummaryItem: typeof import('./components/BoardSummaryItem.vue')['default']
     BoardSvg: typeof import('./components/BoardSvg.vue')['default']
     Button: typeof import('./components/Button.vue')['default']
-    copy: typeof import('./components/BoardControlsSvgDownload copy.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     Line: typeof import('./components/Line.vue')['default']
