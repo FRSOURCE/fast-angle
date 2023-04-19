@@ -5,7 +5,23 @@ const showHint = ref(true)
 const boardRef = useBoardRef()
 const { height, width } = useElementSize(boardRef)
 
-const { imageSrc, processFiles } = useBoardImage()
+const { src: imageSrc, width: imageWidth, height: imageHeight, processFiles } = useBoardImage()
+const scaledImgHeight = ref(0)
+const scaledImgWidth = ref(0)
+
+watch(imageSrc, () => {
+  if (imageHeight && imageWidth) {
+    if (imageWidth.value > width.value || imageHeight.value > height.value) {
+      const maxRatio = Math.min(width.value / imageWidth.value, height.value / imageHeight.value)
+      scaledImgHeight.value = imageHeight.value * maxRatio
+      scaledImgWidth.value = imageWidth.value * maxRatio
+    }
+    else {
+      scaledImgHeight.value = imageHeight.value
+      scaledImgWidth.value = imageWidth.value
+    }
+  }
+})
 const { isOverDropZone } = useDropZone(boardRef, processFiles)
 
 const info = computed(() => {
@@ -19,18 +35,17 @@ const info = computed(() => {
 <template>
   <div ref="boardRef" :class="$style.board">
     <BoardSvg :class="$style.board__svg" :width="width" :height="height" @pressed="showHint = false">
-      <image v-if="imageSrc" :href="imageSrc" height="100%" width="100%" />
+      <image v-if="imageSrc" :href="imageSrc" :x="scaledImgWidth / -2" :y="scaledImgHeight / -2" :height="`${scaledImgHeight}`" :width="`${scaledImgWidth}`" />
     </BoardSvg>
 
     <div v-if="showHint && !imageSrc" :class="$style.board__hint">
       {{ t('board.click_this_button_or_drop') }}
     </div>
 
-    <BoardResult :board-ref="boardRef" />
+    <BoardResult />
 
     <BoardControls
       :class="$style.board__nav"
-      :board-ref="boardRef"
       :info="info"
       @update:files="processFiles"
     />
@@ -60,6 +75,14 @@ const info = computed(() => {
       width: 100%;
       stroke: #fff;
       touch-action: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: solid 2px var(--primary-focus);
+      }
     }
 
     &__nav {

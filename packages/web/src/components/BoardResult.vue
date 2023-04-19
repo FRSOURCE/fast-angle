@@ -1,16 +1,7 @@
 <script lang="ts" setup>
-import type { MaybeElement } from '@vueuse/core'
-import type { PropType } from 'vue'
 import IconZoomInArea from '~icons/carbon/zoom-in-area'
 import IconZoomOutArea from '~icons/carbon/zoom-out-area'
 import { OVERFLOW_LABELS_DIRECTION } from '~/composables/useOutOfBoundLabels'
-
-const props = defineProps({
-  boardRef: {
-    type: Object as PropType<MaybeElement>,
-    default: undefined,
-  },
-})
 
 const { t } = useI18n()
 const isOpen = ref(false)
@@ -24,7 +15,7 @@ const el = ref<HTMLElement>()
 onClickOutside(el, close)
 onKeyStroke('Escape', close)
 
-const { height: elementHeight, width: elementWidth } = useElementSize(toRef(props, 'boardRef'))
+const { height: elementHeight, width: elementWidth } = useElementSize(useBoardRef())
 const svgSize = computed(() => ({
   width: 300, height: 300 * elementHeight.value / elementWidth.value,
 }))

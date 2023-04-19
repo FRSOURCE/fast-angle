@@ -13,8 +13,10 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@panzoom/panzoom": "^4.5.1",
     "@picocss/pico": "1.5.6",
     "@vueuse/core": "9.3.1",
+    "@vueuse/gesture": "2.0.0-beta.1",
     "@vueuse/head": "1.1.23",
     "@vueuse/integrations": "9.3.1",
     "@vueuse/math": "9.3.1",
@@ -23,6 +25,8 @@
     "del-cli": "^5.0.0",
     "focus-trap": "7.0.0",
     "lodash-es": "4.17.21",
+    "panzoom": "^9.4.3",
+    "svg-pan-zoom": "^3.6.1",
     "vue": "3.2.41",
     "vue-demi": "0.13.11",
     "vue-i18n": "9.2.2",

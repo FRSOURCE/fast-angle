@@ -7,8 +7,6 @@ export enum OVERFLOW_LABELS_DIRECTION {
   RIGHT,
 }
 
-const labelMargins = { x: 30, y: 4.5 }
-
 export const useOutOfBoundLabels = createSharedComposable(() => {
   const outOfBoundLabels = ref<{
     y: number
@@ -20,13 +18,20 @@ export const useOutOfBoundLabels = createSharedComposable(() => {
 
   return {
     outOfBoundLabels,
-    setOutBoundLabels(labels: UnwrapRef<ReturnType<typeof useAnglesLabels>>, svgSize: { width: number; height: number }) {
-      const outOfBoundsLabel = labels.find(({ x, y }) => x < labelMargins.x || x > svgSize.width - labelMargins.x || y < labelMargins.y + 3 || y > svgSize.height - labelMargins.y)
+    setOutBoundLabels(labels: UnwrapRef<ReturnType<typeof useAnglesLabels>>, svgSize: { width: number; height: number }, svgOffset: { x: number; y: number }) {
+      const labelMargins = { x: 30, y: 4.5 }
+      const outOfBoundsLabel = labels.find(({ x, y }) => {
+        x -= svgOffset.x
+        y -= svgOffset.y
+        return x < labelMargins.x || x > svgSize.width - labelMargins.x || y < labelMargins.y + 3 || y > svgSize.height - labelMargins.y
+      })
 
       if (!outOfBoundsLabel)
         return outOfBoundLabels.value = false
 
-      const { x, y } = outOfBoundsLabel
+      let { x, y } = outOfBoundsLabel
+      x -= svgOffset.x
+      y -= svgOffset.y
 
       if (x < labelMargins.x)
         return outOfBoundLabels.value = { direction: OVERFLOW_LABELS_DIRECTION.LEFT, y }

@@ -1,5 +1,4 @@
-import type { Ref } from 'vue'
-import { computed } from 'vue'
+import { type Ref, computed } from 'vue'
 import type { Line } from '~/composables/useLines'
 
 const getLinearFnVariables = useMemoize((
@@ -9,7 +8,7 @@ const getLinearFnVariables = useMemoize((
     return
 
   if (x1 === x2)
-    ++x1
+    x1 += 0.1
 
   const slope = (y1 - y2) / (x1 - x2)
   const intercept = y2 - x2 * slope

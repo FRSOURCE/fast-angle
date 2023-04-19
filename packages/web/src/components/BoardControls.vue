@@ -1,19 +1,16 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import type { MaybeElement } from '@vueuse/core'
 import IconMaximize from '~icons/carbon/maximize'
 import IconMinimize from '~icons/carbon/minimize'
+import IconZoomIn from '~icons/carbon/zoom-in'
+import IconZoomOut from '~icons/carbon/zoom-out'
 import IconImageReference from '~icons/carbon/image-reference'
 import IconAngle from '~icons/carbon/angle'
 import IconUndo from '~icons/carbon/undo'
 import IconRedo from '~icons/carbon/redo'
 import IconAngleObtuse from '~icons/custom/angle-obtuse'
 
-const props = defineProps({
-  boardRef: {
-    type: Object as PropType<MaybeElement>,
-    default: undefined,
-  },
+defineProps({
   info: {
     type: Array as PropType<string[]>,
     required: true,
@@ -23,8 +20,32 @@ const props = defineProps({
 const { t } = useI18n()
 const { lines } = useLines()
 const angle = useAngle(lines)
+const { zoom, transformOrigin } = useBoardSvgPanzoom()
+const boardRef = useBoardRef()
+const boardSvgRef = useBoardSvgRef()
+const boardSvgViewBox = computed(() => {
+  const board = unrefElement(boardSvgRef)
+  if (!board)
+    return { x: 0, y: 0, width: 0, height: 0 }
+  return board.viewBox.baseVal
+})
+const updateZoomOrigin = () => {
+  transformOrigin.value = [
+    (boardSvgViewBox.value.width / 2 - (boardSvgViewBox.value.x + boardSvgViewBox.value.width / 2) / 2) * zoom.value,
+    (boardSvgViewBox.value.height / 2 - (boardSvgViewBox.value.y + boardSvgViewBox.value.height / 2) / 2) * zoom.value,
+  ]
+}
 
-const { toggle, isFullscreen, isSupported: isFullscreenSupported } = useFullscreen(toRef(props, 'boardRef'))
+const zoomIn = () => {
+  updateZoomOrigin()
+  zoom.value += 0.1
+}
+const zoomOut = () => {
+  updateZoomOrigin()
+  zoom.value -= 0.1
+}
+
+const { toggle, isFullscreen, isSupported: isFullscreenSupported } = useFullscreen(boardRef)
 const { undo, redo, canUndo, canRedo } = useLines()
 // eslint-disable-next-line vue/no-irregular-whitespace, no-irregular-whitespace
 const undoTooltip = computed(() => `${t('board.nav.undo')} [ctrl + z][⌘ + z]`)
@@ -103,6 +124,28 @@ onKeyStroke('f', toggle)
             @touchstart.prevent.stop.capture="open()"
           >
             <IconImageReference />
+          </Button>
+        </li>
+        <li class="d-none md-d-inline-block">
+          <Button
+            :disabled="!canUndo"
+            :tooltip="`${t('board.result.zoom_out')} [-]`"
+            tooltip-placement="left"
+            @click="zoomOut()"
+            @touchstart.prevent.stop.capture="zoomOut()"
+          >
+            <IconZoomOut />
+          </Button>
+        </li>
+        <li class="d-none md-d-inline-block">
+          <Button
+            :disabled="!canUndo"
+            :tooltip="`${t('board.result.zoom_in')} [+]`"
+            tooltip-placement="left"
+            @click="zoomIn()"
+            @touchstart.prevent.stop.capture="zoomIn()"
+          >
+            <IconZoomIn />
           </Button>
         </li>
         <li v-if="isFullscreenSupported">

@@ -12,16 +12,28 @@ const props = defineProps({
 const emit = defineEmits<{
   (e: 'pressed'): void
 }>()
-const pathWidth = 5
+const { width, height } = toRefs(props)
 const svgRef = useBoardSvgRef()
 const initialized = ref(false)
+const { ctrl, meta, option } = useMagicKeys()
+
+const cursorStyle = computed(() => {
+  if (meta.value)
+    return 'move'
+})
+
+const { offset: panzoomOffset, active: panzoomActive, zoom, transformOrigin } = useBoardSvgPanzoom()
+const pathWidth = computed(() => 5 / zoom.value)
+const svgSize = computed(() => ({ width: width.value / zoom.value, height: height.value / zoom.value }))
+const svgOffset = computed(() => ({ x: -panzoomOffset.value[0] / zoom.value, y: -panzoomOffset.value[1] / zoom.value }))
 
 const { elementX, elementY } = useMouseInElement(svgRef, { handleOutside: false })
+const currentPointX = computed(() => (elementX.value - panzoomOffset.value[0]) / zoom.value)
+const currentPointY = computed(() => (elementY.value - panzoomOffset.value[1]) / zoom.value)
 const { undo: elementXUndo, redo: elementXRedo } = useRefHistory(elementX)
 const { undo: elementYUndo, redo: elementYRedo } = useRefHistory(elementY)
-
-const svgSize = computed(() => ({ width: props.width, height: props.height }))
 const { lines, predictNextPoint, drawNextPoint, step, registerOnRedo, registerOnUndo } = useLines()
+
 registerOnRedo(() => {
   elementXRedo()
   elementYRedo()
@@ -30,9 +42,9 @@ registerOnUndo(() => {
   elementXUndo()
   elementYUndo()
 })
-watch([elementX, elementY] as const, ([elementX, elementY]) => {
+watch([currentPointX, currentPointY] as const, ([currentPointX, currentPointY]) => {
   if (step.value === 2)
-    predictNextPoint(elementX, elementY)
+    predictNextPoint(currentPointX, currentPointY)
 })
 
 const angle = useAngle(lines)
@@ -43,14 +55,24 @@ const line2Variables = useLinearFnVariables(segment2)
 const intersectionOffset = useLinesIntersectionPosition(line1Variables, line2Variables)
 const anglesBisectors = useAnglesBisectors(angle, intersectionOffset, line1Variables, line2Variables)
 const labels = useAnglesLabels(angle, intersectionOffset, anglesBisectors)
-const { outOfBoundLabels, setOutBoundLabels } = useOutOfBoundLabels()
+const { setOutBoundLabels } = useOutOfBoundLabels()
 
-watch([labels, svgSize] as const, ([labels, svgSize]) => {
-  setOutBoundLabels(labels, svgSize)
+watch([labels, svgSize, svgOffset] as const, ([labels, svgSize, svgOffset]) =>
+  setOutBoundLabels(labels, svgSize, svgOffset),
+)
+
+watch([width, height] as const, ([width, height], [oldWidth, oldHeight]) => {
+  transformOrigin.value = [
+    transformOrigin.value[0] + (width - oldWidth) / 2,
+    transformOrigin.value[1] + (height - oldHeight) / 2,
+  ]
 })
 
-const pressed = () => {
-  drawNextPoint(elementX.value, elementY.value)
+const pressed = (e: TouchEvent | PointerEvent | MouseEvent) => {
+  if (panzoomActive.value)
+    return
+  drawNextPoint(currentPointX.value, currentPointY.value)
+
   emit('pressed')
 }
 </script>
@@ -58,8 +80,12 @@ const pressed = () => {
 <template>
   <svg
     ref="svgRef"
-    :viewBox="`0 0 ${svgSize.width} ${svgSize.height}`"
+    :viewBox="`${svgOffset.x} ${svgOffset.y} ${svgSize.width} ${svgSize.height}`"
     :stroke-width="pathWidth"
+    tabindex="0"
+    :style="{
+      cursor: cursorStyle,
+    }"
     @touchend.prevent="pressed"
     @mouseup.prevent="pressed"
     @mousedown.once="initialized = true"
@@ -67,16 +93,14 @@ const pressed = () => {
     @touchstart.passive.once="initialized = true"
   >
     <slot />
-    <circle v-show="initialized" v-if="step % 2" :cx="`${elementX}px`" :cy="`${elementY}px`" :r="pathWidth" :stroke-width="1" />
-    <Line v-else :points="[lines[Math.floor(step / 2)][0], [elementX, elementY]]" :svg-size="svgSize" :path-width="pathWidth" />
+    <circle v-show="initialized && !ctrl && !meta && !option" v-if="step % 2" :cx="`${currentPointX}px`" :cy="`${currentPointY}px`" :r="pathWidth" :stroke-width="1" />
+    <Line v-else :points="[lines[Math.floor(step / 2)][0], [currentPointX, currentPointY]]" :svg-size="svgSize" :svg-offset="svgOffset" :path-width="pathWidth" />
 
-    <Line :points="lines[0]" :svg-size="svgSize" :path-width="pathWidth" />
-    <Line :points="lines[1]" :svg-size="svgSize" :path-width="pathWidth" />
-    <template v-if="!outOfBoundLabels">
-      <template v-for="label in labels" :key="`${label.x}|${label.y}`">
-        <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="var(--background-color-transparent)" stroke-width="5">{{ label.value.toFixed(3) }}&deg;</text>
-        <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="transparent">{{ label.value.toFixed(3) }}&deg;</text>
-      </template>
+    <Line :points="lines[0]" :svg-size="svgSize" :svg-offset="svgOffset" :path-width="pathWidth" />
+    <Line :points="lines[1]" :svg-size="svgSize" :svg-offset="svgOffset" :path-width="pathWidth" />
+    <template v-for="label in labels" :key="`${label.x}|${label.y}`">
+      <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="var(--background-color-transparent)" :stroke-width="pathWidth" :style="`font-size:${pathWidth / 5}em`">{{ label.value.toFixed(3) }}&deg;</text>
+      <text :x="label.x" :y="label.y" text-anchor="middle" dominant-baseline="middle" stroke="transparent" :style="`font-size:${pathWidth / 5}em`">{{ label.value.toFixed(3) }}&deg;</text>
     </template>
   </svg>
 </template>

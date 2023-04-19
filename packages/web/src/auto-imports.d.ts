@@ -143,6 +143,7 @@ declare global {
   const useBoardImage: typeof import('./composables/useBoardImage')['useBoardImage']
   const useBoardRef: typeof import('./composables/useBoardRef')['useBoardRef']
   const useBoardSvgDownload: typeof import('./composables/useBoardSvgDownload')['useBoardSvgDownload']
+  const useBoardSvgPanzoom: typeof import('./composables/useBoardSvgPanzoom')['useBoardSvgPanzoom']
   const useBoardSvgRef: typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']
   const useBreakpoints: typeof import('@vueuse/core')['useBreakpoints']
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
@@ -231,6 +232,7 @@ declare global {
   const useOnline: typeof import('@vueuse/core')['useOnline']
   const useOutOfBoundLabels: typeof import('./composables/useOutOfBoundLabels')['useOutOfBoundLabels']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
+  const usePanzoom: typeof import('./composables/usePanzoom')['usePanzoom']
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePixelToUnit: typeof import('./composables/usePixelToUnit')['usePixelToUnit']
@@ -462,6 +464,7 @@ declare module '@vue/runtime-core' {
     readonly useBoardImage: UnwrapRef<typeof import('./composables/useBoardImage')['useBoardImage']>
     readonly useBoardRef: UnwrapRef<typeof import('./composables/useBoardRef')['useBoardRef']>
     readonly useBoardSvgDownload: UnwrapRef<typeof import('./composables/useBoardSvgDownload')['useBoardSvgDownload']>
+    readonly useBoardSvgPanzoom: UnwrapRef<typeof import('./composables/useBoardSvgPanzoom')['useBoardSvgPanzoom']>
     readonly useBoardSvgRef: UnwrapRef<typeof import('./composables/useBoardSvgRef')['useBoardSvgRef']>
     readonly useBreakpoints: UnwrapRef<typeof import('@vueuse/core')['useBreakpoints']>
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
@@ -550,6 +553,7 @@ declare module '@vue/runtime-core' {
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
     readonly useOutOfBoundLabels: UnwrapRef<typeof import('./composables/useOutOfBoundLabels')['useOutOfBoundLabels']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
+    readonly usePanzoom: UnwrapRef<typeof import('./composables/usePanzoom')['usePanzoom']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePixelToUnit: UnwrapRef<typeof import('./composables/usePixelToUnit')['usePixelToUnit']>

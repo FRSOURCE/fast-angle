@@ -1,14 +1,19 @@
 import type { ComputedRef } from 'vue'
 import type { useLinesIntersectionPosition } from '~/composables/useLinesIntersectionPosition'
 
+interface AngleLabel {x: number; y: number; value: number}
+
 export const useAnglesLabels = (
   angle: ComputedRef<number>,
   intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>,
   anglesBisectors: ReturnType<typeof useAnglesBisectors>,
-) =>
-  computed(() => {
+) => {
+  const labels = ref<[AngleLabel, AngleLabel] | []>([])
+
+  // throttled to not recalculate on drag
+  watchThrottled([intersectionPosition, anglesBisectors, angle], () => {
     if (!intersectionPosition.value || !anglesBisectors.value || !angle.value)
-      return []
+      return labels.value = []
 
     const {
       acute: { slope: acuteSlope, intercept: acuteIntercept },
@@ -24,7 +29,7 @@ export const useAnglesLabels = (
     const obtuseAngle = 180 - acuteAngle
     const obtuseX = -Math.cos(Math.atan(obtuseSlope)) * (distance + (90 - obtuseAngle) * 0.4) + intersectionPosition.value.x
 
-    return [{
+    labels.value = [{
       x: acuteX,
       y: acuteSlope * acuteX + acuteIntercept,
       value: acuteAngle,
@@ -33,4 +38,7 @@ export const useAnglesLabels = (
       y: obtuseSlope * obtuseX + obtuseIntercept,
       value: obtuseAngle,
     }]
-  })
+  }, { throttle: 20, immediate: true })
+
+  return labels
+}
