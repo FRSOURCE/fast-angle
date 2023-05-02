@@ -34,7 +34,7 @@ importers:
       '@vueuse/gesture': 2.0.0-beta.1
       '@vueuse/head': 1.1.23
       '@vueuse/integrations': 9.3.1
-      '@vueuse/math': 9.3.1
+      '@vueuse/math': 10.1.2
       '@vueuse/router': ^9.4.0
       color-hash: 2.0.1
       critters: 0.0.16
@@ -77,7 +77,7 @@ importers:
       '@vueuse/gesture': 2.0.0-beta.1_vue@3.2.41
       '@vueuse/head': 1.1.23_vue@3.2.41
       '@vueuse/integrations': 9.3.1_pjdria5vbbxcbooins3zcfxkzy
-      '@vueuse/math': 9.3.1_vue@3.2.41
+      '@vueuse/math': 10.1.2_vue@3.2.41
       '@vueuse/router': 9.4.0_4dzfggngbcv3f6kocd3r4z3f4q
       color-hash: 2.0.1
       del-cli: 5.0.0
@@ -2068,8 +2068,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230316:
-    resolution: {integrity: sha512-XyxW0rJFcDIybN3SKObx6JvsquZ02AvfOLRjj4zRpaRuSi8+iDF6HWDdpq5kd/+sSk8juRDQ86frGXjv4rc0vA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230427:
+    resolution: {integrity: sha512-Piwa6C0cW3NJ4LbR3KY/YYm/1Npi8vIpKINbWfD8/kYPFLVRNulWEYjDgCvecStE1+4ucUKA55aPubAwTzCW/Q==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2279,7 +2279,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230316
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230427
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -2814,11 +2814,11 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/math/9.3.1_vue@3.2.41:
-    resolution: {integrity: sha512-6ojNHKlhs57NViEzTOQMAOZ0QpBxRalx4kFgIV5M+5DHAwi2AAwZpYwtI+PKKHrIvfdB3fx+pkz7pcjnh9GBDQ==}
+  /@vueuse/math/10.1.2_vue@3.2.41:
+    resolution: {integrity: sha512-cFrCEggVFoMPM6//vbE9yTBDzhzsmmUujUrXuJQoF6mntmYckBLOL1gPzWyX0tXmYUIo2bk2duDO6vuD0b9hPg==}
     dependencies:
-      '@vueuse/shared': 9.3.1_vue@3.2.41
-      vue-demi: 0.13.11_vue@3.2.41
+      '@vueuse/shared': 10.1.2_vue@3.2.41
+      vue-demi: 0.14.0_vue@3.2.41
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -2835,6 +2835,15 @@ packages:
       '@vueuse/shared': 9.4.0_vue@3.2.41
       vue-demi: 0.13.11_vue@3.2.41
       vue-router: 4.1.6_vue@3.2.41
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/shared/10.1.2_vue@3.2.41:
+    resolution: {integrity: sha512-1uoUTPBlgyscK9v6ScGeVYDDzlPSFXBlxuK7SfrDGyUTBiznb3mNceqhwvZHjtDRELZEN79V5uWPTF1VDV8svA==}
+    dependencies:
+      vue-demi: 0.14.0_vue@3.2.41
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -8491,6 +8500,21 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.41
+
+  /vue-demi/0.14.0_vue@3.2.41:
+    resolution: {integrity: sha512-gt58r2ogsNQeVoQ3EhoUAvUsH9xviydl0dWJj7dabBC/2L4uBId7ujtCwDRD0JhkGsV1i0CtfLAeyYKBht9oWg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.41
+    dev: false
 
   /vue-eslint-parser/9.0.3_eslint@8.25.0:
     resolution: {integrity: sha512-yL+ZDb+9T0ELG4VIFo/2anAOz8SvBdlqEnQnvJ3M7Scq56DvtjY0VY88bByRZB0D4J0u8olBcfrXTVONXsh4og==}

@@ -19,7 +19,7 @@
     "@vueuse/gesture": "2.0.0-beta.1",
     "@vueuse/head": "1.1.23",
     "@vueuse/integrations": "9.3.1",
-    "@vueuse/math": "9.3.1",
+    "@vueuse/math": "10.1.2",
     "@vueuse/router": "^9.4.0",
     "color-hash": "2.0.1",
     "del-cli": "^5.0.0",
