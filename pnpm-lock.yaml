@@ -30,7 +30,7 @@ importers:
       '@types/markdown-it-link-attributes': ^3.0.1
       '@vitejs/plugin-vue': 3.1.2
       '@vue/test-utils': 2.1.0
-      '@vueuse/core': 9.3.1
+      '@vueuse/core': 10.1.2
       '@vueuse/gesture': 2.0.0-beta.1
       '@vueuse/head': 1.1.23
       '@vueuse/integrations': 9.3.1
@@ -73,7 +73,7 @@ importers:
     dependencies:
       '@panzoom/panzoom': 4.5.1
       '@picocss/pico': 1.5.6
-      '@vueuse/core': 9.3.1_vue@3.2.41
+      '@vueuse/core': 10.1.2_vue@3.2.41
       '@vueuse/gesture': 2.0.0-beta.1_vue@3.2.41
       '@vueuse/head': 1.1.23_vue@3.2.41
       '@vueuse/integrations': 9.3.1_pjdria5vbbxcbooins3zcfxkzy
@@ -109,7 +109,7 @@ importers:
       shiki: 0.11.1
       type-fest: 3.1.0
       typescript: 4.8.4
-      unplugin-auto-import: 0.11.2_@vueuse+core@9.3.1
+      unplugin-auto-import: 0.11.2_@vueuse+core@10.1.2
       unplugin-icons: 0.14.12
       unplugin-vue-components: 0.22.8_vue@3.2.41
       vite: 3.1.8_sass@1.55.0
@@ -2068,8 +2068,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230316:
-    resolution: {integrity: sha512-XyxW0rJFcDIybN3SKObx6JvsquZ02AvfOLRjj4zRpaRuSi8+iDF6HWDdpq5kd/+sSk8juRDQ86frGXjv4rc0vA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230427:
+    resolution: {integrity: sha512-Piwa6C0cW3NJ4LbR3KY/YYm/1Npi8vIpKINbWfD8/kYPFLVRNulWEYjDgCvecStE1+4ucUKA55aPubAwTzCW/Q==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2279,7 +2279,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230316
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230427
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -2436,6 +2436,10 @@ packages:
 
   /@types/web-bluetooth/0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
+    dev: false
+
+  /@types/web-bluetooth/0.0.17:
+    resolution: {integrity: sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==}
 
   /@typescript-eslint/eslint-plugin/5.38.0_pb5gbpy3f5fbacjzut73wcd3o4:
     resolution: {integrity: sha512-GgHi/GNuUbTOeoJiEANi0oI6fF3gBQc3bGFYj40nnAPCbhrtEDf2rjBmefFadweBmO1Du1YovHeDP2h5JLhtTQ==}
@@ -2732,6 +2736,17 @@ packages:
       vue: 3.2.41
     dev: true
 
+  /@vueuse/core/10.1.2_vue@3.2.41:
+    resolution: {integrity: sha512-roNn8WuerI56A5uiTyF/TEYX0Y+VKlhZAF94unUfdhbDUI+NfwQMn4FUnUscIRUhv3344qvAghopU4bzLPNFlA==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.17
+      '@vueuse/metadata': 10.1.2
+      '@vueuse/shared': 10.1.2_vue@3.2.41
+      vue-demi: 0.14.0_vue@3.2.41
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
   /@vueuse/core/9.3.1_vue@3.2.41:
     resolution: {integrity: sha512-xriyD+v3D2ObH/UtnkEl+1sbcLBVHNaZaLi/rqoNEe/B92hggDEFQIGXoQUjdRzYOjASHSezf9uCDtmd7LeWyA==}
     dependencies:
@@ -2742,6 +2757,7 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
 
   /@vueuse/gesture/2.0.0-beta.1_vue@3.2.41:
     resolution: {integrity: sha512-HTLibLy3bh6TjRnDAbMAvHSsEmrkRituMj2x+mHwmp1EnM8A8CDRTfNJEr8d/hIairnPPp5Va2KWYVmyP/zvkA==}
@@ -2824,8 +2840,12 @@ packages:
       - vue
     dev: false
 
+  /@vueuse/metadata/10.1.2:
+    resolution: {integrity: sha512-3mc5BqN9aU2SqBeBuWE7ne4OtXHoHKggNgxZR2K+zIW4YLsy6xoZ4/9vErQs6tvoKDX6QAqm3lvsrv0mczAwIQ==}
+
   /@vueuse/metadata/9.3.1:
     resolution: {integrity: sha512-G1BPhtx3OHaL/y4OZBofh6Xt02G1VA9PuOO8nac9sTKMkMqfyez5VfkF3D9GUjSRNO7cVWyH4rceeGXfr2wdMg==}
+    dev: false
 
   /@vueuse/router/9.4.0_4dzfggngbcv3f6kocd3r4z3f4q:
     resolution: {integrity: sha512-nq7FJMDucngIxvvBvkdg8mgzqhyX9YnptOZozh5oVfbR3ZPVy/9U8VyDEt4CUsxs2Xwg4taA2PaO9xPsgkyruQ==}
@@ -2840,6 +2860,14 @@ packages:
       - vue
     dev: false
 
+  /@vueuse/shared/10.1.2_vue@3.2.41:
+    resolution: {integrity: sha512-1uoUTPBlgyscK9v6ScGeVYDDzlPSFXBlxuK7SfrDGyUTBiznb3mNceqhwvZHjtDRELZEN79V5uWPTF1VDV8svA==}
+    dependencies:
+      vue-demi: 0.14.0_vue@3.2.41
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
   /@vueuse/shared/9.3.1_vue@3.2.41:
     resolution: {integrity: sha512-YFu3qcnVeu0S2L4XdQJtBpDcjz6xwqHZtTv/XRhu66/yge1XVhxskUcc7VZbX52xF9A34V6KCfwncP9YDqYFiw==}
     dependencies:
@@ -2847,6 +2875,7 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
 
   /@vueuse/shared/9.4.0_vue@3.2.41:
     resolution: {integrity: sha512-fTuem51KwMCnqUKkI8B57qAIMcFovtGgsCtAeqxIzH3i6nE9VYge+gVfneNHAAy7lj8twbkNfqQSygOPJTm4tQ==}
@@ -8112,7 +8141,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin-auto-import/0.11.2_@vueuse+core@9.3.1:
+  /unplugin-auto-import/0.11.2_@vueuse+core@10.1.2:
     resolution: {integrity: sha512-1+VwBfn9dtiYv9SQLKP1AvZolUbK9xTVeAT+iOcEk4EHSFUlmIqBVLEKI76cifSQTLOJ3rZyPrEgptf3SZNLlQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -8123,7 +8152,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.2
       '@rollup/pluginutils': 4.2.1
-      '@vueuse/core': 9.3.1_vue@3.2.41
+      '@vueuse/core': 10.1.2_vue@3.2.41
       local-pkg: 0.4.2
       magic-string: 0.26.6
       unimport: 0.6.7
@@ -8480,6 +8509,21 @@ packages:
 
   /vue-demi/0.13.11_vue@3.2.41:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.41
+    dev: false
+
+  /vue-demi/0.14.0_vue@3.2.41:
+    resolution: {integrity: sha512-gt58r2ogsNQeVoQ3EhoUAvUsH9xviydl0dWJj7dabBC/2L4uBId7ujtCwDRD0JhkGsV1i0CtfLAeyYKBht9oWg==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
