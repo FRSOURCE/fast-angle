@@ -28,7 +28,7 @@ importers:
       '@types/color-hash': ^1.0.2
       '@types/lodash-es': ^4.17.6
       '@types/markdown-it-link-attributes': ^3.0.1
-      '@vitejs/plugin-vue': 3.1.2
+      '@vitejs/plugin-vue': 4.2.3
       '@vue/test-utils': 2.1.0
       '@vueuse/core': 9.3.1
       '@vueuse/gesture': 2.0.0-beta.1
@@ -96,7 +96,7 @@ importers:
       '@types/color-hash': 1.0.2
       '@types/lodash-es': 4.17.6
       '@types/markdown-it-link-attributes': 3.0.1
-      '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
+      '@vitejs/plugin-vue': 4.2.3_vite@3.1.8+vue@3.2.41
       '@vue/test-utils': 2.1.0_vue@3.2.41
       critters: 0.0.16
       cross-env: 7.0.3
@@ -2068,8 +2068,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230316:
-    resolution: {integrity: sha512-XyxW0rJFcDIybN3SKObx6JvsquZ02AvfOLRjj4zRpaRuSi8+iDF6HWDdpq5kd/+sSk8juRDQ86frGXjv4rc0vA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230511:
+    resolution: {integrity: sha512-hY+eurkgtz/7JtWHqr3Z7/Vz5cL3vqlkJhwNUd4pQ6/ZYJ9blrbSPdiAg5Q1xB0u2mt78b1iilyT6v0hFSn67Q==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2279,7 +2279,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230316
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230511
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -2597,11 +2597,11 @@ packages:
       unhead: 1.1.23
       vue: 3.2.41
 
-  /@vitejs/plugin-vue/3.1.2_vite@3.1.8+vue@3.2.41:
-    resolution: {integrity: sha512-3zxKNlvA3oNaKDYX0NBclgxTQ1xaFdL7PzwF6zj9tGFziKwmBa3Q/6XcJQxudlT81WxDjEhHmevvIC4Orc1LhQ==}
+  /@vitejs/plugin-vue/4.2.3_vite@3.1.8+vue@3.2.41:
+    resolution: {integrity: sha512-R6JDUfiZbJA9cMiguQ7jxALsgiprjBeHL5ikpXfJCH62pPHtI+JdJ5xWj6Ev73yXSlYl86+blXn1kZHQ7uElxw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
       vite: 3.1.8_sass@1.55.0
