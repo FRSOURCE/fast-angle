@@ -47,7 +47,7 @@ importers:
       markdown-it-link-attributes: 4.0.1
       markdown-it-shiki: 0.5.1
       panzoom: ^9.4.3
-      pnpm: 7.13.5
+      pnpm: 8.5.1
       sass: 1.55.0
       shiki: 0.11.1
       svg-pan-zoom: ^3.6.1
@@ -104,7 +104,7 @@ importers:
       incstr: 1.2.3
       markdown-it-link-attributes: 4.0.1
       markdown-it-shiki: 0.5.1
-      pnpm: 7.13.5
+      pnpm: 8.5.1
       sass: 1.55.0
       shiki: 0.11.1
       type-fest: 3.1.0
@@ -2068,8 +2068,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230316:
-    resolution: {integrity: sha512-XyxW0rJFcDIybN3SKObx6JvsquZ02AvfOLRjj4zRpaRuSi8+iDF6HWDdpq5kd/+sSk8juRDQ86frGXjv4rc0vA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230511:
+    resolution: {integrity: sha512-hY+eurkgtz/7JtWHqr3Z7/Vz5cL3vqlkJhwNUd4pQ6/ZYJ9blrbSPdiAg5Q1xB0u2mt78b1iilyT6v0hFSn67Q==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2279,7 +2279,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230316
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230511
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -6923,9 +6923,9 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: true
 
-  /pnpm/7.13.5:
-    resolution: {integrity: sha512-7+xyYPunBiAAJclpmUU2CTqe7uHipDjguUF2qmd9+r8hfZEVj0TnMTfblPnRF9aiVsmE4X3zRPlY3A5zk7r73w==}
-    engines: {node: '>=14.6'}
+  /pnpm/8.5.1:
+    resolution: {integrity: sha512-W6elL7Nww0a/MCICkzpkbxW6f99TQuX4DuJoDjWp39X08PKDkEpg4cgj3d6EtgYADcdQWl/eM8NdlLJVE3RgpA==}
+    engines: {node: '>=16.14'}
     hasBin: true
     dev: true
 
