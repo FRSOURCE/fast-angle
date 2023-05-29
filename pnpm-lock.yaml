@@ -21,7 +21,7 @@ importers:
   packages/web:
     specifiers:
       '@frsource/frs-replace': ^4.0.0
-      '@iconify-json/carbon': 1.1.16
+      '@iconify-json/carbon': 1.1.17
       '@intlify/vite-plugin-vue-i18n': 6.0.3
       '@panzoom/panzoom': ^4.5.1
       '@picocss/pico': 1.5.10
@@ -91,7 +91,7 @@ importers:
       vue-router: 4.1.6_vue@3.2.41
     devDependencies:
       '@frsource/frs-replace': 4.0.0
-      '@iconify-json/carbon': 1.1.16
+      '@iconify-json/carbon': 1.1.17
       '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@3.1.8+vue-i18n@9.2.2
       '@types/color-hash': 1.0.2
       '@types/lodash-es': 4.17.6
@@ -1517,8 +1517,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/carbon/1.1.16:
-    resolution: {integrity: sha512-AD8bcnRSGA0WfcGEass2FbA0sagrUzrpFx5WchuDy3uf7yKBWumdypdQK121DH321fQDl5+zZQ26T6gC9knwUQ==}
+  /@iconify-json/carbon/1.1.17:
+    resolution: {integrity: sha512-FJCHUNP+iEGZILqu5YjByV+RBrWCsMo7YWXBJSpRMvaeVH3yjK3TI8UIc7lmPGI1NRmjThiaqjxMqe7CgQY55Q==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
