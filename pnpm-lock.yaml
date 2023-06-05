@@ -37,7 +37,7 @@ importers:
       '@vueuse/math': 9.3.1
       '@vueuse/router': ^9.4.0
       color-hash: 2.0.2
-      critters: 0.0.17
+      critters: 0.0.18
       cross-env: 7.0.3
       del-cli: ^5.0.0
       focus-trap: 7.0.0
@@ -98,7 +98,7 @@ importers:
       '@types/markdown-it-link-attributes': 3.0.1
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
       '@vue/test-utils': 2.1.0_vue@3.2.41
-      critters: 0.0.17
+      critters: 0.0.18
       cross-env: 7.0.3
       https-localhost: 4.7.1
       incstr: 1.2.3
@@ -118,7 +118,7 @@ importers:
       vite-plugin-pwa: 0.13.1_vite@3.1.8
       vite-plugin-vue-layouts: 0.7.0_ecdnvyvwgikoc66bazlhpeez6y
       vite-plugin-vue-markdown: 0.22.1_vite@3.1.8
-      vite-ssg: 0.21.2_e5l7gvz5i76u4zlaghviturhv4
+      vite-ssg: 0.21.2_zwtyppag4quseslqusdncakgvi
       vite-ssg-sitemap: 0.4.3
       vitest: 0.31.1_sass@1.55.0
       vue-tsc: 1.0.8_typescript@4.8.4
@@ -1552,8 +1552,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.17
-      '@intlify/shared': 9.3.0-beta.17
+      '@intlify/message-compiler': 9.3.0-beta.19
+      '@intlify/shared': 9.3.0-beta.19
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.2.2_vue@3.2.41
@@ -1582,11 +1582,11 @@ packages:
       '@intlify/shared': 9.2.2
       source-map: 0.6.1
 
-  /@intlify/message-compiler/9.3.0-beta.17:
-    resolution: {integrity: sha512-i7hvVIRk1Ax2uKa9xLRJCT57to08OhFMhFXXjWN07rmx5pWQYQ23MfX1xgggv9drnWTNhqEiD+u4EJeHoS5+Ww==}
-    engines: {node: '>= 14'}
+  /@intlify/message-compiler/9.3.0-beta.19:
+    resolution: {integrity: sha512-5RBn5tMOsWh5FqM65IfEJvfpRS8R0lHEUVNDa2rNc9Y7oGEI7swezlbFqU9Kc5FyHy5Kx2jHtdgFIipDwnIYFQ==}
+    engines: {node: '>= 16'}
     dependencies:
-      '@intlify/shared': 9.3.0-beta.17
+      '@intlify/shared': 9.3.0-beta.19
       source-map: 0.6.1
     dev: true
 
@@ -1594,9 +1594,9 @@ packages:
     resolution: {integrity: sha512-wRwTpsslgZS5HNyM7uDQYZtxnbI12aGiBZURX3BTR9RFIKKRWpllTsgzHWvj3HKm3Y2Sh5LPC1r0PDCKEhVn9Q==}
     engines: {node: '>= 14'}
 
-  /@intlify/shared/9.3.0-beta.17:
-    resolution: {integrity: sha512-mscf7RQsUTOil35jTij4KGW1RC9SWQjYScwLxP53Ns6g24iEd5HN7ksbt9O6FvTmlQuX77u+MXpBdfJsGqizLQ==}
-    engines: {node: '>= 14'}
+  /@intlify/shared/9.3.0-beta.19:
+    resolution: {integrity: sha512-+lhQggrLvlQ/O5OmIYAc9gadcYXMoaDi0Doef+X/f6TLZFr9PTMjOpBWmpwNNHi026e54jckntUn6GzqDtIN4w==}
+    engines: {node: '>= 16'}
     dev: true
 
   /@intlify/vite-plugin-vue-i18n/6.0.3_vite@3.1.8+vue-i18n@9.2.2:
@@ -1615,7 +1615,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1_vue-i18n@9.2.2
-      '@intlify/shared': 9.3.0-beta.17
+      '@intlify/shared': 9.3.0-beta.19
       '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
       fast-glob: 3.2.12
@@ -2072,8 +2072,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230525:
-    resolution: {integrity: sha512-wrsm8Hl9j+85esdPZbqFP5IgeoZ27AkPKziGxfyNuM8ra0BGEr1FOHX8b4RDVdKqWBYKTD94/yFy7a19ID4f8A==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230601:
+    resolution: {integrity: sha512-Rgxj7SJw7zANIlhvDfugmmAnnW81cxOY2uDvwm/n1QlSeT2pSbe7c98lmg5WRm/rHZhd5yJ2Ber/YkHd9p0Lzw==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery': 1.0.8
@@ -2301,7 +2301,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230525
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230601
     dev: true
 
   /@types/gapi.client.discovery/1.0.8:
@@ -3494,11 +3494,6 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /chalk/5.2.0:
-    resolution: {integrity: sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==}
-    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-    dev: true
-
   /character-entities-legacy/1.1.4:
     resolution: {integrity: sha512-3Xnr+7ZFS1uxeiUDvV02wQ+QDbc55o97tIV5zHScSPJpcLm/r0DFPcoY3tYRp+VZukxuMeKgXYmsXQHO05zQeA==}
     dev: true
@@ -3764,16 +3759,16 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /critters/0.0.17:
-    resolution: {integrity: sha512-FddWL3bp0EiIu/Va4Rl1lPj11LurnG0UI/cNWoFaenpqs/BpGN3UhSbXd6iNvgg154FP/q4ni8SLW3x2S6WhGg==}
+  /critters/0.0.18:
+    resolution: {integrity: sha512-I7t/da29EIWXgxx2RSW1md1DvenEgEuLlki6nHE5+Nc0e3eib5AuGIGbPVuI8q+erCKkSP9T/NqYfvasAy7x7A==}
     dependencies:
-      chalk: 5.2.0
+      chalk: 4.1.2
       css-select: 5.1.0
       dom-serializer: 2.0.0
       domhandler: 5.0.3
       htmlparser2: 8.0.2
       postcss: 8.4.24
-      pretty-bytes: 6.1.0
+      pretty-bytes: 5.6.0
     dev: true
 
   /cross-env/7.0.3:
@@ -7261,11 +7256,6 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: true
 
-  /pretty-bytes/6.1.0:
-    resolution: {integrity: sha512-Rk753HI8f4uivXi4ZCIYdhmG1V+WKzvRMg/X+M42a6t7D07RcmopXJMDNk6N++7Bl75URRGsb40ruvg7Hcp2wQ==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-    dev: true
-
   /pretty-format/27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -8735,7 +8725,7 @@ packages:
     resolution: {integrity: sha512-9ZIRBRCgM1Q4RtXXEBHIu8gotbx9LCnHZOZXtdSzR0DnjN9H5IYGY3yGoxI6VX8dScXiluxOODFlNlr7ydyI9A==}
     dev: true
 
-  /vite-ssg/0.21.2_e5l7gvz5i76u4zlaghviturhv4:
+  /vite-ssg/0.21.2_zwtyppag4quseslqusdncakgvi:
     resolution: {integrity: sha512-srcxakrqBaubPr6KuhMmkmrdm1Ye1zIClWOpV3TSk4viyy0QymZWwfPAPXjCwjzmPDY/QVHTffuMTNjoM4xkbA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -8752,7 +8742,7 @@ packages:
         optional: true
     dependencies:
       '@vueuse/head': 1.1.26_vue@3.2.41
-      critters: 0.0.17
+      critters: 0.0.18
       fs-extra: 10.1.0
       html-minifier: 4.0.0
       html5parser: 2.0.2
