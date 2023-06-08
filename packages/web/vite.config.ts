@@ -195,6 +195,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['*.svg', '*.png'],
       manifest: {
+        id: '/fast-angle/',
         name: 'Fast Angle',
         short_name: 'Fast Angle',
         description: 'Simple online protractor - measure any angle directly on your image!',
@@ -202,7 +203,7 @@ export default defineConfig({
         background_color: '#11191f',
         orientation: 'natural',
         display: 'standalone',
-        display_override: ['standalone', 'fullscreen', 'minimal-ui', 'browser'],
+        display_override: ['window-controls-overlay', 'standalone', 'fullscreen', 'minimal-ui', 'browser'],
         shortcuts: [],
         screenshots: [
           {
@@ -244,6 +245,15 @@ export default defineConfig({
           },
         ],
         categories: ['graphics', 'utilities'],
+        // @ts-expect-error VitePWA is missing some properties in their typings
+        dir: 'auto',
+        launch_handler: {
+          client_mode: ['navigate-existing', 'auto'],
+        },
+        handle_links: 'auto',
+        edge_side_panel: {
+          preferred_width: 400,
+        },
       },
     }),
 

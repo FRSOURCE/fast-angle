@@ -60,7 +60,7 @@ watch(angle, (angle) => {
 const obtuseAngle = computed(() => acuteAngle.value ? 180 - acuteAngle.value : undefined)
 
 const { processFiles } = useBoardImage()
-const { files, open } = useFileDialog({ multiple: false, accept: 'image/*' })
+const { files, open: openUploadDialog } = useFileDialog({ multiple: false, accept: 'image/*' })
 whenever(files, (files) => {
   processFiles(Array.from(files))
 })
@@ -120,8 +120,8 @@ onKeyStroke('f', toggle)
           <Button
             :tooltip="t('board.nav.upload_file')"
             tooltip-placement="left"
-            @click="open()"
-            @touchstart.prevent.stop.capture="open()"
+            @click="openUploadDialog()"
+            @touchstart.stop.capture
           >
             <IconImageReference />
           </Button>
