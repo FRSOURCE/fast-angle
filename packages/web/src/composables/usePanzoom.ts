@@ -31,10 +31,10 @@ export function usePanzoom(elementRef: MaybeElementRef, options?: MaybeComputedR
     return zoomValue
   }
 
-  const updateActiveState = ({ wheeling, dragging, pinching, intentional, enabled, touches, ctrlKey, event }: { wheeling: boolean; dragging: boolean; pinching: boolean; intentional: boolean; enabled: boolean; touches: number; ctrlKey: boolean; event: PointerEvent }) => {
+  const updateActiveState = ({ wheeling, dragging, pinching, intentional, enabled, touches, ctrlKey, event }: { wheeling: boolean; dragging: boolean; pinching: boolean; intentional: boolean; enabled: boolean; touches: number; ctrlKey: boolean; event: PointerEvent | WheelEvent | TouchEvent }) => {
     const nextActiveValue = !enabled || !intentional
       ? false
-      : (dragging && (touches === 2 || event.pointerType === 'mouse')) || pinching || (wheeling && !ctrlKey)
+      : (dragging && (touches === 2 || ('pointerType' in event && event.pointerType === 'mouse'))) || pinching || (wheeling && !ctrlKey)
 
     if (active.value)
       requestAnimationFrame(() => active.value = nextActiveValue)
@@ -44,8 +44,8 @@ export function usePanzoom(elementRef: MaybeElementRef, options?: MaybeComputedR
     return nextActiveValue
   }
 
-  useDrag(({ wheeling, dragging, pinching, touches, intentional, delta, metaKey, ctrlKey, altKey, event }) => {
-    if (!updateActiveState({ wheeling, dragging, pinching, intentional, enabled: enabled.value, metaKey, ctrlKey, altKey, touches, event }))
+  useDrag(({ wheeling, dragging, pinching, touches, intentional, delta, ctrlKey, event }) => {
+    if (!updateActiveState({ wheeling, dragging, pinching, intentional, enabled: enabled.value, ctrlKey, touches, event }))
       return
 
     offset.value[0] += delta[0]
@@ -55,8 +55,8 @@ export function usePanzoom(elementRef: MaybeElementRef, options?: MaybeComputedR
     filterTaps: true,
   })
 
-  useWheel(({ event, delta, wheeling, dragging, pinching, touches, intentional, metaKey, ctrlKey, altKey }) => {
-    if (!updateActiveState({ dragging, pinching, wheeling, intentional, enabled: enabled.value, touches, metaKey, ctrlKey, altKey, event }))
+  useWheel(({ event, delta, wheeling, dragging, pinching, touches, intentional, ctrlKey }) => {
+    if (!updateActiveState({ dragging, pinching, wheeling, intentional, enabled: enabled.value, touches, ctrlKey, event }))
       return
 
     event.preventDefault()
@@ -70,8 +70,8 @@ export function usePanzoom(elementRef: MaybeElementRef, options?: MaybeComputedR
     },
   })
 
-  usePinch(({ offset: [zoomValue], origin: originValue, pinching, dragging, wheeling, metaKey, ctrlKey, altKey, touches, intentional, event }) => {
-    if (!updateActiveState({ dragging, pinching, wheeling, intentional, enabled: enabled.value, touches, metaKey, altKey, ctrlKey, event }))
+  usePinch(({ offset: [zoomValue], origin: originValue, pinching, dragging, wheeling, ctrlKey, touches, intentional, event }) => {
+    if (!updateActiveState({ dragging, pinching, wheeling, intentional, enabled: enabled.value, touches, ctrlKey, event }))
       return
 
     const oldZoomValue = zoom.value
