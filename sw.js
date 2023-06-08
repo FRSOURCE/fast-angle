@@ -1,1 +1,192 @@
-if(!self.define){let e,s={};const i=(i,r)=>(i=new URL(i+".js",r).href,s[i]||new Promise((s=>{if("document"in self){const e=document.createElement("script");e.src=i,e.onload=s,document.head.appendChild(e)}else e=i,importScripts(i),s()})).then((()=>{let e=s[i];if(!e)throw new Error(`Module ${i} didn’t register its module`);return e})));self.define=(r,l)=>{const n=e||("document"in self?document.currentScript.src:"")||location.href;if(s[n])return;let c={};const d=e=>i(e,n),a={module:{uri:n},exports:c,require:d};s[n]=Promise.all(r.map((e=>a[e]||d(e)))).then((e=>(l(...e),c)))}}define(["./workbox-9af8cc0a"],(function(e){"use strict";self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"404.html",revision:"e6c9062fd527cf3d30cfcb48e03aa673"},{url:"assets/_...all_.6a61a61b.js",revision:null},{url:"assets/app.33c61873.js",revision:null},{url:"assets/centered.5292110f.js",revision:null},{url:"assets/centered.7e85bd20.css",revision:null},{url:"assets/index.c266d42a.css",revision:null},{url:"assets/index.e5d2e57c.js",revision:null},{url:"assets/index.f8b96e8c.css",revision:null},{url:"assets/privacy-policy.67515085.css",revision:null},{url:"assets/privacy-policy.fcef9a58.js",revision:null},{url:"assets/terms.09568f49.js",revision:null},{url:"assets/terms.7d73e925.css",revision:null},{url:"assets/virtual_pwa-register.54433313.js",revision:null},{url:"assets/workbox-window.prod.es5.298879d7.js",revision:null},{url:"de.html",revision:"646f8a4b7668093de7ebf4323b7ecd06"},{url:"de/privacy-policy.html",revision:"f34f0af9c650bb583a87fdc1dd410d73"},{url:"de/terms.html",revision:"d6bd2bc63ebec1205812c00ead9a2d91"},{url:"en.html",revision:"410760aaed3df49f7d1954ce2204d409"},{url:"en/privacy-policy.html",revision:"b34cf20a0ff60e3f09c3b84da2b333b8"},{url:"en/terms.html",revision:"bd93244c14ee9c3cf1597c280d6ccde7"},{url:"index.html",revision:"c809f70b67e7d5a79ec0dee27d103c56"},{url:"pl.html",revision:"58088db646874e3fbda166643e8fccd8"},{url:"pl/privacy-policy.html",revision:"8104d44df8b013d39ca74b4b587a70ef"},{url:"pl/terms.html",revision:"970dcbeaa0505bf02e73a704d895c76b"},{url:"favicon-dark.svg",revision:"98cd02853d9e8386612b5fbd7f9eb630"},{url:"favicon.svg",revision:"e476a8de9eefda3467f128aed07c007d"},{url:"pwa-192x192.png",revision:"307aeecc8a6cf708adcbd0b21274b92f"},{url:"pwa-512x512.png",revision:"50c3254ba3466da79827fcceb4807241"},{url:"pwa-maskable-512x512.png",revision:"5123dacbec6173fc269500f01c0834a8"},{url:"pwa-monochrome-192x192.png",revision:"47c8c3bba4d5b3cc780c268659f6a3fc"},{url:"safari-pinned-tab.svg",revision:"037dc7a68e4764080ef4d13890a13140"},{url:"manifest.webmanifest",revision:"d0f4bd53a92b341482d7df7532e786a7"}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("index.html")))}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  let registry = {};
+
+  // Used for `eval` and `importScripts` where we can't get script URL by other means.
+  // In both cases, it's safe to use a global var because those functions are synchronous.
+  let nextDefineUri;
+
+  const singleRequire = (uri, parentUri) => {
+    uri = new URL(uri + ".js", parentUri).href;
+    return registry[uri] || (
+      
+        new Promise(resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = uri;
+            script.onload = resolve;
+            document.head.appendChild(script);
+          } else {
+            nextDefineUri = uri;
+            importScripts(uri);
+            resolve();
+          }
+        })
+      
+      .then(() => {
+        let promise = registry[uri];
+        if (!promise) {
+          throw new Error(`Module ${uri} didn’t register its module`);
+        }
+        return promise;
+      })
+    );
+  };
+
+  self.define = (depsNames, factory) => {
+    const uri = nextDefineUri || ("document" in self ? document.currentScript.src : "") || location.href;
+    if (registry[uri]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    let exports = {};
+    const require = depUri => singleRequire(depUri, uri);
+    const specialDeps = {
+      module: { uri },
+      exports,
+      require
+    };
+    registry[uri] = Promise.all(depsNames.map(
+      depName => specialDeps[depName] || require(depName)
+    )).then(deps => {
+      factory(...deps);
+      return exports;
+    });
+  };
+}
+define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
+
+  /**
+  * Welcome to your Workbox-powered service worker!
+  *
+  * You'll need to register this file in your web app.
+  * See https://goo.gl/nhQhGp
+  *
+  * The rest of the code is auto-generated. Please don't update this file
+  * directly; instead, make changes to your Workbox build configuration
+  * and re-run your build process.
+  * See https://goo.gl/2aRDsh
+  */
+
+  self.skipWaiting();
+  workbox.clientsClaim();
+  /**
+   * The precacheAndRoute() method efficiently caches and responds to
+   * requests for URLs in the manifest.
+   * See https://goo.gl/S9QRab
+   */
+
+  workbox.precacheAndRoute([{
+    "url": "404.html",
+    "revision": "39499b680f6a0c44b8462074f5e5e3a1"
+  }, {
+    "url": "assets/_...all_-f0314962.js",
+    "revision": null
+  }, {
+    "url": "assets/app-f292bcab.js",
+    "revision": null
+  }, {
+    "url": "assets/centered-4a179916.css",
+    "revision": null
+  }, {
+    "url": "assets/centered-bb20475a.js",
+    "revision": null
+  }, {
+    "url": "assets/index-aef8a8b5.js",
+    "revision": null
+  }, {
+    "url": "assets/index-d210702b.css",
+    "revision": null
+  }, {
+    "url": "assets/index-e0391102.css",
+    "revision": null
+  }, {
+    "url": "assets/privacy-policy-4e512381.css",
+    "revision": null
+  }, {
+    "url": "assets/privacy-policy-e5eab4b1.js",
+    "revision": null
+  }, {
+    "url": "assets/terms-25ad673c.js",
+    "revision": null
+  }, {
+    "url": "assets/terms-335f0e5d.css",
+    "revision": null
+  }, {
+    "url": "assets/virtual_pwa-register-53c13262.js",
+    "revision": null
+  }, {
+    "url": "assets/workbox-window.prod.es5-a7b12eab.js",
+    "revision": null
+  }, {
+    "url": "de.html",
+    "revision": "b9b8b14c8da2f81fad9612e48ee02c39"
+  }, {
+    "url": "de/privacy-policy.html",
+    "revision": "1d43d230797507609396b5fc0ebec6ec"
+  }, {
+    "url": "de/terms.html",
+    "revision": "eed59fb345b55b078b8fb081e97503b8"
+  }, {
+    "url": "en.html",
+    "revision": "6cb2216842e9c1759142185858002124"
+  }, {
+    "url": "en/privacy-policy.html",
+    "revision": "b5e81730a1e0a90dfc941058e79b2e3a"
+  }, {
+    "url": "en/terms.html",
+    "revision": "1d064723462ec891b56b4395f5ac3022"
+  }, {
+    "url": "index.html",
+    "revision": "8b714e861bc66c63b055ce534a0b503a"
+  }, {
+    "url": "pl.html",
+    "revision": "9bd6559afe928243d3bc62193f6a2796"
+  }, {
+    "url": "pl/privacy-policy.html",
+    "revision": "52a2a48a06f8faa19a422fc7416cbaab"
+  }, {
+    "url": "pl/terms.html",
+    "revision": "7375e8e64d3c390a259ea7407324e1d6"
+  }, {
+    "url": "favicon-dark.svg",
+    "revision": "98cd02853d9e8386612b5fbd7f9eb630"
+  }, {
+    "url": "favicon.svg",
+    "revision": "e476a8de9eefda3467f128aed07c007d"
+  }, {
+    "url": "pwa-192x192.png",
+    "revision": "307aeecc8a6cf708adcbd0b21274b92f"
+  }, {
+    "url": "pwa-512x512.png",
+    "revision": "50c3254ba3466da79827fcceb4807241"
+  }, {
+    "url": "pwa-maskable-512x512.png",
+    "revision": "5123dacbec6173fc269500f01c0834a8"
+  }, {
+    "url": "pwa-monochrome-192x192.png",
+    "revision": "47c8c3bba4d5b3cc780c268659f6a3fc"
+  }, {
+    "url": "safari-pinned-tab.svg",
+    "revision": "037dc7a68e4764080ef4d13890a13140"
+  }, {
+    "url": "manifest.webmanifest",
+    "revision": "d0f4bd53a92b341482d7df7532e786a7"
+  }], {});
+  workbox.cleanupOutdatedCaches();
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html")));
+
+}));
