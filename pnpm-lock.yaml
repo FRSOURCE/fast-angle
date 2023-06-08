@@ -28,7 +28,7 @@ importers:
       '@types/color-hash': ^1.0.2
       '@types/lodash-es': ^4.17.6
       '@types/markdown-it-link-attributes': ^3.0.1
-      '@vitejs/plugin-vue': 3.2.0
+      '@vitejs/plugin-vue': 4.2.3
       '@vue/test-utils': 2.3.2
       '@vueuse/core': 9.13.0
       '@vueuse/gesture': 2.0.0-beta.1
@@ -96,7 +96,7 @@ importers:
       '@types/color-hash': 1.0.2
       '@types/lodash-es': 4.17.6
       '@types/markdown-it-link-attributes': 3.0.1
-      '@vitejs/plugin-vue': 3.2.0_vite@4.3.9+vue@3.3.4
+      '@vitejs/plugin-vue': 4.2.3_vite@4.3.9+vue@3.3.4
       '@vue/test-utils': 2.3.2_vue@3.3.4
       critters: 0.0.18
       cross-env: 7.0.3
@@ -2836,11 +2836,11 @@ packages:
       unhead: 1.1.27
       vue: 3.3.4
 
-  /@vitejs/plugin-vue/3.2.0_vite@4.3.9+vue@3.3.4:
-    resolution: {integrity: sha512-E0tnaL4fr+qkdCNxJ+Xd0yM31UwMkQje76fsDVBBUCoGOUPexu2VDUYHL8P4CwV+zMvWw6nlRw19OnRKmYAJpw==}
+  /@vitejs/plugin-vue/4.2.3_vite@4.3.9+vue@3.3.4:
+    resolution: {integrity: sha512-R6JDUfiZbJA9cMiguQ7jxALsgiprjBeHL5ikpXfJCH62pPHtI+JdJ5xWj6Ev73yXSlYl86+blXn1kZHQ7uElxw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
       vite: 4.3.9_sass@1.63.2
