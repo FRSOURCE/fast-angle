@@ -142,7 +142,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "eed59fb345b55b078b8fb081e97503b8"
   }, {
     "url": "en.html",
-    "revision": "6cb2216842e9c1759142185858002124"
+    "revision": "b6e47bc90256cd9ce05ea8539a2c9215"
   }, {
     "url": "en/privacy-policy.html",
     "revision": "89e1e86549d16038f94d649114d0a9c2"
@@ -184,7 +184,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "037dc7a68e4764080ef4d13890a13140"
   }, {
     "url": "manifest.webmanifest",
-    "revision": "114f1cdd288db00d97f4ce6b14074f17"
+    "revision": "ce907abfe73edcba22db7b7f14400306"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html")));
