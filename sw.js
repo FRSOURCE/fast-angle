@@ -136,7 +136,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "b9b8b14c8da2f81fad9612e48ee02c39"
   }, {
     "url": "de/privacy-policy.html",
-    "revision": "8d391c2e8b709ec0dbbb9908464dda23"
+    "revision": "1d43d230797507609396b5fc0ebec6ec"
   }, {
     "url": "de/terms.html",
     "revision": "eed59fb345b55b078b8fb081e97503b8"
@@ -148,7 +148,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "89e1e86549d16038f94d649114d0a9c2"
   }, {
     "url": "en/terms.html",
-    "revision": "07091653b055c2753613633c785bc1e2"
+    "revision": "1d064723462ec891b56b4395f5ac3022"
   }, {
     "url": "index.html",
     "revision": "8b714e861bc66c63b055ce534a0b503a"
@@ -157,7 +157,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "9bd6559afe928243d3bc62193f6a2796"
   }, {
     "url": "pl/privacy-policy.html",
-    "revision": "8d26a343a0ba1247e0c42c0bb06e677d"
+    "revision": "52a2a48a06f8faa19a422fc7416cbaab"
   }, {
     "url": "pl/terms.html",
     "revision": "7375e8e64d3c390a259ea7407324e1d6"
@@ -184,7 +184,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "037dc7a68e4764080ef4d13890a13140"
   }, {
     "url": "manifest.webmanifest",
-    "revision": "42c94e896aaaacf86e699dae1fc8b52b"
+    "revision": "47ea7743e6e7dc83394ed1fe454ee7e3"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html")));
