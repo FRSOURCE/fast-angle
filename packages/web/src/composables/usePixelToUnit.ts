@@ -8,7 +8,7 @@ export const SIZING_UNIT = {
   'mm': 4,
 } as const
 
-const convertPxToUnit = (valuePx: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) => {
+function convertPxToUnit(valuePx: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) {
   let result = valuePx
   switch (unit) {
     case SIZING_UNIT['%']: result = valuePx * 100 / originalSize
@@ -22,7 +22,7 @@ const convertPxToUnit = (valuePx: number, unit: ValueOf<typeof SIZING_UNIT>, ori
   return +(result.toFixed(6))
 }
 
-const convertUnitToPx = (value: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) => {
+function convertUnitToPx(value: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) {
   let result = value
   switch (unit) {
     case SIZING_UNIT['%']: result = value / 100 * originalSize
@@ -36,7 +36,7 @@ const convertUnitToPx = (value: number, unit: ValueOf<typeof SIZING_UNIT>, origi
   return +(result.toFixed(5))
 }
 
-export const usePixelToUnit = (valuePx: Ref<number>, unit: Ref<ValueOf<typeof SIZING_UNIT>>, originalSize: Ref<number>) => {
+export function usePixelToUnit(valuePx: Ref<number>, unit: Ref<ValueOf<typeof SIZING_UNIT>>, originalSize: Ref<number>) {
   const value = ref(0)
   const innerPxValue = ref(valuePx.value - 1)
   const inputValue = ref(0)

@@ -12,9 +12,11 @@ const prefferedLanguages = usePreferredLanguages()
 const availableLocales = Object.keys(messages)
 
 const isLocaleAvailable = (lang: string) => availableLocales.includes(lang)
-export const toAvailableLocale = (lang: string) => isLocaleAvailable(lang)
-  ? lang
-  : fallbackLocale
+export function toAvailableLocale(lang: string) {
+  return isLocaleAvailable(lang)
+    ? lang
+    : fallbackLocale
+}
 
 const defaultLanguage = ref(fallbackLocale)
 

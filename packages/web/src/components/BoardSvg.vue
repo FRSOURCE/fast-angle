@@ -68,7 +68,7 @@ watch([width, height] as const, ([width, height], [oldWidth, oldHeight]) => {
   ]
 })
 
-const pressed = (e: TouchEvent | PointerEvent | MouseEvent) => {
+function pressed() {
   if (panzoomActive.value)
     return
   drawNextPoint(currentPointX.value, currentPointY.value)
@@ -87,8 +87,8 @@ const pressed = (e: TouchEvent | PointerEvent | MouseEvent) => {
       cursor: cursorStyle,
     }"
     @touchend.prevent="pressed"
-    @mouseup.prevent="pressed"
-    @mousedown.once="initialized = true"
+    @mouseup.left.prevent="pressed"
+    @mousedown.left.once="initialized = true"
     @mousemove.passive.once="initialized = true"
     @touchstart.passive.once="initialized = true"
   >

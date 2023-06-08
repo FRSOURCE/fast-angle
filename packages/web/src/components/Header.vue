@@ -10,7 +10,7 @@ const { t, availableLocales, locale } = useI18n()
 const detailsRef = ref<HTMLDetailsElement>()
 const open = ref(false)
 
-const setLocale = (value: string) => {
+function setLocale(value: string) {
   locale.value = value
   open.value = false
 }
@@ -112,4 +112,3 @@ const setLocale = (value: string) => {
   }
 }
 </style>
-

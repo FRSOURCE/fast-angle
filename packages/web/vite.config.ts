@@ -1,5 +1,5 @@
-import path from 'path'
-import { promises as fs } from 'fs'
+import path from 'node:path'
+import { promises as fs } from 'node:fs'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -26,7 +26,7 @@ const nextClassName = incstr.idGenerator({
 })
 const classNameMap = {} as Record<string, string>
 
-const productionClassGenerator = (name: string, filename: string) => {
+function productionClassGenerator(name: string, filename: string) {
   const id = `${filename}_>_${name}`
   let classname = classNameMap[id]
 

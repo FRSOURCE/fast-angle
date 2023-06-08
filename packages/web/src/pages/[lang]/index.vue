@@ -1,3 +1,3 @@
 <template>
-  <Board ref="boardRef" class="flex-grow" />
+  <Board class="flex-grow" />
 </template>

@@ -70,7 +70,7 @@ watch(quality, () => {
     quality.value = 0
 })
 
-const submit = async () => {
+async function submit() {
   await triggerSvgDownload({
     filename: filename.value,
     filetype: filetype.value,

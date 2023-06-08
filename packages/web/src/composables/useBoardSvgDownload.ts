@@ -1,6 +1,6 @@
 import type { ValueOf } from 'type-fest'
 
-const triggerDownload = (imgURI: string, filename: string) => {
+function triggerDownload(imgURI: string, filename: string) {
   const evt = new MouseEvent('click', {
     view: window,
     bubbles: false,
@@ -15,7 +15,7 @@ const triggerDownload = (imgURI: string, filename: string) => {
   a.dispatchEvent(evt)
 }
 
-const svgToCanvas = async (svg: SVGElement, ctx: CanvasRenderingContext2D) => {
+async function svgToCanvas(svg: SVGElement, ctx: CanvasRenderingContext2D) {
   const data = new XMLSerializer().serializeToString(svg)
   const svgBlob = new Blob([data], { type: 'image/svg+xml;charset=utf-8' })
   const img = new Image()
@@ -50,7 +50,7 @@ const FILETYPES = {
   },
 }
 
-const prepareSvg = (originalSvg: SVGElement) => {
+function prepareSvg(originalSvg: SVGElement) {
   const svg = originalSvg.cloneNode(true) as SVGElement
   const svgStyle = window.getComputedStyle(originalSvg)
   svg.querySelector('circle')?.remove()
