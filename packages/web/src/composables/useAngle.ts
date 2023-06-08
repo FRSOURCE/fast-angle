@@ -2,7 +2,7 @@ import type { Ref } from 'vue'
 import { computed } from 'vue'
 import type { Lines, Point } from '~/composables/useLines'
 
-export const getAngle = (lines: Lines) => {
+export function getAngle(lines: Lines) {
   const [[[x11, y11], [x12, y12]], [[x21, y21], [x22, y22]]] = lines as [[Point, Point], [Point, Point]]
   const dAx = x12 - x11
   const dAy = y12 - y11
@@ -13,8 +13,8 @@ export const getAngle = (lines: Lines) => {
   return Math.abs(angle) * (180 / Math.PI)
 }
 
-export const useAngle = (lines: Ref<Lines>) =>
-  computed(() => {
+export function useAngle(lines: Ref<Lines>) {
+  return computed(() => {
     if (
       (lines.value[0]?.length || 0) < 2
       || (lines.value[1]?.length || 0) < 2
@@ -22,3 +22,4 @@ export const useAngle = (lines: Ref<Lines>) =>
 
     return getAngle(lines.value)
   })
+}

@@ -3,11 +3,9 @@ import type { useLinesIntersectionPosition } from '~/composables/useLinesInterse
 
 interface AngleLabel {x: number; y: number; value: number}
 
-export const useAnglesLabels = (
-  angle: ComputedRef<number>,
+export function useAnglesLabels(angle: ComputedRef<number>,
   intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>,
-  anglesBisectors: ReturnType<typeof useAnglesBisectors>,
-) => {
+  anglesBisectors: ReturnType<typeof useAnglesBisectors>) {
   const labels = ref<[AngleLabel, AngleLabel] | []>([])
 
   // throttled to not recalculate on drag

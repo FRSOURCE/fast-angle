@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { MessageFunction, VueMessageType } from 'vue-i18n'
 import IconHelp from '~icons/carbon/help'
 import { locale } from '~/composables/locale'
 import IconLogoGithub from '~icons/carbon/logo-github'
@@ -6,6 +7,7 @@ import FavoriteFilled from '~icons/carbon/favorite-filled'
 
 const { t, tm, rt } = useI18n()
 const isModalOpen = ref(false)
+const content = computed(() => tm('board.nav.help.content') as MessageFunction<VueMessageType>[])
 </script>
 
 <template>
@@ -23,10 +25,7 @@ const isModalOpen = ref(false)
         :class="$style.modal"
       >
         <ul>
-          <!-- eslint-disable-next-line vue/first-attribute-linebreak -->
-          <li v-for="//@ts-ignore
-            helpItem in tm('board.nav.help.content')" :key="rt(helpItem)"
-          >
+          <li v-for="helpItem in content" :key="rt(helpItem)">
             {{ rt(helpItem) }}
           </li>
         </ul>

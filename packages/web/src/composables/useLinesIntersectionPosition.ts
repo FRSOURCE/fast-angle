@@ -1,5 +1,5 @@
-export const useLinesIntersectionPosition = (line1Variables: ReturnType<typeof useLinearFnVariables>, line2Variables: ReturnType<typeof useLinearFnVariables>) =>
-  computed(() => {
+export function useLinesIntersectionPosition(line1Variables: ReturnType<typeof useLinearFnVariables>, line2Variables: ReturnType<typeof useLinearFnVariables>) {
+  return computed(() => {
     if (!line1Variables.value || !line2Variables.value)
       return
 
@@ -14,3 +14,4 @@ export const useLinesIntersectionPosition = (line1Variables: ReturnType<typeof u
 
     return { x, y: slope1 * x + intercept1 }
   })
+}

@@ -4,7 +4,7 @@ import { throttleFilter } from '@vueuse/core'
 const { t, locale, availableLocales } = useI18n()
 const router = useRouter()
 const throttle = throttleFilter(300)
-const recalculateViewport = () => {
+function recalculateViewport() {
   // Make sure viewport is always 100vh, even with mobile keyboard open
   // https://stackoverflow.com/a/62054041/8805801
   const viewport = document.querySelector<HTMLMetaElement>('meta[name=viewport]')
@@ -56,4 +56,3 @@ onMounted(() => {
 <template>
   <RouterView />
 </template>
-

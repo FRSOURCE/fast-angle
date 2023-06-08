@@ -29,18 +29,18 @@ const boardSvgViewBox = computed(() => {
     return { x: 0, y: 0, width: 0, height: 0 }
   return board.viewBox.baseVal
 })
-const updateZoomOrigin = () => {
+function updateZoomOrigin() {
   transformOrigin.value = [
     (boardSvgViewBox.value.width / 2 - (boardSvgViewBox.value.x + boardSvgViewBox.value.width / 2) / 2) * zoom.value,
     (boardSvgViewBox.value.height / 2 - (boardSvgViewBox.value.y + boardSvgViewBox.value.height / 2) / 2) * zoom.value,
   ]
 }
 
-const zoomIn = () => {
+function zoomIn() {
   updateZoomOrigin()
   zoom.value += 0.1
 }
-const zoomOut = () => {
+function zoomOut() {
   updateZoomOrigin()
   zoom.value -= 0.1
 }

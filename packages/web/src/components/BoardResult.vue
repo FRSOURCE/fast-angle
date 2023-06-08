@@ -6,7 +6,7 @@ import { OVERFLOW_LABELS_DIRECTION } from '~/composables/useOutOfBoundLabels'
 const { t } = useI18n()
 const isOpen = ref(false)
 
-const close = () => {
+function close() {
   if (isOpen.value)
     isOpen.value = false
 }

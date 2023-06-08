@@ -1,5 +1,6 @@
 <script lang="ts">
 import { UseFocusTrap } from '@vueuse/integrations/useFocusTrap/component'
+
 export default {
   inheritAttrs: false,
 }

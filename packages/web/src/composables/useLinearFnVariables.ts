@@ -16,7 +16,8 @@ const getLinearFnVariables = useMemoize((
   return { slope, intercept }
 })
 
-export const useLinearFnVariables = (points: Ref<Line>) =>
-  computed(() =>
+export function useLinearFnVariables(points: Ref<Line>) {
+  return computed(() =>
     getLinearFnVariables(...(points.value[0] || []), ...(points.value[1] || [])),
   )
+}
