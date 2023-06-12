@@ -133,7 +133,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "de.html",
-    "revision": "68cef5515636b3892356a7b53b322d88"
+    "revision": "8ec2de5b5dc6323941f48bc2d41bafda"
   }, {
     "url": "de/privacy-policy.html",
     "revision": "d4c54ca3605802767e5370dc9d77b126"
