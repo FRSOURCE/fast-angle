@@ -136,19 +136,19 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "c0fc713300a2609fc1b0de20b3118bf6"
   }, {
     "url": "de/privacy-policy.html",
-    "revision": "3ba0191dc86fb3b3958aab4647dadbbd"
+    "revision": "4eacbd37d88c76f3dbef409161910e34"
   }, {
     "url": "de/terms.html",
-    "revision": "79e1ba4f9fb545c78dc00dcb551e19c6"
+    "revision": "077b930a594898d0534695b3c8e0b6ea"
   }, {
     "url": "en.html",
     "revision": "a46b597245efa26d79834c7cd4e5d91f"
   }, {
     "url": "en/privacy-policy.html",
-    "revision": "5d993d15252c1ca2c43f4e16eb75b631"
+    "revision": "8decaffe8b91d577d3f75ddc70a8f472"
   }, {
     "url": "en/terms.html",
-    "revision": "f4570a02b58be4a2bb304fca83daf9f3"
+    "revision": "dc1318c6084f8a607657dfb2efd6f749"
   }, {
     "url": "index.html",
     "revision": "aa169651ad20f7c31a663f21236ee743"
@@ -157,10 +157,10 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "35e36e9f513eb516a7b896b074f77970"
   }, {
     "url": "pl/privacy-policy.html",
-    "revision": "fdc91668ca9313822af489843545f382"
+    "revision": "326dd1c3349300335f5d50edcbc4528b"
   }, {
     "url": "pl/terms.html",
-    "revision": "599c54fae9fb57b8e48350c5468b209f"
+    "revision": "311263cb0f2f14fae5ebbb4fe2990b81"
   }, {
     "url": "favicon-dark.svg",
     "revision": "98cd02853d9e8386612b5fbd7f9eb630"
