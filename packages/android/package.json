@@ -2,7 +2,7 @@
   "name": "@frsource/fast-angle-android",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@7.33.2",
+  "packageManager": "pnpm@7.33.5",
   "scripts": {
     "build": "bubblewrap build",
     "new-version": "bubblewrap update",
