@@ -21,7 +21,7 @@ importers:
   packages/web:
     specifiers:
       '@frsource/frs-replace': ^4.0.0
-      '@iconify-json/carbon': 1.1.18
+      '@iconify-json/carbon': 1.1.19
       '@intlify/vite-plugin-vue-i18n': 6.0.3
       '@panzoom/panzoom': ^4.5.1
       '@picocss/pico': 1.5.10
@@ -47,7 +47,7 @@ importers:
       markdown-it-link-attributes: 4.0.1
       markdown-it-shiki: 0.9.0
       panzoom: ^9.4.3
-      pnpm: 7.33.5
+      pnpm: 7.33.6
       sass: 1.63.6
       shiki: 0.14.3
       svg-pan-zoom: ^3.6.1
@@ -91,7 +91,7 @@ importers:
       vue-router: 4.1.6_vue@3.3.4
     devDependencies:
       '@frsource/frs-replace': 4.0.0
-      '@iconify-json/carbon': 1.1.18
+      '@iconify-json/carbon': 1.1.19
       '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@4.3.9+vue-i18n@9.2.2
       '@types/color-hash': 1.0.2
       '@types/lodash-es': 4.17.6
@@ -104,7 +104,7 @@ importers:
       incstr: 1.2.3
       markdown-it-link-attributes: 4.0.1
       markdown-it-shiki: 0.9.0
-      pnpm: 7.33.5
+      pnpm: 7.33.6
       sass: 1.63.6
       shiki: 0.14.3
       type-fest: 3.1.0
@@ -1731,8 +1731,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/carbon/1.1.18:
-    resolution: {integrity: sha512-RbKET6KS9xUMeYVq1FUH3UUA7AYNcnApkHt2AccCwTWTQQs/O58ji4Of6z6PhRajGlbfvrJzT/Uqh19OKECRvA==}
+  /@iconify-json/carbon/1.1.19:
+    resolution: {integrity: sha512-4obFv2J5L/bIgXCKnW8Xkly47dGgPH+xbP3NZ6DRYznc8ykAo+X5z3WSAW5/ZKO9cKZzRcOnNS6DYofOZZbRCA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -7394,8 +7394,8 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: true
 
-  /pnpm/7.33.5:
-    resolution: {integrity: sha512-TkmfIv/+WEWqj5Rj4ThrLXLDE04OvvlAk2CthE/vApDoK0ebMusuwPMOVmB+GCDCIWeCn9YmVtQaj9DMSg9CZw==}
+  /pnpm/7.33.6:
+    resolution: {integrity: sha512-kOJ/04BH8YWD8zQveEzD8Yf01MqsievB//rhjc17Ld52eKC/I3SBvLj36OZhNfo0gDhW5OssRCzggv+rXZ0kHw==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true

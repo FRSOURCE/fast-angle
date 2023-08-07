@@ -2,7 +2,7 @@
   "name": "@frsource/fast-angle-web",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@7.33.5",
+  "packageManager": "pnpm@7.33.6",
   "scripts": {
     "build": "vite-ssg build --base='/fast-angle/' && del dist/.html && frs-replace 'https://www.frsource.org/' 'https://www.frsource.org/fast-angle/' -i dist/sitemap.xml -o dist/sitemap.xml",
     "dev": "vite --port 3333 --open",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@frsource/frs-replace": "^4.0.0",
-    "@iconify-json/carbon": "1.1.18",
+    "@iconify-json/carbon": "1.1.19",
     "@intlify/vite-plugin-vue-i18n": "6.0.3",
     "@types/color-hash": "^1.0.2",
     "@types/lodash-es": "^4.17.6",
@@ -47,7 +47,7 @@
     "incstr": "^1.2.3",
     "markdown-it-link-attributes": "4.0.1",
     "markdown-it-shiki": "0.9.0",
-    "pnpm": "7.33.5",
+    "pnpm": "7.33.6",
     "sass": "1.63.6",
     "shiki": "0.14.3",
     "type-fest": "^3.1.0",
