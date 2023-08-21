@@ -61,7 +61,7 @@ importers:
       vite-plugin-pages: ^0.31.0
       vite-plugin-pwa: 0.16.4
       vite-plugin-vue-layouts: ^0.8.0
-      vite-plugin-vue-markdown: 0.23.7
+      vite-plugin-vue-markdown: 0.23.8
       vite-ssg: 0.22.2
       vite-ssg-sitemap: 0.5.1
       vitest: 0.34.1
@@ -117,7 +117,7 @@ importers:
       vite-plugin-pages: 0.31.0_vite@4.3.9
       vite-plugin-pwa: 0.16.4_vite@4.3.9
       vite-plugin-vue-layouts: 0.8.0_gas6wsx6jorcemqckrjqiwdurm
-      vite-plugin-vue-markdown: 0.23.7_vite@4.3.9
+      vite-plugin-vue-markdown: 0.23.8_vite@4.3.9
       vite-ssg: 0.22.2_47lkjnmzvdr4lvb66wrwd6a6pm
       vite-ssg-sitemap: 0.5.1
       vitest: 0.34.1_sass@1.63.6
@@ -1766,8 +1766,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.25
-      '@intlify/shared': 9.3.0-beta.25
+      '@intlify/message-compiler': 9.3.0-beta.26
+      '@intlify/shared': 9.3.0-beta.26
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.2.2_vue@3.3.4
@@ -1796,11 +1796,11 @@ packages:
       '@intlify/shared': 9.2.2
       source-map: 0.6.1
 
-  /@intlify/message-compiler/9.3.0-beta.25:
-    resolution: {integrity: sha512-uT7ybqKoDEw1XITQYnTYjWgZnpCDmHv9e3D4MmJDqHl2qCm6anzdUXWKHUhqR87Ha9Z8Rl44v40iSI/4NUbppQ==}
+  /@intlify/message-compiler/9.3.0-beta.26:
+    resolution: {integrity: sha512-qsfU6Lca7mI80ts1vgy+pfNvGm2gHy0nERpT/K1GYgnECmsKwud0e8SG1PPxKPEHKa5Mdngzs4pS7X1wH0SCGA==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/shared': 9.3.0-beta.25
+      '@intlify/shared': 9.3.0-beta.26
       source-map-js: 1.0.2
     dev: true
 
@@ -1808,8 +1808,8 @@ packages:
     resolution: {integrity: sha512-wRwTpsslgZS5HNyM7uDQYZtxnbI12aGiBZURX3BTR9RFIKKRWpllTsgzHWvj3HKm3Y2Sh5LPC1r0PDCKEhVn9Q==}
     engines: {node: '>= 14'}
 
-  /@intlify/shared/9.3.0-beta.25:
-    resolution: {integrity: sha512-Zg+ECV9RPdp227tCJOgvPb+S3i651nf4kKHsMojSyWCppVK/4NFuDrBG2lIQSQL6Iq5LKVr5MkezHCW2NBTQRg==}
+  /@intlify/shared/9.3.0-beta.26:
+    resolution: {integrity: sha512-RpCtfSYIg4tSskrazTr5+WCHyw6qpgwdIxC+x3nCnrPGxyk+en9FoSbadVfx/w7uDTdyhKslEw4d2+qhNc0s4Q==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -1829,7 +1829,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1_vue-i18n@9.2.2
-      '@intlify/shared': 9.3.0-beta.25
+      '@intlify/shared': 9.3.0-beta.26
       '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
       fast-glob: 3.2.12
@@ -2296,8 +2296,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230810:
-    resolution: {integrity: sha512-yZk8zgxV3vmotkzYItgL6moLV5yHWX4CbtIZqr3YsYIPV0V+juzriCh2T4vdK3WZTO70LZd5rl/Tnxj+LJXXQg==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230817:
+    resolution: {integrity: sha512-sF007Mxr1SCZ9uwrwoH0NpVMIK1DC1cQbn666NSrx4ozuxeLZ0OCLdgAo/ttoMFzvx9ow22DkO5KbvDxCTwCcA==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery-v1': 0.0.1
@@ -2448,6 +2448,20 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /@rollup/pluginutils/5.0.3:
+    resolution: {integrity: sha512-hfllNN4a80rwNQ9QCxhxuHCGHMAvabXqxNdaChUSSadMre7t4iEUI6fFAhBOn/eIYTgYVhBv7vCLsAJ4u3lf3g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
   /@sinclair/typebox/0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
@@ -2529,7 +2543,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230810
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230817
     dev: true
 
   /@types/gapi.client.discovery-v1/0.0.1:
@@ -2592,6 +2606,13 @@ packages:
 
   /@types/markdown-it/12.2.3:
     resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
+    dependencies:
+      '@types/linkify-it': 3.0.2
+      '@types/mdurl': 1.0.2
+    dev: true
+
+  /@types/markdown-it/13.0.0:
+    resolution: {integrity: sha512-mPTaUl5glYfzdJFeCsvhXQwZKdyszNAZcMm5ZTP5SfpTu+vIbog7J3z8Fa4x/Fzv5TB4R6OA/pHBYIYmkYOWGQ==}
     dependencies:
       '@types/linkify-it': 3.0.2
       '@types/mdurl': 1.0.2
@@ -8975,8 +8996,9 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-markdown/0.23.7_vite@4.3.9:
-    resolution: {integrity: sha512-zbZxgJ0fr0f1pSJek3j2236suhyyoKAQzxP1GPrRrrEiM2FWVoio9uD8fD3kaqPPi/D9QRzKixGQU9nZ95CIdw==}
+  /vite-plugin-vue-markdown/0.23.8_vite@4.3.9:
+    resolution: {integrity: sha512-8G/PmndrdPfsnnUMvlJWHTCtoi/LLA+pKbePkZoZni21zy+mTX/mmdZCqO95e0OOn83W2okNHu9QriQFzmGU3A==}
+    deprecated: '`vite-plugin-vue-markdown` is renamed to `unplugin-vue-markdown`. For usages in Vite, you also need to change the import path to `unplugin-vue-markdown/vite`.'
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0
     dependencies:
@@ -8984,8 +9006,8 @@ packages:
       '@mdit-vue/plugin-component': 0.12.0
       '@mdit-vue/plugin-frontmatter': 0.12.0
       '@mdit-vue/types': 0.12.0
-      '@rollup/pluginutils': 5.0.2
-      '@types/markdown-it': 12.2.3
+      '@rollup/pluginutils': 5.0.3
+      '@types/markdown-it': 13.0.0
       markdown-it: 13.0.1
       vite: 4.3.9_sass@1.63.6
     transitivePeerDependencies:
