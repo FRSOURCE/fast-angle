@@ -21,7 +21,7 @@ importers:
   packages/web:
     specifiers:
       '@frsource/frs-replace': ^4.0.0
-      '@iconify-json/carbon': 1.1.19
+      '@iconify-json/carbon': 1.1.20
       '@intlify/vite-plugin-vue-i18n': 6.0.3
       '@panzoom/panzoom': ^4.5.1
       '@picocss/pico': 1.5.10
@@ -91,7 +91,7 @@ importers:
       vue-router: 4.1.6_vue@3.3.4
     devDependencies:
       '@frsource/frs-replace': 4.0.0
-      '@iconify-json/carbon': 1.1.19
+      '@iconify-json/carbon': 1.1.20
       '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@4.3.9+vue-i18n@9.2.2
       '@types/color-hash': 1.0.2
       '@types/lodash-es': 4.17.6
@@ -1731,8 +1731,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/carbon/1.1.19:
-    resolution: {integrity: sha512-4obFv2J5L/bIgXCKnW8Xkly47dGgPH+xbP3NZ6DRYznc8ykAo+X5z3WSAW5/ZKO9cKZzRcOnNS6DYofOZZbRCA==}
+  /@iconify-json/carbon/1.1.20:
+    resolution: {integrity: sha512-ed/3FDCjicQARWaSGIDZpaF+rWmxoSqrmHYZV2aEicufp0yciG44y9OEmArxxr/0U6bEC3zJbKMSOSw4CKeBJg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2296,8 +2296,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230817:
-    resolution: {integrity: sha512-sF007Mxr1SCZ9uwrwoH0NpVMIK1DC1cQbn666NSrx4ozuxeLZ0OCLdgAo/ttoMFzvx9ow22DkO5KbvDxCTwCcA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20230824:
+    resolution: {integrity: sha512-gJRkFeQlbRSbQ6bv73CXVF9ypTwiU0T+zwIO3XNUL0pz0MHFFI3LugmgI3lAbEJSDCbmk9FSLoRdG5ALdsaMOA==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery-v1': 0.0.1
@@ -2543,7 +2543,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230817
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20230824
     dev: true
 
   /@types/gapi.client.discovery-v1/0.0.1:
