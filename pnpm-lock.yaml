@@ -51,7 +51,7 @@ importers:
       sass: 1.63.6
       shiki: 0.14.3
       svg-pan-zoom: ^3.6.1
-      type-fest: ^3.1.0
+      type-fest: ^4.0.0
       typescript: 5.1.6
       unplugin-auto-import: 0.16.6
       unplugin-icons: 0.16.5
@@ -107,7 +107,7 @@ importers:
       pnpm: 7.33.6
       sass: 1.63.6
       shiki: 0.14.3
-      type-fest: 3.1.0
+      type-fest: 4.1.0
       typescript: 5.1.6
       unplugin-auto-import: 0.16.6_@vueuse+core@9.13.0
       unplugin-icons: 0.16.5
@@ -8578,9 +8578,9 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /type-fest/3.1.0:
-    resolution: {integrity: sha512-StmrZmK3eD9mDF9Vt7UhqthrDSk66O9iYl5t5a0TSoVkHjl0XZx/xuc/BRz4urAXXGHOY5OLsE0RdJFIApSFmw==}
-    engines: {node: '>=14.16'}
+  /type-fest/4.1.0:
+    resolution: {integrity: sha512-VJGJVepayd8OWavP+rgXt4i3bfLk+tSomTV7r4mca2XD/oTCWnkJlNkpXavkxdmtU2aKdAmFGeHvoQutOVHCZg==}
+    engines: {node: '>=16'}
     dev: true
 
   /type-is/1.6.18:
