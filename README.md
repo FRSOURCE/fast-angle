@@ -2,6 +2,8 @@
 
 Simple online protractor - measure any angle directly on your image!
 
+Native apps are published on [App Store](https://apps.apple.com/us/app/fast-angle/id6450143053) and [Play Store](https://play.google.com/store/apps/details?id=org.frsource.www.fast_angle.twa).
+
 ## Development
 
 > Before stating development, make sure to install package dependencies by running `pnpm i`
