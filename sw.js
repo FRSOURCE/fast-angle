@@ -91,7 +91,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
 
   workbox.precacheAndRoute([{
     "url": "404.html",
-    "revision": "5b0bb6d567a4a8d2e4e69d8d09e91711"
+    "revision": "d18d5bc0cd420b1c80fd6a58fa7d4338"
   }, {
     "url": "assets/_...all_-b0c409f4.js",
     "revision": null
@@ -142,7 +142,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "7b74da1e5ddaa9b78b34205af1be044d"
   }, {
     "url": "en.html",
-    "revision": "7b6219efdd6e8a2d87dc79297363e906"
+    "revision": "44f43cbef564d48636fd58b0535f528b"
   }, {
     "url": "en/privacy-policy.html",
     "revision": "d08aa778e37e785e5894bbb08f5433d8"
