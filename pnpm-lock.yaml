@@ -49,7 +49,7 @@ importers:
       panzoom: ^9.4.3
       pnpm: 7.33.6
       sass: 1.63.6
-      shiki: 0.14.4
+      shiki: 0.14.5
       svg-pan-zoom: ^3.6.1
       type-fest: ^4.0.0
       typescript: 5.1.6
@@ -106,7 +106,7 @@ importers:
       markdown-it-shiki: 0.9.0
       pnpm: 7.33.6
       sass: 1.63.6
-      shiki: 0.14.4
+      shiki: 0.14.5
       type-fest: 4.1.0
       typescript: 5.1.6
       unplugin-auto-import: 0.16.6_@vueuse+core@9.13.0
@@ -2307,8 +2307,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20231003:
-    resolution: {integrity: sha512-wga9KM9USRq5zlPt7puK0Gm0ritTTXfGMsH28ptrDQWVzqqbG16rm7wJTSGMmRTIpyF4SWQEcBhkuPWnZZsn6w==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3/0.0.20231012:
+    resolution: {integrity: sha512-xl39sQFyNthPx8FAm/v4fQLV+EG4bWWvMsmlF1Q/ueg7TGeISCYenmiUaHEQ1I0Lran8OMcpDqSm2SS8sn8rIA==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery-v1': 0.0.1
@@ -2568,7 +2568,7 @@ packages:
   /@types/gapi.client.androidpublisher/3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20231003
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20231012
     dev: true
 
   /@types/gapi.client.discovery-v1/0.0.1:
@@ -6732,7 +6732,7 @@ packages:
   /markdown-it-shiki/0.9.0:
     resolution: {integrity: sha512-TyP5YbDnFu3T7MPwC8jFs1swzAXqALy50MPPdis2tNc5MQ0UxSqhARFfMzEJN21mE0ihAngi2kqDzKR5+ZsMqg==}
     dependencies:
-      shiki: 0.14.4
+      shiki: 0.14.5
       synckit: 0.8.5
     dev: true
 
@@ -7990,8 +7990,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki/0.14.4:
-    resolution: {integrity: sha512-IXCRip2IQzKwxArNNq1S+On4KPML3Yyn8Zzs/xRgcgOWIr8ntIK3IKzjFPfjy/7kt9ZMjc+FItfqHRBg8b6tNQ==}
+  /shiki/0.14.5:
+    resolution: {integrity: sha512-1gCAYOcmCFONmErGTrS1fjzJLA7MGZmKzrBNX7apqSwhyITJg2O102uFzXUeBxNnEkDA9vHIKLyeKq0V083vIw==}
     dependencies:
       ansi-sequence-parser: 1.1.0
       jsonc-parser: 3.2.0
