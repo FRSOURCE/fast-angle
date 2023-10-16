@@ -49,7 +49,7 @@
     "markdown-it-shiki": "0.9.0",
     "pnpm": "7.33.6",
     "sass": "1.63.6",
-    "shiki": "0.14.4",
+    "shiki": "0.14.5",
     "type-fest": "^4.0.0",
     "typescript": "5.1.6",
     "unplugin-auto-import": "0.16.6",
