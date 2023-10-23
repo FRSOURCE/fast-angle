@@ -91,21 +91,18 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
 
   workbox.precacheAndRoute([{
     "url": "404.html",
-    "revision": "5b0bb6d567a4a8d2e4e69d8d09e91711"
+    "revision": "dca1e07bd5885c4ed9544e91e54bf321"
   }, {
-    "url": "assets/_...all_-b0c409f4.js",
+    "url": "assets/_...all_-7ba07212.js",
     "revision": null
   }, {
-    "url": "assets/app-2665ae72.js",
+    "url": "assets/app-28598460.js",
+    "revision": null
+  }, {
+    "url": "assets/centered-2aed6be4.js",
     "revision": null
   }, {
     "url": "assets/centered-4a179916.css",
-    "revision": null
-  }, {
-    "url": "assets/centered-efa9bc6b.js",
-    "revision": null
-  }, {
-    "url": "assets/index-7c82f955.js",
     "revision": null
   }, {
     "url": "assets/index-d210702b.css",
@@ -114,53 +111,56 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "url": "assets/index-e0391102.css",
     "revision": null
   }, {
-    "url": "assets/privacy-policy-4e512381.css",
+    "url": "assets/index-ff504e40.js",
     "revision": null
   }, {
-    "url": "assets/privacy-policy-cf35d42f.js",
+    "url": "assets/privacy-policy-473f4136.js",
+    "revision": null
+  }, {
+    "url": "assets/privacy-policy-4e512381.css",
     "revision": null
   }, {
     "url": "assets/terms-335f0e5d.css",
     "revision": null
   }, {
-    "url": "assets/terms-7b6955e4.js",
+    "url": "assets/terms-e955442a.js",
     "revision": null
   }, {
-    "url": "assets/virtual_pwa-register-1f7529a5.js",
+    "url": "assets/virtual_pwa-register-cb537683.js",
     "revision": null
   }, {
     "url": "assets/workbox-window.prod.es5-a7b12eab.js",
     "revision": null
   }, {
     "url": "de.html",
-    "revision": "40da529b6dce087c15ebb60808c95c6e"
+    "revision": "2da900be9f8b1e42b2b35f85be181e94"
   }, {
     "url": "de/privacy-policy.html",
-    "revision": "337afdbe0ffe38dba7ad67792c4260c0"
+    "revision": "47542506427c576b365feedb4d5abb4f"
   }, {
     "url": "de/terms.html",
-    "revision": "7b74da1e5ddaa9b78b34205af1be044d"
+    "revision": "c5ee75f321bea66cfa4df3cdf04033b0"
   }, {
     "url": "en.html",
-    "revision": "44f43cbef564d48636fd58b0535f528b"
+    "revision": "1ee9d30f0a43c5381deab381d7971374"
   }, {
     "url": "en/privacy-policy.html",
-    "revision": "d08aa778e37e785e5894bbb08f5433d8"
+    "revision": "3120a772f0228169151728c57c1ee5ca"
   }, {
     "url": "en/terms.html",
-    "revision": "b4a94b5949f11809dfc37636af84c5e2"
+    "revision": "9ee9a534bf170d37f4b2077a622dc164"
   }, {
     "url": "index.html",
-    "revision": "23c4a511eb7a2c8e5c4ebd6b745479bb"
+    "revision": "240717acbdc391ac906909d8b02b053a"
   }, {
     "url": "pl.html",
-    "revision": "917e539d4fbcc4fca36c26d2d9f3e9a5"
+    "revision": "5d39557eb649c61b4748a33475cab2be"
   }, {
     "url": "pl/privacy-policy.html",
-    "revision": "bd1d5228fe399fd9924f4f2bfe1d0c7b"
+    "revision": "d9e3b7650d5cea9e25aae62c005cdb56"
   }, {
     "url": "pl/terms.html",
-    "revision": "cf52787c9a10e225c69e3ffd35e47bb9"
+    "revision": "32b9c0ddb90cbbb44563bed8442fd937"
   }, {
     "url": "favicon-dark.svg",
     "revision": "98cd02853d9e8386612b5fbd7f9eb630"
