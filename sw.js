@@ -142,7 +142,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "b4083b360986ff7fc98d86526f5e2c60"
   }, {
     "url": "en.html",
-    "revision": "b627fa949c619a509a5b440362af3755"
+    "revision": "b19e825d7f4a834ff1e931bd5831ff02"
   }, {
     "url": "en/privacy-policy.html",
     "revision": "3bf6a9c41d3c576fd5c1a1ba6a17584b"
