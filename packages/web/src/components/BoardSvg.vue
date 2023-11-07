@@ -58,8 +58,7 @@ const labels = useAnglesLabels(angle, intersectionOffset, anglesBisectors)
 const { setOutBoundLabels } = useOutOfBoundLabels()
 
 watch([labels, svgSize, svgOffset] as const, ([labels, svgSize, svgOffset]) =>
-  setOutBoundLabels(labels, svgSize, svgOffset),
-)
+  setOutBoundLabels(labels, svgSize, svgOffset))
 
 watch([width, height] as const, ([width, height], [oldWidth, oldHeight]) => {
   transformOrigin.value = [

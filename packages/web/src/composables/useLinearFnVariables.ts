@@ -2,7 +2,10 @@ import { type Ref, computed } from 'vue'
 import type { Line } from '~/composables/useLines'
 
 const getLinearFnVariables = useMemoize((
-  x1?: number, y1?: number, x2?: number, y2?: number,
+  x1?: number,
+  y1?: number,
+  x2?: number,
+  y2?: number,
 ) => {
   if (!x1 || !y1 || !x2 || !y2)
     return

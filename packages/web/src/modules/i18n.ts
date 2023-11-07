@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import { type UserModule } from '~/types'
+import type { UserModule } from '~/types'
 import { fallbackLocale, locale, messages } from '~/composables/locale'
 
 // Import i18n resources

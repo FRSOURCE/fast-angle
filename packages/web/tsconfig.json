@@ -2,6 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
     "types": [
       "vitest",
       "vite/client",
@@ -10,10 +13,7 @@
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/client",
       "unplugin-icons/types/vue"
-    ],
-    "paths": {
-      "~/*": ["src/*"]
-    }
+    ]
   },
   "exclude": ["dist", "node_modules"]
 }

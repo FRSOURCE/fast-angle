@@ -2,10 +2,7 @@ import type { ComputedRef } from 'vue'
 import type { Lines } from '~/composables/useLines'
 import type { useLinesIntersectionPosition } from '~/composables/useLinesIntersectionPosition'
 
-export function useAnglesBisectors(angle: ComputedRef<number>,
-  intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>,
-  line1Variables: ReturnType<typeof useLinearFnVariables>,
-  line2Variables: ReturnType<typeof useLinearFnVariables>) {
+export function useAnglesBisectors(angle: ComputedRef<number>, intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>, line1Variables: ReturnType<typeof useLinearFnVariables>, line2Variables: ReturnType<typeof useLinearFnVariables>) {
   return computed(() => {
     if (!intersectionPosition.value || !line1Variables.value || !line2Variables.value || !angle.value)
       return
