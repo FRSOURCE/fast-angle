@@ -45,8 +45,8 @@ importers:
         specifier: 9.13.0
         version: 9.13.0(focus-trap@7.4.3)(vue@3.3.7)
       '@vueuse/math':
-        specifier: 9.13.0
-        version: 9.13.0(vue@3.3.7)
+        specifier: 10.5.0
+        version: 10.5.0(vue@3.3.7)
       '@vueuse/router':
         specifier: ^9.4.0
         version: 9.4.0(vue-router@4.1.6)(vue@3.3.7)
@@ -2371,8 +2371,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20231031:
-    resolution: {integrity: sha512-kroW6LfzD7JhNGpz1pY++2wa3MCBFCKUruQfjkJ5EPyT8aPjyamVIHpZn4oBWeBsLF/t5aDyGdw6dUmZhh52KA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20231106:
+    resolution: {integrity: sha512-M8oUPT4AnbnqFrnF4fK7d0+GTTpPQRpaTJhuUX2LQION4aavp30xdv634FFfnpzkiHWLK0g96qiijVPUzBIkrA==}
     dependencies:
       '@types/gapi.client': 1.0.5
       '@types/gapi.client.discovery-v1': 0.0.1
@@ -2621,7 +2621,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20231031
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20231106
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.1:
@@ -3327,10 +3327,10 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/math@9.13.0(vue@3.3.7):
-    resolution: {integrity: sha512-FE2n8J1AfBb4dNvNyE6wS+l87XDcC/y3/037AmrwonsGD5QwJJl6rGr57idszs3PXTuEYcEkDysHLxstSxbQEg==}
+  /@vueuse/math@10.5.0(vue@3.3.7):
+    resolution: {integrity: sha512-fPCte2DbMI+JCEjG6gj35RmNZ7HjYRMHXfLJ9CjdGli0PtbmZ2WTXqJiaRSEgaeM1uN1QL/l0gXixRvRf85tQQ==}
     dependencies:
-      '@vueuse/shared': 9.13.0(vue@3.3.7)
+      '@vueuse/shared': 10.5.0(vue@3.3.7)
       vue-demi: 0.14.6(vue@3.3.7)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -3348,6 +3348,15 @@ packages:
       '@vueuse/shared': 9.4.0(vue@3.3.7)
       vue-demi: 0.14.6(vue@3.3.7)
       vue-router: 4.1.6(vue@3.3.7)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/shared@10.5.0(vue@3.3.7):
+    resolution: {integrity: sha512-18iyxbbHYLst9MqU1X1QNdMHIjks6wC7XTVf0KNOv5es/Ms6gjVFCAAWTVP2JStuGqydg3DT+ExpFORUEi9yhg==}
+    dependencies:
+      vue-demi: 0.14.6(vue@3.3.7)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
