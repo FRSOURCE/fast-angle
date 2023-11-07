@@ -91,7 +91,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
 
   workbox.precacheAndRoute([{
     "url": "404.html",
-    "revision": "79b36b1db497520c15e9dd0547e6aa4a"
+    "revision": "b27c42d023708d3c83ff17e0037170d2"
   }, {
     "url": "assets/_...all_-4d5ce279.js",
     "revision": null
@@ -133,7 +133,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "de.html",
-    "revision": "ee114100333b0d2765f8805a5699d3e9"
+    "revision": "8df9cf40556b1bf1474d74d8d8c9625c"
   }, {
     "url": "de/privacy-policy.html",
     "revision": "ddfeb66b5238a61069665b9eee5c5d88"
@@ -145,10 +145,10 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "b19e825d7f4a834ff1e931bd5831ff02"
   }, {
     "url": "en/privacy-policy.html",
-    "revision": "2f55b57bcba60b94bac7e7b98bf3856f"
+    "revision": "c72c2bfbd5f81b8437ac5a9270678dcd"
   }, {
     "url": "en/terms.html",
-    "revision": "607cc3c8b3e0d5e2a9cddd7490185a9c"
+    "revision": "50dcca6840463b6ac4f569df80e5c3cb"
   }, {
     "url": "index.html",
     "revision": "4d599d172f3e775662bd06dec7bf0f3b"
@@ -160,7 +160,7 @@ define(['./workbox-9faaa4b3'], (function (workbox) { 'use strict';
     "revision": "8ba216155a8f0397243e566ee24e0396"
   }, {
     "url": "pl/terms.html",
-    "revision": "5a8381e43cf70f9223fe86a97ad2484a"
+    "revision": "bce21acf9aef6376e7421f76b8cd3727"
   }, {
     "url": "favicon-dark.svg",
     "revision": "98cd02853d9e8386612b5fbd7f9eb630"
