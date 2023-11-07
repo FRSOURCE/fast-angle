@@ -11,8 +11,8 @@
     "typecheck": "pnpm run -r --parallel --stream typecheck"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.39.5",
-    "eslint": "^8.25.0",
-    "typescript": "5.1.6"
+    "@antfu/eslint-config": "1.1.0",
+    "eslint": "^8.53.0",
+    "typescript": "5.2.2"
   }
 }

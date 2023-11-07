@@ -1,11 +1,9 @@
 import type { ComputedRef } from 'vue'
 import type { useLinesIntersectionPosition } from '~/composables/useLinesIntersectionPosition'
 
-interface AngleLabel {x: number; y: number; value: number}
+interface AngleLabel { x: number; y: number; value: number }
 
-export function useAnglesLabels(angle: ComputedRef<number>,
-  intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>,
-  anglesBisectors: ReturnType<typeof useAnglesBisectors>) {
+export function useAnglesLabels(angle: ComputedRef<number>, intersectionPosition: ReturnType<typeof useLinesIntersectionPosition>, anglesBisectors: ReturnType<typeof useAnglesBisectors>) {
   const labels = ref<[AngleLabel, AngleLabel] | []>([])
 
   // throttled to not recalculate on drag

@@ -17,7 +17,8 @@ onKeyStroke('Escape', close)
 
 const { height: elementHeight, width: elementWidth } = useElementSize(useBoardRef())
 const svgSize = computed(() => ({
-  width: 300, height: 300 * elementHeight.value / elementWidth.value,
+  width: 300,
+  height: 300 * elementHeight.value / elementWidth.value,
 }))
 
 const { outOfBoundLabels } = useOutOfBoundLabels()

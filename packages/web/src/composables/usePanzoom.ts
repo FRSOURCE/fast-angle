@@ -1,4 +1,4 @@
-import { type MaybeComputedRef, type MaybeElementRef } from '@vueuse/core'
+import type { MaybeComputedRef, MaybeElementRef } from '@vueuse/core'
 import { type GenericOptions, useDrag, usePinch, useWheel } from '@vueuse/gesture'
 
 export function usePanzoom(elementRef: MaybeElementRef, options?: MaybeComputedRef<GenericOptions | undefined>) {
