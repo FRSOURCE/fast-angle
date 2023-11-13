@@ -2,7 +2,7 @@
   "name": "@frsource/fast-angle",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.10.3",
   "scripts": {
     "build": "pnpm --filter '@frsource/fast-angle-web' build",
     "dev": "pnpm run -r --parallel --stream dev",
@@ -11,7 +11,7 @@
     "typecheck": "pnpm run -r --parallel --stream typecheck"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "1.1.0",
+    "@antfu/eslint-config": "1.1.1",
     "eslint": "^8.53.0",
     "typescript": "5.2.2"
   }
