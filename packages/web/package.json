@@ -27,14 +27,14 @@
     "lodash-es": "4.17.21",
     "panzoom": "^9.4.3",
     "svg-pan-zoom": "^3.6.1",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vue-demi": "0.14.6",
     "vue-i18n": "9.6.5",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@frsource/frs-replace": "^4.0.0",
-    "@iconify-json/carbon": "1.1.21",
+    "@iconify-json/carbon": "1.1.22",
     "@intlify/vite-plugin-vue-i18n": "6.0.3",
     "@types/color-hash": "^1.0.2",
     "@types/lodash-es": "^4.17.6",
