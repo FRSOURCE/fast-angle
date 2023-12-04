@@ -34,13 +34,13 @@
   },
   "devDependencies": {
     "@frsource/frs-replace": "^4.0.0",
-    "@iconify-json/carbon": "1.1.22",
+    "@iconify-json/carbon": "1.1.24",
     "@intlify/vite-plugin-vue-i18n": "6.0.3",
     "@types/color-hash": "^1.0.2",
     "@types/lodash-es": "^4.17.6",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@vitejs/plugin-vue": "4.4.1",
-    "@vue/test-utils": "2.4.2",
+    "@vue/test-utils": "2.4.3",
     "critters": "0.0.20",
     "cross-env": "7.0.3",
     "https-localhost": "4.7.1",
@@ -64,6 +64,6 @@
     "vite-ssg": "0.23.5",
     "vite-ssg-sitemap": "0.6.1",
     "vitest": "0.34.6",
-    "vue-tsc": "1.8.22"
+    "vue-tsc": "1.8.24"
   }
 }
