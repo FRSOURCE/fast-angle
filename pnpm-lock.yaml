@@ -30,8 +30,8 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1
       '@picocss/pico':
-        specifier: 1.5.11
-        version: 1.5.11
+        specifier: 1.5.12
+        version: 1.5.12
       '@vueuse/core':
         specifier: 9.13.0
         version: 9.13.0(vue@3.3.13)
@@ -85,8 +85,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       '@iconify-json/carbon':
-        specifier: 1.1.28
-        version: 1.1.28
+        specifier: 1.1.29
+        version: 1.1.29
       '@intlify/vite-plugin-vue-i18n':
         specifier: 6.0.3
         version: 6.0.3(vite@4.5.2)(vue-i18n@9.6.5)
@@ -1796,8 +1796,8 @@ packages:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
     dev: true
 
-  /@iconify-json/carbon@1.1.28:
-    resolution: {integrity: sha512-tg+h0i+69JrIqUpQva2Mt611KdLMeCyibqS7lIqaMRXJgnalHtdqDcdZAKCSLb/hTbkJHyk0NCpQSYJ3f/v51w==}
+  /@iconify-json/carbon@1.1.29:
+    resolution: {integrity: sha512-zfyvX/kPItpBEU0fV0FhMW8Ln8PJX6is/L/GX7z9OOoVWEz1k8IlbK3KoBBH6ODZ8HHKG7HQ9FZ4nNl6RDe0Lw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2335,8 +2335,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240131:
-    resolution: {integrity: sha512-b96ADfCRmEhFB77FYRCWVnvi0oXoNeSxHQmvRqP8njK8ZfHEvZiNupBw5SmAe13B4LtL+CZPERIuB4L+QT78Ug==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240208:
+    resolution: {integrity: sha512-HVFiecDgytIXeqGWynlE/tMFIKdiXyLTQqB2kl1P+oiud8SMa6kIvd49o0b+0KydZf8LLEmGjwdxLl0D2v+yRQ==}
     dependencies:
       '@types/gapi.client': 1.0.7
       '@types/gapi.client.discovery-v1': 0.0.3
@@ -2395,8 +2395,8 @@ packages:
     resolution: {integrity: sha512-QOr/t7314XTwgAUDazR+RDcTAWSbkpjDnZJddd9f56jSUA8ptUsyDblAb+sp/O5O1o5Fiu9KpWxVHKuhGUgp5w==}
     dev: false
 
-  /@picocss/pico@1.5.11:
-    resolution: {integrity: sha512-cDaFiSyNPtuSTwSQt/05xsw8+g2ek4/S58tgh9Nc7miJCCdUrY9PAyl4OPWRJtYgJDdEvkUA9GuGj0J4nDP4Cw==}
+  /@picocss/pico@1.5.12:
+    resolution: {integrity: sha512-Q4s+DGqLw/0hdhGSL1T2u8mIJRkQingYqEjJvC+1st4FavBBekmjsTNykI7J7Xr1v5ZNMl/fIHULiXZt4GZvwg==}
     dev: false
 
   /@pkgr/utils@2.4.1:
@@ -2629,7 +2629,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240131
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240208
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.3:
@@ -9946,6 +9946,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
