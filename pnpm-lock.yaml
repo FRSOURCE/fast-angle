@@ -85,8 +85,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       '@iconify-json/carbon':
-        specifier: 1.1.29
-        version: 1.1.29
+        specifier: 1.1.30
+        version: 1.1.30
       '@intlify/vite-plugin-vue-i18n':
         specifier: 6.0.3
         version: 6.0.3(vite@4.5.2)(vue-i18n@9.6.5)
@@ -1796,8 +1796,8 @@ packages:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
     dev: true
 
-  /@iconify-json/carbon@1.1.29:
-    resolution: {integrity: sha512-zfyvX/kPItpBEU0fV0FhMW8Ln8PJX6is/L/GX7z9OOoVWEz1k8IlbK3KoBBH6ODZ8HHKG7HQ9FZ4nNl6RDe0Lw==}
+  /@iconify-json/carbon@1.1.30:
+    resolution: {integrity: sha512-tEvEmxCO0J0t0p2NT2IvJ+iiSNqqnabygSo/S8wkeh2Guhc4tQOgl9dxvDMpy6RqwtKRTKsaROPtnRfu/bl+Tg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2335,8 +2335,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240208:
-    resolution: {integrity: sha512-HVFiecDgytIXeqGWynlE/tMFIKdiXyLTQqB2kl1P+oiud8SMa6kIvd49o0b+0KydZf8LLEmGjwdxLl0D2v+yRQ==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240215:
+    resolution: {integrity: sha512-EyVgdF3pioxlZ6RdAh2r3IAaOQ67Q89WEzMym7dQ7brOhd88fzUvjLOzHjQjyPWHxsaT4QDA8jeB/b/Iji8jZA==}
     dependencies:
       '@types/gapi.client': 1.0.7
       '@types/gapi.client.discovery-v1': 0.0.3
@@ -2629,7 +2629,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240208
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240215
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.3:
