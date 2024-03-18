@@ -103,8 +103,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1(vite@4.5.2)(vue@3.3.13)
       '@vue/test-utils':
-        specifier: 2.4.4
-        version: 2.4.4(vue@3.3.13)
+        specifier: 2.4.5
+        version: 2.4.5
       critters:
         specifier: 0.0.22
         version: 0.0.22
@@ -2385,8 +2385,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240308:
-    resolution: {integrity: sha512-t6gMrCQ88abVg8ePeFdBCv0/O95PsrLp0cxJO5225vVOYhGe8x8mR9JeJ5kATdaS2pu2I2lZqgcDowBrzW0nBg==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240314:
+    resolution: {integrity: sha512-E9LtF/aTjzgjb3s7CWEsVQmj76O9tHxmwiYyQ68AGuoB1qT1NgzFVQHjNq1j6EZE4AiBqxZ6YvzgpYcg8pQ0Jw==}
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -2679,7 +2679,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240308
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240314
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.4:
@@ -3289,18 +3289,11 @@ packages:
   /@vue/shared@3.3.13:
     resolution: {integrity: sha512-/zYUwiHD8j7gKx2argXEMCUXVST6q/21DFU0sTfNX0URJroCe3b1UF6vLJ3lQDfLNIiiRl2ONp7Nh5UVWS6QnA==}
 
-  /@vue/test-utils@2.4.4(vue@3.3.13):
-    resolution: {integrity: sha512-8jkRxz8pNhClAf4Co4ZrpAoFISdvT3nuSkUlY6Ys6rmTpw3DMWG/X3mw3gQ7QJzgCZO9f+zuE2kW57fi09MW7Q==}
-    peerDependencies:
-      '@vue/server-renderer': ^3.0.1
-      vue: ^3.0.1
-    peerDependenciesMeta:
-      '@vue/server-renderer':
-        optional: true
+  /@vue/test-utils@2.4.5:
+    resolution: {integrity: sha512-oo2u7vktOyKUked36R93NB7mg2B+N7Plr8lxp2JBGwr18ch6EggFjixSCdIVVLkT6Qr0z359Xvnafc9dcKyDUg==}
     dependencies:
       js-beautify: 1.14.9
-      vue: 3.3.13(typescript@5.2.2)
-      vue-component-type-helpers: 1.8.22
+      vue-component-type-helpers: 2.0.6
     dev: true
 
   /@vueuse/core@9.13.0(vue@3.3.13):
@@ -9746,8 +9739,8 @@ packages:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
     dev: true
 
-  /vue-component-type-helpers@1.8.22:
-    resolution: {integrity: sha512-LK3wJHs3vJxHG292C8cnsRusgyC5SEZDCzDCD01mdE/AoREFMl2tzLRuzwyuEsOIz13tqgBcnvysN3Lxsa14Fw==}
+  /vue-component-type-helpers@2.0.6:
+    resolution: {integrity: sha512-qdGXCtoBrwqk1BT6r2+1Wcvl583ZVkuSZ3or7Y1O2w5AvWtlvvxwjGhmz5DdPJS9xqRdDlgTJ/38ehWnEi0tFA==}
     dev: true
 
   /vue-demi@0.14.7(vue@3.3.13):
