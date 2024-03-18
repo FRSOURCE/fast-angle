@@ -40,7 +40,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@vitejs/plugin-vue": "4.4.1",
-    "@vue/test-utils": "2.4.4",
+    "@vue/test-utils": "2.4.5",
     "critters": "0.0.22",
     "cross-env": "7.0.3",
     "https-localhost": "4.7.1",
