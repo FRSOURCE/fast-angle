@@ -130,8 +130,8 @@ importers:
         specifier: 1.69.7
         version: 1.69.7
       shiki:
-        specifier: 0.14.7
-        version: 0.14.7
+        specifier: 1.2.1
+        version: 1.2.1
       type-fest:
         specifier: ^4.0.0
         version: 4.1.0
@@ -2385,8 +2385,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240321:
-    resolution: {integrity: sha512-PDERno3k9FENrydNNxmSUGIGkuq0CYyQ2//VzgxOmtfsYNQO7RxJ5lnpLXlfJFNwkE5JcGpWcmnafNJNONaC5g==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240325:
+    resolution: {integrity: sha512-jDqUpms6wEx447/aFFC4AKdP4Cv5tNszM8hawJLuMfjIYGa+oSYTwsS+OqaCTNbMd40hX52gj1KljNzh3VZ5NQ==}
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -2557,6 +2557,10 @@ packages:
       rollup: 2.79.1
     dev: true
 
+  /@shikijs/core@1.2.1:
+    resolution: {integrity: sha512-KaIS0H4EQ3KI2d++TjYqRNgwp8E3M/68e9veR4QtInzA7kKFgcjeiJqb80fuXW+blDy5fmd11PN9g9soz/3ANQ==}
+    dev: true
+
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
@@ -2679,7 +2683,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240321
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240325
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.4:
@@ -8505,6 +8509,12 @@ packages:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: true
+
+  /shiki@1.2.1:
+    resolution: {integrity: sha512-u+XW6o0vCkUNlneZb914dLO+AayEIwK5tI62WeS//R5HIXBFiYaj/Hc5xcq27Yh83Grr4JbNtUBV8W6zyK4hWg==}
+    dependencies:
+      '@shikijs/core': 1.2.1
     dev: true
 
   /side-channel@1.0.4:
