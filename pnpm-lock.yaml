@@ -30,8 +30,8 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1
       '@picocss/pico':
-        specifier: 1.5.13
-        version: 1.5.13
+        specifier: 2.0.6
+        version: 2.0.6
       '@vueuse/core':
         specifier: 9.13.0
         version: 9.13.0(vue@3.3.13)
@@ -2445,8 +2445,9 @@ packages:
     resolution: {integrity: sha512-QOr/t7314XTwgAUDazR+RDcTAWSbkpjDnZJddd9f56jSUA8ptUsyDblAb+sp/O5O1o5Fiu9KpWxVHKuhGUgp5w==}
     dev: false
 
-  /@picocss/pico@1.5.13:
-    resolution: {integrity: sha512-BPTeE4JC95+7/vsG9r+6hDR1qUkV4YZ1blI/TI6peOmM94XubjmUDE3jUi4f6DBV6WmCL76ueTct/NerJ33E8A==}
+  /@picocss/pico@2.0.6:
+    resolution: {integrity: sha512-/d8qsykowelD6g8k8JYgmCagOIulCPHMEc2NC4u7OjmpQLmtSetLhEbt0j1n3fPNJVcrT84dRp0RfJBn3wJROA==}
+    engines: {node: '>=18.19.0'}
     dev: false
 
   /@pkgr/utils@2.4.1:
