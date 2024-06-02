@@ -130,8 +130,8 @@ importers:
         specifier: 1.69.7
         version: 1.69.7
       shiki:
-        specifier: 0.14.7
-        version: 0.14.7
+        specifier: 1.6.2
+        version: 1.6.2
       type-fest:
         specifier: ^4.0.0
         version: 4.1.0
@@ -1881,8 +1881,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.4.1
-      '@intlify/shared': 9.4.1
+      '@intlify/message-compiler': 10.0.0-beta.1
+      '@intlify/shared': 10.0.0-beta.1
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.6.5(vue@3.3.13)
@@ -1896,11 +1896,11 @@ packages:
       '@intlify/message-compiler': 9.6.5
       '@intlify/shared': 9.6.5
 
-  /@intlify/message-compiler@9.4.1:
-    resolution: {integrity: sha512-aN2N+dUx320108QhH51Ycd2LEpZ+NKbzyQ2kjjhqMcxhHdxtOnkgdx+MDBhOy/CObwBmhC3Nygzc6hNlfKvPNw==}
+  /@intlify/message-compiler@10.0.0-beta.1:
+    resolution: {integrity: sha512-rBmXBZzDgq3yPkL/3/r9uK0nrsJOYHSpaW0mtGBxxjt9pY9vaPL0UAKbVAjFPRnfEY41ixgpkpTjai6IKZ+hvg==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/shared': 9.4.1
+      '@intlify/shared': 10.0.0-beta.1
       source-map-js: 1.0.2
     dev: true
 
@@ -1911,8 +1911,8 @@ packages:
       '@intlify/shared': 9.6.5
       source-map-js: 1.0.2
 
-  /@intlify/shared@9.4.1:
-    resolution: {integrity: sha512-A51elBmZWf1FS80inf/32diO9DeXoqg9GR9aUDHFcfHoNDuT46Q+fpPOdj8jiJnSHSBh8E1E+6qWRhAZXdK3Ng==}
+  /@intlify/shared@10.0.0-beta.1:
+    resolution: {integrity: sha512-61MnYhgqS/TyAto9CXOltHlhK2WflLBcKpIkRhZCUL2IkiVvh7qKevsqZ3RYZylyC3q19ajLW6mB+iJtnbAOpg==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -1936,7 +1936,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1(vue-i18n@9.6.5)
-      '@intlify/shared': 9.4.1
+      '@intlify/shared': 10.0.0-beta.1
       '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
       fast-glob: 3.2.12
@@ -2385,8 +2385,8 @@ packages:
     dev: true
     optional: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240321:
-    resolution: {integrity: sha512-PDERno3k9FENrydNNxmSUGIGkuq0CYyQ2//VzgxOmtfsYNQO7RxJ5lnpLXlfJFNwkE5JcGpWcmnafNJNONaC5g==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240530:
+    resolution: {integrity: sha512-9EgzpD+Q10YZiPyLScQe2613hIo/NA3c3/pHmAEWRBcrVqbn7g2klW+GLKspvHTOfcaDZ40n9zscNSYeJCSkVA==}
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -2557,6 +2557,10 @@ packages:
       rollup: 2.79.1
     dev: true
 
+  /@shikijs/core@1.6.2:
+    resolution: {integrity: sha512-guW5JeDzZ7uwOjTfCOFZ2VtVXk5tmkMzBYbKGfXsmAH1qYOej49L5jQDcGmwd6/OgvpmWhzO2GNJkQIFnbwLPQ==}
+    dev: true
+
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
@@ -2679,7 +2683,7 @@ packages:
   /@types/gapi.client.androidpublisher@3.0.1:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240321
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240530
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.4:
@@ -8505,6 +8509,12 @@ packages:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: true
+
+  /shiki@1.6.2:
+    resolution: {integrity: sha512-X3hSm5GzzBd/BmPmGfkueOUADLyBoZo1ojYQXhd+NU2VJn458yt4duaS0rVzC+WtqftSV7mTVvDw+OB9AHi3Eg==}
+    dependencies:
+      '@shikijs/core': 1.6.2
     dev: true
 
   /side-channel@1.0.4:
