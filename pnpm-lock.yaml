@@ -88,8 +88,8 @@ importers:
         specifier: 1.1.34
         version: 1.1.34
       '@intlify/vite-plugin-vue-i18n':
-        specifier: 6.0.3
-        version: 6.0.3(vite@5.2.12)(vue-i18n@9.6.5)
+        specifier: 7.0.0
+        version: 7.0.0(vite@5.2.12)(vue-i18n@9.6.5)
       '@types/color-hash':
         specifier: ^2.0.0
         version: 2.0.0
@@ -1943,9 +1943,10 @@ packages:
     resolution: {integrity: sha512-gD7Ey47Xi4h/t6P+S04ymMSoA3wVRxGqjxuIMglwRO8POki9h164Epu2N8wk/GHXM/hR6ZGcsx2HArCCENjqSQ==}
     engines: {node: '>= 16'}
 
-  /@intlify/vite-plugin-vue-i18n@6.0.3(vite@5.2.12)(vue-i18n@9.6.5):
-    resolution: {integrity: sha512-6SgNzPAOCR90wvt368lKzi7f/5ZEWJn22UCGvhFsP3XvKqlF3cVzojahgQ6o+LTdCkExeM6wPgd+haFf28E9VQ==}
+  /@intlify/vite-plugin-vue-i18n@7.0.0(vite@5.2.12)(vue-i18n@9.6.5):
+    resolution: {integrity: sha512-2TbDOQ8XD+vkc0s5OFmr+IY/k4mYMC7pzvx0xGQn+cU/ev314+yi7Z7N7rWcBgiYk1WOUalbGSo3d4nJDxOOyw==}
     engines: {node: '>= 14.6'}
+    deprecated: This plugin support until Vite 3. If you would like to use on Vite 4, please use @intlify/unplugin-vue-i18n
     peerDependencies:
       petite-vue-i18n: '*'
       vite: ^2.9.0 || ^3.0.0
@@ -1961,8 +1962,8 @@ packages:
       '@intlify/bundle-utils': 3.2.1(vue-i18n@9.6.5)
       '@intlify/shared': 10.0.0-beta.1
       '@rollup/pluginutils': 4.2.1
-      debug: 4.3.4
-      fast-glob: 3.2.12
+      debug: 4.3.5
+      fast-glob: 3.3.1
       source-map: 0.6.1
       vite: 5.2.12(@types/node@18.6.1)(sass@1.69.7)
       vue-i18n: 9.6.5(vue@3.3.13)
@@ -8912,7 +8913,7 @@ packages:
   /spdy-transport@3.0.0:
     resolution: {integrity: sha512-hsLVFE5SjA6TCisWeJXFKniGGOpBgMLmerfO2aCyCU5s7nJ/rpAepqmFifv/GCbSbueEeAJJnmSQ2rKC/g8Fcw==}
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.5
       detect-node: 2.1.0
       hpack.js: 2.1.6
       obuf: 1.1.2
