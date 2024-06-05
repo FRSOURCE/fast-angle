@@ -4,8 +4,9 @@
     "target": {
       "namespace": "android_app",
       "package_name": "org.frsource.www.fast_angle.twa",
-      "sha256_cert_fingerprints":
-        ["2B:F0:18:F9:3F:3B:EB:05:B4:1B:E4:E6:EA:0A:AA:4F:26:BC:48:AC:46:2D:07:87:87:24:16:AA:71:98:F4:B8"]
+      "sha256_cert_fingerprints": [
+        "2B:F0:18:F9:3F:3B:EB:05:B4:1B:E4:E6:EA:0A:AA:4F:26:BC:48:AC:46:2D:07:87:87:24:16:AA:71:98:F4:B8"
+      ]
     }
   }
 ]
