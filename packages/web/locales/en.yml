@@ -24,7 +24,7 @@ board:
   click_this_button_or_drop: |
     Click here to start measurement.
     To open image, drop it onto this board or use load button below.
-    For better experience - enable fullscreen mode by clicking on fullscreen button located in bottom-right corner.
+    For better experience - enable fullscreen mode by clicking on button located in bottom-right corner.
   result:
     zoom_in: Zoom in
     zoom_out: Zoom out

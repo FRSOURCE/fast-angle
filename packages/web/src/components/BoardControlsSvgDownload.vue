@@ -1,30 +1,30 @@
 <script lang="ts" setup>
-import IconDownload from '~icons/carbon/download'
+import IconDownload from '~icons/carbon/download';
 
 defineProps({
   disabled: {
     type: Boolean,
     default: false,
   },
-})
+});
 
-const { t } = useI18n()
-const { isSupported: isSvgDownloadSupported } = useBoardSvgDownload()
-const boardRef = useBoardRef()
-const { height: boardHeight, width: boardWidth } = useElementSize(boardRef)
-const isModalOpen = ref(false)
-const isSubmittingForm = ref(false)
-const formId = 'board_svg_download_form'
+const { t } = useI18n();
+const { isSupported: isSvgDownloadSupported } = useBoardSvgDownload();
+const boardRef = useBoardRef();
+const { height: boardHeight, width: boardWidth } = useElementSize(boardRef);
+const isModalOpen = ref(false);
+const isSubmittingForm = ref(false);
+const formId = 'board_svg_download_form';
 
 useMagicKeys({
   onEventFired(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-      e.preventDefault()
-      isModalOpen.value = true
+      e.preventDefault();
+      isModalOpen.value = true;
     }
   },
   passive: false,
-})
+});
 </script>
 
 <template>
@@ -46,7 +46,7 @@ useMagicKeys({
           :board-height="boardHeight"
           :board-width="boardWidth"
           @submit="isSubmittingForm = true"
-          @download-finish="isSubmittingForm = false, isModalOpen = false"
+          @download-finish="(isSubmittingForm = false), (isModalOpen = false)"
         />
 
         <template #footer>
@@ -56,6 +56,8 @@ useMagicKeys({
             :form="formId"
             :disabled="isSubmittingForm"
             :aria-busy="isSubmittingForm"
+            :class="$style['button-submit']"
+            autofocus
           >
             {{ t('board.nav.download_image.save') }}
           </Button>
@@ -64,3 +66,9 @@ useMagicKeys({
     </Button>
   </li>
 </template>
+
+<style lang="scss" module>
+.button-submit {
+  width: auto !important;
+}
+</style>

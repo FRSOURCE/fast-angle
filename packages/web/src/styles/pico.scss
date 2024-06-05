@@ -1,86 +1,99 @@
-@use "sass:color" as color;
+@use 'sass:color' as color;
+@use '@picocss/pico/scss/colors' as picoColors;
+@use 'tooltip' with (
+  $enable-transitions: true
+);
+@use '@picocss/pico/scss/pico' as pico with (
+  // Enable <header>, <main>, <footer> inside $semantic-root-element as containers
+  $enable-semantic-container: true,
+  $semantic-root-element: '#app',
+  // Enable .classes
+  $enable-classes: false,
+  // Enable fluid layout
+  $enable-viewport: false,
 
-$semantic-root-element: '#app';
-// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
-$enable-semantic-container: true;
-// Enable .classes
-$enable-classes: false;
-// Enable fluid layout
-$enable-viewport: false;
+  $theme-color: 'blue',
+  $css-var-prefix: '--',
 
-$primary-hue: 205 !default;
-$primary-50: hsl($primary-hue, 99%, 94%) !default;
-$primary-100: hsl($primary-hue, 98%, 86%) !default;
-$primary-200: hsl($primary-hue, 95%, 77%) !default;
-$primary-300: hsl($primary-hue, 92%, 68%) !default;
-$primary-400: hsl($primary-hue, 94%, 59%) !default;
-$primary-500: hsl($primary-hue, 96%, 50%) !default;
-$primary-600: hsl($primary-hue, 99%, 46%) !default;
-$primary-700: hsl($primary-hue, 99%, 40%) !default;
-$primary-800: hsl($primary-hue, 98%, 30%) !default;
-$primary-900: hsl($primary-hue, 100%, 22%) !default;
+  $modules: (
+    // Theme
+    'themes/default': true,
 
-$grey-hue: 205 !default;
-$grey-500: hsl($grey-hue, 20%, 40%) !default;
-$grey-600: hsl($grey-hue, 15%, 41%) !default;
-$grey-700: hsl($grey-hue, 20%, 32%) !default;
-$grey-800: hsl($grey-hue, 25%, 23%) !default;
-$grey-900: hsl($grey-hue, 30%, 15%) !default;
+    // Layout
+    'layout/document': true,
+    'layout/landmarks': false,
+    'layout/container': true,
+    'layout/section': true,
+    'layout/grid': true,
+    'layout/overflow-auto': false,
 
-// Config
-@import "@picocss/pico/scss/variables";
+    // Content
+    'content/link': true,
+    'content/typography': true,
+    'content/embedded': true,
+    'content/button': true,
+    'content/table': true,
+    'content/code': true,
+    'content/figure': true,
+    'content/miscs': true,
 
-// Theming
-@import "@picocss/pico/scss/themes/default";
+    // Forms
+    'forms/basics': true,
+    'forms/checkbox-radio-switch': true,
+    'forms/input-color': true,
+    'forms/input-date': false,
+    'forms/input-file': false,
+    'forms/input-range': true,
+    'forms/input-search': false,
 
-// Layout
-@import "@picocss/pico/scss/layout/document"; // html
-@import "@picocss/pico/scss/layout/sectioning"; // body, header, main, footer
-@import "@picocss/pico/scss/layout/container"; // .container, .container-fluid
-@import "@picocss/pico/scss/layout/section"; // section
-@import "@picocss/pico/scss/layout/grid"; // .grid
-@import "@picocss/pico/scss/layout/scroller"; // figure
+    // Components
+    'components/accordion': true,
+    'components/card': true,
+    'components/dropdown': true,
+    'components/group': false,
+    'components/loading': false,
+    'components/modal': true,
+    'components/nav': true,
+    'components/progress': true,
+    'components/tooltip': false,
 
-// Content
-@import "@picocss/pico/scss/content/typography"; // a, headings, p, ul, blockquote, ...
-@import "@picocss/pico/scss/content/embedded"; // audio, canvas, iframe, img, svg, video
-@import "@picocss/pico/scss/content/button"; // button, a[role=button], type=button, type=submit ...
-@import "@picocss/pico/scss/content/form"; // input, select, textarea, label, fieldset, legend
-@import "@picocss/pico/scss/content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
-@import "@picocss/pico/scss/content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
-@import "@picocss/pico/scss/content/table"; // table, tr, td, ...
-@import "@picocss/pico/scss/content/code"; // pre, code, ...
-@import "@picocss/pico/scss/content/miscs"; // hr, template, [hidden], dialog, canvas
+    // Utilities
+    'utilities/accessibility': true,
+    'utilities/reduce-motion': true
+  )
+);
 
-// Components
-@import "@picocss/pico/scss/components/accordion"; // details, summary
-@import "@picocss/pico/scss/components/card"; // article
-@import "@picocss/pico/scss/components/modal"; // dialog
-@import "@picocss/pico/scss/components/nav"; // nav
-@import "@picocss/pico/scss/components/progress"; // progress
-@import "@picocss/pico/scss/components/dropdown"; // dropdown
+$background-color-transparent-light: color.adjust(
+  picoColors.$white,
+  $alpha: -0.3
+);
+$background-color-transparent-dark: color.adjust(
+  color.mix(picoColors.$black, picoColors.$grey-900, 37.5%),
+  $alpha: -0.4
+);
 
-// Utilities
-@import "@picocss/pico/scss/utilities/loading"; // aria-busy=true
-@import "tooltip"; // data-tooltip
-@import "@picocss/pico/scss/utilities/accessibility"; // -ms-touch-action, aria-*
-@import "@picocss/pico/scss/utilities/reduce-motion"; // prefers-reduced-motion
+$primary: #0189e9;
 
-$background-color-transparent-light: color.adjust($white, $alpha: -0.3);
-$background-color-transparent-dark: color.adjust(color.mix($black, $grey-900, 37.5%), $alpha: -0.4);
+$primary-link-light: color.mix($primary, picoColors.$black, 75%);
+$primary-link-dark: color.mix($primary, picoColors.$white, 75%);
 
-$primary-link-light: $primary-700;
-$primary-link-dark: $primary-400;
+$muted-color-dark: #{picoColors.$grey-300};
 
-$muted-color-dark: #{$grey-300};
+[data-theme='light'],
+:root:not([data-theme='dark']),
+[data-theme='dark'] {
+  --primary: #0189e9;
+  --primary-background: #0189e9;
+}
 
-[data-theme=light], :root:not([data-theme=dark]) {
+[data-theme='light'],
+:root:not([data-theme='dark']) {
   --background-color-transparent: #{$background-color-transparent-light};
   --background-color-transparent-inverse: #{$background-color-transparent-dark};
   --primary-link: #{$primary-link-light};
 }
 
-[data-theme=dark] {
+[data-theme='dark'] {
   --background-color-transparent: #{$background-color-transparent-dark};
   --background-color-transparent-inverse: #{$background-color-transparent-light};
   --primary-link: #{$primary-link-dark};
@@ -88,7 +101,7 @@ $muted-color-dark: #{$grey-300};
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
+  :root:not([data-theme='light']) {
     --background-color-transparent: #{$background-color-transparent-dark};
     --background-color-transparent-inverse: #{$background-color-transparent-light};
     --primary-link: #{$primary-link-dark};
@@ -104,24 +117,6 @@ body {
   }
 }
 
-dialog {
-  padding: 0;
-
-  > article {
-    margin: 0;
-    max-height: 100%;
-  }
-
-  @media (min-width: 480px) {
-    padding: var(--spacing);
-
-    > article {
-      margin: var(--block-spacing-vertical) 0;
-      max-height: calc(100vh - var(--spacing) * 2);
-    }
-  }
-}
-
 fieldset {
   border: thin solid var(--form-element-border-color);
   padding: 0 var(--form-element-spacing-horizontal);
@@ -133,6 +128,7 @@ fieldset {
   }
 }
 
-th, td {
+th,
+td {
   padding: calc(var(--spacing) / 4) calc(var(--spacing) / 2);
 }

@@ -1,11 +1,15 @@
-import type { UserModule } from '~/types'
+import type { UserModule } from '~/types';
+
+const isVirtualKeyboardApiSupported = (
+  navigator: Navigator,
+): navigator is Navigator & { virtualKeyboard: { overlaysContent: boolean } } =>
+  'virtualKeyboard' in navigator;
 
 // makes the keyboard show as an overlay in Android Chrome
 // https://developer.chrome.com/docs/web-platform/virtual-keyboard/#opting-in-to-the-new-virtual-keyboard-behavior
 export const install: UserModule = async ({ isClient }) => {
-  if (!isClient)
-    return
+  if (!isClient) return;
 
-  if ('virtualKeyboard' in navigator)
-    (navigator as any).virtualKeyboard.overlaysContent = true
-}
+  if (isVirtualKeyboardApiSupported(navigator))
+    navigator.virtualKeyboard.overlaysContent = true;
+};

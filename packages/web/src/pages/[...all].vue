@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const { t } = useI18n()
+const { t } = useI18n();
 
-const currentRoute = useRoute()
-const uriLocale = useUriLocale()
-const lang = computed(() => toAvailableLocale(uriLocale.value))
-const currentUrl = computed(() => currentRoute.fullPath)
+const currentRoute = useRoute();
+const uriLocale = useUriLocale();
+const lang = computed(() => toAvailableLocale(uriLocale.value));
+const currentUrl = computed(() => currentRoute.fullPath);
 </script>
 
 <template>
@@ -24,9 +24,8 @@ const currentUrl = computed(() => currentRoute.fullPath)
       />
     </p>
     <p v-if="lang">
-      {{ t('404.redirect_button_description') }} <RouterLink
-        :to="{ name: `lang-${lang}` }"
-      >
+      {{ t('404.redirect_button_description') }}
+      <RouterLink :to="{ name: `lang-${lang}` }">
         {{ t('404.redirect_button') }}
       </RouterLink>
     </p>

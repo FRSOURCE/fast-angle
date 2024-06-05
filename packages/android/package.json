@@ -9,6 +9,6 @@
     "preview": "bubblewrap install"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "^1.18.1"
+    "@bubblewrap/cli": "1.21.0"
   }
 }

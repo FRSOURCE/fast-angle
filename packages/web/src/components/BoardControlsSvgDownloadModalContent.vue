@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { ValueOf } from 'type-fest'
-import { SVG_DOWNLOAD_FILETYPE } from '~/composables/useBoardSvgDownload'
-import { SIZING_UNIT } from '~/composables/usePixelToUnit'
-import IconLocked from '~icons/carbon/locked'
-import IconUnlocked from '~icons/carbon/unlocked'
+import type { ValueOf } from 'type-fest';
+import { SVG_DOWNLOAD_FILETYPE } from '~/composables/useBoardSvgDownload';
+import { SIZING_UNIT } from '~/composables/usePixelToUnit';
+import IconLocked from '~icons/carbon/locked';
+import IconUnlocked from '~icons/carbon/unlocked';
 
 const props = defineProps({
   boardWidth: {
@@ -14,61 +14,80 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-})
+});
 
 const emit = defineEmits<{
-  (e: 'downloadFinish'): void
-}>()
+  (e: 'downloadFinish'): void;
+}>();
 
-const { t } = useI18n()
-const { triggerDownload: triggerSvgDownload } = useBoardSvgDownload()
-const filename = useLocalStorage('FA_FILENAME', 'fast-angle-image')
+const { t } = useI18n();
+const { triggerDownload: triggerSvgDownload } = useBoardSvgDownload();
+const filename = useLocalStorage('FA_FILENAME', 'fast-angle-image');
 
-const { boardHeight, boardWidth } = toRefs(props)
-const height = ref(boardHeight.value)
-const width = ref(boardWidth.value)
-const unit = useLocalStorage<ValueOf<typeof SIZING_UNIT>>('FA_SIZE_UNIT', SIZING_UNIT.px)
-const keepAspectRatio = ref(true)
-const aspectRatio = ref(boardWidth.value / boardHeight.value)
+const { boardHeight, boardWidth } = toRefs(props);
+const height = ref(boardHeight.value);
+const width = ref(boardWidth.value);
+const unit = useLocalStorage<ValueOf<typeof SIZING_UNIT>>(
+  'FA_SIZE_UNIT',
+  SIZING_UNIT.px,
+);
+const keepAspectRatio = ref(true);
+const aspectRatio = ref(boardWidth.value / boardHeight.value);
 
 if (breakpoints.isGreaterOrEqual('xl')) {
   watch([boardWidth, boardHeight] as const, ([boardWidth, boardHeight]) => {
-    width.value = boardWidth
-    height.value = boardHeight
-    aspectRatio.value = boardWidth / boardHeight
-  })
+    width.value = boardWidth;
+    height.value = boardHeight;
+    aspectRatio.value = boardWidth / boardHeight;
+  });
 }
 
-const heightUnit = usePixelToUnit(height, unit, boardHeight)
-const widthUnit = usePixelToUnit(width, unit, boardWidth)
+const heightUnit = usePixelToUnit(height, unit, boardHeight);
+const widthUnit = usePixelToUnit(width, unit, boardWidth);
 
-watch([widthUnit, heightUnit] as const, ([widthUnit, heightUnit]) => {
-  if (!keepAspectRatio.value)
-    aspectRatio.value = widthUnit / heightUnit
-}, { flush: 'sync', immediate: true })
+watch(
+  [widthUnit, heightUnit] as const,
+  ([widthUnit, heightUnit]) => {
+    if (!keepAspectRatio.value) aspectRatio.value = widthUnit / heightUnit;
+  },
+  { flush: 'sync', immediate: true },
+);
 
-watch(heightUnit, () => {
-  if (heightUnit.value < 0)
-    heightUnit.value = 1
-  if (keepAspectRatio.value && heightUnit.value !== +((widthUnit.value / aspectRatio.value).toFixed(3)))
-    widthUnit.value = +((heightUnit.value * aspectRatio.value).toFixed(3))
-}, { flush: 'sync' })
-watch(widthUnit, () => {
-  if (widthUnit.value < 0)
-    widthUnit.value = 1
-  if (keepAspectRatio.value && widthUnit.value !== +((heightUnit.value * aspectRatio.value).toFixed(3)))
-    heightUnit.value = +((widthUnit.value / aspectRatio.value).toFixed(3))
-}, { flush: 'sync' })
+watch(
+  heightUnit,
+  () => {
+    if (heightUnit.value < 0) heightUnit.value = 1;
+    if (
+      keepAspectRatio.value &&
+      heightUnit.value !== +(widthUnit.value / aspectRatio.value).toFixed(3)
+    )
+      widthUnit.value = +(heightUnit.value * aspectRatio.value).toFixed(3);
+  },
+  { flush: 'sync' },
+);
+watch(
+  widthUnit,
+  () => {
+    if (widthUnit.value < 0) widthUnit.value = 1;
+    if (
+      keepAspectRatio.value &&
+      widthUnit.value !== +(heightUnit.value * aspectRatio.value).toFixed(3)
+    )
+      heightUnit.value = +(widthUnit.value / aspectRatio.value).toFixed(3);
+  },
+  { flush: 'sync' },
+);
 
-const filetype = useLocalStorage<ValueOf<typeof SVG_DOWNLOAD_FILETYPE>>('FA_FILETYPE', SVG_DOWNLOAD_FILETYPE.PNG)
+const filetype = useLocalStorage<ValueOf<typeof SVG_DOWNLOAD_FILETYPE>>(
+  'FA_FILETYPE',
+  SVG_DOWNLOAD_FILETYPE.PNG,
+);
 
-const quality = useLocalStorage('FA_QUALITY', 100)
+const quality = useLocalStorage('FA_QUALITY', 100);
 watch(quality, () => {
-  if (quality.value > 100)
-    quality.value = 100
-  if (quality.value < 0)
-    quality.value = 0
-})
+  if (quality.value > 100) quality.value = 100;
+  if (quality.value < 0) quality.value = 0;
+});
 
 async function submit() {
   await triggerSvgDownload({
@@ -77,20 +96,24 @@ async function submit() {
     quality: quality.value / 100,
     width: width.value,
     height: height.value,
-  }).catch(() => {})
+  }).catch(() => {});
 
-  emit('downloadFinish')
+  emit('downloadFinish');
 }
 </script>
 
 <template>
-  <form
-    @submit.prevent="submit"
-  >
+  <form @submit.prevent="submit">
     <div :class="$style.name">
       <label class="flex-grow">
         {{ t('board.nav.download_image.name_label') }}
-        <input v-model="filename" type="text" name="name" required :aria-invalid="!filename">
+        <input
+          v-model="filename"
+          type="text"
+          name="name"
+          required
+          :aria-invalid="!filename"
+        />
       </label>
 
       <label :class="$style['label--big']">
@@ -99,25 +122,51 @@ async function submit() {
           <option
             v-for="format in Object.keys(SVG_DOWNLOAD_FILETYPE)"
             :key="format"
-            :value="SVG_DOWNLOAD_FILETYPE[format as keyof typeof SVG_DOWNLOAD_FILETYPE]"
+            :value="
+              SVG_DOWNLOAD_FILETYPE[
+                format as keyof typeof SVG_DOWNLOAD_FILETYPE
+              ]
+            "
             v-text="format"
           />
         </select>
       </label>
     </div>
     <fieldset :class="$style.sizing">
-      <legend><small>{{ t('board.nav.download_image.sizing_label') }}</small></legend>
+      <legend>
+        <small>{{ t('board.nav.download_image.sizing_label') }}</small>
+      </legend>
       <label :class="$style.label">
         {{ t('board.nav.download_image.width_label') }}
-        <input v-model.number="widthUnit" min="1" type="number" step="0.000001" name="width" required :aria-invalid="!widthUnit || widthUnit < 1">
+        <input
+          v-model.number="widthUnit"
+          min="1"
+          type="number"
+          step="0.000001"
+          name="width"
+          required
+          :aria-invalid="!widthUnit || widthUnit < 1"
+        />
       </label>
       <label :class="$style.label">
         {{ t('board.nav.download_image.height_label') }}
-        <input v-model.number="heightUnit" min="1" type="number" step="0.000001" name="height" required :aria-invalid="!heightUnit || heightUnit < 1">
+        <input
+          v-model.number="heightUnit"
+          min="1"
+          type="number"
+          step="0.000001"
+          name="height"
+          required
+          :aria-invalid="!heightUnit || heightUnit < 1"
+        />
       </label>
       <label>
         &nbsp;
-        <div :class="$style['aspect-ratio']" :data-tooltip="t('board.nav.download_image.keep_aspect_ratio')">
+        <div
+          :class="$style['aspect-ratio']"
+          :data-tooltip="t('board.nav.download_image.keep_aspect_ratio')"
+          data-placement="left"
+        >
           <Button
             :aria-label="t('board.nav.download_image.keep_aspect_ratio')"
             :class="[
@@ -146,10 +195,24 @@ async function submit() {
     <label>
       <span :class="$style.quality">
         {{ t('board.nav.download_image.quality_label') }}
-        <input v-model.number="quality" type="number" min="1" max="100" :class="$style.quality__input" name="quality" :aria-invalid="!quality || quality > 100 || quality < 1">
+        <input
+          v-model.number="quality"
+          type="number"
+          min="1"
+          max="100"
+          :class="$style.quality__input"
+          name="quality"
+          :aria-invalid="!quality || quality > 100 || quality < 1"
+        />
         %
       </span>
-      <input v-model.number="quality" type="range" min="1" max="100" name="quality">
+      <input
+        v-model.number="quality"
+        type="range"
+        min="1"
+        max="100"
+        name="quality"
+      />
     </label>
   </form>
 </template>
@@ -170,9 +233,10 @@ async function submit() {
   width: 80px;
 }
 
-.sizing, .name {
+.sizing,
+.name {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .sizing {
@@ -180,14 +244,14 @@ async function submit() {
 }
 
 .aspect-ratio {
-  border-bottom: none!important;
-  margin-top: calc(var(--spacing) * 0.25 + .375rem);
-  cursor: default!important;
+  border-bottom: none !important;
+  margin-top: calc(var(--spacing) * 0.25 + 0.375rem);
+  cursor: default !important;
 }
 
 .aspect-ratio-btn {
-  --form-element-spacing-vertical: .5rem;
-  --form-element-spacing-horizontal: .25rem;
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.25rem;
   margin-right: 0;
 }
 
@@ -197,11 +261,11 @@ async function submit() {
 
 .quality {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   align-items: center;
 
   .quality__input {
-    margin: 0 .5rem 0 auto;
+    margin: 0 0.5rem 0 auto;
     width: 100px;
     --line-height: 9px;
     --form-element-spacing-vertical: 0.5rem;

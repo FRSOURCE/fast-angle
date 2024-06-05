@@ -1,1 +1,3 @@
-export const useBoardSvgRef = createSharedComposable(() => ref<SVGSVGElement>())
+export const useBoardSvgRef = createSharedComposable(() =>
+  ref<SVGSVGElement>(),
+);

@@ -1,59 +1,59 @@
-import path from 'node:path'
-import process from 'node:process'
-import { promises as fs } from 'node:fs'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import generateSitemap from 'vite-ssg-sitemap'
-import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-vue-markdown'
-import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Inspect from 'vite-plugin-inspect'
-import LinkAttributes from 'markdown-it-link-attributes'
-import Shiki from 'markdown-it-shiki'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import incstr from 'incstr'
+import path from 'node:path';
+import process from 'node:process';
+import { promises as fs } from 'node:fs';
+import { defineConfig } from 'vite';
+import Vue from '@vitejs/plugin-vue';
+import Pages from 'vite-plugin-pages';
+import generateSitemap from 'vite-ssg-sitemap';
+import Layouts from 'vite-plugin-vue-layouts';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import Markdown from 'unplugin-vue-markdown/vite';
+import { VitePWA } from 'vite-plugin-pwa';
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
+import Inspect from 'vite-plugin-inspect';
+import LinkAttributes from 'markdown-it-link-attributes';
+import Shiki from '@shikijs/markdown-it';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import incstr from 'incstr';
 
-const isProd = process.env.NODE_ENV === 'production'
-const prefix = 'f_'
+const isProd = process.env.NODE_ENV === 'production';
+const prefix = 'f_';
 const nextClassName = incstr.idGenerator({
   alphabet: 'abcdefghijklmnopqrstuvwxyz0123456789_-',
   prefix,
-})
-const classNameMap = {} as Record<string, string>
+});
+const classNameMap = {} as Record<string, string>;
 
 function productionClassGenerator(name: string, filename: string) {
-  const id = `${filename}_>_${name}`
-  let classname = classNameMap[id]
+  const id = `${filename}_>_${name}`;
+  let classname = classNameMap[id];
 
   if (!classname) {
-    classname = nextClassName()
+    classname = nextClassName();
 
-    classNameMap[id] = classname
+    classNameMap[id] = classname;
   }
 
-  return classname
+  return classname;
 }
 
 const availableLocalesPromise = new Promise<string[]>((resolve) => {
   fs.readdir('./locales').then((files) => {
     resolve(
       files
-        .filter(file =>
+        .filter((file) =>
           ['.yml', '.json', '.yaml'].includes(path.extname(file).toLowerCase()),
         )
-        .map(file => file.substring(0, file.lastIndexOf('.'))),
-    )
-  })
-})
+        .map((file) => file.substring(0, file.lastIndexOf('.'))),
+    );
+  });
+});
 
-const baseArg = process.argv.find(v => v.includes('--base='))
-const base = baseArg ? baseArg.replace('--base=', '') : '/'
+const baseArg = process.argv.find((v) => v.includes('--base='));
+const base = baseArg ? baseArg.replace('--base=', '') : '/';
 
 export default defineConfig({
   base,
@@ -69,7 +69,7 @@ export default defineConfig({
       reactivityTransform: true,
       template: {
         compilerOptions: {
-          isCustomElement: tag => ['hgroup'].includes(tag),
+          isCustomElement: (tag) => ['hgroup'].includes(tag),
         },
       },
     }),
@@ -85,9 +85,12 @@ export default defineConfig({
               '--icon-search',
               '--icon-time',
             ].reduce((p, cssVar) => {
-              return p.replace(new RegExp(`${cssVar.replaceAll('-', '\\-')}:.+?;`), '')
+              return p.replace(
+                new RegExp(`${cssVar.replaceAll('-', '\\-')}:.+?;`),
+                '',
+              );
             }, code),
-          }
+          };
         }
       },
     },
@@ -96,42 +99,39 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
       async onRoutesGenerated(routes) {
-        const availableLocales = await availableLocalesPromise
+        const availableLocales = await availableLocalesPromise;
 
-        return routes
-          .flatMap((route) => {
-            if (route.name === 'all') {
-              return [
-                {
-                  ...route,
-                  name: '404',
-                  path: '/404',
-                },
-                route,
-              ]
-            }
+        return routes.flatMap((route) => {
+          if (route.name === 'all') {
+            return [
+              {
+                ...route,
+                name: '404',
+                path: '/404',
+              },
+              route,
+            ];
+          }
 
-            if (route.name === 'lang') {
-              return availableLocales
-                .map(locale => ({
-                  ...route,
-                  name: `lang-${locale}`,
-                  path: `/${locale}`,
-                }))
-            }
+          if (route.name === 'lang') {
+            return availableLocales.map((locale) => ({
+              ...route,
+              name: `lang-${locale}`,
+              path: `/${locale}`,
+            }));
+          }
 
-            if (route.name.substring(0, 5) === 'lang-') {
-              const pageName = route.name.substring(5)
-              return availableLocales
-                .map(locale => ({
-                  ...route,
-                  name: `lang-${locale}-${pageName}`,
-                  path: `/${locale}/${pageName}`,
-                }))
-            }
+          if (route.name.substring(0, 5) === 'lang-') {
+            const pageName = route.name.substring(5);
+            return availableLocales.map((locale) => ({
+              ...route,
+              name: `lang-${locale}-${pageName}`,
+              path: `/${locale}/${pageName}`,
+            }));
+          }
 
-            return route
-          })
+          return route;
+        });
       },
     }),
 
@@ -150,9 +150,7 @@ export default defineConfig({
         '@vueuse/core',
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: [
-        'src/composables',
-      ],
+      dirs: ['src/composables'],
       vueTemplate: true,
     }),
 
@@ -163,9 +161,11 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
-      resolvers: [IconsResolver({
-        customCollections: ['custom'],
-      })],
+      resolvers: [
+        IconsResolver({
+          customCollections: ['custom'],
+        }),
+      ],
     }),
 
     // https://github.com/antfu/vite-plugin-vue-markdown
@@ -173,21 +173,23 @@ export default defineConfig({
     Markdown({
       wrapperClasses: 'prose prose-sm m-auto text-left',
       headEnabled: true,
-      markdownItSetup(md) {
+      async markdownItSetup(md) {
         // https://prismjs.com/
-        md.use(Shiki, {
-          theme: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
-          },
-        })
+        md.use(
+          await Shiki({
+            themes: {
+              light: 'vitesse-light',
+              dark: 'vitesse-dark',
+            },
+          }),
+        );
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
             target: '_blank',
             rel: 'noopener',
           },
-        })
+        });
       },
     }),
 
@@ -199,12 +201,19 @@ export default defineConfig({
         id: '/fast-angle/',
         name: 'Fast Angle',
         short_name: 'Fast Angle',
-        description: 'Simple online protractor - measure any angle directly on your image!',
+        description:
+          'Simple online protractor - measure any angle directly on your image!',
         theme_color: '#0189e9',
         background_color: '#11191f',
         orientation: 'natural',
         display: 'standalone',
-        display_override: ['window-controls-overlay', 'standalone', 'fullscreen', 'minimal-ui', 'browser'],
+        display_override: [
+          'window-controls-overlay',
+          'standalone',
+          'fullscreen',
+          'minimal-ui',
+          'browser',
+        ],
         shortcuts: [],
         screenshots: [
           {
@@ -212,7 +221,8 @@ export default defineConfig({
             sizes: '1200x630',
             type: 'image/jpeg',
             platform: 'wide',
-            label: 'Example of the angle measurement on top of an image in FastAngle app.',
+            label:
+              'Example of the angle measurement on top of an image in FastAngle app.',
           },
         ],
         icons: [
@@ -258,8 +268,8 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
-    VueI18n({
+    // https://github.com/intlify/bundle-tools/blob/main/packages/unplugin-vue-i18n
+    VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
       include: [path.resolve(__dirname, 'locales/**')],
@@ -303,7 +313,7 @@ export default defineConfig({
       generateSitemap({
         hostname: 'https://www.frsource.org/fast-angle/',
         exclude: ['/'],
-      })
+      });
     },
   },
 
@@ -311,4 +321,4 @@ export default defineConfig({
     // TODO: workaround until they support native ESM
     noExternal: ['workbox-window', /vue-i18n/, 'color-hash'],
   },
-})
+});

@@ -1,23 +1,39 @@
 <script setup lang="ts">
-import { locale } from '~/composables/locale'
-import IconLogoGithub from '~icons/carbon/logo-github'
+import { locale } from '~/composables/locale';
+import IconLogoGithub from '~icons/carbon/logo-github';
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
 
 <template>
-  <footer :class="$style.footer">
+  <footer>
     <nav :class="$style.nav">
       <ul>
-        <li><strong :class="$style['font-small']">{{ t('main.brought_to_you_by') }} <a :href="`${host}/`" :data-tooltip="t('main.visit_our_website')" :title="t('main.visit_our_website')">FRSOURCE</a></strong></li>
+        <li>
+          <strong :class="$style['font-small']"
+            >{{ t('main.brought_to_you_by') }}
+            <a
+              :href="`${host}/`"
+              :data-tooltip="t('main.visit_our_website')"
+              :title="t('main.visit_our_website')"
+              >FRSOURCE</a
+            ></strong
+          >
+        </li>
       </ul>
-      <ul>
+      <ul :class="$style['right-col']">
         <li :class="$style.links">
           <RouterLink :to="{ name: `lang-${locale}-terms` }">
-            <small :class="$style['font-small']" v-text="t('main.terms_and_conditions')" />
+            <small
+              :class="$style['font-small']"
+              v-text="t('main.terms_and_conditions')"
+            />
           </RouterLink>
           <RouterLink :to="{ name: `lang-${locale}-privacy-policy` }">
-            <small :class="$style['font-small']" v-text="t('main.privacy_policy')" />
+            <small
+              :class="$style['font-small']"
+              v-text="t('main.privacy_policy')"
+            />
           </RouterLink>
         </li>
         <li>
@@ -39,11 +55,8 @@ const { t } = useI18n()
 </template>
 
 <style lang="scss" module>
-.footer {
-  --block-spacing-vertical: 0!important;
-}
-
 .nav {
+  align-items: flex-start;
   --nav-element-spacing-vertical: 0.25rem;
 
   @media (min-width: 768px) {
@@ -51,8 +64,12 @@ const { t } = useI18n()
   }
 }
 
+.right-col {
+  margin-right: 0 !important;
+}
+
 .links {
-  margin-inline-end: .5rem;
+  margin-inline-end: 0.5rem;
   display: flex;
   flex-flow: column;
   width: max-content;

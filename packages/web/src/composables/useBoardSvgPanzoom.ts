@@ -1,1 +1,3 @@
-export const useBoardSvgPanzoom = createSharedComposable(() => usePanzoom(useBoardSvgRef()))
+export const useBoardSvgPanzoom = createSharedComposable(() =>
+  usePanzoom(useBoardSvgRef()),
+);

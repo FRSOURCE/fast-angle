@@ -2,5 +2,5 @@
 export const isDark = useDark({
   attribute: 'data-theme',
   valueLight: 'light',
-})
-export const toggleDark = useToggle(isDark)
+});
+export const toggleDark = useToggle(isDark);

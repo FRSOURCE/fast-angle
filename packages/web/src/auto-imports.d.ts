@@ -59,6 +59,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const localStorageLocale: typeof import('./composables/locale')['localStorageLocale']
   const locale: typeof import('./composables/locale')['locale']
   const logicAnd: typeof import('@vueuse/math')['logicAnd']
   const logicNot: typeof import('@vueuse/math')['logicNot']

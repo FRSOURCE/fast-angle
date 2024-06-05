@@ -6,13 +6,9 @@
   "scripts": {
     "build": "pnpm --filter '@frsource/fast-angle-web' build",
     "dev": "pnpm run -r --parallel --stream dev",
-    "lint": "eslint .",
+    "lint": "pnpm run -r --parallel --stream lint",
+    "fix": "pnpm run -r --parallel --stream fix",
     "test": "pnpm run -r --parallel --stream test",
     "typecheck": "pnpm run -r --parallel --stream typecheck"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "1.1.1",
-    "eslint": "^8.53.0",
-    "typescript": "5.2.2"
   }
 }

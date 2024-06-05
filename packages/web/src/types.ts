@@ -1,3 +1,3 @@
-import type { ViteSSGContext } from 'vite-ssg/single-page'
+import type { ViteSSGContext } from 'vite-ssg/single-page';
 
-export type UserModule = (ctx: ViteSSGContext<true>) => void
+export type UserModule = (ctx: ViteSSGContext<true>) => void;

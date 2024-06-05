@@ -1,59 +1,85 @@
-import type { ValueOf } from 'type-fest'
-import type { Ref } from 'vue'
+import type { ValueOf } from 'type-fest';
+import type { Ref } from 'vue';
 
 export const SIZING_UNIT = {
-  'px': 1,
+  px: 1,
   '%': 2,
-  'in': 3,
-  'mm': 4,
-} as const
+  in: 3,
+  mm: 4,
+} as const;
 
-function convertPxToUnit(valuePx: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) {
-  let result = valuePx
+function convertPxToUnit(
+  valuePx: number,
+  unit: ValueOf<typeof SIZING_UNIT>,
+  originalSize: number,
+) {
+  let result = valuePx;
   switch (unit) {
-    case SIZING_UNIT['%']: result = valuePx * 100 / originalSize
-      break
-    case SIZING_UNIT.in: result = valuePx / window.devicePixelRatio
-      break
-    case SIZING_UNIT.mm: result = valuePx * 25.4 / window.devicePixelRatio
-      break
+    case SIZING_UNIT['%']:
+      result = (valuePx * 100) / originalSize;
+      break;
+    case SIZING_UNIT.in:
+      result = valuePx / window.devicePixelRatio;
+      break;
+    case SIZING_UNIT.mm:
+      result = (valuePx * 25.4) / window.devicePixelRatio;
+      break;
   }
 
-  return +(result.toFixed(6))
+  return +result.toFixed(6);
 }
 
-function convertUnitToPx(value: number, unit: ValueOf<typeof SIZING_UNIT>, originalSize: number) {
-  let result = value
+function convertUnitToPx(
+  value: number,
+  unit: ValueOf<typeof SIZING_UNIT>,
+  originalSize: number,
+) {
+  let result = value;
   switch (unit) {
-    case SIZING_UNIT['%']: result = value / 100 * originalSize
-      break
-    case SIZING_UNIT.in: result = value * window.devicePixelRatio
-      break
-    case SIZING_UNIT.mm: result = value * window.devicePixelRatio / 25.4
-      break
+    case SIZING_UNIT['%']:
+      result = (value / 100) * originalSize;
+      break;
+    case SIZING_UNIT.in:
+      result = value * window.devicePixelRatio;
+      break;
+    case SIZING_UNIT.mm:
+      result = (value * window.devicePixelRatio) / 25.4;
+      break;
   }
 
-  return +(result.toFixed(5))
+  return +result.toFixed(5);
 }
 
-export function usePixelToUnit(valuePx: Ref<number>, unit: Ref<ValueOf<typeof SIZING_UNIT>>, originalSize: Ref<number>) {
-  const value = ref(0)
-  const innerPxValue = ref(valuePx.value - 1)
-  const inputValue = ref(0)
+export function usePixelToUnit(
+  valuePx: Ref<number>,
+  unit: Ref<ValueOf<typeof SIZING_UNIT>>,
+  originalSize: Ref<number>,
+) {
+  const value = ref(0);
+  const innerPxValue = ref(valuePx.value - 1);
+  const inputValue = ref(0);
 
-  watch([valuePx, unit], ([valuePx, unit], [, oldUnit]) => {
-    if (innerPxValue.value !== valuePx || unit !== oldUnit) {
-      innerPxValue.value = valuePx
-      value.value = convertPxToUnit(valuePx, unit, originalSize.value)
-    }
-  }, { immediate: true })
+  watch(
+    [valuePx, unit],
+    ([valuePx, unit], [, oldUnit]) => {
+      if (innerPxValue.value !== valuePx || unit !== oldUnit) {
+        innerPxValue.value = valuePx;
+        value.value = convertPxToUnit(valuePx, unit, originalSize.value);
+      }
+    },
+    { immediate: true },
+  );
 
   watch(inputValue, (inputValue) => {
     if (value.value !== inputValue)
-      innerPxValue.value = convertUnitToPx(inputValue, unit.value, originalSize.value)
-  })
+      innerPxValue.value = convertUnitToPx(
+        inputValue,
+        unit.value,
+        originalSize.value,
+      );
+  });
 
-  watch(value, value => inputValue.value = value, { immediate: true })
+  watch(value, (value) => (inputValue.value = value), { immediate: true });
 
-  return inputValue
+  return inputValue;
 }

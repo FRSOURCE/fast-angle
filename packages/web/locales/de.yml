@@ -24,7 +24,7 @@ board:
   click_this_button_or_drop: |
     Klicken Sie hier, um die Messung zu starten.
     Um das Bild zu öffnen, ziehen Sie es auf dieses Board oder verwenden Sie die Ladeschaltfläche unten.
-    Für ein besseres Erlebnis - aktivieren Sie den Vollbildmodus, indem Sie auf die Schaltfläche „Vollbild“ in der unteren rechten Ecke klicken.
+    Für ein besseres Erlebnis - aktivieren Sie den Vollbildmodus, indem Sie auf die Schaltfläche in der unteren rechten Ecke klicken.
   result:
     zoom_in: Hineinzoomen
     zoom_out: Rauszoomen

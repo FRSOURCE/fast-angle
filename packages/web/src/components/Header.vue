@@ -1,31 +1,35 @@
 <script setup lang="ts">
-import { basePath } from '~/composables/basePath'
-import { favicon } from '~/composables/favicon'
-import { isDark, toggleDark } from '~/composables/dark'
-import IconSun from '~icons/carbon/sun'
-import IconMoon from '~icons/carbon/moon'
-import IconLanguage from '~icons/carbon/language'
+import { basePath } from '~/composables/basePath';
+import { favicon } from '~/composables/favicon';
+import { isDark, toggleDark } from '~/composables/dark';
+import IconSun from '~icons/carbon/sun';
+import IconMoon from '~icons/carbon/moon';
+import IconLanguage from '~icons/carbon/language';
 
-const { t, availableLocales, locale } = useI18n()
-const detailsRef = ref<HTMLDetailsElement>()
-const open = ref(false)
+const { t, availableLocales, locale } = useI18n();
 
-function setLocale(value: string) {
-  locale.value = value
-  open.value = false
-}
+const localeModel = computed({
+  get() {
+    return locale.value;
+  },
+  set(value) {
+    locale.value = value;
+  },
+});
 </script>
 
 <template>
-  <header
-    :class="$style.header"
-  >
-    <hgroup
-      :class="$style.heading"
-    >
+  <header :class="$style.header">
+    <hgroup :class="$style.heading">
       <h1>
         <a :href="basePath" :class="$style.title">
-          <img :src="favicon" :class="$style.favicon" alt="Fast Angle logo" width="32" height="32">
+          <img
+            :src="favicon"
+            :class="$style.favicon"
+            alt="Fast Angle logo"
+            width="32"
+            height="32"
+          />
           {{ t('main.title') }}
         </a>
       </h1>
@@ -34,27 +38,24 @@ function setLocale(value: string) {
     <nav>
       <ul>
         <li>
-          <details
-            ref="detailsRef"
-            role="list"
-            :title="t('board.nav.toggle_langs')"
-            :open="open"
-            @toggle="() => open = detailsRef?.open || false"
-          >
-            <summary aria-haspopup="listbox" role="button">
-              <IconLanguage />
-            </summary>
-            <ul role="group" :class="$style.dropdown" :aria-label="t('board.nav.toggle_langs')">
-              <li v-for="lang in availableLocales" :key="lang" role="listitem" :aria-label="lang">
-                <a
-                  href="#"
-                  :class="{ [$style['dropdown--active']]: locale === lang }"
-                  @click.prevent="setLocale(lang)"
-                  v-text="lang"
-                />
-              </li>
-            </ul>
-          </details>
+          <form @submit.prevent :class="$style.lang">
+            <IconLanguage
+              :class="$style['lang-icon']"
+              :aria-label="t('board.nav.toggle_langs')"
+            />
+            <select
+              :class="$style['lang-select']"
+              v-model="localeModel"
+              :title="t('board.nav.toggle_langs')"
+              :aria-label="t('board.nav.toggle_langs')"
+            >
+              <option
+                v-for="lang in availableLocales"
+                :key="lang"
+                v-text="lang"
+              />
+            </select>
+          </form>
         </li>
 
         <li>
@@ -70,45 +71,62 @@ function setLocale(value: string) {
 
 <style lang="scss" module>
 .header {
-  --block-spacing-vertical: 0!important;
-  --nav-element-spacing-vertical: .5rem;
+  --block-spacing-vertical: 0 !important;
+  --nav-element-spacing-vertical: 0.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    margin: var(--nav-element-spacing-vertical) 0;
+  }
 }
 
 .heading {
   overflow: hidden;
   max-height: 2.25rem;
-  margin: var(--nav-element-spacing-vertical) 0;
-  transition: max-height .3s ease-out;
+  margin: 0;
+  transition: max-height 0.3s ease-out;
 
   @media (min-width: 1024px) {
+    margin-bottom: calc(var(--nav-element-spacing-vertical) / 2);
     max-height: 120px;
   }
 }
 
 .title {
-  display: block;
+  vertical-align: middle;
   font-size: 1.5rem;
   color: var(--h2-color);
+  --underline: rgba(255 255 255 / 0%);
 
   @media (min-width: 1024px) {
+    display: block;
     font-size: var(--font-size);
+    margin-bottom: 0.5rem;
   }
 }
 
 .favicon {
   @media (min-width: 768px) {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
 
-.dropdown {
-  max-height: 200px;
-  overflow: auto;
+.lang {
+  position: relative;
 
-  &--active {
-    --dropdown-color: var(--primary-link);
+  &-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+  }
+
+  &-select {
+    width: 0;
+    padding-left: 1.5rem !important;
+    --nav-link-spacing-vertical: 0.35rem;
   }
 }
 </style>

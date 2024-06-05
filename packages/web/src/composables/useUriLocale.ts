@@ -1,4 +1,4 @@
 export function useUriLocale() {
-  const currentRoute = useRoute()
-  return computed(() => currentRoute.path.split('/')[1])
+  const currentRoute = useRoute();
+  return computed(() => currentRoute.path.split('/')[1]);
 }

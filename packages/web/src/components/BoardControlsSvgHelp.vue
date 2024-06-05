@@ -1,13 +1,15 @@
 <script lang="ts" setup>
-import type { MessageFunction, VueMessageType } from 'vue-i18n'
-import IconHelp from '~icons/carbon/help'
-import { locale } from '~/composables/locale'
-import IconLogoGithub from '~icons/carbon/logo-github'
-import FavoriteFilled from '~icons/carbon/favorite-filled'
+import type { MessageFunction, VueMessageType } from 'vue-i18n';
+import IconHelp from '~icons/carbon/help';
+import { locale } from '~/composables/locale';
+import IconLogoGithub from '~icons/carbon/logo-github';
+import FavoriteFilled from '~icons/carbon/favorite-filled';
 
-const { t, tm, rt } = useI18n()
-const isModalOpen = ref(false)
-const content = computed(() => tm('board.nav.help.content') as MessageFunction<VueMessageType>[])
+const { t, tm, rt } = useI18n();
+const isModalOpen = ref(false);
+const content = computed(
+  () => tm('board.nav.help.content') as MessageFunction<VueMessageType>[],
+);
 </script>
 
 <template>
@@ -30,7 +32,7 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
           </li>
         </ul>
 
-        <hr>
+        <hr />
 
         <div :class="$style['hide-mobile']">
           <h4 v-text="t('board.nav.help.key_bindings.heading')" />
@@ -39,18 +41,25 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
               <tr>
                 <th scope="col" v-text="'Win'" />
                 <th scope="col" v-text="'Mac'" />
-                <th scope="col" v-text="t('board.nav.help.key_bindings.description')" />
+                <th
+                  scope="col"
+                  v-text="t('board.nav.help.key_bindings.description')"
+                />
               </tr>
             </thead>
             <tr>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd><small :class="$style['binding-item-plus']">+</small><kbd>z</kbd>
+                  <kbd>ctrl</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>z</kbd>
                 </div>
               </td>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd><small :class="$style['binding-item-plus']">+</small><kbd>z</kbd>
+                  <kbd>⌘</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>z</kbd>
                 </div>
               </td>
               <td scope="col" v-text="t('board.nav.undo')" />
@@ -58,12 +67,20 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
             <tr>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd><small :class="$style['binding-item-plus']">+</small><kbd>shift</kbd><small :class="$style['binding-item-plus']">+</small><kbd>z</kbd>
+                  <kbd>ctrl</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>shift</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>z</kbd>
                 </div>
               </td>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd><small :class="$style['binding-item-plus']">+</small><kbd>shift</kbd><small :class="$style['binding-item-plus']">+</small><kbd>z</kbd>
+                  <kbd>⌘</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>shift</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>z</kbd>
                 </div>
               </td>
               <td scope="col" v-text="t('board.nav.download_image.action')" />
@@ -71,12 +88,16 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
             <tr>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd><small :class="$style['binding-item-plus']">+</small><kbd>s</kbd>
+                  <kbd>ctrl</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>s</kbd>
                 </div>
               </td>
               <td scope="col" :class="$style['binding-item-wrapper']">
                 <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd><small :class="$style['binding-item-plus']">+</small><kbd>s</kbd>
+                  <kbd>⌘</kbd
+                  ><small :class="$style['binding-item-plus']">+</small
+                  ><kbd>s</kbd>
                 </div>
               </td>
               <td scope="col" v-text="t('board.nav.redo')" />
@@ -99,7 +120,13 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
 
         <h4 v-text="t('board.nav.help.heading_authors')" />
         <p>
-          {{ t('main.brought_to_you_by') }} <a :href="`${host}/`" :data-tooltip="t('main.visit_our_website')" :title="t('main.visit_our_website')">FRSOURCE</a>
+          {{ t('main.brought_to_you_by') }}
+          <a
+            :href="`${host}/`"
+            :data-tooltip="t('main.visit_our_website')"
+            :title="t('main.visit_our_website')"
+            >FRSOURCE</a
+          >
         </p>
         <p>
           <a
@@ -124,7 +151,7 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
           </a>
         </p>
 
-        <hr>
+        <hr />
 
         <p :class="$style.terms">
           <RouterLink :to="{ name: `lang-${locale}-terms` }">
@@ -136,6 +163,7 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
         </p>
         <template #footer-pre>
           <a
+            autofocus
             rel="noreferrer"
             href="https://github.com/FRSOURCE/fast-angle"
             target="_blank"
@@ -153,9 +181,7 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
 
 <style lang="scss" module>
 .modal {
-  min-width: 94%;
-
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     min-width: 720px;
   }
 }
@@ -171,11 +197,11 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
 .binding-item {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: .25em;
+  gap: 0.25em;
 }
 
 .binding-item-plus {
-  font-size: .75em;
+  font-size: 0.75em;
   line-height: 2.5em;
 }
 
@@ -192,6 +218,6 @@ const content = computed(() => tm('board.nav.help.content') as MessageFunction<V
   display: inline-flex;
   vertical-align: middle;
   margin-right: 2em;
-  gap: .5em;
+  gap: 0.5em;
 }
 </style>

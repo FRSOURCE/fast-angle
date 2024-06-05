@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue'
-import type { Point } from '~/composables/useLines'
+import type { PropType } from 'vue';
+import type { Point } from '~/composables/useLines';
 
 defineProps({
   pointStart: {
@@ -11,7 +11,7 @@ defineProps({
     type: Array as unknown as PropType<Point>,
     default: undefined,
   },
-})
+});
 </script>
 
 <template>

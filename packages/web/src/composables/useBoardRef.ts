@@ -1,1 +1,1 @@
-export const useBoardRef = createSharedComposable(() => ref<HTMLDivElement>())
+export const useBoardRef = createSharedComposable(() => ref<HTMLDivElement>());

@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-import IconCopy from '~icons/carbon/copy'
-import IconCheckmark from '~icons/carbon/checkmark'
+import IconCopy from '~icons/carbon/copy';
+import IconCheckmark from '~icons/carbon/checkmark';
 
 const props = defineProps({
   value: {
     type: Number,
     default: 0,
   },
-})
-const formattedValue = computed(() => props.value ? props.value.toFixed(3) : '')
-const { copy, copied, isSupported } = useClipboard({ source: formattedValue })
+});
+const formattedValue = computed(() =>
+  props.value ? props.value.toFixed(3) : '',
+);
+const { copy, copied, isSupported } = useClipboard({ source: formattedValue });
 </script>
 
 <template>
@@ -21,7 +23,11 @@ const { copy, copied, isSupported } = useClipboard({ source: formattedValue })
         <template v-else>?</template>
       </span>
     </div>
-    <Button v-if="isSupported && formattedValue" :class="$style.btn" :disabled="copied">
+    <Button
+      v-if="isSupported && formattedValue"
+      :class="$style.btn"
+      :disabled="copied"
+    >
       <IconCheckmark v-if="copied" />
       <IconCopy v-else />
     </Button>
@@ -38,7 +44,7 @@ const { copy, copied, isSupported } = useClipboard({ source: formattedValue })
 }
 
 .text {
-  margin-left: .25rem;
+  margin-left: 0.25rem;
   vertical-align: middle;
 }
 
@@ -46,7 +52,7 @@ const { copy, copied, isSupported } = useClipboard({ source: formattedValue })
   justify-content: flex-end;
   border: none;
   margin: 0;
-  font-size: .75em;
+  font-size: 0.75em;
   padding: 0;
   vertical-align: middle;
   background: none;

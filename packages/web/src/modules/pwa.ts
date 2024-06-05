@@ -1,10 +1,9 @@
-import type { UserModule } from '~/types'
+import type { UserModule } from '~/types';
 
 // https://github.com/antfu/vite-plugin-pwa#automatic-reload-when-new-content-available
 export const install: UserModule = async ({ isClient }) => {
-  if (!isClient)
-    return
+  if (!isClient) return;
 
-  const { registerSW } = await import('virtual:pwa-register')
-  registerSW({ immediate: true })
-}
+  const { registerSW } = await import('virtual:pwa-register');
+  registerSW({ immediate: true });
+};

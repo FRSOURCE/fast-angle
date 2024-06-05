@@ -1,0 +1,7 @@
+**/dist
+**/.*-temp
+**/coverage
+pnpm-lock.yaml
+CHANGELOG.md
+src/components.d.ts
+src/auto-imports.d.ts

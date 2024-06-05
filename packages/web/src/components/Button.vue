@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import type { PropType } from 'vue';
 
 defineProps({
   tooltip: {
@@ -14,7 +14,7 @@ defineProps({
     type: String as PropType<'small'>,
     default: undefined,
   },
-})
+});
 </script>
 
 <template>
@@ -33,7 +33,7 @@ defineProps({
 
 <style lang="scss" module>
 .small {
-  --form-element-spacing-vertical: .5rem;
-  --form-element-spacing-horizontal: .5rem;
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.5rem;
 }
 </style>
