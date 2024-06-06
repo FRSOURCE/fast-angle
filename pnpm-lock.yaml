@@ -96,8 +96,8 @@ importers:
         specifier: 3.0.5
         version: 3.0.5
       '@vitejs/plugin-vue':
-        specifier: 4.6.2
-        version: 4.6.2(vite@5.2.12)(vue@3.4.27)
+        specifier: 5.0.5
+        version: 5.0.5(vite@5.2.12)(vue@3.4.27)
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -2407,8 +2407,8 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240605:
-    resolution: {integrity: sha512-/9SrVG/9Ghhl8Mwz3K0Fg2ErY4xFkhijzv6wc4Z6w3YZSw//t3iBnVlR2ztKWsqTSefSiJdKG07BGY6a7bpG9w==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240606:
+    resolution: {integrity: sha512-5xHQOavVeYIEMK0kBvJUtWRsU3Yn7tV8DjgeipGMjWiuHP+x9qDhL2CmCj0TyuhBksRf/WDk5PF4uLge1foHZA==}
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -2915,7 +2915,7 @@ packages:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     deprecated: use @types/gapi.client.androidpublisher-v3 instead; see https://github.com/Maxim-Mazurok/google-api-typings-generator/issues/652 for details
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240605
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240606
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.4:
@@ -3347,11 +3347,11 @@ packages:
       unhead: 1.9.12
       vue: 3.4.27(typescript@5.4.5)
 
-  /@vitejs/plugin-vue@4.6.2(vite@5.2.12)(vue@3.4.27):
-    resolution: {integrity: sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==}
-    engines: {node: ^14.18.0 || >=16.0.0}
+  /@vitejs/plugin-vue@5.0.5(vite@5.2.12)(vue@3.4.27):
+    resolution: {integrity: sha512-LOjm7XeIimLBZyzinBQ6OSm3UBCNVCpLkxGC0oWmm2YPzVZoxMsdvNVimLTBzpAnR9hl/yn1SHGuRfe6/Td9rQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      vite: ^4.0.0 || ^5.0.0
+      vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
       vite: 5.2.12(@types/node@18.6.1)(sass@1.77.4)
