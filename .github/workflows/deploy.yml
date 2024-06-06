@@ -5,12 +5,15 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
@@ -24,3 +27,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: deploy
           FOLDER: packages/web/dist
+      - uses: ./.github/actions/deploy-to-google-play
+        if: env.DEPLOYMENT_STATUS == 'success'
+        with:
+          keystore-base64: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_BASE64 }}
+          keystore-password: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_PASSWD }}
+          service-account-key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+

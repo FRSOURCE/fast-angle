@@ -10,5 +10,10 @@
     "fix": "pnpm run -r --parallel --stream fix",
     "test": "pnpm run -r --parallel --stream test",
     "typecheck": "pnpm run -r --parallel --stream typecheck"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@bubblewrap/cli@1.21.0": "patches/@bubblewrap__cli@1.21.0.patch"
+    }
   }
 }

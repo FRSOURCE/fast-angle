@@ -1,0 +1,44 @@
+# https://proandroiddev.com/how-to-securely-build-and-sign-your-android-app-with-github-actions-ad5323452ce
+# https://developer.chrome.com/docs/android/trusted-web-activity/receive-payments-play-billing/
+name: Deploy to Google Play
+description: Build the app and publishes it to Google Play
+inputs:
+  keystore-base64:
+    description: keystore encoded into base64 string
+    required: true
+  keystore-password:
+    description: password to keystore
+    required: true
+  service-account-key:
+    description: GCP service account in JSON format
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
+      shell: bash
+    - run: echo $KEYSTORE_BASE64 | base64 -d > android-keystore
+      env:
+        KEYSTORE_BASE64: ${{ inputs.keystore-base64 }}
+      shell: bash
+
+    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' build --signingKeyPath="../../android-keystore"
+      env:
+        BUBBLEWRAP_KEYSTORE_PASSWORD: ${{ inputs.keystore-password }}
+        BUBBLEWRAP_KEY_PASSWORD: ${{ inputs.keystore-password }}
+      shell: bash
+    - run: rm android-keystore
+      shell: bash
+    - run: echo $GCP_SERVICE_ACCOUNT_KEY > service-account.json
+      env:
+        GCP_SERVICE_ACCOUNT_KEY: ${{ inputs.service-account-key }}
+      shell: bash
+    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+      shell: bash
+    - run: rm service-account.json
+      shell: bash
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore(release): android app [no ci]"
+        file_pattern: 'packages/android/*'
+        disable_globbing: true
