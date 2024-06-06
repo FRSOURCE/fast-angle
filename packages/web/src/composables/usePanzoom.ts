@@ -1,4 +1,4 @@
-import type { MaybeComputedRef, MaybeElementRef } from '@vueuse/core';
+import type { MaybeRef, MaybeElementRef } from '@vueuse/core';
 import {
   type GenericOptions,
   useDrag,
@@ -8,7 +8,7 @@ import {
 
 export function usePanzoom(
   elementRef: MaybeElementRef,
-  options?: MaybeComputedRef<GenericOptions | undefined>,
+  options?: MaybeRef<GenericOptions | undefined>,
 ) {
   const optionsRef = resolveRef(options);
   const enabled = computed(() => unref(optionsRef)?.enabled ?? true);

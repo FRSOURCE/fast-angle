@@ -270,6 +270,10 @@ async function submit() {
     --line-height: 9px;
     --form-element-spacing-vertical: 0.5rem;
     --form-element-spacing-horizontal: 0.75rem;
+
+    @media (min-width: 1024px) {
+      width: 115px;
+    }
   }
 }
 </style>
