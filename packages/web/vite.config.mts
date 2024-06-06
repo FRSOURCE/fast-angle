@@ -66,7 +66,6 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
       template: {
         compilerOptions: {
           isCustomElement: (tag) => ['hgroup'].includes(tag),
