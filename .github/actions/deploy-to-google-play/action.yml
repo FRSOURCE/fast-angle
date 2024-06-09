@@ -15,14 +15,22 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
+    # first script sends "Y" to any prompt raised by bubblewrap CLI
+    # 2>/dev/null allows script to finish successfully when script after the pipe | is done
+    - run: |
+        set -o pipefail
+        while true; do echo "Y"; sleep 15; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
+        echo $PIPESTATUS
+        set +o pipefail
       shell: bash
     - run: echo $KEYSTORE_BASE64 | base64 -d > android-keystore
       env:
         KEYSTORE_BASE64: ${{ inputs.keystore-base64 }}
       shell: bash
 
-    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' build --signingKeyPath="../../android-keystore"
+    - run: |
+        while true; do echo "Y"; sleep 15; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' build --signingKeyPath="../../android-keystore"
+        exit ${PIPESTATUS[1]}
       env:
         BUBBLEWRAP_KEYSTORE_PASSWORD: ${{ inputs.keystore-password }}
         BUBBLEWRAP_KEY_PASSWORD: ${{ inputs.keystore-password }}
@@ -33,7 +41,9 @@ runs:
       env:
         GCP_SERVICE_ACCOUNT_KEY: ${{ inputs.service-account-key }}
       shell: bash
-    - run: yes 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+    - run: |
+        while true; do echo "Y"; sleep 15; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+        exit ${PIPESTATUS[1]}
       shell: bash
     - run: rm service-account.json
       shell: bash
