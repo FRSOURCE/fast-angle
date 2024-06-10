@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@bubblewrap/cli@1.21.0':
-    hash: 5ovpd5rk5ji76sxzdvhmnlg5ne
+    hash: awjaumbjwlqbyz7gow3msvm64m
     path: patches/@bubblewrap__cli@1.21.0.patch
 
 importers:
@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@bubblewrap/cli':
         specifier: 1.21.0
-        version: 1.21.0(patch_hash=5ovpd5rk5ji76sxzdvhmnlg5ne)
+        version: 1.21.0(patch_hash=awjaumbjwlqbyz7gow3msvm64m)
 
   packages/web:
     dependencies:
@@ -1475,7 +1475,7 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  /@bubblewrap/cli@1.21.0(patch_hash=5ovpd5rk5ji76sxzdvhmnlg5ne):
+  /@bubblewrap/cli@1.21.0(patch_hash=awjaumbjwlqbyz7gow3msvm64m):
     resolution: {integrity: sha512-nIP12qo5CBLeOZhLcErVO/BabWN5fjez5MXy2sVK/z/Sj4NLCRH4iFNDW9CUeza6Bq3wtAoQYS7+QVRytLcBdQ==}
     engines: {node: '>=14.15.0'}
     hasBin: true

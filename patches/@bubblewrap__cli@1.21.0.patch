@@ -1,3 +1,53 @@
+diff --git a/dist/index.js b/dist/index.js
+index f9e8c808ef85f891558b666f15ec8069f0294c2a..eea174c57e365951fdb3e895781178e3966c929b 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -18,21 +18,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ const Cli_1 = require("./lib/Cli");
+ const core_1 = require("@bubblewrap/core");
+ module.exports = async () => {
+-    const cli = new Cli_1.Cli();
+-    const log = new core_1.ConsoleLog('cli');
+-    const args = process.argv.slice(2);
+-    let success;
+-    try {
+-        success = await cli.run(args);
+-    }
+-    catch (err) {
+-        log.error(err.message);
+-        success = false;
+-    }
+-    // If running the command fails, we terminate the process signaling an error has occured.
+-    // This helps if the CLI is being used as part of a build process and depends on its result
+-    // to abort the build.
+-    if (!success) {
+-        process.exit(1);
+-    }
++  const cli = new Cli_1.Cli();
++  const log = new core_1.ConsoleLog("cli");
++  const args = process.argv.slice(2);
++  let success;
++  try {
++    success = await cli.run(args);
++    console.log("zxczxc", success);
++  } catch (err) {
++    console.log("qweqwe");
++    console.log(err);
++    log.error(err.message);
++    success = false;
++  }
++  console.log("asdasd");
++
++  // If running the command fails, we terminate the process signaling an error has occured.
++  // This helps if the CLI is being used as part of a build process and depends on its result
++  // to abort the build.
++  if (!success) {
++    process.exit(1);
++  } else {
++    console.log("exit 0");
++    process.exit(0);
++  }
+ };
 diff --git a/dist/lib/Cli.js b/dist/lib/Cli.js
 index 16f8ac083e4c085fd302c3a78bb45b74869ca4e8..1243a5000c5fac62912ba7dfc665d325fe5083c1 100644
 --- a/dist/lib/Cli.js
