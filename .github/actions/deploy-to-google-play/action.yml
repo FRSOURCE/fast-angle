@@ -39,10 +39,10 @@ runs:
       env:
         GCP_SERVICE_ACCOUNT_KEY: ${{ inputs.service-account-key }}
       shell: bash
-    - run: |
-        set +o pipefail
-        while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
-      shell: bash
+    # - run: |
+    #     set +o pipefail
+    #     while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+    #   shell: bash
     - run: rm service-account.json
       shell: bash
     - uses: stefanzweifel/git-auto-commit-action@v5
@@ -50,3 +50,4 @@ runs:
         commit_message: "chore(release): android app [no ci]"
         file_pattern: 'packages/android/*'
         disable_globbing: true
+        branch: main

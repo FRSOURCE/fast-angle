@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@bubblewrap/cli@1.21.0':
-    hash: awjaumbjwlqbyz7gow3msvm64m
+    hash: 5ovpd5rk5ji76sxzdvhmnlg5ne
     path: patches/@bubblewrap__cli@1.21.0.patch
 
 importers:
@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@bubblewrap/cli':
         specifier: 1.21.0
-        version: 1.21.0(patch_hash=awjaumbjwlqbyz7gow3msvm64m)
+        version: 1.21.0(patch_hash=5ovpd5rk5ji76sxzdvhmnlg5ne)
 
   packages/web:
     dependencies:
@@ -1475,7 +1475,7 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  /@bubblewrap/cli@1.21.0(patch_hash=awjaumbjwlqbyz7gow3msvm64m):
+  /@bubblewrap/cli@1.21.0(patch_hash=5ovpd5rk5ji76sxzdvhmnlg5ne):
     resolution: {integrity: sha512-nIP12qo5CBLeOZhLcErVO/BabWN5fjez5MXy2sVK/z/Sj4NLCRH4iFNDW9CUeza6Bq3wtAoQYS7+QVRytLcBdQ==}
     engines: {node: '>=14.15.0'}
     hasBin: true
@@ -2349,8 +2349,8 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240606:
-    resolution: {integrity: sha512-5xHQOavVeYIEMK0kBvJUtWRsU3Yn7tV8DjgeipGMjWiuHP+x9qDhL2CmCj0TyuhBksRf/WDk5PF4uLge1foHZA==}
+  /@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20240610:
+    resolution: {integrity: sha512-qtwnf70ZyBDU7WocWyOiwt/pGw/JFsdB0lNNF5mjhN0JoMHcgmtw4hYKJpHm8d/FKZN8EktPR3ArdLVbdAf3+g==}
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -2847,7 +2847,7 @@ packages:
     resolution: {integrity: sha512-KHaUw5bZv/uptAAia8DBzkSeyVxTj8hvG1ok+yI8ugnwUZdwHfGBsTxlNPhVk2YpD0gKP4x1mqd9NYDyslNfAQ==}
     deprecated: use @types/gapi.client.androidpublisher-v3 instead; see https://github.com/Maxim-Mazurok/google-api-typings-generator/issues/652 for details
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240606
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20240610
     dev: true
 
   /@types/gapi.client.discovery-v1@0.0.4:
