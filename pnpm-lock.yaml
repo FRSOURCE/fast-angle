@@ -44,7 +44,7 @@ importers:
         version: 10.10.0(vue@3.4.27)
       '@vueuse/router':
         specifier: 10.0.0
-        version: 10.0.0(vue-router@4.1.6)(vue@3.4.27)
+        version: 10.0.0(vue-router@4.3.3)(vue@3.4.27)
       color-hash:
         specifier: 2.0.2
         version: 2.0.2
@@ -67,15 +67,15 @@ importers:
         specifier: 9.13.1
         version: 9.13.1(vue@3.4.27)
       vue-router:
-        specifier: 4.1.6
-        version: 4.1.6(vue@3.4.27)
+        specifier: 4.3.3
+        version: 4.3.3(vue@3.4.27)
     devDependencies:
       '@frsource/eslint-config':
         specifier: 1.13.0
         version: 1.13.0(eslint@9.4.0)(typescript@5.4.5)
       '@frsource/frs-replace':
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.1.1
+        version: 4.1.1
       '@frsource/prettier-config':
         specifier: 1.9.0
         version: 1.9.0(eslint@9.4.0)
@@ -116,14 +116,14 @@ importers:
         specifier: 7.0.3
         version: 7.0.3
       del-cli:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.1.0
+        version: 5.1.0
       eslint:
         specifier: 9.4.0
         version: 9.4.0
       globals:
-        specifier: 15.3.0
-        version: 15.3.0
+        specifier: 15.4.0
+        version: 15.4.0
       https-localhost:
         specifier: 4.7.1
         version: 4.7.1
@@ -146,8 +146,8 @@ importers:
         specifier: 1.6.3
         version: 1.6.3
       type-fest:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.20.0
+        version: 4.20.0
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -177,10 +177,10 @@ importers:
         version: 0.20.0(vite@5.2.13)(workbox-build@7.1.1)(workbox-window@7.1.0)
       vite-plugin-vue-layouts:
         specifier: 0.11.0
-        version: 0.11.0(vite@5.2.13)(vue-router@4.1.6)(vue@3.4.27)
+        version: 0.11.0(vite@5.2.13)(vue-router@4.3.3)(vue@3.4.27)
       vite-ssg:
         specifier: 0.23.7
-        version: 0.23.7(critters@0.0.22)(vite@5.2.13)(vue-router@4.1.6)(vue@3.4.27)
+        version: 0.23.7(critters@0.0.22)(vite@5.2.13)(vue-router@4.3.3)(vue@3.4.27)
       vite-ssg-sitemap:
         specifier: 0.7.1
         version: 0.7.1
@@ -1816,15 +1816,15 @@ packages:
       '@typescript-eslint/parser': 7.10.0(eslint@9.4.0)(typescript@5.4.5)
       eslint: 9.4.0
       eslint-config-prettier: 9.1.0(eslint@9.4.0)
-      globals: 15.3.0
+      globals: 15.4.0
       typescript: 5.4.5
       typescript-eslint: 7.12.0(eslint@9.4.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@frsource/frs-replace@4.0.0:
-    resolution: {integrity: sha512-FxF0T9lvpQfCt2qtolaTe3gVH28womNaBazMr8EOzFtKVrbS2GB4fcrkruvnueNnGei4R0cGeCt9i7+lD/eHbA==}
+  /@frsource/frs-replace@4.1.1:
+    resolution: {integrity: sha512-Rx1IkS+LoCNn9d/Pyt/GZXs/fjupBiVRBzdpnN1zORteBuYrE+pXeXb0qZ1yUlvksP1Rp0+dhQVlGEmkQEvT/Q==}
     hasBin: true
     dependencies:
       fast-glob: 3.3.2
@@ -3545,14 +3545,14 @@ packages:
   /@vueuse/metadata@10.10.0:
     resolution: {integrity: sha512-UNAo2sTCAW5ge6OErPEHb5z7NEAg3XcO9Cj7OK45aZXfLLH1QkexDcZD77HBi5zvEiLOm1An+p/4b5K3Worpug==}
 
-  /@vueuse/router@10.0.0(vue-router@4.1.6)(vue@3.4.27):
+  /@vueuse/router@10.0.0(vue-router@4.3.3)(vue@3.4.27):
     resolution: {integrity: sha512-d8rasUUhJOzh/xpVmjHc3hmc6Nnn5yjtMio2oXVqwFGNCNDqACTCGERLBnwpgyTT+xz9oMoW37dQuseADOTIBA==}
     peerDependencies:
       vue-router: '>=4.0.0-rc.1'
     dependencies:
       '@vueuse/shared': 10.0.0(vue@3.4.27)
       vue-demi: 0.14.8(vue@3.4.27)
-      vue-router: 4.1.6(vue@3.4.27)
+      vue-router: 4.3.3(vue@3.4.27)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -4514,8 +4514,8 @@ packages:
       object-keys: 1.1.1
     dev: true
 
-  /del-cli@5.0.0:
-    resolution: {integrity: sha512-rENFhUaYcjoMODwFhhlON+ogN7DoG+4+GFN+bsA1XeDt4w2OKQnQadFP1thHSAlK9FAtl88qgP66wOV+eFZZiQ==}
+  /del-cli@5.1.0:
+    resolution: {integrity: sha512-xwMeh2acluWeccsfzE7VLsG3yTr7nWikbfw+xhMnpRrF15pGSkw+3/vJZWlGoE4I86UiLRNHicmKt4tkIX9Jtg==}
     engines: {node: '>=14.16'}
     hasBin: true
     dependencies:
@@ -5442,8 +5442,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /globals@15.3.0:
-    resolution: {integrity: sha512-cCdyVjIUVTtX8ZsPkq1oCsOsLmGIswqnjZYMJJTGaNApj1yHtLSymKhwH51ttirREn75z3p4k051clwg7rvNKA==}
+  /globals@15.4.0:
+    resolution: {integrity: sha512-unnwvMZpv0eDUyjNyh9DH/yxUaRYrEjW/qK4QcdrHg3oO11igUQrCSgODHEqxlKg8v2CD2Sd7UkqqEBoz5U7TQ==}
     engines: {node: '>=18'}
     dev: true
 
@@ -8122,8 +8122,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest@4.0.0:
-    resolution: {integrity: sha512-d/oYtUnPM9zar2fqqGLYPzgcY0qUlYK0evgNVti93xpzfjGkMgZHu9Lvgrkn0rqGXTgsFRxFamzjGoD9Uo+dgw==}
+  /type-fest@4.20.0:
+    resolution: {integrity: sha512-MBh+PHUHHisjXf4tlx0CFWoMdjx8zCMLJHOjnV1prABYZFHqtFOyauCIK2/7w4oIfwkF8iNhLtnJEfVY2vn3iw==}
     engines: {node: '>=16'}
     dev: true
 
@@ -8588,7 +8588,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-layouts@0.11.0(vite@5.2.13)(vue-router@4.1.6)(vue@3.4.27):
+  /vite-plugin-vue-layouts@0.11.0(vite@5.2.13)(vue-router@4.3.3)(vue@3.4.27):
     resolution: {integrity: sha512-uh6NW7lt+aOXujK4eHfiNbeo55K9OTuB7fnv+5RVc4OBn/cZull6ThXdYH03JzKanUfgt6QZ37NbbtJ0og59qw==}
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0
@@ -8599,7 +8599,7 @@ packages:
       fast-glob: 3.3.2
       vite: 5.2.13(@types/node@20.14.2)(sass@1.77.4)
       vue: 3.4.27(typescript@5.4.5)
-      vue-router: 4.1.6(vue@3.4.27)
+      vue-router: 4.3.3(vue@3.4.27)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8608,7 +8608,7 @@ packages:
     resolution: {integrity: sha512-5yzGZi9NRREbhObUBCHkzAtth3vaWs7JxQFXugTUjD11IREYN9jATrdp7rGqFcDXVZoZuTAyfT57OYNskEvWFQ==}
     dev: true
 
-  /vite-ssg@0.23.7(critters@0.0.22)(vite@5.2.13)(vue-router@4.1.6)(vue@3.4.27):
+  /vite-ssg@0.23.7(critters@0.0.22)(vite@5.2.13)(vue-router@4.3.3)(vue@3.4.27):
     resolution: {integrity: sha512-ufkQa45DzXPpo/jPiOkuMvxWn0B1hD1Lw4CnG/9CAgM804/dZYQi9PQvr4a1W0nMjySgsGFwV/zR1JZNzrGEvw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -8634,7 +8634,7 @@ packages:
       prettier: 3.3.1
       vite: 5.2.13(@types/node@20.14.2)(sass@1.77.4)
       vue: 3.4.27(typescript@5.4.5)
-      vue-router: 4.1.6(vue@3.4.27)
+      vue-router: 4.3.3(vue@3.4.27)
       yargs: 17.7.2
     transitivePeerDependencies:
       - bufferutil
@@ -8769,8 +8769,8 @@ packages:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.27(typescript@5.4.5)
 
-  /vue-router@4.1.6(vue@3.4.27):
-    resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}
+  /vue-router@4.3.3(vue@3.4.27):
+    resolution: {integrity: sha512-8Q+u+WP4N2SXY38FDcF2H1dUEbYVHVPtPCPZj/GTZx8RCbiB8AtJP9+YIxn4Vs0svMTNQcLIzka4GH7Utkx9xQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
