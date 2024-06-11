@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/**/*'
+      - 'patches/**/*'
+      - 'packages/**/*'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'tsconfig.json'
+      - '.npmrc'
 
 permissions:
   contents: write
@@ -27,8 +35,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: deploy
           FOLDER: packages/web/dist
+      - name: get hash of last commit to main
+        id: commit_hash
+        run: echo "commit_hash=$(git log -1 --skip 1 --format='%H')" >> $GITHUB_OUTPUT
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          base: ${{ steps.commit_hash.outputs.commit_hash }}
+          filters: |
+            src:
+              - '.github/workflows/deploy.yml'
+              - 'patches/**'
+              - 'packages/web/**'
+              - 'tsconfig.json'
+            android:
+              - '.github/actions/deploy-to-google-play/action.yml'
+              - 'packages/android/**'
+            ios:
+              - 'packages/ios/**'
       - uses: ./.github/actions/deploy-to-google-play
-        if: env.DEPLOYMENT_STATUS == 'success'
+        if: env.DEPLOYMENT_STATUS == 'success' && (steps.changes.outputs.src == 'true' || steps.changes.outputs.android == 'true')
         with:
           keystore-base64: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_BASE64 }}
           keystore-password: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_PASSWD }}

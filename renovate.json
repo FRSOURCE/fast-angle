@@ -3,5 +3,15 @@
   "extends": ["github>FRSOURCE/renovate-config"],
   "gradle": {
     "enabled": false
-  }
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["gradle"],
+      "enabled": false
+    },
+    {
+      "matchPackagePatterns": ["gradle"],
+      "enabled": false
+    }
+  ]
 }

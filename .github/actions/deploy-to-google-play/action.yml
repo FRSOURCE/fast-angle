@@ -45,9 +45,14 @@ runs:
       shell: bash
     - run: rm service-account.json
       shell: bash
+    - name: Generate release commit info (commit message)
+      id: commit_info
+      run: |
+        echo "message=\"chore(release): android app v$(cat packages/android/twa-manifest.json | jq '.appVersionCode') [no ci]\"" >> $GITHUB_OUTPUT
+      shell: bash
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: "chore(release): android app [no ci]"
+        commit_message: ${{ steps.commit_info.outputs.message }}
         file_pattern: 'packages/android/*'
         disable_globbing: true
         branch: main
