@@ -48,7 +48,7 @@ runs:
     - name: Generate release commit info (commit message)
       id: commit_info
       run: |
-        echo "message=\"chore(release): android app v$(cat packages/android/twa-manifest.json | jq '.appVersionCode') [no ci]\"" >> $GITHUB_OUTPUT
+        echo "message=chore(release): android app v$(cat packages/android/twa-manifest.json | jq '.appVersionCode') [no ci]" >> $GITHUB_OUTPUT
       shell: bash
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
