@@ -268,19 +268,19 @@ export default defineConfig({
         related_applications: [
           {
             platform: 'webapp',
-            url: 'https://www.frsource.org/fast-angle/'
+            url: 'https://www.frsource.org/fast-angle/',
           },
           {
             platform: 'play',
             url: 'https://play.google.com/store/apps/details?id=org.frsource.www.fast_angle.twa&amp;pli=1',
-            id: 'org.frsource.www.fast_angle.twa'
+            id: 'org.frsource.www.fast_angle.twa',
           },
           {
             platform: 'itunes',
             url: 'https://apps.apple.com/us/app/fast-angle/id6450143053',
-            id: '6450143053'
-          }
-        ]
+            id: '6450143053',
+          },
+        ],
       },
     }),
 
