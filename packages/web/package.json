@@ -28,9 +28,9 @@
     "lodash-es": "4.17.21",
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.1",
-    "vue": "3.4.35",
+    "vue": "3.4.37",
     "vue-i18n": "9.13.1",
-    "vue-router": "4.4.2"
+    "vue-router": "4.4.3"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.13.0",
@@ -61,7 +61,7 @@
     "type-fest": "4.22.1",
     "typescript": "5.5.4",
     "unplugin-auto-import": "0.18.2",
-    "unplugin-icons": "0.19.1",
+    "unplugin-icons": "0.19.2",
     "unplugin-vue-components": "0.27.3",
     "unplugin-vue-markdown": "0.26.2",
     "vite": "5.3.5",
