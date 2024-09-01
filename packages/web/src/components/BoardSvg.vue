@@ -12,6 +12,7 @@ const props = defineProps({
 const emit = defineEmits<{
   (e: 'pressed'): void;
 }>();
+
 const { width, height } = toRefs(props);
 const svgRef = useBoardSvgRef();
 const initialized = ref(false);
