@@ -26,8 +26,10 @@ runs:
         KEYSTORE_BASE64: ${{ inputs.keystore-base64 }}
       shell: bash
 
+    # unset is needed because bubblewrap CLI installs its own version of Android SDK and properly specifies its path unsed ANDROID_HOME env variable
     - run: |
         set +o pipefail
+        unset ANDROID_SDK_ROOT
         while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' build --signingKeyPath="../../android-keystore"
       env:
         BUBBLEWRAP_KEYSTORE_PASSWORD: ${{ inputs.keystore-password }}
