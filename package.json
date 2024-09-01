@@ -2,7 +2,7 @@
   "name": "@frsource/fast-angle",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "build": "pnpm --filter '@frsource/fast-angle-web' build",
     "dev": "pnpm run -r --parallel --stream dev",
@@ -13,7 +13,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@bubblewrap/cli@1.21.0": "patches/@bubblewrap__cli@1.21.0.patch"
+      "@bubblewrap/cli": "patches/@bubblewrap__cli.patch"
     }
   }
 }
