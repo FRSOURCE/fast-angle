@@ -13,7 +13,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@bubblewrap/cli@1.21.0": "patches/@bubblewrap__cli@1.21.0.patch"
+      "@bubblewrap/cli": "patches/@bubblewrap__cli.patch"
     }
   }
 }

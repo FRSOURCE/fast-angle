@@ -1,19 +1,20 @@
 diff --git a/dist/lib/Cli.js b/dist/lib/Cli.js
-index 16f8ac083e4c085fd302c3a78bb45b74869ca4e8..1243a5000c5fac62912ba7dfc665d325fe5083c1 100644
+index 195146107cecec4951a42d59a0a25c7077f753d7..ce194a725a63adb2a36e46f35c8b53a71765508a 100644
 --- a/dist/lib/Cli.js
 +++ b/dist/lib/Cli.js
-@@ -34,6 +34,7 @@ const fingerprint_1 = require("./cmds/fingerprint");
+@@ -36,7 +36,7 @@ const merge_1 = require("./cmds/merge");
+ const fingerprint_1 = require("./cmds/fingerprint");
  // import {play, PlayArgs} from './cmds/play';
  const core_1 = require("@bubblewrap/core");
- // import { play, PlayArgs, playPublish } from './cmds/play';
+-// import { play, PlayArgs, playPublish } from './cmds/play';
 +const { play, PlayArgs, playPublish } = require('./cmds/play');
  class Cli {
      async run(args) {
          console.log(constants_1.BUBBLEWRAP_LOGO);
-@@ -88,14 +89,14 @@ class Cli {
-                 return await merge_1.merge(parsedArgs);
+@@ -91,14 +91,14 @@ class Cli {
+                 return await (0, merge_1.merge)(parsedArgs);
              case 'fingerprint':
-                 return await fingerprint_1.fingerprint(parsedArgs);
+                 return await (0, fingerprint_1.fingerprint)(parsedArgs);
 -            // case 'play':
 -            //   return await play(parsedArgs as unknown as PlayArgs);
 -            // case 'playPublish':
