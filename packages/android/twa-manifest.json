@@ -21,8 +21,8 @@
     "path": "/Users/jakubfreisler/android-studio-keystore",
     "alias": "fastangle"
   },
-  "appVersionName": "26",
-  "appVersionCode": 26,
+  "appVersionName": "27",
+  "appVersionCode": 27,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://www.frsource.org/fast-angle/manifest.webmanifest",
@@ -48,5 +48,5 @@
   "serviceAccountJsonFile": "../../service-account.json",
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "26"
+  "appVersion": "27"
 }
