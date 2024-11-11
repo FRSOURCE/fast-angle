@@ -37,7 +37,7 @@
     "@frsource/frs-replace": "4.1.1",
     "@frsource/prettier-config": "1.9.0",
     "@iconify-json/carbon": "1.2.4",
-    "@intlify/unplugin-vue-i18n": "4.0.0",
+    "@intlify/unplugin-vue-i18n": "5.3.1",
     "@shikijs/markdown-it": "1.16.2",
     "@types/color-hash": "2.0.0",
     "@types/lodash-es": "4.17.12",
