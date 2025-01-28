@@ -28,8 +28,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6
       '@vueuse/core':
-        specifier: 11.1.0
-        version: 11.1.0(vue@3.5.13(typescript@5.5.4))
+        specifier: 12.5.0
+        version: 12.5.0(typescript@5.5.4)
       '@vueuse/gesture':
         specifier: 2.0.0
         version: 2.0.0(vue@3.5.13(typescript@5.5.4))
@@ -37,14 +37,14 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(vue@3.5.13(typescript@5.5.4))
       '@vueuse/integrations':
-        specifier: 11.1.0
-        version: 11.1.0(focus-trap@7.5.4)(vue@3.5.13(typescript@5.5.4))
+        specifier: 12.5.0
+        version: 12.5.0(focus-trap@7.5.4)(typescript@5.5.4)
       '@vueuse/math':
-        specifier: 11.1.0
-        version: 11.1.0(vue@3.5.13(typescript@5.5.4))
+        specifier: 12.5.0
+        version: 12.5.0(typescript@5.5.4)
       '@vueuse/router':
-        specifier: 11.1.0
-        version: 11.1.0(vue-router@4.4.5(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))
+        specifier: 12.5.0
+        version: 12.5.0(typescript@5.5.4)(vue-router@4.4.5(vue@3.5.13(typescript@5.5.4)))
       color-hash:
         specifier: 2.0.2
         version: 2.0.2
@@ -153,7 +153,7 @@ importers:
         version: 5.5.4
       unplugin-auto-import:
         specifier: 0.18.5
-        version: 0.18.5(@vueuse/core@11.1.0(vue@3.5.13(typescript@5.5.4)))(rollup@2.79.1)
+        version: 0.18.5(@vueuse/core@12.5.0(typescript@5.5.4))(rollup@2.79.1)
       unplugin-icons:
         specifier: 0.19.3
         version: 0.19.3(@vue/compiler-sfc@3.5.13)(vue-template-compiler@2.7.14)
@@ -1283,8 +1283,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20241217':
-    resolution: {integrity: sha512-mX+erSKBu0/ylDa5Y244yxsoGp5d0/DER+z/4v04Hnd0iXU4EruM7P/E/ZMIDC0KB1pPFXUJq561GOMqWmz43g==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250121':
+    resolution: {integrity: sha512-+C5V4n3bZlEFxtJME/hPMLYwaduCeHUuI6mll0FIvQvvtSOR/HpMhvRn7L4BN5XKpruv8zLagfpN+KLoMg6l5A==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.1.20200806':
     resolution: {integrity: sha512-Wl6UfmZVDdWbY3PUu8E2ULk9RPLjnMqp/iOA4tcK8Ne+U/GmlnWP/e34IaZNGArfl7iXJNOG+/3Rj9L9jQyF9Q==}
@@ -1948,8 +1948,8 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
-  '@vueuse/core@11.1.0':
-    resolution: {integrity: sha512-P6dk79QYA6sKQnghrUz/1tHi0n9mrb/iO1WTMk/ElLmTyNqgDeSZ3wcDf6fRBGzRJbeG1dxzEOvLENMjr+E3fg==}
+  '@vueuse/core@12.5.0':
+    resolution: {integrity: sha512-GVyH1iYqNANwcahAx8JBm6awaNgvR/SwZ1fjr10b8l1HIgDp82ngNbfzJUgOgWEoxjL+URAggnlilAEXwCOZtg==}
 
   '@vueuse/gesture@2.0.0':
     resolution: {integrity: sha512-+F0bhhd8j+gxHaXG4fJgfokrkFfWenQ10MtrWOJk68B5UaTwtJm4EpsZFiVdluA3jpKExG6H+HtroJpvO7Qx0A==}
@@ -1965,8 +1965,8 @@ packages:
     peerDependencies:
       vue: '>=2.7 || >=3'
 
-  '@vueuse/integrations@11.1.0':
-    resolution: {integrity: sha512-O2ZgrAGPy0qAjpoI2YR3egNgyEqwG85fxfwmA9BshRIGjV4G6yu6CfOPpMHAOoCD+UfsIl7Vb1bXJ6ifrHYDDA==}
+  '@vueuse/integrations@12.5.0':
+    resolution: {integrity: sha512-HYLt8M6mjUfcoUOzyBcX2RjpfapIwHPBmQJtTmXOQW845Y/Osu9VuTJ5kPvnmWJ6IUa05WpblfOwZ+P0G4iZsQ==}
     peerDependencies:
       async-validator: ^4
       axios: ^1
@@ -2006,19 +2006,19 @@ packages:
       universal-cookie:
         optional: true
 
-  '@vueuse/math@11.1.0':
-    resolution: {integrity: sha512-pnjB9WBatF5RHHRbMo2P1w/e5m+r0QQJtGcA1cZGrg5yp1itzixLpMZHEmXVWelRTc0Dfn5uyn/sYmBimU1BoA==}
+  '@vueuse/math@12.5.0':
+    resolution: {integrity: sha512-7Mtq4ascSwNk8GVdHywAhMkjxR77+BJUxsjygTI5CwnwnRsTVC5w04QTL9AKfC7ivVua2+Vf2BgP8TR2Xmy4wg==}
 
-  '@vueuse/metadata@11.1.0':
-    resolution: {integrity: sha512-l9Q502TBTaPYGanl1G+hPgd3QX5s4CGnpXriVBR5fEZ/goI6fvDaVmIl3Td8oKFurOxTmbXvBPSsgrd6eu6HYg==}
+  '@vueuse/metadata@12.5.0':
+    resolution: {integrity: sha512-Ui7Lo2a7AxrMAXRF+fAp9QsXuwTeeZ8fIB9wsLHqzq9MQk+2gMYE2IGJW48VMJ8ecvCB3z3GsGLKLbSasQ5Qlg==}
 
-  '@vueuse/router@11.1.0':
-    resolution: {integrity: sha512-OjTNIOzX5jD1HDzmDApMke2QsCZ+gWKaydfndKJ3j9ttn41Pr11cQbSY6ZBp+bNjctAR+jhQBV/DGtL3iKpuHg==}
+  '@vueuse/router@12.5.0':
+    resolution: {integrity: sha512-4JRK62RmE1dkbEBVSAgWLh3myENAUztKKO0E5+rN9Ii+Iu9h8SJaMwqldPiA7BzD/mChnUzrc1MQxWBQwom7xg==}
     peerDependencies:
       vue-router: '>=4.0.0-rc.1'
 
-  '@vueuse/shared@11.1.0':
-    resolution: {integrity: sha512-YUtIpY122q7osj+zsNMFAfMTubGz0sn5QzE5gPzAIiCmtt2ha3uQUY1+JPyL4gRCTsLPX82Y9brNbo/aqlA91w==}
+  '@vueuse/shared@12.5.0':
+    resolution: {integrity: sha512-vMpcL1lStUU6O+kdj6YdHDixh0odjPAUM15uJ9f7MY781jcYkIwFA4iv2EfoIPO6vBmvutI1HxxAwmf0cx5ISQ==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -4903,17 +4903,6 @@ packages:
   vue-component-type-helpers@2.0.6:
     resolution: {integrity: sha512-qdGXCtoBrwqk1BT6r2+1Wcvl583ZVkuSZ3or7Y1O2w5AvWtlvvxwjGhmz5DdPJS9xqRdDlgTJ/38ehWnEi0tFA==}
 
-  vue-demi@0.14.10:
-    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-
   vue-demi@0.14.8:
     resolution: {integrity: sha512-Uuqnk9YE9SsWeReYqK2alDI5YzciATE0r2SkA6iMAtuXvNTMNACJLJEXNXaEy94ECuBe4Sk6RzRU80kjdbIo1Q==}
     engines: {node: '>=12'}
@@ -6500,7 +6489,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20241217':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250121':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -6756,7 +6745,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20241217
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20250121
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
@@ -7247,15 +7236,14 @@ snapshots:
       js-beautify: 1.14.9
       vue-component-type-helpers: 2.0.6
 
-  '@vueuse/core@11.1.0(vue@3.5.13(typescript@5.5.4))':
+  '@vueuse/core@12.5.0(typescript@5.5.4)':
     dependencies:
       '@types/web-bluetooth': 0.0.20
-      '@vueuse/metadata': 11.1.0
-      '@vueuse/shared': 11.1.0(vue@3.5.13(typescript@5.5.4))
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.5.4))
+      '@vueuse/metadata': 12.5.0
+      '@vueuse/shared': 12.5.0(typescript@5.5.4)
+      vue: 3.5.13(typescript@5.5.4)
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      - typescript
 
   '@vueuse/gesture@2.0.0(vue@3.5.13(typescript@5.5.4))':
     dependencies:
@@ -7273,42 +7261,38 @@ snapshots:
       '@unhead/vue': 1.9.12(vue@3.5.13(typescript@5.5.4))
       vue: 3.5.13(typescript@5.5.4)
 
-  '@vueuse/integrations@11.1.0(focus-trap@7.5.4)(vue@3.5.13(typescript@5.5.4))':
+  '@vueuse/integrations@12.5.0(focus-trap@7.5.4)(typescript@5.5.4)':
     dependencies:
-      '@vueuse/core': 11.1.0(vue@3.5.13(typescript@5.5.4))
-      '@vueuse/shared': 11.1.0(vue@3.5.13(typescript@5.5.4))
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.5.4))
+      '@vueuse/core': 12.5.0(typescript@5.5.4)
+      '@vueuse/shared': 12.5.0(typescript@5.5.4)
+      vue: 3.5.13(typescript@5.5.4)
     optionalDependencies:
       focus-trap: 7.5.4
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      - typescript
 
-  '@vueuse/math@11.1.0(vue@3.5.13(typescript@5.5.4))':
+  '@vueuse/math@12.5.0(typescript@5.5.4)':
     dependencies:
-      '@vueuse/shared': 11.1.0(vue@3.5.13(typescript@5.5.4))
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.5.4))
+      '@vueuse/shared': 12.5.0(typescript@5.5.4)
+      vue: 3.5.13(typescript@5.5.4)
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      - typescript
 
-  '@vueuse/metadata@11.1.0': {}
+  '@vueuse/metadata@12.5.0': {}
 
-  '@vueuse/router@11.1.0(vue-router@4.4.5(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))':
+  '@vueuse/router@12.5.0(typescript@5.5.4)(vue-router@4.4.5(vue@3.5.13(typescript@5.5.4)))':
     dependencies:
-      '@vueuse/shared': 11.1.0(vue@3.5.13(typescript@5.5.4))
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.5.4))
+      '@vueuse/shared': 12.5.0(typescript@5.5.4)
+      vue: 3.5.13(typescript@5.5.4)
       vue-router: 4.4.5(vue@3.5.13(typescript@5.5.4))
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      - typescript
 
-  '@vueuse/shared@11.1.0(vue@3.5.13(typescript@5.5.4))':
+  '@vueuse/shared@12.5.0(typescript@5.5.4)':
     dependencies:
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.5.4))
+      vue: 3.5.13(typescript@5.5.4)
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      - typescript
 
   abbrev@1.1.1: {}
 
@@ -10190,7 +10174,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-auto-import@0.18.5(@vueuse/core@11.1.0(vue@3.5.13(typescript@5.5.4)))(rollup@2.79.1):
+  unplugin-auto-import@0.18.5(@vueuse/core@12.5.0(typescript@5.5.4))(rollup@2.79.1):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.3(rollup@2.79.1)
@@ -10201,7 +10185,7 @@ snapshots:
       unimport: 3.13.2(rollup@2.79.1)
       unplugin: 1.16.0
     optionalDependencies:
-      '@vueuse/core': 11.1.0(vue@3.5.13(typescript@5.5.4))
+      '@vueuse/core': 12.5.0(typescript@5.5.4)
     transitivePeerDependencies:
       - rollup
 
@@ -10458,10 +10442,6 @@ snapshots:
   vscode-uri@3.0.8: {}
 
   vue-component-type-helpers@2.0.6: {}
-
-  vue-demi@0.14.10(vue@3.5.13(typescript@5.5.4)):
-    dependencies:
-      vue: 3.5.13(typescript@5.5.4)
 
   vue-demi@0.14.8(vue@3.5.13(typescript@5.5.4)):
     dependencies:
