@@ -46,7 +46,7 @@ useMagicKeys({
           :board-height="boardHeight"
           :board-width="boardWidth"
           @submit="isSubmittingForm = true"
-          @download-finish="(isSubmittingForm = false), (isModalOpen = false)"
+          @download-finish="((isSubmittingForm = false), (isModalOpen = false))"
         />
 
         <template #footer>
