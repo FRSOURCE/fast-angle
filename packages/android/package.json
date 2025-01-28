@@ -10,6 +10,6 @@
     "release": "bubblewrap playPublish"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "1.22.0"
+    "@bubblewrap/cli": "1.22.3"
   }
 }
