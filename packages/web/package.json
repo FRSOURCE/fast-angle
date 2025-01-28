@@ -29,7 +29,7 @@
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.13",
-    "vue-i18n": "9.14.1",
+    "vue-i18n": "11.0.1",
     "vue-router": "4.5.0"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "@frsource/frs-replace": "4.1.1",
     "@frsource/prettier-config": "1.22.0",
     "@iconify-json/carbon": "1.2.4",
-    "@intlify/unplugin-vue-i18n": "4.0.0",
+    "@intlify/unplugin-vue-i18n": "6.0.3",
     "@shikijs/markdown-it": "1.29.1",
     "@types/color-hash": "2.0.0",
     "@types/lodash-es": "4.17.12",

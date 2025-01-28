@@ -10,8 +10,13 @@
       "enabled": false
     },
     {
-      "matchPackagePatterns": ["gradle"],
+      "matchPackageNames": ["gradle"],
       "enabled": false
+    },
+    {
+      "groupName": "vue i18n updates",
+      "matchPackageNames": ["vue-i18n", "@intlify/unplugin-vue-i18n"],
+      "matchUpdateTypes": ["major"]
     }
   ]
 }
