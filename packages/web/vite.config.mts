@@ -307,8 +307,10 @@ export default defineConfig({
   test: {
     include: ['test/**/*.test.ts'],
     environment: 'jsdom',
-    deps: {
-      inline: ['@vue', '@vueuse', 'vue-demi'],
+    server: {
+      deps: {
+        inline: ['@vue', '@vueuse', 'vue-demi'],
+      },
     },
   },
 
@@ -322,7 +324,7 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    crittersOptions: {
+    beastiesOptions: {
       publicPath: '/fast-angle/',
     },
     onFinished() {
