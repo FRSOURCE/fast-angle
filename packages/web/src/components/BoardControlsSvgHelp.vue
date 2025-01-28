@@ -47,74 +47,76 @@ const content = computed(
                 />
               </tr>
             </thead>
-            <tr>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>z</kbd>
-                </div>
-              </td>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>z</kbd>
-                </div>
-              </td>
-              <td scope="col" v-text="t('board.nav.undo')" />
-            </tr>
-            <tr>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>shift</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>z</kbd>
-                </div>
-              </td>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>shift</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>z</kbd>
-                </div>
-              </td>
-              <td scope="col" v-text="t('board.nav.download_image.action')" />
-            </tr>
-            <tr>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>ctrl</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>s</kbd>
-                </div>
-              </td>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>⌘</kbd
-                  ><small :class="$style['binding-item-plus']">+</small
-                  ><kbd>s</kbd>
-                </div>
-              </td>
-              <td scope="col" v-text="t('board.nav.redo')" />
-            </tr>
-            <tr>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>f</kbd>
-                </div>
-              </td>
-              <td scope="col" :class="$style['binding-item-wrapper']">
-                <div :class="$style['binding-item']">
-                  <kbd>f</kbd>
-                </div>
-              </td>
-              <td scope="col" v-text="t('board.nav.toggle_fullscreen')" />
-            </tr>
+            <tbody>
+              <tr>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>ctrl</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>z</kbd>
+                  </div>
+                </td>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>⌘</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>z</kbd>
+                  </div>
+                </td>
+                <td scope="col" v-text="t('board.nav.undo')" />
+              </tr>
+              <tr>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>ctrl</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>shift</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>z</kbd>
+                  </div>
+                </td>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>⌘</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>shift</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>z</kbd>
+                  </div>
+                </td>
+                <td scope="col" v-text="t('board.nav.download_image.action')" />
+              </tr>
+              <tr>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>ctrl</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>s</kbd>
+                  </div>
+                </td>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>⌘</kbd
+                    ><small :class="$style['binding-item-plus']">+</small
+                    ><kbd>s</kbd>
+                  </div>
+                </td>
+                <td scope="col" v-text="t('board.nav.redo')" />
+              </tr>
+              <tr>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>f</kbd>
+                  </div>
+                </td>
+                <td scope="col" :class="$style['binding-item-wrapper']">
+                  <div :class="$style['binding-item']">
+                    <kbd>f</kbd>
+                  </div>
+                </td>
+                <td scope="col" v-text="t('board.nav.toggle_fullscreen')" />
+              </tr>
+            </tbody>
           </table>
         </div>
 
