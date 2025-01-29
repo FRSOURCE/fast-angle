@@ -12,9 +12,6 @@
     "typecheck": "pnpm run -r --parallel --stream typecheck"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "@bubblewrap/cli": "patches/@bubblewrap__cli.patch"
-    },
     "peerDependencyRules": {
       "allowedVersions": {
         "vite": "^6.0.0"

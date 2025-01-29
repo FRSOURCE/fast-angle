@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@bubblewrap/cli':
-    hash: hf6bf5l57rbalkqvzkvsmrfzqy
-    path: patches/@bubblewrap__cli.patch
-
 importers:
 
   .: {}
@@ -17,7 +12,7 @@ importers:
     devDependencies:
       '@bubblewrap/cli':
         specifier: 1.22.3
-        version: 1.22.3(patch_hash=hf6bf5l57rbalkqvzkvsmrfzqy)
+        version: 1.22.3
 
   packages/web:
     dependencies:
@@ -5814,7 +5809,7 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@bubblewrap/cli@1.22.3(patch_hash=hf6bf5l57rbalkqvzkvsmrfzqy)':
+  '@bubblewrap/cli@1.22.3':
     dependencies:
       '@bubblewrap/core': 1.22.3
       '@bubblewrap/validator': 1.22.0

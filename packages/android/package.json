@@ -7,7 +7,7 @@
     "build": "bubblewrap build",
     "new-version": "bubblewrap update",
     "preview": "bubblewrap install",
-    "release": "bubblewrap playPublish"
+    "release": "bubblewrap play publish"
   },
   "devDependencies": {
     "@bubblewrap/cli": "1.22.3"
