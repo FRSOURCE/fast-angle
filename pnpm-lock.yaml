@@ -82,7 +82,7 @@ importers:
         version: 6.0.3(@vue/compiler-dom@3.5.13)(eslint@9.19.0)(rollup@2.79.2)(typescript@5.7.3)(vue-i18n@11.0.1(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
       '@shikijs/markdown-it':
         specifier: 2.1.0
-        version: 2.1.0
+        version: 2.1.0(markdown-it-async@1.4.2)
       '@types/color-hash':
         specifier: 2.0.0
         version: 2.0.0
@@ -153,8 +153,8 @@ importers:
         specifier: 0.22.0
         version: 0.22.0(@vue/compiler-sfc@3.5.13)(vue-template-compiler@2.7.14)
       unplugin-vue-components:
-        specifier: 0.28.0
-        version: 0.28.0(@babel/parser@7.26.7)(rollup@2.79.2)(vue@3.5.13(typescript@5.7.3))
+        specifier: 28.0.0
+        version: 28.0.0(@babel/parser@7.26.7)(rollup@2.79.2)(vue@3.5.13(typescript@5.7.3))
       unplugin-vue-markdown:
         specifier: 28.1.0
         version: 28.1.0(rollup@2.79.2)(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))
@@ -4645,8 +4645,8 @@ packages:
       vue-template-es2015-compiler:
         optional: true
 
-  unplugin-vue-components@0.28.0:
-    resolution: {integrity: sha512-jiTGtJ3JsRFBjgvyilfrX7yUoGKScFgbdNw+6p6kEXU+Spf/rhxzgvdfuMcvhCcLmflB/dY3pGQshYBVGOUx7Q==}
+  unplugin-vue-components@28.0.0:
+    resolution: {integrity: sha512-vYe0wSyqTVhyNFIad1iiGyQGhG++tDOMgohqenMDOAooMJP9vvzCdXTqCVx20A0rCQXFNjgoRbSeDAioLPH36Q==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -6649,10 +6649,12 @@ snapshots:
     dependencies:
       '@shikijs/types': 2.1.0
 
-  '@shikijs/markdown-it@2.1.0':
+  '@shikijs/markdown-it@2.1.0(markdown-it-async@1.4.2)':
     dependencies:
       markdown-it: 14.1.0
       shiki: 2.1.0
+    optionalDependencies:
+      markdown-it-async: 1.4.2
 
   '@shikijs/themes@2.1.0':
     dependencies:
@@ -10125,7 +10127,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  unplugin-vue-components@0.28.0(@babel/parser@7.26.7)(rollup@2.79.2)(vue@3.5.13(typescript@5.7.3)):
+  unplugin-vue-components@28.0.0(@babel/parser@7.26.7)(rollup@2.79.2)(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.4(rollup@2.79.2)
