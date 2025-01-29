@@ -74,8 +74,8 @@ importers:
         specifier: 1.34.0
         version: 1.34.0(eslint@9.19.0)(typescript@5.7.3)
       '@frsource/frs-replace':
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 5.1.10
+        version: 5.1.10
       '@frsource/prettier-config':
         specifier: 1.22.0
         version: 1.22.0(eslint@9.19.0)
@@ -939,8 +939,9 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@4.1.1':
-    resolution: {integrity: sha512-Rx1IkS+LoCNn9d/Pyt/GZXs/fjupBiVRBzdpnN1zORteBuYrE+pXeXb0qZ1yUlvksP1Rp0+dhQVlGEmkQEvT/Q==}
+  '@frsource/frs-replace@5.1.10':
+    resolution: {integrity: sha512-NVrj2ORWI2K/qReJUGH9llZIrF9ERWzIznvuFPFp1CuYQdmHLQfI1c95P9whoKpotpSl1z0dgubqIwF2DayFSg==}
+    engines: {node: '>=20.0.0'}
     hasBin: true
 
   '@frsource/prettier-config@1.22.0':
@@ -2038,10 +2039,6 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  add-filename-increment@1.0.0:
-    resolution: {integrity: sha512-pFV8VZX8jxuVMIycKvGZkWF/ihnUubu9lbQVnOnZWp7noVxbKQTNj7zG2y9fXdPcuZ6lAN3Drr517HaivGCjdQ==}
-    engines: {node: '>=8'}
-
   agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
@@ -2932,9 +2929,9 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
-  get-stdin@8.0.0:
-    resolution: {integrity: sha512-sY22aA6xchAzprjyqmSEQv4UbAAzRN0L2dQB0NlN5acTTK9Don6nhoc3eAbUnpZiCANAMfd/+40kVdKfFygohg==}
-    engines: {node: '>=10'}
+  get-stdin@9.0.0:
+    resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
+    engines: {node: '>=12'}
 
   get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
@@ -4335,10 +4332,6 @@ packages:
     resolution: {integrity: sha512-ZprKx+bBLXv067WTCALv8SSz5l2+XhpYCsVtSqlMnkAXMWDq+/ekVbl1ghqP9rUHTzv6sm/DwCOiYutU/yp1fw==}
     engines: {node: '>=10'}
 
-  strip-filename-increment@2.0.1:
-    resolution: {integrity: sha512-+v5xsiTTsdYqkPj7qz1zlngIsjZedhHDi3xp/9bMurV8kXe9DAr732gNVqtt4X8sI3hOqS3nlFfps5gyVcux6w==}
-    engines: {node: '>=8'}
-
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
@@ -5043,10 +5036,6 @@ packages:
 
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
-
-  write@2.0.0:
-    resolution: {integrity: sha512-yam9TAqN8sAZokECAejo9HpT2j2s39OgK8i8yxadrFBVo+iSWLfnipRVFulfAw1d2dz5vSuGmlMHYRKG4fysOA==}
-    engines: {node: '>=10'}
 
   ws@8.18.0:
     resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
@@ -6023,11 +6012,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@4.1.1':
+  '@frsource/frs-replace@5.1.10':
     dependencies:
       fast-glob: 3.3.3
-      get-stdin: 8.0.0
-      write: 2.0.0
+      get-stdin: 9.0.0
       yargs: 17.7.2
 
   '@frsource/prettier-config@1.22.0(eslint@9.19.0)':
@@ -7212,10 +7200,6 @@ snapshots:
 
   acorn@8.14.0: {}
 
-  add-filename-increment@1.0.0:
-    dependencies:
-      strip-filename-increment: 2.0.1
-
   agent-base@6.0.2:
     dependencies:
       debug: 4.4.0
@@ -8279,7 +8263,7 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
-  get-stdin@8.0.0: {}
+  get-stdin@9.0.0: {}
 
   get-stream@6.0.1: {}
 
@@ -9821,8 +9805,6 @@ snapshots:
 
   strip-comments@2.0.1: {}
 
-  strip-filename-increment@2.0.1: {}
-
   strip-json-comments@3.1.1: {}
 
   strip-literal@2.1.1:
@@ -10639,10 +10621,6 @@ snapshots:
       strip-ansi: 6.0.1
 
   wrappy@1.0.2: {}
-
-  write@2.0.0:
-    dependencies:
-      add-filename-increment: 1.0.0
 
   ws@8.18.0: {}
 
