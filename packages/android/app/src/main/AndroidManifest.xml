@@ -138,7 +138,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="https"
-                    android:host="@string/hostName"/>
+                    android:host="@string/hostName"
+                
+                    android:pathPrefix="/fast-angle/"
+                
+                />
             </intent-filter>
 
             
