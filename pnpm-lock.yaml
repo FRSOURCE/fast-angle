@@ -162,8 +162,8 @@ importers:
         specifier: 6.0.11
         version: 6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)
       vite-plugin-inspect:
-        specifier: 0.10.6
-        version: 0.10.6(rollup@2.79.2)(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))
+        specifier: 10.1.0
+        version: 10.1.0(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))
       vite-plugin-pages:
         specifier: 0.32.4
         version: 0.32.4(@vue/compiler-sfc@3.5.13)(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))
@@ -2614,8 +2614,8 @@ packages:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
 
-  error-stack-parser-es@0.1.5:
-    resolution: {integrity: sha512-xHku1X40RO+fO8yJ8Wh2f2rZWVjqyhb1zgq1yZ8aZRQkv6OOKhKWRUaht3eSCUbAOBaKIgM+ykwFLE+QUxgGeg==}
+  error-stack-parser-es@1.0.5:
+    resolution: {integrity: sha512-5qucVt2XcuGMcEGgWI7i+yZpmpByQ8J1lHhcL7PwqCwu9FPP3VUXzT4ltHe5i2z9dePwEHcDVOAfSnHsOlCXRA==}
 
   es-abstract@1.23.9:
     resolution: {integrity: sha512-py07lI0wjxAC/DcfK1S6G7iANonniZwTISvdPzk9hzeH0IZIshbuuFxLIU96OyF89Yb9hiqWn8M/bY83KY5vzA==}
@@ -3861,9 +3861,6 @@ packages:
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
 
-  perfect-debounce@1.0.0:
-    resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
-
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
 
@@ -4729,8 +4726,8 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-plugin-inspect@0.10.6:
-    resolution: {integrity: sha512-R3pwljjBbjFM2sZvy6Zvynnm51oaEwLYyYPk9Wp2lF97w/YMBq+KtTJXpCA17IO2pImX0bWA6WB05kuqRnkuyQ==}
+  vite-plugin-inspect@10.1.0:
+    resolution: {integrity: sha512-solJQhkZULyR7Qq2CRGbO/8ijNPTwmxxLDMx3FkMzGQAuVqKrgqmV2cw/u8SXBsKDHgSMykipW+78MBMZz3O0g==}
     engines: {node: '>=14'}
     peerDependencies:
       '@nuxt/kit': '*'
@@ -7802,7 +7799,7 @@ snapshots:
 
   entities@4.5.0: {}
 
-  error-stack-parser-es@0.1.5: {}
+  error-stack-parser-es@1.0.5: {}
 
   es-abstract@1.23.9:
     dependencies:
@@ -9277,8 +9274,6 @@ snapshots:
 
   pend@1.2.0: {}
 
-  perfect-debounce@1.0.0: {}
-
   performance-now@2.1.0: {}
 
   phin@2.9.3: {}
@@ -10239,20 +10234,15 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-inspect@0.10.6(rollup@2.79.2)(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)):
+  vite-plugin-inspect@10.1.0(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)):
     dependencies:
-      '@antfu/utils': 0.7.10
-      '@rollup/pluginutils': 5.1.4(rollup@2.79.2)
       debug: 4.4.0
-      error-stack-parser-es: 0.1.5
-      fs-extra: 11.2.0
+      error-stack-parser-es: 1.0.5
       open: 10.1.0
-      perfect-debounce: 1.0.0
       picocolors: 1.1.1
       sirv: 3.0.0
       vite: 6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)
     transitivePeerDependencies:
-      - rollup
       - supports-color
 
   vite-plugin-pages@0.32.4(@vue/compiler-sfc@3.5.13)(vite@6.0.11(@types/node@22.10.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3))):
