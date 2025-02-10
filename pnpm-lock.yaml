@@ -69,14 +69,14 @@ importers:
         specifier: 1.34.0
         version: 1.34.0(eslint@9.19.0)(typescript@5.7.3)
       '@frsource/frs-replace':
-        specifier: 5.1.10
-        version: 5.1.10
+        specifier: 5.1.13
+        version: 5.1.13
       '@frsource/prettier-config':
         specifier: 1.22.0
         version: 1.22.0(eslint@9.19.0)
       '@iconify-json/carbon':
-        specifier: 1.2.5
-        version: 1.2.5
+        specifier: 1.2.6
+        version: 1.2.6
       '@intlify/unplugin-vue-i18n':
         specifier: 6.0.3
         version: 6.0.3(@vue/compiler-dom@3.5.13)(eslint@9.19.0)(rollup@2.79.2)(typescript@5.7.3)(vue-i18n@11.0.1(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
@@ -129,8 +129,8 @@ importers:
         specifier: 4.0.1
         version: 4.0.1
       pnpm:
-        specifier: 9.15.4
-        version: 9.15.4
+        specifier: 9.15.5
+        version: 9.15.5
       prettier:
         specifier: 3.4.2
         version: 3.4.2
@@ -162,8 +162,8 @@ importers:
         specifier: 6.0.11
         version: 6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)
       vite-plugin-inspect:
-        specifier: 10.1.0
-        version: 10.1.0(vite@6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))
+        specifier: 10.1.1
+        version: 10.1.1(vite@6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))
       vite-plugin-pages:
         specifier: 0.32.4
         version: 0.32.4(@vue/compiler-sfc@3.5.13)(vite@6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))
@@ -934,8 +934,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.10':
-    resolution: {integrity: sha512-NVrj2ORWI2K/qReJUGH9llZIrF9ERWzIznvuFPFp1CuYQdmHLQfI1c95P9whoKpotpSl1z0dgubqIwF2DayFSg==}
+  '@frsource/frs-replace@5.1.13':
+    resolution: {integrity: sha512-JGwpBJ0KioMiIR4goJf87VheydY5Uw3z/hXEASTPPVK9Sh6Y2tzkEHhQBtrm0+MVbedAI+seNAZK+7KOCtDpMg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -964,8 +964,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/carbon@1.2.5':
-    resolution: {integrity: sha512-aI3TEzOrUDGhs74zIT3ym/ZQBUEziyu8JifntX2Hb4siVzsP5sQ/QEfVdmcCUj37kQUYT3TYBSeAw2vTfCJx9w==}
+  '@iconify-json/carbon@1.2.6':
+    resolution: {integrity: sha512-Oat/TUfu1Cpg/inoi6ZIVvNjWoKQJFugpDB6LqpahENf4f2pZKMOUR2B9MCQlje77iRRI5nWQzvUO2kJlXFStw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3895,8 +3895,8 @@ packages:
     resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==}
     engines: {node: '>=12.13.0'}
 
-  pnpm@9.15.4:
-    resolution: {integrity: sha512-stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==}
+  pnpm@9.15.5:
+    resolution: {integrity: sha512-hFGWAmqrHMPwmKBHS2TfurKv56G06R3YaJXY5Koyp6bQMEni0K13C75N4COnEi+2jBodbg0DPHB2CF+dXUgA1A==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -4723,8 +4723,8 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-plugin-inspect@10.1.0:
-    resolution: {integrity: sha512-solJQhkZULyR7Qq2CRGbO/8ijNPTwmxxLDMx3FkMzGQAuVqKrgqmV2cw/u8SXBsKDHgSMykipW+78MBMZz3O0g==}
+  vite-plugin-inspect@10.1.1:
+    resolution: {integrity: sha512-b/2Eq7kAimQufakK8lpdUbRPSbw/h1IBKts+ZwF5vVhHfyeNE9p01JYrv20rGGewHkomyfTC+CBkax93FeSYPQ==}
     engines: {node: '>=14'}
     peerDependencies:
       '@nuxt/kit': '*'
@@ -6009,7 +6009,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.10':
+  '@frsource/frs-replace@5.1.13':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6032,7 +6032,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@iconify-json/carbon@1.2.5':
+  '@iconify-json/carbon@1.2.6':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -9290,7 +9290,7 @@ snapshots:
 
   pngjs@6.0.0: {}
 
-  pnpm@9.15.4: {}
+  pnpm@9.15.5: {}
 
   possible-typed-array-names@1.0.0: {}
 
@@ -10224,7 +10224,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-inspect@10.1.0(vite@6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)):
+  vite-plugin-inspect@10.1.1(vite@6.0.11(@types/node@22.12.0)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0)):
     dependencies:
       debug: 4.4.0
       error-stack-parser-es: 1.0.5
