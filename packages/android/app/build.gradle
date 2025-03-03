@@ -57,8 +57,8 @@ android {
         applicationId "org.frsource.www.fast_angle.twa"
         minSdkVersion 19
         targetSdkVersion 35
-        versionCode 55
-        versionName "55"
+        versionCode 56
+        versionName "56"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
