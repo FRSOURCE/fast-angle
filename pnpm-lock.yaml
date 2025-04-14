@@ -69,8 +69,8 @@ importers:
         specifier: 1.34.0
         version: 1.34.0(eslint@9.19.0)(typescript@5.7.3)
       '@frsource/frs-replace':
-        specifier: 5.1.31
-        version: 5.1.31
+        specifier: 5.1.32
+        version: 5.1.32
       '@frsource/prettier-config':
         specifier: 1.22.0
         version: 1.22.0(eslint@9.19.0)
@@ -934,8 +934,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.31':
-    resolution: {integrity: sha512-mMqpA6Gm8kI4Hu3ppPFCJpnmW8XQS7MEqjRt6SC3sxsgVWNADEWHA5Dch3UOJXWu+BZxJBEjxmHi6JoFfPBnbQ==}
+  '@frsource/frs-replace@5.1.32':
+    resolution: {integrity: sha512-ZWajQ4uRQTvYFlM5yrS3IOZIBo+7SpfvXjDrjWsULVl1inLBzgkexNw1x0cTw73BDJ6CV+vdI++nvbIe/4wi2Q==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -1226,8 +1226,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250403':
-    resolution: {integrity: sha512-caGkUaHDnqF/0LcMqj8mFXfDFwo+1c60D7iAKP/ROJ80iEl31iuxOfijQ4fVhBSKCQpQsBM/VJniVco++vBL6A==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250410':
+    resolution: {integrity: sha512-N2D1z8j+7t5OGvhJZBvVk7VCKKujn2ugS7zIACbc05Hml2w5jS5ClSxgkHgDVhdnbUaIiiH+FGhOoddc+HETuA==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.1.20200806':
     resolution: {integrity: sha512-Wl6UfmZVDdWbY3PUu8E2ULk9RPLjnMqp/iOA4tcK8Ne+U/GmlnWP/e34IaZNGArfl7iXJNOG+/3Rj9L9jQyF9Q==}
@@ -6006,7 +6006,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.31':
+  '@frsource/frs-replace@5.1.32':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6353,7 +6353,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250403':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250410':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -6695,7 +6695,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20250403
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20250410
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
