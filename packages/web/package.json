@@ -33,7 +33,7 @@
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.43.0",
+    "@frsource/eslint-config": "1.44.0",
     "@frsource/frs-replace": "5.1.39",
     "@frsource/prettier-config": "1.26.0",
     "@iconify-json/carbon": "1.2.8",
@@ -49,7 +49,7 @@
     "beasties": "^0.2.0",
     "cross-env": "7.0.3",
     "del-cli": "6.0.0",
-    "eslint": "9.25.1",
+    "eslint": "9.26.0",
     "globals": "15.14.0",
     "https-localhost": "4.7.1",
     "incstr": "1.2.3",
