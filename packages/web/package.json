@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.43.0",
-    "@frsource/frs-replace": "5.1.37",
+    "@frsource/frs-replace": "5.1.39",
     "@frsource/prettier-config": "1.26.0",
     "@iconify-json/carbon": "1.2.8",
     "@intlify/unplugin-vue-i18n": "6.0.8",
@@ -44,7 +44,7 @@
     "@types/markdown-it": "14.1.2",
     "@types/markdown-it-link-attributes": "3.0.5",
     "@types/node": "22.15.3",
-    "@vitejs/plugin-vue": "5.2.3",
+    "@vitejs/plugin-vue": "5.2.4",
     "@vue/test-utils": "2.4.6",
     "beasties": "^0.2.0",
     "cross-env": "7.0.3",
