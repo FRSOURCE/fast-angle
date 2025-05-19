@@ -50,7 +50,7 @@
     "cross-env": "7.0.3",
     "del-cli": "6.0.0",
     "eslint": "9.27.0",
-    "globals": "15.14.0",
+    "globals": "16.1.0",
     "https-localhost": "4.7.1",
     "incstr": "1.2.3",
     "markdown-it-link-attributes": "4.0.1",
