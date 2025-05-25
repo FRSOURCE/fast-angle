@@ -11,8 +11,8 @@ importers:
   packages/android:
     devDependencies:
       '@bubblewrap/cli':
-        specifier: 1.22.5
-        version: 1.22.5
+        specifier: 1.22.6
+        version: 1.22.6
 
   packages/web:
     dependencies:
@@ -69,8 +69,8 @@ importers:
         specifier: 1.45.0
         version: 1.45.0(eslint@9.27.0)(typescript@5.7.3)
       '@frsource/frs-replace':
-        specifier: 5.1.41
-        version: 5.1.41
+        specifier: 5.1.45
+        version: 5.1.45
       '@frsource/prettier-config':
         specifier: 1.26.0
         version: 1.26.0(eslint@9.27.0)
@@ -720,13 +720,13 @@ packages:
     resolution: {integrity: sha512-+EzkxvLNfiUeKMgy/3luqfsCWFRXLb7U6wNQTk60tovuckwB15B191tJWvpp4HjiQWdJkCxO3Wbvc6jlk3Xb2Q==}
     engines: {node: '>=6.9.0'}
 
-  '@bubblewrap/cli@1.22.5':
-    resolution: {integrity: sha512-Kk/oQQvebJ+0+vw6GXSSYj/7E5LaER7W3qC+PBpvUKG28eWyre/U+Of9AbawZixkFvUioc0DyQXOqQ7IkUgkVw==}
+  '@bubblewrap/cli@1.22.6':
+    resolution: {integrity: sha512-LgdD/ZHtAEnJ1eR+3XUb1xSHfXHtN3JxtgxyXrXbeMMxPnhSW60BWpLH0AzLzZRy9SpRlLxhYh+Jbnt90qVsZg==}
     engines: {node: '>=14.15.0'}
     hasBin: true
 
-  '@bubblewrap/core@1.22.5':
-    resolution: {integrity: sha512-VXin0nNBSldYUqx7w59mh7XKOJHwuEEPcBTtKILIGL2nOjbvwSkZ6fpU5pPCedEdlB/DdXCK/Wju7teV5YG52Q==}
+  '@bubblewrap/core@1.22.6':
+    resolution: {integrity: sha512-CE32qgf2mG1gW1Iok8wLW1P9J6dnZVApNNCZM3raIFoAwXlNhsza52AXh9k9kFErA/HsOUfScSDKVnv7AIUNsQ==}
     engines: {node: '>=14.15.0'}
 
   '@bubblewrap/validator@1.22.0':
@@ -965,8 +965,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.41':
-    resolution: {integrity: sha512-Ha40POrVi19eHxOMkitgNRiBPJdnz4V7P8GPPPs3JzemXtAec86L/nHbQ7SXBFY+CzepG+cVzYnNKZxvKaeKaw==}
+  '@frsource/frs-replace@5.1.45':
+    resolution: {integrity: sha512-0vmeS9G4ROmjm9jcwuoCLxFtzwrl9fZjBNzHNL0IQseGnRgQ6UL8DAHyCItPtN5bICJNp+vFgs2L/tVV0XgYXA==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -1257,8 +1257,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250519':
-    resolution: {integrity: sha512-pVL/hkrxMucZ+dxn9CqdAZ+HPStlvTjFbvXm5kvWqDASoIV/dmtgp1krCCq4KRpaGcH9UVO7hnrKMR2gh+Kzgw==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250521':
+    resolution: {integrity: sha512-qB2eEW6RGFeXsjkysGiif/IZ+8SU6iRQk1yEqEmu8esDrys31xXy8x5IClrE9J2l9MzjMyr3z0X2HCGnb3tOMQ==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.1.20200806':
     resolution: {integrity: sha512-Wl6UfmZVDdWbY3PUu8E2ULk9RPLjnMqp/iOA4tcK8Ne+U/GmlnWP/e34IaZNGArfl7iXJNOG+/3Rj9L9jQyF9Q==}
@@ -5872,9 +5872,9 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@bubblewrap/cli@1.22.5':
+  '@bubblewrap/cli@1.22.6':
     dependencies:
-      '@bubblewrap/core': 1.22.5
+      '@bubblewrap/core': 1.22.6
       '@bubblewrap/validator': 1.22.0
       '@types/cli-progress': 3.11.0
       '@types/color': 3.0.3
@@ -5895,7 +5895,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@bubblewrap/core@1.22.5':
+  '@bubblewrap/core@1.22.6':
     dependencies:
       '@resvg/resvg-js': 2.6.2
       '@types/color': 3.0.3
@@ -6090,7 +6090,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.41':
+  '@frsource/frs-replace@5.1.45':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6437,7 +6437,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250519':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.0.20250521':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -6779,7 +6779,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20250519
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.0.20250521
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
