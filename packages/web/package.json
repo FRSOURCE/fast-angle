@@ -33,9 +33,9 @@
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.45.0",
+    "@frsource/eslint-config": "1.48.0",
     "@frsource/frs-replace": "5.1.45",
-    "@frsource/prettier-config": "1.26.0",
+    "@frsource/prettier-config": "1.29.0",
     "@iconify-json/carbon": "1.2.8",
     "@intlify/unplugin-vue-i18n": "6.0.8",
     "@shikijs/markdown-it": "2.1.0",
