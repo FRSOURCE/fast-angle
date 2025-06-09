@@ -69,14 +69,14 @@ importers:
         specifier: 1.48.0
         version: 1.48.0(eslint@9.27.0)(typescript@5.8.3)
       '@frsource/frs-replace':
-        specifier: 5.1.47
-        version: 5.1.47
+        specifier: 5.1.49
+        version: 5.1.49
       '@frsource/prettier-config':
         specifier: 1.29.0
         version: 1.29.0(prettier@3.5.3)
       '@iconify-json/carbon':
-        specifier: 1.2.8
-        version: 1.2.8
+        specifier: 1.2.9
+        version: 1.2.9
       '@intlify/unplugin-vue-i18n':
         specifier: 6.0.8
         version: 6.0.8(@vue/compiler-dom@3.5.16)(eslint@9.27.0)(rollup@2.79.2)(typescript@5.8.3)(vue-i18n@11.1.5(vue@3.5.16(typescript@5.8.3)))(vue@3.5.16(typescript@5.8.3))
@@ -958,8 +958,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.47':
-    resolution: {integrity: sha512-AGAZv7hN/NZqf22avlP6tr5h8dA+iIA0GjgIdrpWj7Ze7n0jhZ+eHqMAITii0X+z8DafqfhwyM5hyf9tPsWU6g==}
+  '@frsource/frs-replace@5.1.49':
+    resolution: {integrity: sha512-r8Ko+qQPH41o+I0Hg5EnDA/FDkfu5BRF9qQ8Sl/7kxPtKw0uEnFYHauxPqiI9OzNK4emA0iIwioNqYLKlkoMTQ==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -988,8 +988,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/carbon@1.2.8':
-    resolution: {integrity: sha512-6xh4YiFBz6qoSnB3XMe23WvjTJroDFXB17J1MbiT7nATFe+70+em1acRXr8hgP/gYpwFMHFc4IvjA/IPTPnTzg==}
+  '@iconify-json/carbon@1.2.9':
+    resolution: {integrity: sha512-RyeSAuFTzhs1GX4yrzVEKEbNQGt95p9zMR4S2F63vbThtNoUr5OKwaWbhO/GbHQCSgdbKuZv2ApAOsY2fLxLbQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -6126,7 +6126,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.47':
+  '@frsource/frs-replace@5.1.49':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6149,7 +6149,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@iconify-json/carbon@1.2.8':
+  '@iconify-json/carbon@1.2.9':
     dependencies:
       '@iconify/types': 2.0.0
 
