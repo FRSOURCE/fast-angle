@@ -66,7 +66,7 @@
     "unplugin-vue-markdown": "28.3.1",
     "vite": "6.3.5",
     "vite-plugin-inspect": "10.3.0",
-    "vite-plugin-pages": "0.33.0",
+    "vite-plugin-pages": "0.33.1",
     "vite-plugin-pwa": "0.21.2",
     "vite-plugin-vue-layouts": "0.11.0",
     "vite-ssg": "25.2.0",
