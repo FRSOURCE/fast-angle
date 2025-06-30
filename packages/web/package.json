@@ -33,7 +33,7 @@
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.48.0",
+    "@frsource/eslint-config": "1.53.0",
     "@frsource/frs-replace": "5.1.57",
     "@frsource/prettier-config": "1.29.0",
     "@iconify-json/carbon": "1.2.10",
@@ -49,20 +49,20 @@
     "beasties": "^0.3.0",
     "cross-env": "7.0.3",
     "del-cli": "6.0.0",
-    "eslint": "9.27.0",
+    "eslint": "9.30.0",
     "globals": "16.2.0",
     "https-localhost": "4.7.1",
     "incstr": "1.2.3",
     "markdown-it-link-attributes": "4.0.1",
     "pnpm": "9.15.9",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "sass": "1.89.2",
     "shiki": "2.5.0",
     "type-fest": "4.41.0",
     "typescript": "5.8.3",
     "unplugin-auto-import": "19.3.0",
     "unplugin-icons": "22.1.0",
-    "unplugin-vue-components": "28.7.0",
+    "unplugin-vue-components": "28.8.0",
     "unplugin-vue-markdown": "28.3.1",
     "vite": "6.3.5",
     "vite-plugin-inspect": "10.3.0",
@@ -71,7 +71,7 @@
     "vite-plugin-vue-layouts": "0.11.0",
     "vite-ssg": "25.2.0",
     "vite-ssg-sitemap": "0.9.0",
-    "vitest": "3.1.4",
+    "vitest": "3.2.4",
     "vue-tsc": "2.2.10"
   }
 }
