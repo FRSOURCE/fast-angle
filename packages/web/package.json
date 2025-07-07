@@ -29,12 +29,12 @@
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.17",
-    "vue-i18n": "11.1.7",
+    "vue-i18n": "11.1.9",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.53.0",
-    "@frsource/frs-replace": "5.1.57",
+    "@frsource/frs-replace": "5.1.60",
     "@frsource/prettier-config": "1.29.0",
     "@iconify-json/carbon": "1.2.10",
     "@intlify/unplugin-vue-i18n": "6.0.8",
@@ -72,6 +72,6 @@
     "vite-ssg": "25.2.0",
     "vite-ssg-sitemap": "0.9.0",
     "vitest": "3.2.4",
-    "vue-tsc": "2.2.10"
+    "vue-tsc": "2.2.12"
   }
 }
