@@ -156,8 +156,8 @@ importers:
         specifier: 28.8.0
         version: 28.8.0(@babel/parser@7.28.0)(vue@3.5.17(typescript@5.8.3))
       unplugin-vue-markdown:
-        specifier: 28.3.1
-        version: 28.3.1(vite@6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0))
+        specifier: 29.1.0
+        version: 29.1.0(vite@6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0))
       vite:
         specifier: 6.3.5
         version: 6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)
@@ -1291,14 +1291,14 @@ packages:
   '@maxim_mazurok/gapi.client.discovery-v1@0.1.20200806':
     resolution: {integrity: sha512-Wl6UfmZVDdWbY3PUu8E2ULk9RPLjnMqp/iOA4tcK8Ne+U/GmlnWP/e34IaZNGArfl7iXJNOG+/3Rj9L9jQyF9Q==}
 
-  '@mdit-vue/plugin-component@2.1.3':
-    resolution: {integrity: sha512-9AG17beCgpEw/4ldo/M6Y/1Rh4E1bqMmr/rCkWKmCAxy9tJz3lzY7HQJanyHMJufwsb3WL5Lp7Om/aPcQTZ9SA==}
+  '@mdit-vue/plugin-component@2.1.4':
+    resolution: {integrity: sha512-fiLbwcaE6gZE4c8Mkdkc4X38ltXh/EdnuPE1hepFT2dLiW6I4X8ho2Wq7nhYuT8RmV4OKlCFENwCuXlKcpV/sw==}
 
-  '@mdit-vue/plugin-frontmatter@2.1.3':
-    resolution: {integrity: sha512-KxsSCUVBEmn6sJcchSTiI5v9bWaoRxe68RBYRDGcSEY1GTnfQ5gQPMIsM48P4q1luLEIWurVGGrRu7u93//LDQ==}
+  '@mdit-vue/plugin-frontmatter@2.1.4':
+    resolution: {integrity: sha512-mOlavV176njnozIf0UZGFYymmQ2LK5S1rjrbJ1uGz4Df59tu0DQntdE7YZXqmJJA9MiSx7ViCTUQCNPKg7R8Ow==}
 
-  '@mdit-vue/types@2.1.0':
-    resolution: {integrity: sha512-TMBB/BQWVvwtpBdWD75rkZx4ZphQ6MN0O4QB2Bc0oI5PC2uE57QerhNxdRZ7cvBHE2iY2C+BUNUziCfJbjIRRA==}
+  '@mdit-vue/types@2.1.4':
+    resolution: {integrity: sha512-QiGNZslz+zXUs2X8D11UQhB4KAMZ0DZghvYxa7+1B+VMLcDtz//XHpWbcuexjzE3kBXSxIUTPH3eSQCa0puZHA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4862,10 +4862,11 @@ packages:
       '@nuxt/kit':
         optional: true
 
-  unplugin-vue-markdown@28.3.1:
-    resolution: {integrity: sha512-t+vhR2QbTba/NabOkonzdaRngM/hHiDH059L4wZPPMeysTp8ZxQ5gv8QoXEqkSMoM+uKUWVZOiIWpDhYcCXR/Q==}
+  unplugin-vue-markdown@29.1.0:
+    resolution: {integrity: sha512-BvDFrhsiXzVvzfq1y68jtZwHg1NYJBteSXmUK4zMdX1HT2QtKw8yimjUbDwuI1K9TW/1/L6QYiRQSl1OkHcxWg==}
+    engines: {node: '>=20'}
     peerDependencies:
-      vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0
+      vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0
 
   unplugin@1.16.1:
     resolution: {integrity: sha512-4/u/j4FrCKdi17jaxuJA0jClGxB1AvU2hw/IuayPc4ay1XGaJs/rbb4v5WKwAjNifjmXK9PIFyuPiaK8azyR9w==}
@@ -6635,19 +6636,19 @@ snapshots:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
 
-  '@mdit-vue/plugin-component@2.1.3':
+  '@mdit-vue/plugin-component@2.1.4':
     dependencies:
       '@types/markdown-it': 14.1.2
       markdown-it: 14.1.0
 
-  '@mdit-vue/plugin-frontmatter@2.1.3':
+  '@mdit-vue/plugin-frontmatter@2.1.4':
     dependencies:
-      '@mdit-vue/types': 2.1.0
+      '@mdit-vue/types': 2.1.4
       '@types/markdown-it': 14.1.2
       gray-matter: 4.0.3
       markdown-it: 14.1.0
 
-  '@mdit-vue/types@2.1.0': {}
+  '@mdit-vue/types@2.1.4': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -10548,15 +10549,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  unplugin-vue-markdown@28.3.1(vite@6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)):
+  unplugin-vue-markdown@29.1.0(vite@6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)):
     dependencies:
-      '@mdit-vue/plugin-component': 2.1.3
-      '@mdit-vue/plugin-frontmatter': 2.1.3
-      '@mdit-vue/types': 2.1.0
+      '@mdit-vue/plugin-component': 2.1.4
+      '@mdit-vue/plugin-frontmatter': 2.1.4
+      '@mdit-vue/types': 2.1.4
       '@types/markdown-it': 14.1.2
       markdown-it: 14.1.0
       markdown-it-async: 2.2.0
-      unplugin: 2.3.4
+      unplugin: 2.3.5
       unplugin-utils: 0.2.4
       vite: 6.3.5(@types/node@22.16.3)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)
 
