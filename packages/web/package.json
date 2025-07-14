@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.53.0",
-    "@frsource/frs-replace": "5.1.60",
+    "@frsource/frs-replace": "5.1.61",
     "@frsource/prettier-config": "1.29.0",
     "@iconify-json/carbon": "1.2.10",
     "@intlify/unplugin-vue-i18n": "6.0.8",
