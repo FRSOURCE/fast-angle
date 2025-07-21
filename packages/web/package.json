@@ -29,14 +29,14 @@
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.17",
-    "vue-i18n": "11.1.9",
+    "vue-i18n": "11.1.10",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.53.0",
-    "@frsource/frs-replace": "5.1.61",
+    "@frsource/frs-replace": "5.1.64",
     "@frsource/prettier-config": "1.29.0",
-    "@iconify-json/carbon": "1.2.10",
+    "@iconify-json/carbon": "1.2.11",
     "@intlify/unplugin-vue-i18n": "6.0.8",
     "@shikijs/markdown-it": "2.5.0",
     "@types/color-hash": "2.0.0",
