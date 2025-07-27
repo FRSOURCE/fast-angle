@@ -28,13 +28,13 @@
     "lodash-es": "4.17.21",
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.2",
-    "vue": "3.5.17",
-    "vue-i18n": "11.1.10",
+    "vue": "3.5.18",
+    "vue-i18n": "11.1.11",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.53.0",
-    "@frsource/frs-replace": "5.1.64",
+    "@frsource/frs-replace": "5.1.66",
     "@frsource/prettier-config": "1.29.0",
     "@iconify-json/carbon": "1.2.11",
     "@intlify/unplugin-vue-i18n": "6.0.8",
