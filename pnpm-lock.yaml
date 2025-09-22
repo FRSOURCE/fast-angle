@@ -69,8 +69,8 @@ importers:
         specifier: 1.56.0
         version: 1.56.0(eslint@9.32.0)(typescript@5.9.2)
       '@frsource/frs-replace':
-        specifier: 5.1.71
-        version: 5.1.71
+        specifier: 5.1.72
+        version: 5.1.72
       '@frsource/prettier-config':
         specifier: 1.31.0
         version: 1.31.0(prettier@3.6.2)
@@ -971,8 +971,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.71':
-    resolution: {integrity: sha512-62X3THeywg5xV+u85whYnqiVCbZmQ9M0OVTqKb2ffCGYJFqPyBFef8TNisZX1FutNejnp+gYZHXyiedO6xsfvA==}
+  '@frsource/frs-replace@5.1.72':
+    resolution: {integrity: sha512-DxH6xLLntLh0lKaUJuNTFPUpsivuQj/npJ27hc8g4a6ko1X6frpc0e7C2xMkt71yQtqGCnhp1MYRTgA1nqJmRw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -1286,8 +1286,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20250904':
-    resolution: {integrity: sha512-DjFTAGnmc31EqWetqC5Z3KaDpDHHrKMwhKZQthH3DN/gNDQRGKghC98yPwg5Y3DPE8QVNdpMHQnqSu/HAEsQxQ==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20250918':
+    resolution: {integrity: sha512-D0oBqMffIvl7KdHHWKo0HqIG8AE1hZnu/m8d41hBKct4OKdaPEqxxSf5KO4R7Rh8iyHg1wqBmKwKkh/Toc+/Xw==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.4.20200806':
     resolution: {integrity: sha512-Jeo/KZqK39DI6ExXHcJ4lqnn1O/wEqboQ6eQ8WnNpu5eJ7wUnX/C5KazOgs1aRhnIB/dVzDe8wm62nmtkMIoaw==}
@@ -6302,7 +6302,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.71':
+  '@frsource/frs-replace@5.1.72':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6633,7 +6633,7 @@ snapshots:
 
   '@jridgewell/gen-mapping@0.3.12':
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/sourcemap-codec': 1.5.5
       '@jridgewell/trace-mapping': 0.3.29
 
   '@jridgewell/gen-mapping@0.3.8':
@@ -6670,9 +6670,9 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.29':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20250904':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20250918':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -7033,7 +7033,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20250904
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20250918
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
