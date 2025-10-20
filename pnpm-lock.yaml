@@ -69,8 +69,8 @@ importers:
         specifier: 1.56.0
         version: 1.56.0(eslint@9.32.0)(typescript@5.9.3)
       '@frsource/frs-replace':
-        specifier: 5.1.75
-        version: 5.1.75
+        specifier: 5.1.77
+        version: 5.1.77
       '@frsource/prettier-config':
         specifier: 1.31.0
         version: 1.31.0(prettier@3.6.2)
@@ -980,8 +980,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.75':
-    resolution: {integrity: sha512-+g8gElEHMHwFnThgISun2UXfT/kOSM0r3lnoh31kDXKTdTs7UGL2AkcbhwIGeXoamAOB0ebzYV1FKoib4msUiw==}
+  '@frsource/frs-replace@5.1.77':
+    resolution: {integrity: sha512-dKXpo1Us7l3P131qEhKehbguFW061yRxyUnV5UlkfSuid4o3C3gOn0ZxyEm4IztAd9PNsr6tNITe7yrZG/djpg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -6317,7 +6317,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.75':
+  '@frsource/frs-replace@5.1.77':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
