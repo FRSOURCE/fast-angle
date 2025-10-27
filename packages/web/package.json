@@ -24,7 +24,7 @@
     "@vueuse/math": "12.8.2",
     "@vueuse/router": "12.8.2",
     "color-hash": "2.0.2",
-    "focus-trap": "7.6.5",
+    "focus-trap": "7.6.6",
     "lodash-es": "4.17.21",
     "panzoom": "9.4.3",
     "svg-pan-zoom": "3.6.2",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.56.0",
-    "@frsource/frs-replace": "5.1.77",
+    "@frsource/frs-replace": "5.1.79",
     "@frsource/prettier-config": "1.31.0",
     "@iconify-json/carbon": "1.2.14",
     "@intlify/unplugin-vue-i18n": "6.0.8",

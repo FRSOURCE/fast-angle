@@ -33,7 +33,7 @@ importers:
         version: 2.0.0(vue@3.5.22(typescript@5.9.3))
       '@vueuse/integrations':
         specifier: 12.8.2
-        version: 12.8.2(focus-trap@7.6.5)(typescript@5.9.3)
+        version: 12.8.2(focus-trap@7.6.6)(typescript@5.9.3)
       '@vueuse/math':
         specifier: 12.8.2
         version: 12.8.2(typescript@5.9.3)
@@ -44,8 +44,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       focus-trap:
-        specifier: 7.6.5
-        version: 7.6.5
+        specifier: 7.6.6
+        version: 7.6.6
       lodash-es:
         specifier: 4.17.21
         version: 4.17.21
@@ -69,8 +69,8 @@ importers:
         specifier: 1.56.0
         version: 1.56.0(eslint@9.32.0)(typescript@5.9.3)
       '@frsource/frs-replace':
-        specifier: 5.1.77
-        version: 5.1.77
+        specifier: 5.1.79
+        version: 5.1.79
       '@frsource/prettier-config':
         specifier: 1.31.0
         version: 1.31.0(prettier@3.6.2)
@@ -980,8 +980,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.77':
-    resolution: {integrity: sha512-dKXpo1Us7l3P131qEhKehbguFW061yRxyUnV5UlkfSuid4o3C3gOn0ZxyEm4IztAd9PNsr6tNITe7yrZG/djpg==}
+  '@frsource/frs-replace@5.1.79':
+    resolution: {integrity: sha512-m3ZhnfFmlla8cai4TTNhKyt6jcX5zC55mWieP60ynInJKq9qMcUAO5GgnmAEkRHhdzQllyLJa7Vs36w/pvXvhQ==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -1292,8 +1292,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251008':
-    resolution: {integrity: sha512-Dx75R6m8q5Go9eKdB0dpNLfuYpE9TAtmRcGlsSXbpkdpS3SZ1Fd+FsP8sBb+Wf8oeKjjol0yBwPwB1xoVmljEA==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251023':
+    resolution: {integrity: sha512-0Z1E0DiM7DtEgUlTq9qpfxic98P6CalaaZDFvBu9dRCKyEA0fORVKxtcAC338vA7u7jIL8CBoTqY00SMTKrILA==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.4.20200806':
     resolution: {integrity: sha512-Jeo/KZqK39DI6ExXHcJ4lqnn1O/wEqboQ6eQ8WnNpu5eJ7wUnX/C5KazOgs1aRhnIB/dVzDe8wm62nmtkMIoaw==}
@@ -3043,8 +3043,8 @@ packages:
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
 
-  focus-trap@7.6.5:
-    resolution: {integrity: sha512-7Ke1jyybbbPZyZXFxEftUtxFGLMpE2n6A+z//m4CRDlj0hW+o3iYSmh8nFlYMurOiJVDmJRilUQtJr08KfIxlg==}
+  focus-trap@7.6.6:
+    resolution: {integrity: sha512-v/Z8bvMCajtx4mEXmOo7QEsIzlIOqRXTIwgUfsFOF9gEsespdbD0AkPIka1bSXZ8Y8oZ+2IVDQZePkTfEHZl7Q==}
 
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
@@ -4578,8 +4578,8 @@ packages:
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
-  tabbable@6.2.0:
-    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+  tabbable@6.3.0:
+    resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
 
   tar@6.1.12:
     resolution: {integrity: sha512-jU4TdemS31uABHd+Lt5WEYJuzn+TJTCBLljvIAHZOz6M9Os5pJ4dD+vRFLxPa/n3T0iEFzpi+0x1UfuDZYbRMw==}
@@ -6317,7 +6317,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.77':
+  '@frsource/frs-replace@5.1.79':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
@@ -6685,7 +6685,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251008':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251023':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -7046,7 +7046,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20251008
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20251023
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
@@ -7553,13 +7553,13 @@ snapshots:
       '@unhead/vue': 1.11.18(vue@3.5.22(typescript@5.9.3))
       vue: 3.5.22(typescript@5.9.3)
 
-  '@vueuse/integrations@12.8.2(focus-trap@7.6.5)(typescript@5.9.3)':
+  '@vueuse/integrations@12.8.2(focus-trap@7.6.6)(typescript@5.9.3)':
     dependencies:
       '@vueuse/core': 12.8.2(typescript@5.9.3)
       '@vueuse/shared': 12.8.2(typescript@5.9.3)
       vue: 3.5.22(typescript@5.9.3)
     optionalDependencies:
-      focus-trap: 7.6.5
+      focus-trap: 7.6.6
     transitivePeerDependencies:
       - typescript
 
@@ -8614,9 +8614,9 @@ snapshots:
 
   flatted@3.3.1: {}
 
-  focus-trap@7.6.5:
+  focus-trap@7.6.6:
     dependencies:
-      tabbable: 6.2.0
+      tabbable: 6.3.0
 
   for-each@0.3.5:
     dependencies:
@@ -10306,7 +10306,7 @@ snapshots:
 
   symbol-tree@3.2.4: {}
 
-  tabbable@6.2.0: {}
+  tabbable@6.3.0: {}
 
   tar@6.1.12:
     dependencies:
