@@ -67,7 +67,7 @@
     "vite": "7.0.6",
     "vite-plugin-inspect": "11.3.3",
     "vite-plugin-pages": "0.33.1",
-    "vite-plugin-pwa": "0.21.2",
+    "vite-plugin-pwa": "1.1.0",
     "vite-plugin-vue-layouts": "0.11.0",
     "vite-ssg": "25.2.0",
     "vite-ssg-sitemap": "0.10.0",
