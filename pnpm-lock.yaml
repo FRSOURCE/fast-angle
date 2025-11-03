@@ -69,8 +69,8 @@ importers:
         specifier: 1.56.0
         version: 1.56.0(eslint@9.32.0)(typescript@5.9.3)
       '@frsource/frs-replace':
-        specifier: 5.1.80
-        version: 5.1.80
+        specifier: 5.1.82
+        version: 5.1.82
       '@frsource/prettier-config':
         specifier: 1.31.0
         version: 1.31.0(prettier@3.6.2)
@@ -957,8 +957,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.80':
-    resolution: {integrity: sha512-22bCaUuAZ4J3afzwdZB0+M3ojKf2if2jeDv3JwA6wNSM/G0alPELWzXFs+AqzIpiXLht8t4z2FMS8SvEG9YSZA==}
+  '@frsource/frs-replace@5.1.82':
+    resolution: {integrity: sha512-fTWWe5j5dNlVHTG+/LnNNW/ZckIe9kBKH6bFnSe+NgAQLNrm22dEWQNMGiuLr3wVllrY+7vkmbyNKoJWsMWI9g==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -5437,7 +5437,7 @@ snapshots:
       '@babel/traverse': 7.28.0
       '@babel/types': 7.28.4
       convert-source-map: 2.0.0
-      debug: 4.4.1
+      debug: 4.4.3
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5489,7 +5489,7 @@ snapshots:
       '@babel/core': 7.28.0
       '@babel/helper-compilation-targets': 7.27.2
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.1
+      debug: 4.4.3
       lodash.debounce: 4.0.8
       resolve: 1.22.10
     transitivePeerDependencies:
@@ -6065,7 +6065,7 @@ snapshots:
       '@babel/parser': 7.28.4
       '@babel/template': 7.27.2
       '@babel/types': 7.28.4
-      debug: 4.4.1
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -6294,7 +6294,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.80':
+  '@frsource/frs-replace@5.1.82':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 9.0.0
