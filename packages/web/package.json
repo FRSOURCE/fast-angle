@@ -43,7 +43,7 @@
     "@types/lodash-es": "4.17.12",
     "@types/markdown-it": "14.1.2",
     "@types/markdown-it-link-attributes": "3.0.5",
-    "@types/node": "22.17.2",
+    "@types/node": "24.10.0",
     "@vitejs/plugin-vue": "5.2.4",
     "@vue/test-utils": "2.4.6",
     "beasties": "^0.3.0",
