@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.66.0",
-    "@frsource/frs-replace": "5.1.86",
+    "@frsource/frs-replace": "5.1.87",
     "@frsource/prettier-config": "1.38.0",
     "@iconify-json/carbon": "1.2.14",
     "@intlify/unplugin-vue-i18n": "11.0.1",
@@ -64,7 +64,7 @@
     "unplugin-icons": "22.5.0",
     "unplugin-vue-components": "30.0.0",
     "unplugin-vue-markdown": "29.2.0",
-    "vite": "7.2.2",
+    "vite": "7.2.4",
     "vite-plugin-inspect": "11.3.3",
     "vite-plugin-pages": "0.33.1",
     "vite-plugin-pwa": "1.1.0",
