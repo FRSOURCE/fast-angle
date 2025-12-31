@@ -129,8 +129,8 @@ importers:
         specifier: 4.0.1
         version: 4.0.1
       pnpm:
-        specifier: 9.15.9
-        version: 9.15.9
+        specifier: 10.27.0
+        version: 10.27.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -1247,8 +1247,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251209':
-    resolution: {integrity: sha512-gNlPb47vVaL9VXG0NlQqNE43tQ+JeG9r20umd8TO7fk1lrBZGYyxSfLpF3sREpu9kZk5YZiDVdckkVUQE1F/Xw==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251216':
+    resolution: {integrity: sha512-KQLVww0JU+qH4hmFdR8LDzGdSsvAIHiPe9sHwqzfh3e43DxRxzi3JWzWsRk2mBcVEWDDELwFoLeSFnpPhKNqEw==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.4.20200806':
     resolution: {integrity: sha512-Jeo/KZqK39DI6ExXHcJ4lqnn1O/wEqboQ6eQ8WnNpu5eJ7wUnX/C5KazOgs1aRhnIB/dVzDe8wm62nmtkMIoaw==}
@@ -4072,8 +4072,8 @@ packages:
     resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==}
     engines: {node: '>=12.13.0'}
 
-  pnpm@9.15.9:
-    resolution: {integrity: sha512-aARhQYk8ZvrQHAeSMRKOmvuJ74fiaR1p5NQO7iKJiClf1GghgbrlW1hBjDolO95lpQXsfF+UA+zlzDzTfc8lMQ==}
+  pnpm@10.27.0:
+    resolution: {integrity: sha512-ctaZ2haxF5wUup5k3HHJpAmIy9xlwmTLDkidt96RfyDc9NZNhyNiXylpulLUt+KhFwaC2awqXcrqq3MrfhbwSg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -5098,6 +5098,7 @@ packages:
   vue-i18n@11.1.12:
     resolution: {integrity: sha512-BnstPj3KLHLrsqbVU2UOrPmr0+Mv11bsUZG0PyCOzsawCivk8W00GMXHeVUWIDOgNaScCuZah47CZFE+Wnl8mw==}
     engines: {node: '>= 16'}
+    deprecated: This version is NOT deprecated. Previous deprecation was a mistake.
     peerDependencies:
       vue: ^3.0.0
 
@@ -5149,6 +5150,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
@@ -6602,7 +6604,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251209':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20251216':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -6959,7 +6961,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20251209
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20251216
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
@@ -9683,7 +9685,7 @@ snapshots:
 
   pngjs@6.0.0: {}
 
-  pnpm@9.15.9: {}
+  pnpm@10.27.0: {}
 
   possible-typed-array-names@1.1.0: {}
 
