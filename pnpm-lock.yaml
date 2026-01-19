@@ -75,8 +75,8 @@ importers:
         specifier: 1.38.0
         version: 1.38.0(prettier@3.6.2)
       '@iconify-json/carbon':
-        specifier: 1.2.16
-        version: 1.2.16
+        specifier: 1.2.18
+        version: 1.2.18
       '@intlify/unplugin-vue-i18n':
         specifier: 11.0.3
         version: 11.0.3(@vue/compiler-dom@3.5.26)(eslint@9.39.2)(rollup@2.79.2)(typescript@5.9.3)(vue-i18n@11.1.12(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
@@ -978,8 +978,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/carbon@1.2.16':
-    resolution: {integrity: sha512-R50UiC4NgPdnoSI3OzaZ/PzKYFVHAsAi3tENWgxvTxjYND3WHiUiG0qfJ0dPuaxwIW/l/2TnZwMPbbedd/+qIQ==}
+  '@iconify-json/carbon@1.2.18':
+    resolution: {integrity: sha512-Grb13E6r/RqTEV4Sqd/BQR2FUt57U2WLuticJ5H8JbTdHLop1LmdePu3EJJA3Xi8DcWRbD6OnC133hKfOwlgtg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1247,8 +1247,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20260108':
-    resolution: {integrity: sha512-7r2EbLbjRFTv9nsRslHK1KCosOyMw6ci4ufAc7u8oUpU11r8GyRI0dRmrPobHfiLW4KvvhkfFEwh8D2xrFmjcg==}
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20260115':
+    resolution: {integrity: sha512-Oe7tV28T72RSrb92hvO3Vl2mFzhw3CE6t/btmJjsO79Mg+2QZYW4rI8zqIbGJT00w0UR2kL/h/yr/mNoIwDu7g==}
 
   '@maxim_mazurok/gapi.client.discovery-v1@0.4.20200806':
     resolution: {integrity: sha512-Jeo/KZqK39DI6ExXHcJ4lqnn1O/wEqboQ6eQ8WnNpu5eJ7wUnX/C5KazOgs1aRhnIB/dVzDe8wm62nmtkMIoaw==}
@@ -4559,6 +4559,7 @@ packages:
   tar@6.1.12:
     resolution: {integrity: sha512-jU4TdemS31uABHd+Lt5WEYJuzn+TJTCBLljvIAHZOz6M9Os5pJ4dD+vRFLxPa/n3T0iEFzpi+0x1UfuDZYbRMw==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   temp-dir@2.0.0:
     resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
@@ -6272,7 +6273,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@iconify-json/carbon@1.2.16':
+  '@iconify-json/carbon@1.2.18':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -6608,7 +6609,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20260108':
+  '@maxim_mazurok/gapi.client.androidpublisher-v3@0.1.20260115':
     dependencies:
       '@types/gapi.client': 1.0.8
       '@types/gapi.client.discovery-v1': 0.0.4
@@ -6965,7 +6966,7 @@ snapshots:
 
   '@types/gapi.client.androidpublisher@3.0.1':
     dependencies:
-      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20260108
+      '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.1.20260115
 
   '@types/gapi.client.discovery-v1@0.0.4':
     dependencies:
