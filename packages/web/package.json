@@ -36,7 +36,7 @@
     "@frsource/eslint-config": "1.66.0",
     "@frsource/frs-replace": "5.1.91",
     "@frsource/prettier-config": "1.38.0",
-    "@iconify-json/carbon": "1.2.16",
+    "@iconify-json/carbon": "1.2.18",
     "@intlify/unplugin-vue-i18n": "11.0.3",
     "@shikijs/markdown-it": "2.5.0",
     "@types/color-hash": "2.0.0",
