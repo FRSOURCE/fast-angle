@@ -69,8 +69,8 @@ importers:
         specifier: 1.66.0
         version: 1.66.0(eslint@9.39.4)(typescript@5.9.3)
       '@frsource/frs-replace':
-        specifier: 5.1.93
-        version: 5.1.93
+        specifier: 5.1.95
+        version: 5.1.95
       '@frsource/prettier-config':
         specifier: 1.38.0
         version: 1.38.0(prettier@3.6.2)
@@ -983,8 +983,8 @@ packages:
       eslint: '>= 9'
       typescript: '>= 5.0.0'
 
-  '@frsource/frs-replace@5.1.93':
-    resolution: {integrity: sha512-raTjQVIDNeLz0NjEZxuq+IxboDM1wk5M3IunKy5i2i37N93Z6BWW/6NQzlNRvft9nCTojAvGE8CcbRRfHggyDQ==}
+  '@frsource/frs-replace@5.1.95':
+    resolution: {integrity: sha512-rhQsBy1mY9vgVjv82ay75YCA3Tf4GplhmsIdoLbPuLUbdYLjFUnOezHHXaPT4lNFmy1pD5QFTSE/JG5GvFkRUQ==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -3797,9 +3797,6 @@ packages:
   minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
 
-  minimatch@3.1.2:
-    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
   minimatch@3.1.5:
     resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
 
@@ -6292,7 +6289,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@frsource/frs-replace@5.1.93':
+  '@frsource/frs-replace@5.1.95':
     dependencies:
       fast-glob: 3.3.3
       get-stdin: 10.0.0
@@ -8681,7 +8678,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -9150,7 +9147,7 @@ snapshots:
       async: 3.2.6
       chalk: 4.1.2
       filelist: 1.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
 
   jimp@0.22.12:
     dependencies:
@@ -9426,10 +9423,6 @@ snapshots:
       dom-walk: 0.1.2
 
   minimalistic-assert@1.0.1: {}
-
-  minimatch@3.1.2:
-    dependencies:
-      brace-expansion: 1.1.11
 
   minimatch@3.1.5:
     dependencies:
