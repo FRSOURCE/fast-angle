@@ -15,7 +15,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@panzoom/panzoom": "4.6.1",
+    "@panzoom/panzoom": "4.6.2",
     "@picocss/pico": "2.1.1",
     "@vueuse/core": "12.8.2",
     "@vueuse/gesture": "2.0.0",
@@ -26,17 +26,17 @@
     "color-hash": "2.0.2",
     "focus-trap": "7.6.6",
     "lodash-es": "4.17.23",
-    "panzoom": "9.4.3",
+    "panzoom": "9.4.4",
     "svg-pan-zoom": "3.6.2",
-    "vue": "3.5.30",
+    "vue": "3.5.32",
     "vue-i18n": "11.1.12",
     "vue-router": "4.6.4"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.66.0",
-    "@frsource/frs-replace": "5.1.95",
+    "@frsource/frs-replace": "5.1.100",
     "@frsource/prettier-config": "1.38.0",
-    "@iconify-json/carbon": "1.2.19",
+    "@iconify-json/carbon": "1.2.20",
     "@intlify/unplugin-vue-i18n": "11.0.7",
     "@shikijs/markdown-it": "2.5.0",
     "@types/color-hash": "2.0.0",
@@ -72,6 +72,6 @@
     "vite-ssg": "28.3.0",
     "vite-ssg-sitemap": "0.10.0",
     "vitest": "3.2.4",
-    "vue-tsc": "3.2.5"
+    "vue-tsc": "3.2.6"
   }
 }
