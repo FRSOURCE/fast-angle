@@ -28,15 +28,15 @@
     "lodash-es": "4.17.23",
     "panzoom": "9.4.4",
     "svg-pan-zoom": "3.6.2",
-    "vue": "3.5.33",
+    "vue": "3.5.34",
     "vue-i18n": "11.1.12",
     "vue-router": "4.6.4"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.66.0",
-    "@frsource/frs-replace": "5.1.106",
+    "@frsource/frs-replace": "5.1.111",
     "@frsource/prettier-config": "1.38.0",
-    "@iconify-json/carbon": "1.2.20",
+    "@iconify-json/carbon": "1.2.22",
     "@intlify/unplugin-vue-i18n": "11.0.7",
     "@shikijs/markdown-it": "2.5.0",
     "@types/color-hash": "2.0.0",
