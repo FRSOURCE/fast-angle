@@ -25,12 +25,12 @@ runs:
 
     # first script sends "Y" to any prompt raised by bubblewrap CLI
     # 2>/dev/null allows script to finish successfully when script after the pipe | is done
-    # sleep 1 (not 10) ensures the SDK terms prompt (default: false) gets answered quickly
+    # sleep 10 ensures the SDK terms prompt (default: false) gets answered quickly
     # on cold-cache runs where the JDK/SDK setup wizard fires
     - run: |
         set +o pipefail
         unset ANDROID_SDK_ROOT
-        while true; do echo "Y"; sleep 1; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
+        while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
       shell: bash
     - run: echo $KEYSTORE_BASE64 | base64 -d > android-keystore
       env:
@@ -54,7 +54,15 @@ runs:
       shell: bash
     - run: |
         set +o pipefail
-        while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+        for attempt in 1 2 3; do
+          while true; do echo "Y"; sleep 10; done 2>/dev/null | \
+            pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+          RELEASE_EXIT=${PIPESTATUS[1]}
+          [ $RELEASE_EXIT -eq 0 ] && break
+          echo "Attempt $attempt/3 failed (exit $RELEASE_EXIT). Retrying in 30s..."
+          sleep 30
+        done
+        exit $RELEASE_EXIT
       shell: bash
     - run: rm service-account.json
       shell: bash
