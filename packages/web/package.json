@@ -72,6 +72,7 @@
     "vite-ssg": "28.3.0",
     "vite-ssg-sitemap": "0.10.0",
     "vitest": "3.2.6",
-    "vue-tsc": "3.3.5"
+    "vue-tsc": "3.3.5",
+    "workbox-window": "7.4.1"
   }
 }
