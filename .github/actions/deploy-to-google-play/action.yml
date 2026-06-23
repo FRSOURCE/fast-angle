@@ -15,11 +15,22 @@ inputs:
 runs:
   using: "composite"
   steps:
+    # Cache bubblewrap environment (JDK 17 + Android SDK) so the interactive setup wizard
+    # only runs on the first cold-cache build. Key on @bubblewrap/cli version so it
+    # invalidates automatically when the dependency is bumped.
+    - uses: actions/cache@v4
+      with:
+        path: ~/.bubblewrap
+        key: bubblewrap-${{ runner.os }}-${{ hashFiles('packages/android/package.json') }}
+
     # first script sends "Y" to any prompt raised by bubblewrap CLI
     # 2>/dev/null allows script to finish successfully when script after the pipe | is done
+    # sleep 1 (not 10) ensures the SDK terms prompt (default: false) gets answered quickly
+    # on cold-cache runs where the JDK/SDK setup wizard fires
     - run: |
         set +o pipefail
-        while true; do echo "Y"; sleep 10; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
+        unset ANDROID_SDK_ROOT
+        while true; do echo "Y"; sleep 1; done 2>/dev/null | pnpm --filter '@frsource/fast-angle-android' new-version
       shell: bash
     - run: echo $KEYSTORE_BASE64 | base64 -d > android-keystore
       env:
