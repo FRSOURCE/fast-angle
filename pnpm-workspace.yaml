@@ -1,2 +1,13 @@
 packages:
   - 'packages/*'
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  vue-demi: true
+
+peerDependencyRules:
+  allowedVersions:
+    vite: "^6.0.0"
+
+overrides:
+  "@maxim_mazurok/gapi.client.androidpublisher-v3": "0.3.20260613"
