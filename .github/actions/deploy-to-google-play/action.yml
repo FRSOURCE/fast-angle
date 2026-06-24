@@ -52,6 +52,26 @@ runs:
       env:
         GCP_SERVICE_ACCOUNT_KEY: ${{ inputs.service-account-key }}
       shell: bash
+    - name: Debug environment
+      run: |
+        echo "=== Node.js version ==="
+        node --version
+        echo "=== globalThis.fetch available ==="
+        node -e "console.log('globalThis.fetch:', typeof globalThis.fetch)"
+        echo "=== gaxios fetch implementation ==="
+        node -e "
+          const g = require('@bubblewrap/core/node_modules/gaxios') || require('gaxios');
+          console.log('gaxios loaded, fetch type:', typeof g.request);
+        " 2>/dev/null || node -e "
+          // Try resolving from bubblewrap's perspective
+          const path = require('path');
+          const gaxiosPath = require.resolve('gaxios', {paths: [path.join(process.env.HOME, '.bubblewrap')]});
+          console.log('gaxios path:', gaxiosPath);
+        " 2>/dev/null || echo "could not load gaxios directly"
+        echo "=== Service account JSON structure (keys only) ==="
+        python3 -c "import json,sys; d=json.load(open('../../service-account.json')); print('keys:', list(d.keys())); print('type:', d.get('type')); print('token_uri:', d.get('token_uri'))" 2>&1
+      shell: bash
+      working-directory: packages/android
     - run: |
         set +o pipefail
         for attempt in 1 2 3; do

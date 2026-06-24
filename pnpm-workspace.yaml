@@ -20,4 +20,5 @@ overrides:
   yauzl: ^3.3.1
 
 patchedDependencies:
+  gaxios@4.3.3: patches/gaxios@4.3.3.patch
   gtoken@5.3.2: patches/gtoken@5.3.2.patch
