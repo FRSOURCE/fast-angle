@@ -1,0 +1,16 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+deleted file mode 100644
+index 8f0b9a0d7cc7504bf9a63ba07c7a4b4485b2fca7..0000000000000000000000000000000000000000
+diff --git a/build/src/index.js b/build/src/index.js
+index e92cc95328b1f5a032bd288111c09d4a67482368..b0d598f7755828a7a7ff453e6ec1315242e05c52 100644
+--- a/build/src/index.js
++++ b/build/src/index.js
+@@ -18,7 +18,7 @@ const readFile = fs.readFile
+         // if running in the web-browser, fs.readFile may not have been shimmed.
+         throw new ErrorWithCode('use key rather than keyFile.', 'MISSING_CREDENTIALS');
+     };
+-const GOOGLE_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token';
++const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+ const GOOGLE_REVOKE_TOKEN_URL = 'https://accounts.google.com/o/oauth2/revoke?token=';
+ class ErrorWithCode extends Error {
+     constructor(message, code) {

@@ -18,3 +18,6 @@ overrides:
   # yauzl >= 3.3.1 fixes the silent extraction failure. Remove once extract-zip ranges to
   # yauzl >= 3.3.1 on its own.
   yauzl: ^3.3.1
+
+patchedDependencies:
+  gtoken@5.3.2: patches/gtoken@5.3.2.patch

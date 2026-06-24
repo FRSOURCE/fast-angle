@@ -8,6 +8,9 @@ overrides:
   '@maxim_mazurok/gapi.client.androidpublisher-v3': 0.3.20260613
   yauzl: ^3.3.1
 
+patchedDependencies:
+  gtoken@5.3.2: d777ced64aeff4ac8811ccda200b2d7214f78d16a90001316774a04a0c352bcd
+
 importers:
 
   .: {}
@@ -8894,7 +8897,7 @@ snapshots:
       fast-text-encoding: 1.0.6
       gaxios: 4.3.3
       gcp-metadata: 4.3.1
-      gtoken: 5.3.2
+      gtoken: 5.3.2(patch_hash=d777ced64aeff4ac8811ccda200b2d7214f78d16a90001316774a04a0c352bcd)
       jws: 4.0.1
       lru-cache: 6.0.0
     transitivePeerDependencies:
@@ -8936,7 +8939,7 @@ snapshots:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
 
-  gtoken@5.3.2:
+  gtoken@5.3.2(patch_hash=d777ced64aeff4ac8811ccda200b2d7214f78d16a90001316774a04a0c352bcd):
     dependencies:
       gaxios: 4.3.3
       google-p12-pem: 3.1.4
