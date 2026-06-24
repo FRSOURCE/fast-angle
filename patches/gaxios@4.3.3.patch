@@ -2,7 +2,7 @@ diff --git a/CHANGELOG.md b/CHANGELOG.md
 deleted file mode 100644
 index ac91e5f598c67477c08a223dfa549d4576708c80..0000000000000000000000000000000000000000
 diff --git a/build/src/gaxios.js b/build/src/gaxios.js
-index 26d45b5cc6abcb62c16ed468eb4d8c21384d40ce..0ca47ea991350cd09c9ecd61735fef7c5ec111a7 100644
+index 26d45b5cc6abcb62c16ed468eb4d8c21384d40ce..6bee7506aac7905afb99adbe095591f3c83512e0 100644
 --- a/build/src/gaxios.js
 +++ b/build/src/gaxios.js
 @@ -25,12 +25,12 @@ const url_1 = require("url");
@@ -20,3 +20,13 @@ index 26d45b5cc6abcb62c16ed468eb4d8c21384d40ce..0ca47ea991350cd09c9ecd61735fef7c
  }
  function hasBuffer() {
      return typeof Buffer !== 'undefined';
+@@ -108,6 +108,9 @@ class Gaxios {
+     }
+     async _defaultAdapter(opts) {
+         const fetchImpl = opts.fetchImplementation || fetch;
++        if (!hasWindow() && hasFetch() && opts.body !== undefined && opts.body !== null && !opts.duplex) {
++            opts.duplex = 'half';
++        }
+         const res = (await fetchImpl(opts.url, opts));
+         const data = await this.getResponseData(opts, res);
+         return this.translateResponse(opts, res, data);
