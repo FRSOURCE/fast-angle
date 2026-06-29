@@ -1,1 +1,0 @@
-import{d as e}from"./vue.runtime.esm-bundler-BmrivtRI.js";import{c as t}from"./app-D3Et-4q_.js";function n(){let n=t();return e(()=>n.path.split(`/`)[1])}export{n as t};
