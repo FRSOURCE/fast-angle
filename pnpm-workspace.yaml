@@ -10,7 +10,7 @@ peerDependencyRules:
     vite: "^6.0.0"
 
 overrides:
-  "@maxim_mazurok/gapi.client.androidpublisher-v3": "0.3.20260625"
+  "@maxim_mazurok/gapi.client.androidpublisher-v3": "0.4.20260630"
   # Build-tooling override. `@bubblewrap/core
   # extract JDK ZIPs via `extract-zip` → `yauzl`.
   # yauzl 2.10.0 extracts only the first entry and then lets the process exit
