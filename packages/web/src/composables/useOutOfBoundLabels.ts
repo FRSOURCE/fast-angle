@@ -12,14 +12,12 @@ export const useOutOfBoundLabels = createSharedComposable(() => {
     | {
         y: number;
         direction:
-          | OVERFLOW_LABELS_DIRECTION.LEFT
-          | OVERFLOW_LABELS_DIRECTION.RIGHT;
+          OVERFLOW_LABELS_DIRECTION.LEFT | OVERFLOW_LABELS_DIRECTION.RIGHT;
       }
     | {
         x: number;
         direction:
-          | OVERFLOW_LABELS_DIRECTION.UP
-          | OVERFLOW_LABELS_DIRECTION.DOWN;
+          OVERFLOW_LABELS_DIRECTION.UP | OVERFLOW_LABELS_DIRECTION.DOWN;
       }
     | false
   >(false);
