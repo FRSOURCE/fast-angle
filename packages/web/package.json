@@ -2,7 +2,7 @@
   "name": "@frsource/fast-angle-web",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
+  "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8",
   "scripts": {
     "build": "vite-ssg build --base='/fast-angle/' && del dist/.html && frs-replace 'https://www.frsource.org/' 'https://www.frsource.org/fast-angle/' -i dist/sitemap.xml -o dist/sitemap.xml",
     "dev": "vite --port 3333 --open",
@@ -58,7 +58,7 @@
     "prettier": "3.9.4",
     "sass": "1.101.0",
     "shiki": "2.5.0",
-    "type-fest": "5.7.0",
+    "type-fest": "5.8.0",
     "typescript": "6.0.3",
     "unplugin-auto-import": "21.0.0",
     "unplugin-icons": "23.0.1",
