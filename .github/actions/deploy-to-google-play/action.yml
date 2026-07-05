@@ -18,7 +18,7 @@ runs:
     # Cache bubblewrap environment (JDK 17 + Android SDK) so the interactive setup wizard
     # only runs on the first cold-cache build. Key on @bubblewrap/cli version so it
     # invalidates automatically when the dependency is bumped.
-    - uses: actions/cache@v4
+    - uses: actions/cache@v6
       with:
         path: ~/.bubblewrap
         key: bubblewrap-${{ runner.os }}-${{ hashFiles('packages/android/package.json') }}
