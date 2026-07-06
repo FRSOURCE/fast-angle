@@ -13,7 +13,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import Inspect from 'vite-plugin-inspect';
 import LinkAttributes from 'markdown-it-link-attributes';
-import Shiki from '@shikijs/markdown-it';
+import Shiki from '@shikijs/markdown-exit';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
@@ -172,22 +172,30 @@ export default defineConfig({
     Markdown({
       wrapperClasses: 'prose prose-sm m-auto text-left',
       headEnabled: true,
-      async markdownItSetup(md) {
+      markdownItSetup(md) {
         // https://prismjs.com/
         md.use(
-          await Shiki({
+          Shiki({
             themes: {
               light: 'vitesse-light',
               dark: 'vitesse-dark',
             },
           }),
         );
-        md.use(LinkAttributes, {
-          matcher: (link: string) => /^https?:\/\//.test(link),
-          attrs: {
-            target: '_blank',
-            rel: 'noopener',
-          },
+        md.use((md) => {
+          // `this` inside LinkAttributes must stay bound to itself: it reads
+          // `this.defaultRender` as a fallback (see markdown-it-link-attributes source).
+          LinkAttributes.call(
+            LinkAttributes,
+            md as unknown as Parameters<typeof LinkAttributes>[0],
+            {
+              matcher: (link: string) => /^https?:\/\//.test(link),
+              attrs: {
+                target: '_blank',
+                rel: 'noopener',
+              },
+            } as unknown as Parameters<typeof LinkAttributes>[1],
+          );
         });
       },
     }),
