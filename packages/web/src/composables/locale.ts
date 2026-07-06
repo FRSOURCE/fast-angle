@@ -1,7 +1,7 @@
 export const messages = Object.fromEntries(
   Object.entries(
     import.meta.glob<{ default: Record<string, string> }>(
-      '../../locales/*.y(a)?ml',
+      '../../locales/*.{yml,yaml}',
       { eager: true },
     ),
   ).map(([key, value]) => {
