@@ -164,8 +164,8 @@ importers:
         specifier: 32.1.0
         version: 32.1.0(rolldown@1.1.3)(rollup@4.62.2)(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.39(typescript@6.0.3))
       unplugin-vue-markdown:
-        specifier: 29.2.0
-        version: 29.2.0(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0))
+        specifier: 32.0.0
+        version: 32.0.0(rolldown@1.1.3)(rollup@4.62.2)(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0))
       vite:
         specifier: 8.1.3
         version: 8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
@@ -3870,6 +3870,9 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
+  markdown-exit@1.0.0-beta.9:
+    resolution: {integrity: sha512-5tzrMKMF367amyBly131vm6eGuWRL2DjBqWaFmPzPbLyuxP0XOmyyyroOAIXuBAMF/3kZbbfqOxvW/SotqKqbQ==}
+
   markdown-it-async@2.2.0:
     resolution: {integrity: sha512-sITME+kf799vMeO/ww/CjH6q+c05f6TLpn6VOmmWCGNqPJzSh+uFgZoMB9s0plNtW6afy63qglNAC3MhrhP/gg==}
 
@@ -5035,11 +5038,11 @@ packages:
       '@nuxt/kit':
         optional: true
 
-  unplugin-vue-markdown@29.2.0:
-    resolution: {integrity: sha512-/x2hFgQ6cWN1Kls+yK5mAI9YDmeTofftynVGgOy1llBlDX1ifaXsQBls/bpORaiwn7cxA7HkOo0wn/xKcrXBHA==}
-    engines: {node: '>=20'}
+  unplugin-vue-markdown@32.0.0:
+    resolution: {integrity: sha512-K9uiYJF9kvngrN/NRx8fVPZFXiqJR7tbnXQV4mVFxjcsKhuiL6+vVQ5woam59RqeCDprecBmbg+cCGADz0somA==}
+    engines: {node: '>=22'}
     peerDependencies:
-      vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0
+      vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
 
   unplugin@2.3.11:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
@@ -9575,10 +9578,21 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  markdown-exit@1.0.0-beta.9:
+    dependencies:
+      '@types/linkify-it': 5.0.0
+      '@types/mdurl': 2.0.0
+      entities: 7.0.1
+      linkify-it: 5.0.1
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
+
   markdown-it-async@2.2.0:
     dependencies:
       '@types/markdown-it': 14.1.2
       markdown-it: 14.2.0
+    optional: true
 
   markdown-it-link-attributes@4.0.1: {}
 
@@ -10825,17 +10839,24 @@ snapshots:
       - vite
       - webpack
 
-  unplugin-vue-markdown@29.2.0(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)):
+  unplugin-vue-markdown@32.0.0(rolldown@1.1.3)(rollup@4.62.2)(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)):
     dependencies:
       '@mdit-vue/plugin-component': 3.0.2
       '@mdit-vue/plugin-frontmatter': 3.0.2
       '@mdit-vue/types': 3.0.2
-      '@types/markdown-it': 14.1.2
-      markdown-it: 14.2.0
-      markdown-it-async: 2.2.0
-      unplugin: 2.3.11
+      markdown-exit: 1.0.0-beta.9
+      unplugin: 3.3.0(rolldown@1.1.3)(rollup@4.62.2)(vite@8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0))
       unplugin-utils: 0.3.2
       vite: 8.1.3(@types/node@24.13.2)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rspack/core'
+      - bun-types-no-globals
+      - esbuild
+      - rolldown
+      - rollup
+      - unloader
+      - webpack
 
   unplugin@2.3.11:
     dependencies:
