@@ -33,9 +33,9 @@
     "vue-router": "4.6.4"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.85.2",
+    "@frsource/eslint-config": "1.85.5",
     "@frsource/frs-replace": "5.1.117",
-    "@frsource/prettier-config": "1.47.2",
+    "@frsource/prettier-config": "1.47.4",
     "@iconify-json/carbon": "1.2.24",
     "@intlify/unplugin-vue-i18n": "11.2.4",
     "@shikijs/markdown-exit": "4.1.0",
@@ -55,7 +55,7 @@
     "incstr": "1.2.3",
     "markdown-it-link-attributes": "4.0.1",
     "pnpm": "11.10.0",
-    "prettier": "3.9.4",
+    "prettier": "3.9.5",
     "sass": "1.101.0",
     "shiki": "4.1.0",
     "type-fest": "5.8.0",
