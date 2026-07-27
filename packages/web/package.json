@@ -28,13 +28,13 @@
     "lodash-es": "4.18.1",
     "panzoom": "9.4.4",
     "svg-pan-zoom": "3.6.2",
-    "vue": "3.5.39",
-    "vue-i18n": "11.4.6",
+    "vue": "3.5.40",
+    "vue-i18n": "11.4.7",
     "vue-router": "4.6.4"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.85.6",
-    "@frsource/frs-replace": "5.1.117",
+    "@frsource/frs-replace": "5.1.121",
     "@frsource/prettier-config": "1.47.5",
     "@iconify-json/carbon": "1.2.24",
     "@intlify/unplugin-vue-i18n": "11.2.4",
@@ -44,7 +44,7 @@
     "@types/markdown-it": "14.1.2",
     "@types/markdown-it-link-attributes": "3.0.5",
     "@types/node": "24.13.3",
-    "@vitejs/plugin-vue": "6.0.7",
+    "@vitejs/plugin-vue": "6.0.8",
     "@vue/test-utils": "2.4.11",
     "beasties": "^0.4.0",
     "cross-env": "10.1.0",
@@ -64,7 +64,7 @@
     "unplugin-icons": "23.0.1",
     "unplugin-vue-components": "32.1.0",
     "unplugin-vue-markdown": "32.0.0",
-    "vite": "8.1.4",
+    "vite": "8.1.5",
     "vite-plugin-inspect": "11.4.1",
     "vite-plugin-pages": "0.33.3",
     "vite-plugin-pwa": "1.3.0",
@@ -72,7 +72,7 @@
     "vite-ssg": "28.3.0",
     "vite-ssg-sitemap": "0.10.0",
     "vitest": "4.1.10",
-    "vue-tsc": "3.3.7",
+    "vue-tsc": "3.3.8",
     "workbox-window": "7.4.1"
   }
 }
