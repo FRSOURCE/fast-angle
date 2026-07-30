@@ -30,7 +30,7 @@
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.40",
     "vue-i18n": "11.4.7",
-    "vue-router": "4.6.4"
+    "vue-router": "5.2.0"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.85.6",
