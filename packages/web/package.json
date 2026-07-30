@@ -29,12 +29,12 @@
     "panzoom": "9.4.4",
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.40",
-    "vue-i18n": "11.4.7",
+    "vue-i18n": "11.4.8",
     "vue-router": "5.2.0"
   },
   "devDependencies": {
     "@frsource/eslint-config": "1.85.7",
-    "@frsource/frs-replace": "5.1.121",
+    "@frsource/frs-replace": "5.1.123",
     "@frsource/prettier-config": "1.47.6",
     "@iconify-json/carbon": "1.2.24",
     "@intlify/unplugin-vue-i18n": "11.2.4",
