@@ -41,7 +41,7 @@ importers:
         version: 2.0.0(vue@3.5.40(typescript@6.0.3))
       '@vueuse/integrations':
         specifier: 12.8.2
-        version: 12.8.2(focus-trap@7.8.0)(typescript@6.0.3)
+        version: 12.8.2(focus-trap@8.2.2)(typescript@6.0.3)
       '@vueuse/math':
         specifier: 12.8.2
         version: 12.8.2(typescript@6.0.3)
@@ -52,8 +52,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       focus-trap:
-        specifier: 7.8.0
-        version: 7.8.0
+        specifier: 8.2.2
+        version: 8.2.2
       lodash-es:
         specifier: 4.18.1
         version: 4.18.1
@@ -3211,8 +3211,8 @@ packages:
   flatted@3.4.2:
     resolution: {integrity: sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==}
 
-  focus-trap@7.8.0:
-    resolution: {integrity: sha512-/yNdlIkpWbM0ptxno3ONTuf+2g318kh2ez3KSeZN5dZ8YC6AAmgeWz+GasYYiBJPFaYcSAPeu4GfhUaChzIJXA==}
+  focus-trap@8.2.2:
+    resolution: {integrity: sha512-qV0g8hRYBqgACcFOH3f9wXc4zPKhr/0z9RI2a6ZijZ72EeBi4g8oBy8zAWuUR1TsMpOzwpUMFvjdasrC41Joug==}
 
   follow-redirects@1.16.0:
     resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
@@ -7870,13 +7870,13 @@ snapshots:
       '@unhead/vue': 1.11.20(vue@3.5.40(typescript@6.0.3))
       vue: 3.5.40(typescript@6.0.3)
 
-  '@vueuse/integrations@12.8.2(focus-trap@7.8.0)(typescript@6.0.3)':
+  '@vueuse/integrations@12.8.2(focus-trap@8.2.2)(typescript@6.0.3)':
     dependencies:
       '@vueuse/core': 12.8.2(typescript@6.0.3)
       '@vueuse/shared': 12.8.2(typescript@6.0.3)
       vue: 3.5.40(typescript@6.0.3)
     optionalDependencies:
-      focus-trap: 7.8.0
+      focus-trap: 8.2.2
     transitivePeerDependencies:
       - typescript
 
@@ -8926,7 +8926,7 @@ snapshots:
 
   flatted@3.4.2: {}
 
-  focus-trap@7.8.0:
+  focus-trap@8.2.2:
     dependencies:
       tabbable: 6.5.0
 
