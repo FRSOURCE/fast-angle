@@ -91,7 +91,7 @@ runs:
       run: |
         echo "message=chore(release): android app v$(cat packages/android/twa-manifest.json | jq '.appVersionCode') [no ci]" >> $GITHUB_OUTPUT
       shell: bash
-    - uses: stefanzweifel/git-auto-commit-action@v5
+    - uses: stefanzweifel/git-auto-commit-action@v7
       with:
         commit_message: ${{ steps.commit_info.outputs.message }}
         file_pattern: 'packages/android/*'
