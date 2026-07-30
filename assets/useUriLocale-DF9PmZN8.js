@@ -1,0 +1,1 @@
+import{g as e}from"./runtime-core.esm-bundler-BKdLzFmX.js";import{a as t}from"./app-Qd69eINE.js";function n(){let n=t();return e(()=>n.path.split(`/`)[1])}export{n as t};

@@ -1,0 +1,1 @@
+import{C as e,u as t}from"./locale-BsnmmgpN.js";var n=t({attribute:`data-theme`,valueLight:`light`}),r=e(n);export{r as n,n as t};
