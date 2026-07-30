@@ -42,7 +42,7 @@ jobs:
       - name: get hash of last commit to main
         id: commit_hash
         run: echo "commit_hash=$(git log -1 --skip 1 --format='%H')" >> $GITHUB_OUTPUT
-      - uses: dorny/paths-filter@v3
+      - uses: dorny/paths-filter@v4
         id: changes
         with:
           base: ${{ steps.commit_hash.outputs.commit_hash }}
