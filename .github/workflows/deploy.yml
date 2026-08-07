@@ -23,6 +23,8 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    outputs:
+      ios: ${{ steps.changes.outputs.ios }}
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -56,6 +58,7 @@ jobs:
               - '.github/actions/deploy-to-google-play/action.yml'
               - 'packages/android/**'
             ios:
+              - '.github/actions/deploy-to-app-store/action.yml'
               - 'packages/ios/**'
       - uses: ./.github/actions/deploy-to-google-play
         if: env.DEPLOYMENT_STATUS == 'success' && (steps.changes.outputs.src == 'true' || steps.changes.outputs.android == 'true')
@@ -63,4 +66,21 @@ jobs:
           keystore-base64: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_BASE64 }}
           keystore-password: ${{ secrets.ANDROID_DEPLOY_KEYSTORE_PASSWD }}
           service-account-key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+  # The iOS app is a native WKWebView wrapper loading the site remotely, so a new
+  # binary is only needed when packages/ios (or this pipeline) changes — not on
+  # web changes, unlike the Android TWA.
+  deploy-ios:
+    needs: build-and-deploy
+    if: needs.build-and-deploy.outputs.ios == 'true'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/deploy-to-app-store
+        with:
+          dist-cert-base64: ${{ secrets.IOS_DEPLOY_CERT_BASE64 }}
+          dist-cert-password: ${{ secrets.IOS_DEPLOY_CERT_PASSWD }}
+          asc-key-id: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          asc-issuer-id: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          asc-api-key: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
 

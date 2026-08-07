@@ -1,0 +1,47 @@
+name: Deploy to App Store
+description: Build the signed iOS app, upload it and submit it for App Store review
+inputs:
+  dist-cert-base64:
+    description: Apple Distribution certificate (.p12) encoded into base64 string
+    required: true
+  dist-cert-password:
+    description: password to the .p12 certificate
+    required: true
+  asc-key-id:
+    description: App Store Connect API key ID
+    required: true
+  asc-issuer-id:
+    description: App Store Connect API issuer ID
+    required: true
+  asc-api-key:
+    description: App Store Connect API private key (raw contents of the .p8 file)
+    required: true
+runs:
+  using: "composite"
+  steps:
+    # Imports the Apple Distribution certificate into a temporary keychain.
+    # Runners are ephemeral, so no cleanup is needed.
+    - uses: apple-actions/import-codesign-certs@v7
+      with:
+        p12-file-base64: ${{ inputs.dist-cert-base64 }}
+        p12-password: ${{ inputs.dist-cert-password }}
+
+    # Downloads the current App Store provisioning profile via the ASC API,
+    # so annual profile expiry never breaks the pipeline. The project's Release
+    # config expects it under the name "org.frsource.www.fast-angle"
+    # (PROVISIONING_PROFILE_SPECIFIER in project.pbxproj).
+    - uses: apple-actions/download-provisioning-profiles@v6
+      with:
+        bundle-id: org.frsource.www.fast-angle
+        profile-type: IOS_APP_STORE
+        issuer-id: ${{ inputs.asc-issuer-id }}
+        api-key-id: ${{ inputs.asc-key-id }}
+        api-private-key: ${{ inputs.asc-api-key }}
+
+    - run: fastlane ios release
+      shell: bash
+      working-directory: packages/ios
+      env:
+        APP_STORE_CONNECT_KEY_ID: ${{ inputs.asc-key-id }}
+        APP_STORE_CONNECT_ISSUER_ID: ${{ inputs.asc-issuer-id }}
+        APP_STORE_CONNECT_API_KEY: ${{ inputs.asc-api-key }}

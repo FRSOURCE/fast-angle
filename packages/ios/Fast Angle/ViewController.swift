@@ -3,16 +3,25 @@ import WebKit
 
 var webView: WKWebView! = nil
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, UIDocumentInteractionControllerDelegate {
+    enum LoadingMode {
+        case defaultCachePolicy
+        case forceCache
+    }
 
+    var documentController: UIDocumentInteractionController?
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+    
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var connectionProblemView: UIImageView!
     @IBOutlet weak var webviewView: UIView!
-    @IBOutlet weak var splashBkgView: UIView!
     var toolbarView: UIToolbar!
     
-    var htmlIsLoaded = false
+    var htmlIsLoaded = false;
+    private var loadingMode = LoadingMode.defaultCachePolicy
     
     private var themeObservation: NSKeyValueObservation?
     var currentWebViewTheme: UIUserInterfaceStyle = .unspecified
@@ -32,8 +41,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         initWebView()
         initToolbarView()
         loadRootUrl()
-                
+    
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
+        
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        FastAngle.webView.frame = calcWebviewFrame(webviewView: webviewView, toolbarView: nil)
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
@@ -43,19 +58,45 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func initWebView() {
         FastAngle.webView = createWebView(container: webviewView, WKSMH: self, WKND: self, NSO: self, VC: self)
         webviewView.addSubview(FastAngle.webView);
-        FastAngle.webView.uiDelegate = self;
-        FastAngle.webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
+        FastAngle.webView.uiDelegate = self;
+        
+        FastAngle.webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+
+        if(pullToRefresh){
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refreshWebView(_:)), for: UIControl.Event.valueChanged)
+            FastAngle.webView.scrollView.addSubview(refreshControl)
+            FastAngle.webView.scrollView.bounces = true
+        }
+
         if #available(iOS 15.0, *), adaptiveUIStyle {
-            themeObservation = FastAngle.webView.observe(\.underPageBackgroundColor) { [unowned self] webView, _ in
-                currentWebViewTheme = FastAngle.webView.underPageBackgroundColor.isLight() ?? true ? .light : .dark
+            themeObservation = FastAngle.webView.observe(\.themeColor) { [unowned self] webView, _ in
+                let backgroundColor = FastAngle.webView.underPageBackgroundColor;
+                let themeColor = FastAngle.webView.themeColor;
+                currentWebViewTheme = themeColor?.isLight() ?? backgroundColor?.isLight() ?? true ? .light : .dark
                 self.overrideUIStyle()
+                view.backgroundColor = themeColor ?? backgroundColor;
             }
         }
     }
-    
+
+    @objc func refreshWebView(_ sender: UIRefreshControl) {
+        FastAngle.webView?.reload()
+        sender.endRefreshing()
+    }
+
     func createToolbarView() -> UIToolbar{
-        let statusBarHeight = getStatusBarHeight()
+        let winScene = UIApplication.shared.connectedScenes.first
+        let windowScene = winScene as! UIWindowScene
+        var statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height ?? 60
+        
+        #if targetEnvironment(macCatalyst)
+        if (statusBarHeight == 0){
+            statusBarHeight = 30
+        }
+        #endif
+        
         let toolbarView = UIToolbar(frame: CGRect(x: 0, y: 0, width: webviewView.frame.width, height: 0))
         toolbarView.sizeToFit()
         toolbarView.frame = CGRect(x: 0, y: 0, width: webviewView.frame.width, height: toolbarView.frame.height + statusBarHeight)
@@ -68,30 +109,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
         toolbarView.isHidden = true
         
         return toolbarView
-    }
-
-    func getStatusBarHeight() -> CGFloat {
-        let winScene = UIApplication.shared.connectedScenes.first
-        let windowScene = winScene as! UIWindowScene
-        var statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height ?? 60
-        
-        #if targetEnvironment(macCatalyst)
-        if (statusBarHeight == 0) {
-            statusBarHeight = 30
-        }
-        #endif
-        
-        return statusBarHeight;
-    }
-    
-    func initToolbarView() {
-        toolbarView =  createToolbarView()        
-        webviewView.addSubview(toolbarView)
-
-        // Set the top of the splashBkgView to the bottom of the status bar.
-//        let statusBarHeight = getStatusBarHeight()
-//        let splashBkgFrame = self.splashBkgView.frame
-//        self.splashBkgView.frame = CGRect(x: splashBkgFrame.minX, y: statusBarHeight, width: splashBkgFrame.width, height: splashBkgFrame.height)
     }
     
     func overrideUIStyle(toDefault: Bool = false) {
@@ -106,25 +123,41 @@ class ViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
-    @objc func loadRootUrl() {
-        // Was the app launched via a universal link? If so, navigate to that.
-        // Otherwise, see if we were launched via shortcut and nav to that.
-        // If neither, just nav to the main PWA URL.
-        let launchUrl = SceneDelegate.universalLinkToLaunch ?? SceneDelegate.shortcutLinkToLaunch ?? rootUrl;
-        FastAngle.webView.load(URLRequest(url: launchUrl))
+    func initToolbarView() {
+        toolbarView =  createToolbarView()
+        
+        webviewView.addSubview(toolbarView)
+    }
+    
+    @objc func loadRootUrl(cachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy) {
+        FastAngle.webView.load(URLRequest(url: SceneDelegate.universalLinkToLaunch ?? SceneDelegate.shortcutLinkToLaunch ?? rootUrl, cachePolicy: cachePolicy))
+    }
+    
+    func reloadWebview(
+        loadingMode: LoadingMode = LoadingMode.defaultCachePolicy
+    ) {
+        switch loadingMode {
+        case LoadingMode.defaultCachePolicy:
+            loadRootUrl(cachePolicy: .useProtocolCachePolicy);
+
+        case LoadingMode.forceCache:
+            loadRootUrl(cachePolicy: .useProtocolCachePolicy);
+        }
+
+        self.loadingMode = loadingMode
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
-        htmlIsLoaded = true;
+        htmlIsLoaded = true
         
-        self.setProgress(1.0, true);
-        self.animateConnectionProblem(false);
+        self.setProgress(1.0, true)
+        self.animateConnectionProblem(false)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            FastAngle.webView.isHidden = false;
-            self.loadingView.isHidden = true;
+            FastAngle.webView.isHidden = false
+            self.loadingView.isHidden = true
            
-            self.setProgress(0.0, false);
+            self.setProgress(0.0, false)
             
             self.overrideUIStyle()
         }
@@ -133,19 +166,25 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         htmlIsLoaded = false;
         
-        if (error as NSError)._code != (-999) {
-            self.overrideUIStyle(toDefault: true);
-            
-            webView.isHidden = true;
-            loadingView.isHidden = false;
-            animateConnectionProblem(true);
-            
-            setProgress(0.05, true);
+        if (error as NSError)._code == (-999) { return }
+        if (error as NSError)._code == 102 { return }
+        
+        self.overrideUIStyle(toDefault: true);
+        webView.isHidden = true;
+        loadingView.isHidden = false;
 
+        if loadingMode == LoadingMode.defaultCachePolicy {
+            DispatchQueue.main.async {
+                self.reloadWebview(loadingMode: LoadingMode.forceCache)
+            }
+        } else {
+            animateConnectionProblem(true);
+            setProgress(0.05, true);
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.setProgress(0.1, true);
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.loadRootUrl();
+                    self.reloadWebview()
                 }
             }
         }
@@ -163,13 +202,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     if (progress >= 0.3) { self.animateConnectionProblem(false); }
                     
                     self.setProgress(progress, true);
-            
         }
     }
     
     func setProgress(_ progress: Float, _ animated: Bool) {
         self.progressView.setProgress(progress, animated: animated);
     }
+    
     
     func animateConnectionProblem(_ show: Bool) {
         if (show) {
@@ -194,23 +233,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
 }
 
-extension ViewController: WKScriptMessageHandler {
-  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "print" {
-            printView(webView: FastAngle.webView)
-        }
-        if message.name == "push-subscribe" {
-            handleSubscribeTouch(message: message)
-        }
-        if message.name == "push-permission-request" {
-            handlePushPermission()
-        }
-        if message.name == "push-permission-state" {
-            handlePushState()
-        }
-  }
-}
-
 extension UIColor {
     // Check if the color is light or dark, as defined by the injected lightness threshold.
     // Some people report that 0.7 is best. I suggest to find out for yourself.
@@ -231,4 +253,24 @@ extension UIColor {
         let brightness = Float(((components[0] * 299) + (components[1] * 587) + (components[2] * 114)) / 1000)
         return (brightness > threshold)
     }
+}
+
+extension ViewController: WKScriptMessageHandler {
+  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "print" {
+            printView(webView: FastAngle.webView)
+        }
+        if message.name == "push-subscribe" {
+            handleSubscribeTouch(message: message)
+        }
+        if message.name == "push-permission-request" {
+            handlePushPermission()
+        }
+        if message.name == "push-permission-state" {
+            handlePushState()
+        }
+        if message.name == "push-token" {
+            handleFCMToken()
+        }
+  }
 }
