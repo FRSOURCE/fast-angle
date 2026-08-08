@@ -11,6 +11,11 @@ peerDependencyRules:
 
 overrides:
   "@maxim_mazurok/gapi.client.androidpublisher-v3": "0.5.20260805"
+  # unplugin-vue-markdown pins markdown-exit ^1.0.0-beta.9, which semver
+  # prerelease rules keep from resolving to the 1.1.0-beta.2 that
+  # @shikijs/markdown-exit uses — the duplicate copies break typechecking.
+  # Remove once unplugin-vue-markdown ranges to markdown-exit >= 1.1.0.
+  markdown-exit: 1.1.0-beta.2
   # Build-tooling override. `@bubblewrap/core
   # extract JDK ZIPs via `extract-zip` → `yauzl`.
   # yauzl 2.10.0 extracts only the first entry and then lets the process exit
