@@ -38,7 +38,8 @@ runs:
         api-key-id: ${{ inputs.asc-key-id }}
         api-private-key: ${{ inputs.asc-api-key }}
 
-    - run: fastlane iOS release
+    # note: the platform segment is case-sensitive — it must match `platform :ios` in the Fastfile
+    - run: fastlane ios release
       shell: bash
       working-directory: packages/ios
       env:
