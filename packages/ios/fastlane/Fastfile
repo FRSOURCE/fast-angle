@@ -1,6 +1,7 @@
 # Deployed by .github/actions/deploy-to-app-store on pushes to main touching packages/ios.
-# Signing assets (Apple Distribution cert + App Store provisioning profile) are installed
-# by apple-actions/* before this lane runs — see the composite action for details.
+# The Apple Distribution cert is installed into a temporary keychain by
+# apple-actions/import-codesign-certs before this lane runs; the provisioning profile
+# is fetched (and created/renewed when missing) by the lane itself via sigh.
 
 default_platform(:ios)
 
@@ -26,6 +27,34 @@ platform :ios do
     ) + 1
     version = "1.#{build_number}"
 
+    # Fetches the App Store profile, creating or renewing it through the ASC API when
+    # no ACTIVE one exists — so profile expiry (or a missing profile) never breaks the
+    # pipeline. `provisioning_name` keeps the portal name deterministic.
+    get_provisioning_profile(
+      api_key: api_key,
+      app_identifier: BUNDLE_ID,
+      provisioning_name: BUNDLE_ID,
+      ignore_profiles_with_different_name: true
+    )
+    profile_name = lane_context[SharedValues::SIGH_NAME]
+
+    # The team id isn't committed in project.pbxproj; the freshly downloaded profile is
+    # the source of truth for it.
+    profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
+    team_id = sh("security cms -D -i '#{profile_path}' | plutil -extract 'TeamIdentifier.0' raw -o - -").strip
+
+    # The committed project uses automatic signing with no team, which can't work on an
+    # ephemeral CI runner — switch the app target (and only it, so CocoaPods targets are
+    # untouched) to manual signing against the profile fetched above.
+    update_code_signing_settings(
+      path: "Fast Angle.xcodeproj",
+      targets: ["Fast Angle"],
+      use_automatic_signing: false,
+      team_id: team_id,
+      code_sign_identity: "Apple Distribution",
+      profile_name: profile_name
+    )
+
     cocoapods(repo_update: true)
 
     build_app(
@@ -38,7 +67,8 @@ platform :ios do
       xcargs: "CURRENT_PROJECT_VERSION=#{build_number} MARKETING_VERSION=#{version}",
       export_options: {
         signingStyle: "manual",
-        provisioningProfiles: { BUNDLE_ID => BUNDLE_ID }
+        teamID: team_id,
+        provisioningProfiles: { BUNDLE_ID => profile_name }
       }
     )
 
