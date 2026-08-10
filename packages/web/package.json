@@ -28,7 +28,7 @@
     "lodash-es": "4.18.1",
     "panzoom": "9.4.4",
     "svg-pan-zoom": "3.6.2",
-    "vue": "3.5.40",
+    "vue": "3.5.41",
     "vue-i18n": "11.4.8",
     "vue-router": "5.2.0"
   },
@@ -64,7 +64,7 @@
     "unplugin-icons": "23.0.1",
     "unplugin-vue-components": "32.1.0",
     "unplugin-vue-markdown": "32.0.0",
-    "vite": "8.2.0",
+    "vite": "8.2.1",
     "vite-plugin-inspect": "12.0.2",
     "vite-plugin-pages": "0.33.3",
     "vite-plugin-pwa": "1.3.0",
