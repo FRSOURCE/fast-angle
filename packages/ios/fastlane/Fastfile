@@ -27,6 +27,19 @@ platform :ios do
     ) + 1
     version = "1.#{build_number}"
 
+    # App Store Connect holds multiple stale (non-ACTIVE) profiles named after the
+    # bundle id, which makes profile creation fail with a 409 "Multiple profiles found
+    # with the name" error. Deleting the invalid ones is what Apple's error message
+    # asks for; an ACTIVE profile (if one ever exists) is never touched — sigh below
+    # would simply reuse it.
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.from(hash: api_key)
+    Spaceship::ConnectAPI::Profile.all
+      .select { |profile| profile.name == BUNDLE_ID && profile.profile_state != "ACTIVE" }
+      .each do |profile|
+        UI.message("Deleting stale provisioning profile '#{profile.name}' (#{profile.id}, state: #{profile.profile_state})")
+        profile.delete!
+      end
+
     # Fetches the App Store profile, creating or renewing it through the ASC API when
     # no ACTIVE one exists — so profile expiry (or a missing profile) never breaks the
     # pipeline. `provisioning_name` keeps the portal name deterministic.
