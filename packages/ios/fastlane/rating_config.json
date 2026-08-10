@@ -1,0 +1,10 @@
+{
+  "advertising": false,
+  "ageAssurance": false,
+  "gunsOrOtherWeapons": "NONE",
+  "healthOrWellnessTopics": false,
+  "lootBox": false,
+  "messagingAndChat": false,
+  "parentalControls": false,
+  "userGeneratedContent": false
+}

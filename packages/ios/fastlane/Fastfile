@@ -92,10 +92,19 @@ platform :ios do
       app_identifier: BUNDLE_ID,
       app_version: version,
       # Existing store metadata and screenshots carry over from the previous version;
-      # only the required "What's New" text is provided per release.
+      # only the required "What's New" text is provided per release. The explicit
+      # "en-US" entry is required — deliver detects which locales to touch from real
+      # locale keys, so a "default"-only hash uploads nothing.
       skip_metadata: false,
       skip_screenshots: true,
-      release_notes: { "default" => "Stability and performance improvements." },
+      release_notes: {
+        "default" => "Stability and performance improvements.",
+        "en-US" => "Stability and performance improvements."
+      },
+      # Answers for the age-rating questions Apple added in 2025 (parentalControls,
+      # lootBox, ageAssurance, ...) — the app's existing declaration predates them and
+      # review submission rejects the version until they are all filled in.
+      app_rating_config_path: "./fastlane/rating_config.json",
       submit_for_review: true,
       automatic_release: true,
       precheck_include_in_app_purchases: false,
