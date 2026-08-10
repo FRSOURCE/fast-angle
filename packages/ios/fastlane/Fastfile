@@ -27,28 +27,30 @@ platform :ios do
     ) + 1
     version = "1.#{build_number}"
 
-    # App Store Connect holds multiple stale (non-ACTIVE) profiles named after the
-    # bundle id, which makes profile creation fail with a 409 "Multiple profiles found
-    # with the name" error. Deleting the invalid ones is what Apple's error message
-    # asks for; an ACTIVE profile (if one ever exists) is never touched — sigh below
-    # would simply reuse it.
+    # Deletes stale non-ACTIVE profiles for this app that the ASC API can still see,
+    # so they don't pile up or collide with profile names used below. NOTE: expired
+    # profiles are invisible to the list API yet still count against name uniqueness
+    # on creation — that residue is what the rescue fallback below handles.
     Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.from(hash: api_key)
     Spaceship::ConnectAPI::Profile.all
-      .select { |profile| profile.name == BUNDLE_ID && profile.profile_state != "ACTIVE" }
+      .select { |profile| profile.name.start_with?(BUNDLE_ID) && profile.profile_state != "ACTIVE" }
       .each do |profile|
         UI.message("Deleting stale provisioning profile '#{profile.name}' (#{profile.id}, state: #{profile.profile_state})")
         profile.delete!
       end
 
-    # Fetches the App Store profile, creating or renewing it through the ASC API when
-    # no ACTIVE one exists — so profile expiry (or a missing profile) never breaks the
-    # pipeline. `provisioning_name` keeps the portal name deterministic.
-    get_provisioning_profile(
-      api_key: api_key,
-      app_identifier: BUNDLE_ID,
-      provisioning_name: BUNDLE_ID,
-      ignore_profiles_with_different_name: true
-    )
+    # Reuses any valid App Store profile for the bundle id (whatever its name), and
+    # creates one through the ASC API when none exists — so profile expiry (or a
+    # missing profile) never breaks the pipeline. The exact name "org.frsource.www.
+    # fast-angle" is unusable: hidden expired duplicates 409 every creation attempt.
+    sigh_options = { api_key: api_key, app_identifier: BUNDLE_ID }
+    begin
+      get_provisioning_profile(provisioning_name: "#{BUNDLE_ID} CI", **sigh_options)
+    rescue => e
+      raise unless e.message.include?("Multiple profiles found with the name")
+      UI.important("Profile name blocked by expired profiles hidden from the ASC API — retrying with a unique name")
+      get_provisioning_profile(provisioning_name: "#{BUNDLE_ID} CI #{build_number}", **sigh_options)
+    end
     profile_name = lane_context[SharedValues::SIGH_NAME]
 
     # The team id isn't committed in project.pbxproj; the freshly downloaded profile is
