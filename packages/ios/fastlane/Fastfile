@@ -8,7 +8,7 @@ default_platform(:ios)
 BUNDLE_ID = "org.frsource.www.fast-angle".freeze
 
 platform :ios do
-  desc "Build a signed IPA, upload it and submit the new version for App Store review"
+  desc "Build a signed IPA, upload it and — unless a review is already in progress — submit it for App Store review"
   lane :release do
     api_key = app_store_connect_api_key(
       key_id: ENV.fetch("APP_STORE_CONNECT_KEY_ID"),
@@ -87,6 +87,14 @@ platform :ios do
       }
     )
 
+    # Apple allows only one open review submission per app, and deliver aborts the
+    # whole lane with "A review submission is already in progress" rather than
+    # queueing behind it — so a version left waiting for (or in) review by an earlier
+    # push would fail every later one. Uploading the build is still worth doing, so
+    # ask for review only when the way is clear and report back when it isn't.
+    app = Spaceship::ConnectAPI::App.find(BUNDLE_ID)
+    pending_review = app.get_in_progress_review_submission(platform: Spaceship::ConnectAPI::Platform::IOS)
+
     upload_to_app_store(
       api_key: api_key,
       app_identifier: BUNDLE_ID,
@@ -105,7 +113,10 @@ platform :ios do
       # lootBox, ageAssurance, ...) — the app's existing declaration predates them and
       # review submission rejects the version until they are all filled in.
       app_rating_config_path: "./fastlane/rating_config.json",
-      submit_for_review: true,
+      # Year of the repository's first commit, matching LICENSE. Apple's precheck
+      # flags a copyright notice without a year as a potential review problem.
+      copyright: "2022 FRSOURCE",
+      submit_for_review: pending_review.nil?,
       automatic_release: true,
       precheck_include_in_app_purchases: false,
       force: true, # skip the interactive HTML metadata-report approval
@@ -114,5 +125,27 @@ platform :ios do
         export_compliance_uses_encryption: false
       }
     )
+
+    next unless pending_review
+
+    report_review_not_submitted(version: version, build_number: build_number, state: pending_review.state)
+  end
+
+  # The upload half succeeded but nobody asked Apple to review it, which is easy to
+  # miss in a green run — so say it in the fastlane log, as a run annotation, and in
+  # the job summary.
+  private_lane :report_review_not_submitted do |options|
+    message = "iOS #{options[:version]} (build #{options[:build_number]}) was uploaded to App Store Connect " \
+              "but NOT submitted for review: the previous submission is still #{options[:state]}. " \
+              "What to do now: wait for it to finish (or cancel it) in App Store Connect, then either submit " \
+              "#{options[:version]} for review from the website, or re-run this workflow to upload and submit a fresh build."
+
+    UI.important(message)
+
+    if ENV["GITHUB_ACTIONS"]
+      puts("::warning title=App Store review not submitted::#{message}")
+      summary_path = ENV["GITHUB_STEP_SUMMARY"]
+      File.write(summary_path, "### ⚠️ App Store review not submitted\n\n#{message}\n", mode: "a") if summary_path
+    end
   end
 end
