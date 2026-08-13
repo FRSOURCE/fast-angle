@@ -2,6 +2,7 @@
 import type { MessageFunction, VueMessageType } from 'vue-i18n';
 import IconHelp from '~icons/carbon/help';
 import { locale } from '~/composables/locale';
+import { isIosAppStore } from '~/composables/platform';
 import IconLogoGithub from '~icons/carbon/logo-github';
 import FavoriteFilled from '~icons/carbon/favorite-filled';
 
@@ -141,7 +142,7 @@ const content = computed(
             {{ t('main.star_us_on_github') }}
           </a>
         </p>
-        <p>
+        <p v-if="!isIosAppStore">
           <a
             rel="noreferrer"
             href="https://www.frsource.org/blog/sponsoring"
@@ -172,8 +173,11 @@ const content = computed(
             title="GitHub"
             :class="$style.donate"
           >
-            <FavoriteFilled />
-            <small>{{ t('main.donate_us') }}</small>
+            <IconLogoGithub v-if="isIosAppStore" />
+            <FavoriteFilled v-else />
+            <small>{{
+              t(isIosAppStore ? 'main.star_us_on_github' : 'main.donate_us')
+            }}</small>
           </a>
         </template>
       </Modal>
