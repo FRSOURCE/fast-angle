@@ -1,1 +1,0 @@
-var e=`/fast-angle/`;export{e as t};
