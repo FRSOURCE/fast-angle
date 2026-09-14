@@ -1,4 +1,5 @@
-import type { MaybeRef, MaybeElementRef } from '@vueuse/core';
+import type { MaybeRef } from 'vue';
+import type { MaybeElementRef } from '@vueuse/core';
 import {
   type GenericOptions,
   useDrag,
