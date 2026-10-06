@@ -59,7 +59,7 @@
     "sass": "1.105.1",
     "shiki": "4.5.0",
     "type-fest": "5.10.0",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "unplugin-auto-import": "21.1.0",
     "unplugin-icons": "23.0.1",
     "unplugin-vue-components": "32.1.0",
