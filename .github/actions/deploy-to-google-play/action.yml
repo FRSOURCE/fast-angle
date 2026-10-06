@@ -72,13 +72,26 @@ runs:
         python3 -c "import json,sys; d=json.load(open('../../service-account.json')); print('keys:', list(d.keys())); print('type:', d.get('type')); print('token_uri:', d.get('token_uri'))" 2>&1
       shell: bash
       working-directory: packages/android
+    # Google Play rejects a version code that was already uploaded. That happens when an earlier
+    # run published the bundle but never managed to commit the version bump (e.g. its push was
+    # rejected because main moved, or the run got cancelled). The bump `bubblewrap update` made
+    # in this run is then exactly the missing commit: skip the upload (retrying is pointless) and
+    # fall through to the commit step so the next run starts from the correct version code.
     - run: |
         set +o pipefail
+        RELEASE_LOG="$RUNNER_TEMP/bubblewrap-release.log"
         for attempt in 1 2 3; do
           while true; do echo "Y"; sleep 10; done 2>/dev/null | \
-            pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json"
+            pnpm --filter '@frsource/fast-angle-android' release --track="production" --serviceAccountFile="../../service-account.json" 2>&1 | \
+            tee "$RELEASE_LOG"
           RELEASE_EXIT=${PIPESTATUS[1]}
           [ $RELEASE_EXIT -eq 0 ] && break
+          if grep -q "has already been used" "$RELEASE_LOG"; then
+            VERSION_CODE=$(jq '.appVersionCode' packages/android/twa-manifest.json)
+            echo "::warning::Version code $VERSION_CODE is already published to Google Play (most likely by an earlier run that failed to commit the version bump). Skipping upload; committing the bump so the next release uses $((VERSION_CODE + 1))."
+            RELEASE_EXIT=0
+            break
+          fi
           echo "Attempt $attempt/3 failed (exit $RELEASE_EXIT). Retrying in 30s..."
           sleep 30
         done
@@ -90,6 +103,12 @@ runs:
       id: commit_info
       run: |
         echo "message=chore(release): android app v$(cat packages/android/twa-manifest.json | jq '.appVersionCode') [no ci]" >> $GITHUB_OUTPUT
+      shell: bash
+    # main may have moved while the app was building (e.g. another PR got merged). Without this
+    # the push below is rejected, the version bump is lost and the next run reuses an
+    # already-published version code.
+    - name: Rebase onto latest main
+      run: git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" pull --rebase --autostash origin main
       shell: bash
     - uses: stefanzweifel/git-auto-commit-action@v7
       with:
