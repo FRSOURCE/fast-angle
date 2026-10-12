@@ -82,7 +82,7 @@ importers:
         version: 5.1.144
       '@frsource/prettier-config':
         specifier: 1.47.13
-        version: 1.47.13(prettier@3.9.9)
+        version: 1.47.13(prettier@3.9.10)
       '@iconify-json/carbon':
         specifier: 1.2.28
         version: 1.2.28
@@ -141,8 +141,8 @@ importers:
         specifier: 11.28.4
         version: 11.28.4
       prettier:
-        specifier: 3.9.9
-        version: 3.9.9
+        specifier: 3.9.10
+        version: 3.9.10
       sass:
         specifier: 1.105.1
         version: 1.105.1
@@ -184,7 +184,7 @@ importers:
         version: 0.11.0(supports-color@7.2.0)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue-router@5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3))
       vite-ssg:
         specifier: 28.3.0
-        version: 28.3.0(beasties@0.5.4)(prettier@3.9.9)(supports-color@7.2.0)(unhead@2.1.15)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue-router@5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3))
+        version: 28.3.0(beasties@0.5.4)(prettier@3.9.10)(supports-color@7.2.0)(unhead@2.1.15)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue-router@5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3))
       vite-ssg-sitemap:
         specifier: 0.10.0
         version: 0.10.0
@@ -1966,9 +1966,6 @@ packages:
 
   '@types/markdown-it-link-attributes@3.0.5':
     resolution: {integrity: sha512-VZ2BGN3ywUg7mBD8W6PwR8ChpOxaQSBDbLqPgvNI+uIra3zY2af1eG/3XzWTKjEraTWskMKnZqZd6m1fDF67Bg==}
-
-  '@types/markdown-it@14.1.2':
-    resolution: {integrity: sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==}
 
   '@types/markdown-it@14.2.0':
     resolution: {integrity: sha512-NoQ2yGlLWj4wpxMs+TYmRKk3thDrQ97agr7sFqfLsAlvoS8SNQuTrlObhFqG9iugdTtgOE9jpJ6FNM4ZGsa5xQ==}
@@ -4452,8 +4449,8 @@ packages:
     resolution: {integrity: sha512-E6rsNU1QNJgB3sjj7OANinGncFKuK+164sLXw1/CqBjj/EkXSoSdHCtWQGBNlREIGLnL7IEUEGa08YFVUbrhVg==}
     engines: {node: '>=16'}
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -6692,9 +6689,9 @@ snapshots:
       get-stdin: 10.0.0
       yargs: 18.2.0
 
-  '@frsource/prettier-config@1.47.13(prettier@3.9.9)':
+  '@frsource/prettier-config@1.47.13(prettier@3.9.10)':
     dependencies:
-      prettier: 3.9.9
+      prettier: 3.9.10
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -7079,13 +7076,13 @@ snapshots:
 
   '@mdit-vue/plugin-component@3.0.2':
     dependencies:
-      '@types/markdown-it': 14.1.2
+      '@types/markdown-it': 14.2.0
       markdown-it: 14.2.0
 
   '@mdit-vue/plugin-frontmatter@3.0.2':
     dependencies:
       '@mdit-vue/types': 3.0.2
-      '@types/markdown-it': 14.1.2
+      '@types/markdown-it': 14.2.0
       gray-matter: 4.0.3
       markdown-it: 14.2.0
 
@@ -7518,11 +7515,6 @@ snapshots:
   '@types/markdown-it-link-attributes@3.0.5':
     dependencies:
       '@types/markdown-it': 14.2.0
-
-  '@types/markdown-it@14.1.2':
-    dependencies:
-      '@types/linkify-it': 5.0.0
-      '@types/mdurl': 2.0.0
 
   '@types/markdown-it@14.2.0':
     dependencies:
@@ -10298,7 +10290,7 @@ snapshots:
 
   presentable-error@0.0.1: {}
 
-  prettier@3.9.9: {}
+  prettier@3.9.10: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -11337,7 +11329,7 @@ snapshots:
 
   vite-ssg-sitemap@0.10.0: {}
 
-  vite-ssg@28.3.0(beasties@0.5.4)(prettier@3.9.9)(supports-color@7.2.0)(unhead@2.1.15)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue-router@5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3)):
+  vite-ssg@28.3.0(beasties@0.5.4)(prettier@3.9.10)(supports-color@7.2.0)(unhead@2.1.15)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue-router@5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3)):
     dependencies:
       '@unhead/dom': 2.1.15(unhead@2.1.15)
       '@unhead/vue': 2.1.15(vue@3.5.43(typescript@6.0.3))
@@ -11350,7 +11342,7 @@ snapshots:
       vue: 3.5.43(typescript@6.0.3)
     optionalDependencies:
       beasties: 0.5.4
-      prettier: 3.9.9
+      prettier: 3.9.10
       vue-router: 5.3.1(@vue/compiler-sfc@3.5.43)(rolldown@1.2.12)(rollup@4.62.2)(vite@8.3.2(@types/node@24.19.1)(sass@1.105.1)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3))
     transitivePeerDependencies:
       - '@noble/hashes'
