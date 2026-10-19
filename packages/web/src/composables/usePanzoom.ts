@@ -11,7 +11,7 @@ export function usePanzoom(
   elementRef: MaybeElementRef,
   options?: MaybeRef<GenericOptions | undefined>,
 ) {
-  const optionsRef = resolveRef(options);
+  const optionsRef = toRef(options);
   const enabled = computed(() => unref(optionsRef)?.enabled ?? true);
   const active = ref(false);
   const offset = ref<[number, number]>([0, 0]);
