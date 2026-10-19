@@ -30,12 +30,12 @@
     "svg-pan-zoom": "3.6.2",
     "vue": "3.5.44",
     "vue-i18n": "11.4.15",
-    "vue-router": "5.3.1"
+    "vue-router": "5.4.0"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.85.14",
+    "@frsource/eslint-config": "1.86.0",
     "@frsource/frs-replace": "5.1.147",
-    "@frsource/prettier-config": "1.47.13",
+    "@frsource/prettier-config": "1.48.0",
     "@iconify-json/carbon": "1.2.28",
     "@intlify/unplugin-vue-i18n": "11.2.6",
     "@shikijs/markdown-exit": "4.5.0",
@@ -49,7 +49,7 @@
     "beasties": "^0.5.0",
     "cross-env": "10.1.0",
     "del-cli": "7.0.0",
-    "eslint": "10.12.0",
+    "eslint": "10.13.0",
     "globals": "17.13.0",
     "https-localhost": "4.7.2",
     "incstr": "1.2.3",
@@ -65,7 +65,7 @@
     "unplugin-vue-components": "32.1.0",
     "unplugin-vue-markdown": "32.1.1",
     "vite": "8.3.4",
-    "vite-plugin-inspect": "12.0.2",
+    "vite-plugin-inspect": "12.1.0",
     "vite-plugin-pages": "0.33.3",
     "vite-plugin-pwa": "1.3.0",
     "vite-plugin-vue-layouts": "0.11.0",
