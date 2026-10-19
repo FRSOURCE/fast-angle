@@ -57,8 +57,8 @@ android {
         applicationId "org.frsource.www.fast_angle.twa"
         minSdkVersion 24
         targetSdkVersion 36
-        versionCode 101
-        versionName "101"
+        versionCode 102
+        versionName "102"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -208,6 +208,6 @@ repositories {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     
-        implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.6.2'
+        implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.7.4'
     
 }
