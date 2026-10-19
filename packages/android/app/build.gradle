@@ -55,7 +55,7 @@ android {
     namespace "org.frsource.www.fast_angle.twa"
     defaultConfig {
         applicationId "org.frsource.www.fast_angle.twa"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 36
         versionCode 97
         versionName "97"
