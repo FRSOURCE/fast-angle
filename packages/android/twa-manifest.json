@@ -35,7 +35,7 @@
   "isChromeOSOnly": false,
   "isMetaQuest": false,
   "fullScopeUrl": "https://www.frsource.org/fast-angle/",
-  "minSdkVersion": 21,
+  "minSdkVersion": 24,
   "orientation": "natural",
   "fingerprints": [
     {
