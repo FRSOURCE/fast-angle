@@ -1,0 +1,1 @@
+import{a as e}from"./runtime-core.esm-bundler-BeoGFAlL.js";import{c as t}from"./app-OfOn288O.js";function n(){let n=t();return e(()=>n.path.split(`/`)[1])}export{n as t};
