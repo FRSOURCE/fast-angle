@@ -33,7 +33,7 @@
     "vue-router": "5.4.0"
   },
   "devDependencies": {
-    "@frsource/eslint-config": "1.86.3",
+    "@frsource/eslint-config": "1.86.4",
     "@frsource/frs-replace": "5.1.152",
     "@frsource/prettier-config": "1.48.2",
     "@iconify-json/carbon": "1.2.29",
