@@ -75,14 +75,14 @@ importers:
         version: 5.4.0(@vue/compiler-sfc@3.5.45)(rolldown@1.2.16)(rollup@4.62.2)(vite@8.3.6(@types/node@24.19.2)(sass@1.105.2)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.45(typescript@6.0.3))
     devDependencies:
       '@frsource/eslint-config':
-        specifier: 1.86.4
-        version: 1.86.4(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
+        specifier: 1.86.5
+        version: 1.86.5(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       '@frsource/frs-replace':
         specifier: 5.1.155
         version: 5.1.155
       '@frsource/prettier-config':
-        specifier: 1.48.2
-        version: 1.48.2(prettier@3.9.10)
+        specifier: 1.48.3
+        version: 1.48.3(prettier@3.9.10)
       '@iconify-json/carbon':
         specifier: 1.2.30
         version: 1.2.30
@@ -1046,8 +1046,8 @@ packages:
       '@noble/hashes':
         optional: true
 
-  '@frsource/eslint-config@1.86.4':
-    resolution: {integrity: sha512-4tB7MFGBUq8XbyEZi0aBVyxCYhsdTAfUvC+K3XVEwPKaGPcrdDmzXDhOMQ2zXbgFm1IqkjaZ0YEs9C32HqzFYQ==}
+  '@frsource/eslint-config@1.86.5':
+    resolution: {integrity: sha512-uPDqo1zg2lPzVkkMiH1MjC2HjATtHB8ZrN+4wvXMw2UZvbdfI2bVpb+Dyk2NetvMCmmfFNbY5Xi8X/wX57zbjA==}
     peerDependencies:
       eslint: '>= 10'
       typescript: '>= 5.0.0'
@@ -1057,8 +1057,8 @@ packages:
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  '@frsource/prettier-config@1.48.2':
-    resolution: {integrity: sha512-BtrnUzvXL8IF3KGAFAsfFFWT8y5l3GvVFumem87pKRB6uancRPpr072BvH92zr+0Sygj9oPoifouUHnF/qklXA==}
+  '@frsource/prettier-config@1.48.3':
+    resolution: {integrity: sha512-AabQPkhpZR/91ayu26XNk6IUsIYa3hjxiqpE/Imz7MfUGpVSctcu9TmWAoHK8/nRkksWvJ9GTBSsfjI9dr1jBQ==}
     peerDependencies:
       prettier: '>= 3'
 
@@ -6796,7 +6796,7 @@ snapshots:
 
   '@exodus/bytes@1.15.1': {}
 
-  '@frsource/eslint-config@1.86.4(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)':
+  '@frsource/eslint-config@1.86.5(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.13.0(supports-color@7.2.0))
       '@typescript-eslint/eslint-plugin': 8.72.1(@typescript-eslint/parser@8.72.1(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.13.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
@@ -6815,7 +6815,7 @@ snapshots:
       get-stdin: 10.0.0
       yargs: 18.2.0
 
-  '@frsource/prettier-config@1.48.2(prettier@3.9.10)':
+  '@frsource/prettier-config@1.48.3(prettier@3.9.10)':
     dependencies:
       prettier: 3.9.10
 
@@ -6918,7 +6918,7 @@ snapshots:
   '@intlify/vue-i18n-extensions@9.0.0(@intlify/shared@11.4.16)(vue-i18n@11.4.18(vue@3.5.45(typescript@6.0.3)))(vue@3.5.45(typescript@6.0.3))':
     dependencies:
       '@babel/parser': 7.29.9
-      '@vue/compiler-dom': 3.5.44
+      '@vue/compiler-dom': 3.5.45
     optionalDependencies:
       '@intlify/shared': 11.4.16
       vue: 3.5.45(typescript@6.0.3)
